@@ -1,0 +1,167 @@
+author = "TheSpeshalPlatoon"; onLoadName = "Template"; class Header {gameType = COOP}; //loadScreen = __EVAL(selectRandom["data\overview1.jpg","data\overview2.jpg"]); 
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.1;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";   //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of mission
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 40;   //-- AI dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	{"5th Expeditionary Force", "\a3\UI_F_enoch\Data\CfgUnitInsignia\eaf_5thRegiment_ca.paa", "west", {
+		{"Platoon HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "B_officer_F", {}, "iconManCommander_ca.paa"},
+			{"Medic", "B_medic_F", {}, "iconManMedic_ca.paa"},
+			{"Engineer", "B_engineer_F", {}, "iconManEngineer_ca.paa"},
+			{"Explosive Specialist", "B_soldier_exp_F", {}, "iconManExplosive_ca.paa"}
+		}},
+		{"Alpha", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "B_Soldier_SL_F", {}, "iconManLeader_ca.paa"},
+			{"Team Leader", "B_Soldier_TL_F", {}, "iconManLeader_ca.paa"},
+			{"Medic", "B_medic_F", {}, "iconManMedic_ca.paa"},
+			{"Rifleman", "B_Soldier_F", {}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "B_soldier_LAT_F", {}, "iconManAT_ca.paa"},
+			{"Grenadier", "B_Soldier_GL_F", {}, "iconMan_ca.paa"},
+			{"Autorifleman", "B_soldier_AR_F", {}, "iconManMG_ca.paa"},
+			{"Ammo Bearer", "B_Soldier_A_F", {}, "iconMan_ca.paa"}
+		}},
+		{"Bravo", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "B_Soldier_SL_F", {}, "iconManLeader_ca.paa"},
+			{"Team Leader", "B_Soldier_TL_F", {}, "iconManLeader_ca.paa"},
+			{"Medic", "B_medic_F", {}, "iconManMedic_ca.paa"},
+			{"Rifleman", "B_Soldier_F", {}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "B_soldier_LAT_F", {}, "iconManAT_ca.paa"},
+			{"Grenadier", "B_Soldier_GL_F", {}, "iconMan_ca.paa"},
+			{"Autorifleman", "B_soldier_AR_F", {}, "iconManMG_ca.paa"},
+			{"Marksman", "B_soldier_M_F", {}, "iconMan_ca.paa"}
+		}},
+		{"Charlie (Weapons)", "markers\nato\b_art.paa", {
+			{"Squad Leader", "B_Soldier_SL_F", {}, "iconManLeader_ca.paa"},
+			{"Team Leader", "B_Soldier_TL_F", {}, "iconManLeader_ca.paa"},
+			{"Heavy Gunner", "B_HeavyGunner_F", {}, "iconManMG_ca.paa"},
+			{"Ammo Bearer", "B_Soldier_A_F", {}, "iconMan_ca.paa"},
+			{"Missile Specialist", "B_soldier_AT_F", {}, "iconManAT_ca.paa"},
+			{"Assistant Missile Specialist", "B_soldier_AAT_F", {}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"2nd Force Reconnaissance", "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\TFAegis_ca.paa", "west", {
+		{"Raider 1", "markers\nato\b_inf.paa", {
+			{"Team Leader", "B_Soldier_SL_F", {}, "iconManLeader_ca.paa"},
+			{"Medic", "B_medic_F", {}, "iconManMedic_ca.paa"},
+			{"Scout", "B_Soldier_F", {}, "iconManRecon_ca.paa"},
+			{"Autorifleman", "B_soldier_AR_F", {}, "iconManMG_ca.paa"},
+			{"Marksman", "B_soldier_M_F", {}, "iconManRecon_ca.paa"}
+		}},
+		{"Raider 2", "markers\nato\b_inf.paa", {
+			{"Team Leader", "B_Soldier_SL_F", {}, "iconManLeader_ca.paa"},
+			{"Medic", "B_medic_F", {}, "iconManMedic_ca.paa"},
+			{"Scout", "B_Soldier_F", {}, "iconManRecon_ca.paa"},
+			{"Scout (AT)", "B_soldier_LAT_F", {}, "iconManAT_ca.paa"},
+			{"Autorifleman", "B_soldier_AR_F", {}, "iconManMG_ca.paa"}
+		}}
+	}},
+	{"3rd Light Armoured Reconnaissance", "\a3\UI_F_Orange\Data\CfgUnitInsignia\aaf_3rdRegiment_ca.paa", "west", {
+		{"Crocodile 1", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "B_Crew_F", {}, "iconManLeader_ca.paa"},
+			{"Crewman", "B_Crew_F", {}, "iconManLeader_ca.paa"}
+		}},
+		{"Crocodile 2", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "B_Crew_F", {}, "iconManLeader_ca.paa"},
+			{"Crewman", "B_Crew_F", {}, "iconManLeader_ca.paa"}
+		}}
+	}},
+	{"Carrier Rotor Wing 1", "\a3\UI_F_Tank\Data\CfgUnitInsignia\aaf_1stRegiment_ca.paa", "west", {
+		{"Whiplash 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "B_Helipilot_F", {}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "B_Helicrew_F", {}, "iconManOfficer_ca.paa"}
+		}},
+		{"Whiplash 2", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "B_Helipilot_F", {}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "B_Helicrew_F", {}, "iconManOfficer_ca.paa"}
+		}},
+		{"Whiplash 3", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "B_Helipilot_F", {}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "B_Helicrew_F", {}, "iconManOfficer_ca.paa"}
+		}}
+	}},
+	{"Carrier Strike Group 14", "\a3\UI_F_Jets\Data\CfgUnitInsignia\jets_patch_01.paa", "west", {
+		{"Razor 1", "markers\nato\b_plane.paa", {{"Jet Pilot", "B_Pilot_F", {}, "iconManOfficer_ca.paa"}}},
+		{"Razor 2", "markers\nato\b_plane.paa", {{"Jet Pilot", "B_Pilot_F", {}, "iconManOfficer_ca.paa"}}}
+	}},
+	{"CTRG Group 13", "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\CTRG13_NATO.paa", "west", {
+		{"Keystone 1", "markers\nato\b_inf.paa", {
+			{"Team Leader", "B_Soldier_SL_F", {}, "iconManLeader_ca.paa"},
+			{"Medic", "B_medic_F", {}, "iconManMedic_ca.paa"},
+			{"Rifleman (AT)", "B_soldier_LAT_F", {}, "iconManAT_ca.paa"},
+			{"Autorifleman", "B_soldier_AR_F", {}, "iconManMG_ca.paa"},
+			{"Marksman", "B_soldier_M_F", {}, "iconManRecon_ca.paa"}
+		}},
+		{"Phantom 1", "markers\nato\b_plane.paa", {
+			{"Helicopter Pilot", "B_Helipilot_F", {}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "B_Helicrew_F", {}, "iconManOfficer_ca.paa"}
+		}}
+	}}
+};
+
+tsp_param_brightness = 0.5;  tsp_param_time_day = 1;      tsp_param_time_night = 1;
+tsp_param_weather = true;    tsp_param_weatherTime = 20; 
+tsp_param_fog = 0.2;         tsp_param_fogMin = 0;        tsp_param_fogMax = 0.02;
+tsp_param_wind = 1;          tsp_param_windMin = -1;      tsp_param_windMax = 1;
+tsp_param_overcast = 1;      tsp_param_overcastMin = 0;   tsp_param_overcastMax = 1; 
+tsp_param_rain = 0.5;        tsp_param_rainMin = 0;       tsp_param_rainMax = 1;
+tsp_param_lightning = 1;     tsp_param_lightningMin = 0;  tsp_param_lightningMax = 1;
+tsp_param_wave = 0.5;        tsp_param_waveMin = 0;       tsp_param_waveMax = 1;
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 300;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
