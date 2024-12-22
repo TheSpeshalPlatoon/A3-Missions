@@ -1,0 +1,199 @@
+author = "TheSpeshalPlatoon"; onLoadName = "Killhouse Generator"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = false;              //-- Show spawn map at all
+tsp_param_spawnStart = false;        //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.07;        //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Disabled";  //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of mission
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 40;   //-- AI dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\1recon.paa", "west", {
+		{"Raider HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_usmc_engineer", {"usmc_recon"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Raider 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Raider 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Anti Tank", "tsp_usmc_antitank", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner_fast", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Hitman (Scout Snipers)", "markers\nato\b_art.paa", {
+			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
+		}}
+	}},
+	{"USMC - 3rd Marine Raider Battalion", "\tsp_core\data\insignia\raider.paa", "west", {
+		{"Gambler HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_socom_marsoc_elementleader", {"soc_raider","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "rhsusf_socom_marsoc_cso_mechanic", {"soc_raider"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Gambler 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "rhsusf_socom_marsoc_cso", {"soc_raider","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Operator (M203)", "rhsusf_socom_marsoc_cso_grenadier", {"soc_raider","usa_missile","us_grenadier","soc_grenadier"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_army_sf_autorifleman", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "rhsusf_socom_marsoc_cso_breacher", {"soc_raider"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Gambler 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
+			{"Operator (MK17)", "rhsusf_socom_marsoc_cso_mk17", {"soc_raider","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "rhsusf_socom_marsoc_cso", {"soc_raider","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", "rhsusf_socom_marsoc_sniper", {"soc_raider","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"USN - Seal Team 2", "\tsp_core\data\insignia\2seal.paa", "west", {
+		{"Neptune HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "tsp_usn_sailor", {"soc_seal","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_usn_sailor", {"soc_seal","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_usn_sailor", {"soc_seal"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Neptune 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "tsp_usn_sailor", {"soc_seal","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_usn_sailor", {"soc_seal","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_usn_sailor", {"soc_seal","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "tsp_usn_sailor", {"soc_seal","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_usn_sailor", {"soc_seal","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usn_sailor", {"soc_seal"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Neptune 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "tsp_usn_sailor", {"soc_seal","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_usn_sailor", {"soc_seal","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_usn_sailor", {"soc_seal","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "tsp_usn_sailor", {"soc_seal","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "tsp_usn_sailor", {"soc_seal","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", "tsp_usn_sailor", {"soc_seal","soc_sniper"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"USA - 3rd Special Forces Group", "\tsp_core\data\insignia\sf.paa", "west", {
+		{"Sabre HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "tsp_army_sf_teamlead", {"soc_special","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"soc_special","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_army_sf_engineer", {"soc_special"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Sabre 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "tsp_army_sf_teamlead", {"soc_special","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"soc_special","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"soc_special","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "tsp_army_sf_operatorat", {"soc_special","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_army_sf_autorifleman", {"soc_special","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_army_sf_engineer", {"soc_special"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Sabre 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "tsp_army_sf_teamlead", {"soc_special","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"soc_special","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"soc_special","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "B_soldier_LAT_F", {"soc_special","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_special","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_army_sf_engineer", {"soc_special"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Sabre 3 (SNOT)", "markers\nato\b_art.paa", {
+			{"Team Leader", "tsp_army_sf_teamlead", {"soc_special","us_leader"}, "iconManLeader_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"soc_special"}, "iconManRecon_ca.paa"},
+			{"Marksman", "tsp_army_sf_marksman", {"soc_special","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"USA - 1st Special Forces Operational Detachment Delta ", "\tsp_core\data\insignia\1sfod.paa", "west", {
+		{"Shadow HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_army_sf_engineer", {"soc_delta"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Shadow 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"soc_delta","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "tsp_army_sf_operatorat", {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_army_sf_autorifleman", {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_army_sf_engineer", {"soc_delta"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Shadow 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"soc_delta","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "B_soldier_LAT_F", {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_army_sf_engineer", {"soc_delta"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Shadow 3 (SNOT)", "markers\nato\b_art.paa", {
+			{"Team Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Marksman", "tsp_army_sf_marksman", {"soc_delta","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+		}}
+	}}
+};
+
+tsp_param_brightness = 0.5; 
+tsp_param_time_day = 12;
+tsp_param_time_night = 24;
+tsp_param_weather = false;
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 10;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
