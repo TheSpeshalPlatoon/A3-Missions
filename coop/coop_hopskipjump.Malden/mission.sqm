@@ -8,18 +8,22 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=218;
+		nextID=252;
+	};
+	class MarkerIDProvider
+	{
+		nextID=1;
 	};
 	class LayerIndexProvider
 	{
-		nextID=51;
+		nextID=62;
 	};
 	class Camera
 	{
-		pos[]={10764.59,21.662619,1807.4081};
-		dir[]={0.12598246,-0.20998523,0.96960372};
-		up[]={0.027066218,0.97768587,0.20830692};
-		aside[]={0.99170464,-3.0228694e-07,-0.12885307};
+		pos[]={5902.0405,548.31158,6661.4155};
+		dir[]={-0.88227689,-0.27292848,-0.38381797};
+		up[]={-0.25032014,0.96202093,-0.10889767};
+		aside[]={-0.39895734,-1.039356e-06,0.91708112};
 	};
 };
 binarizationWanted=0;
@@ -67,6 +71,7 @@ addons[]=
 	"A3_Boat_F_Destroyer_Destroyer_01",
 	"A3_Characters_F_Jets",
 	"A3_Weapons_F",
+	"acre_main",
 	"A3_Characters_F",
 	"ace_hearing",
 	"ace_gforces",
@@ -76,13 +81,14 @@ addons[]=
 	"A3_Characters_F_Jets_Vests",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Characters_F_Common",
-	"A3_Structures_F_EPA_Walls"
+	"A3_Structures_F_EPA_Walls",
+	"A3_Ui_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=30;
+		items=32;
 		class Item0
 		{
 			className="A3_Boat_F_Jets";
@@ -267,29 +273,43 @@ class AddonsMetaData
 		};
 		class Item26
 		{
+			className="acre_main";
+			name="ACRE2 - Main";
+			author="ACRE2Team";
+			url="https://github.com/IDI-Systems/acre2";
+		};
+		class Item27
+		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item27
+		class Item28
 		{
 			className="ace_medical_engine";
 			name="ACE3 - Medical Engine";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item28
+		class Item29
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item29
+		class Item30
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item31
+		{
+			className="A3_Ui_F";
+			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -307,9 +327,6 @@ randomSeed=11842469;
 class ScenarioData
 {
 	author="ASmallDinosaur";
-};
-class CustomAttributes
-{
 };
 class Mission
 {
@@ -335,14 +352,14 @@ class Mission
 	};
 	class Entities
 	{
-		items=7;
+		items=37;
 		class Item0
 		{
 			dataType="Layer";
 			name="mission";
 			class Entities
 			{
-				items=5;
+				items=7;
 				class Item0
 				{
 					dataType="Layer";
@@ -3468,7 +3485,7 @@ class Mission
 						};
 					};
 					id=39;
-					atlOffset=44.976948;
+					atlOffset=6.7285576;
 				};
 				class Item2
 				{
@@ -5662,9 +5679,23 @@ class Mission
 					type="Land_HelipadEmpty_F";
 					atlOffset=13.805726;
 				};
+				class Item5
+				{
+					dataType="Layer";
+					name="island_base";
+					id=218;
+					atlOffset=96.5;
+				};
+				class Item6
+				{
+					dataType="Layer";
+					name="island_base_close";
+					id=219;
+					atlOffset=96.5;
+				};
 			};
 			id=0;
-			atlOffset=15.847278;
+			atlOffset=71.921288;
 		};
 		class Item1
 		{
@@ -5965,6 +5996,311 @@ class Mission
 				};
 				nAttributes=1;
 			};
+		};
+		class Item7
+		{
+			dataType="Marker";
+			position[]={9751.0186,38.742001,3891.9009};
+			name="marker_0";
+			text="Military Base";
+			type="mil_objective";
+			id=220;
+			atlOffset=-0.00011062622;
+		};
+		class Item8
+		{
+			dataType="Marker";
+			position[]={9299.8555,0,3786.7446};
+			name="marker_1";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=221;
+			atlOffset=13.947753;
+		};
+		class Item9
+		{
+			dataType="Marker";
+			position[]={11608.12,28.007753,4455.6069};
+			name="marker_2";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=222;
+			atlOffset=13.947753;
+		};
+		class Item10
+		{
+			dataType="Marker";
+			position[]={8191.0181,21.670376,3174.0439};
+			name="marker_3";
+			text="Le Port";
+			type="mil_objective";
+			id=224;
+		};
+		class Item11
+		{
+			dataType="Marker";
+			position[]={7817.5063,20.217752,3164.3677};
+			name="marker_4";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=225;
+			atlOffset=13.947752;
+		};
+		class Item12
+		{
+			dataType="Marker";
+			position[]={8416.2461,18.526508,3868.4429};
+			name="marker_5";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=226;
+			atlOffset=13.947752;
+		};
+		class Item13
+		{
+			dataType="Marker";
+			position[]={8080.9897,111.92394,3417.814};
+			name="marker_6";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=227;
+			atlOffset=13.947754;
+		};
+		class Item14
+		{
+			dataType="Marker";
+			position[]={5895.2871,54.886337,3562.8921};
+			name="marker_7";
+			text="Chapoi";
+			type="mil_objective";
+			id=228;
+		};
+		class Item15
+		{
+			dataType="Marker";
+			position[]={5287.5889,83.323997,4451.3442};
+			name="marker_8";
+			text="Sainte Marie";
+			type="mil_objective";
+			id=229;
+			atlOffset=-0.00032043457;
+		};
+		class Item16
+		{
+			dataType="Marker";
+			position[]={4440.8633,114.22683,2872.5166};
+			name="marker_9";
+			text="Field Hospital";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=230;
+			atlOffset=7.6293945e-06;
+		};
+		class Item17
+		{
+			dataType="Marker";
+			position[]={3775.4048,19.549339,3229.364};
+			name="marker_10";
+			text="La Riviere";
+			type="mil_objective";
+			id=231;
+		};
+		class Item18
+		{
+			dataType="Marker";
+			position[]={3643.8701,16.523212,3229.3342};
+			name="marker_11";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=232;
+			atlOffset=8.2880859;
+		};
+		class Item19
+		{
+			dataType="Marker";
+			position[]={4634.8247,80.915359,3604.2188};
+			name="marker_12";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=233;
+		};
+		class Item20
+		{
+			dataType="Marker";
+			position[]={4321.9727,442.22443,6743.0376};
+			name="marker_13";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=234;
+		};
+		class Item21
+		{
+			dataType="Marker";
+			position[]={5464.5967,503.48715,6322.6943};
+			name="marker_14";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=235;
+		};
+		class Item22
+		{
+			dataType="Marker";
+			position[]={6048.5713,125.12,8634.9004};
+			name="marker_15";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=236;
+		};
+		class Item23
+		{
+			dataType="Marker";
+			position[]={7970.4048,29.959999,10061.559};
+			name="marker_16";
+			text="Airbase";
+			type="mil_objective";
+			id=237;
+			atlOffset=-0.00075340271;
+		};
+		class Item24
+		{
+			dataType="Marker";
+			position[]={7025.8359,123.299,10071.81};
+			name="marker_17";
+			text="Radio Station";
+			type="mil_objective";
+			id=238;
+			atlOffset=-0.00025177002;
+		};
+		class Item25
+		{
+			dataType="Marker";
+			position[]={7586.6851,27.839001,10616.107};
+			name="marker_18";
+			text="Barracks";
+			type="mil_objective";
+			id=239;
+			atlOffset=0.00023269653;
+		};
+		class Item26
+		{
+			dataType="Marker";
+			position[]={6062.0508,120.225,10750.565};
+			name="marker_19";
+			text="Airbase";
+			type="mil_unknown";
+			a=0.5;
+			b=0.5;
+			id=240;
+			atlOffset=-0.0010604858;
+		};
+		class Item27
+		{
+			dataType="Marker";
+			position[]={953.16803,28.93,12196.988};
+			name="marker_20";
+			text="Airfield";
+			type="mil_objective";
+			id=241;
+		};
+		class Item28
+		{
+			dataType="Marker";
+			position[]={7119.0972,71.975998,6096.2739};
+			name="marker_21";
+			text="Houdan";
+			type="mil_objective";
+			id=242;
+			atlOffset=-0.0001449585;
+		};
+		class Item29
+		{
+			dataType="Marker";
+			position[]={7044.499,79.889999,7134.4238};
+			name="marker_22";
+			text="Dourdan";
+			type="mil_objective";
+			id=243;
+			atlOffset=0.00032043457;
+		};
+		class Item30
+		{
+			dataType="Marker";
+			position[]={7249.4561,167.57001,7952.7983};
+			name="marker_23";
+			text="La Trinite";
+			type="mil_objective";
+			id=244;
+		};
+		class Item31
+		{
+			dataType="Marker";
+			position[]={7422.1602,169.2444,8104.6738};
+			name="marker_24";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=245;
+		};
+		class Item32
+		{
+			dataType="Marker";
+			position[]={6493.6289,253.02141,8064.2139};
+			name="marker_25";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=246;
+		};
+		class Item33
+		{
+			dataType="Marker";
+			position[]={7514.1445,161.17554,7110.6011};
+			name="marker_26";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=247;
+		};
+		class Item34
+		{
+			dataType="Marker";
+			position[]={6402.9165,135.08153,5413.3237};
+			name="marker_27";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=248;
+		};
+		class Item35
+		{
+			dataType="Marker";
+			position[]={6559.7617,180.11549,5772.1128};
+			name="marker_28";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=249;
+		};
+		class Item36
+		{
+			dataType="Marker";
+			position[]={6805.8745,84.430893,5570.812};
+			name="marker_29";
+			type="mil_objective";
+			a=0.5;
+			b=0.5;
+			id=250;
 		};
 	};
 	class VehicleInVehicleLinks
