@@ -109,7 +109,8 @@ tsp_fnc_intro_guide = {  //-- The numbers Mason, what do they mean!?
 
 tsp_fnc_guide = {  //-- Helicopter hand signal guidance
     params ["_unit", ["_area", [heli_far,heli_center,heli_left,heli_right]]];
-    _unit disableAI "ANIM"; _unit disableAI "MOVE"; _unit switchMove "Acts_JetsCrewaidR_idle";
+    _unit disableAI "ANIM"; _unit disableAI "MOVE";
+	[_unit, "Acts_JetsCrewaidR_idle"] remoteExec ["switchMove"];
 	_unit addEventHandler ["AnimDone", {params ["_unit", "_anim"]; _unit setVariable ["animDone", true]}];  //-- So we know when an anim ends
     while {sleep 1; alive _unit} do {
         _helis = vehicles select {_veh = _x; _veh isKindOf "Helicopter" && isEngineOn _veh && count (_area select {_veh inArea _x}) > 0};
@@ -123,16 +124,16 @@ tsp_fnc_guide = {  //-- Helicopter hand signal guidance
             if (_depart && isTouchingGround _heli) then {[_unit, "Acts_JetsMarshallingEnginesOn", {_depart && isTouchingGround _heli && count (_area select {_heli inArea _x}) > 0}] call tsp_fnc_guide_anim; continue};
             if (_depart && !isTouchingGround _heli) then {[_unit, "Acts_JetsMarshallingStraight", {_depart && !isTouchingGround _heli && count (_area select {_heli inArea _x}) > 0}] call tsp_fnc_guide_anim; continue};
         };
-        _unit switchMove "Acts_JetsCrewaidR_idle";
+		[_unit, "Acts_JetsCrewaidR_idle"] remoteExec ["switchMove"];
     };
 };
 
 tsp_fnc_guide_anim = {
     params ["_unit", "_anim", "_stop"]; if (toLower _anim in toLower animationState _unit) exitWith {};
-    _unit switchMove (_anim + "_in"); _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
-    _unit switchMove (_anim + "_loop"); _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
+    [_unit, _anim + "_in"] remoteExec ["switchMove"]; _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
+    [_unit, _anim + "_loop"] remoteExec ["switchMove"]; _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
     _unit setVariable ["stop", false]; waitUntil {!(call _stop)};
-    _unit switchMove (_anim + "_out"); _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
+    [_unit, _anim + "_out"] remoteExec ["switchMove"]; _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
 };
 
 tsp_fnc_suppress = {  //-- Suppress target ([this, player, {triggerActivated suppress}, currentWeapon this] spawn tsp_fnc_suppress)
@@ -220,16 +221,16 @@ tsp_fnc_task = {  //-- Custom task framework, see below
 };
 
 tsp_fnc_simple = {  //-- Create simple objects (Used for hidden arma models)
-    params ["_base", "_model", ["_scale", 1]]; sleep 1;
+    params ["_base", "_model", ["_scale", 1]]; if (canSuspend) then {sleep 1};
     _obj = createSimpleObject [_model, getPosASL _base, true]; 
     _obj setPosASL (getPosASL _base); _obj setObjectScale _scale;
     _obj setVectorDirAndUp [vectorDir _base, vectorUp _base];
 };
 
 tsp_fnc_replace = {
-    params ["_base", "_class", ["_model", ""], ["_scale", 1], ["_obj", _this#0], ["_hide", true]]; if (canSuspend) then {sleep 1};
+    params ["_base", "_class", ["_model", ""], ["_scale", 1], ["_obj", _this#0], ["_hide", true]]; if (!isServer) exitWith {}; if (canSuspend) then {sleep 1};
     if (isClass (configFile >> "CfgVehicles" >> _class)) then {_obj = createVehicle [_class, getPosASL _base, [], 0, "CAN_COLLIDE"]; [_base, _hide] remoteExec ["hideObjectGlobal", 2]}; 
-    if (_model != "") then {_obj = createSimpleObject [_model, getPosASL _base, true]};
+    if (_model != "") then {_obj = createSimpleObject [_model, getPosASL _base, false]};
     _obj setPosASL (getPosASL _base); _obj setObjectScale _scale;
     _obj setVectorDirAndUp [vectorDir _base, vectorUp _base];
     _obj

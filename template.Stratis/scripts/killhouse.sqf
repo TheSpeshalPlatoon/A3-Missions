@@ -244,7 +244,7 @@ tsp_fnc_killhouse_menu = {
 	_button ctrlAddEventHandler ["buttonClick", {
 		params ["_control"]; tsp_killhouse_params params ["_start", "_end", "_area", ["_width", 6], ["_height", 18], ["_size", 5]]; 
         _side = if (tsp_killhouse_theme in ["Tanoa", "Livonia"]) then {resistance} else {east};
-		[
+		[[
             _start, _end, _area, _width, _height, _size,  //-- Width, height, room size
 			5, 20, tsp_killhouse_hostages,  //-- Min, max, hostage chance
 			tsp_killhouse_enemies, _side, missionNameSpace getVariable ["enemy_"+tsp_killhouse_theme, []],  //-- Enemy chance, side, type
@@ -252,7 +252,7 @@ tsp_fnc_killhouse_menu = {
 			tsp_killhouse_targets, missionNameSpace getVariable ["target_"+tsp_killhouse_theme, ["Target_F"]],  //-- Target chance, type
 			tsp_killhouse_furniture, missionNameSpace getVariable ["furniture_"+tsp_killhouse_theme, []],  //-- Furniture chance, type
             tsp_killhouse_locks, 0.5, 0.95  //--  Locked, openings, doors
-        ] remoteExec ["tsp_fnc_killhouse", 2];
+        ], tsp_fnc_killhouse] remoteExec ["spawn", 2];
 		_control getVariable "display" closeDisplay 1;
 	}];
     while {_display isNotEqualTo displayNull} do {if (kh1_start getVariable ['generating', false]) exitWith {_display closeDisplay 1;}};
@@ -340,8 +340,8 @@ furniture_livonia = [
     ["a3\structures_f_enoch\furniture\cases\dhangar_borwnskrin\dhangar_brownskrin_open.p3d",1,3,0,-0.5,0,false,true,false,false,360], 
     ["Land_WoodenBed_01_F",1,4,0,0.5,0,true,false,false,false,0], 
 
-    ["a3\structures_f_enoch\furniture\decoration\piano\piano.p3d",1,4,0,0,0.9,false,true,false,false,20],
-    ["a3\structures_f_enoch\furniture\various\carpet_2_dz.p3d",1,2,0,0,0.2,false,true,false,false,30],
+    ["a3\structures_f_enoch\furniture\decoration\piano\piano.p3d",1,4,0,0,0,false,true,false,false,20],
+    ["a3\structures_f_enoch\furniture\various\carpet_2_dz.p3d",1,2,0,0,0,false,true,false,false,30],
     ["Land_TableBig_01_F",1,3,0,0,0,false,true,false,false,30],
     ["Land_WoodenCrate_01_F",1,2,90,-0.5,0,true,false,false,false,30],
     ["Land_WoodenCrate_01_stack_x3_F",1,2,90,0,0,false,true,true,false,30],

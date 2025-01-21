@@ -15,10 +15,8 @@ tsp_fnc_action_arsenal = {
 tsp_fnc_action_garage = { 
 	params ["_center", ["_distance", 10], ["_data", {[]}], ["_dataFormat", []], ["_pos", getPosASL (_this#0)], ["_dir", getDir (_this#0)]]; titleCut ["", "BLACK OUT", 0.5]; sleep 0.5; 
 	{deleteVehicle _x} forEach (vehicles select {_x distance _center < _distance});  //-- Clear area
-	{  //-- Format _data
-		if !(isClass (configfile >> "CfgVehicles" >> _x)) then {continue};  //-- If class not found
-		_dataFormat pushBack getText(configFile >> "CfgVehicles" >> _x >> "model"); _dataFormat pushBack [configFile >> "CfgVehicles" >> _x]
-	} forEach (call _data);
+	_data = (call _data) select {isClass (configfile >> "CfgVehicles" >> _x)};  //-- Only for classes that exist
+	{_dataFormat pushBack getText(configFile >> "CfgVehicles" >> _x >> "model"); _dataFormat pushBack [configFile >> "CfgVehicles" >> _x]} forEach _data;
 	[missionNamespace, "garageOpened", {params["_display"]; uiNameSpace setVariable ["BIS_fnc_garage_display", _display]}] call BIS_fnc_addScriptedEventHandler;               //-- Get display
 	["Open", [true, createVehicle ["Land_HelipadEmpty_F", getPos _center, [], 0, "CAN_COLLIDE"]]] call BIS_fnc_garage;                                                        //-- Open garage
 	waitUntil {uiNameSpace getVariable ["BIS_fnc_garage_display", displayNull] isNotEqualTo displayNull}; _display = uiNameSpace getVariable "BIS_fnc_garage_display";       //-- Wait for garage
@@ -56,12 +54,12 @@ tsp_fnc_action = {  //-- Changes for public release in here
 			[_object, "Arsenal", "\a3\missions_f_oldman\data\img\holdactions\holdAction_box_ca.paa", {[player] spawn tsp_fnc_action_arsenal}] call tsp_fnc_action_hold;
 			[_object, "Arsenal (ACE)", "\a3\missions_f_oldman\data\img\holdactions\holdAction_box_ca.paa", {[player, true, false] call ace_arsenal_fnc_removeVirtualItems; [player, tsp_arsenal] call ace_arsenal_fnc_addVirtualItems; [player, player] call ace_arsenal_fnc_openBox}, "!isNil 'ace_arsenal_fnc_openBox'"] call tsp_fnc_action_hold;
 		};
-		[_object, "Save", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unloaddevice_ca.paa", {tsp_loadout_saved = getUnitLoadout player; ["Loadout", "Saved"] spawn tsp_fnc_hint}] call tsp_fnc_action_hold;		
-		[_object, "Load", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_loaddevice_ca.paa", {player setUnitLoadout tsp_loadout_saved; ["Loadout", "Loaded"] spawn tsp_fnc_hint}] call tsp_fnc_action_hold;
-		[_object, "Reset", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa", {player setUnitLoadout tsp_loadout_original; ["Loadout", "Original"] spawn tsp_fnc_hint}] call tsp_fnc_action_hold
+		[_object, "Save", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unloaddevice_ca.paa", {tsp_loadout_saved = getUnitLoadout player; ["Loadout", "Saved"] spawn BIS_fnc_showSubtitle}] call tsp_fnc_action_hold;		
+		[_object, "Load", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_loaddevice_ca.paa", {player setUnitLoadout tsp_loadout_saved; ["Loadout", "Loaded"] spawn BIS_fnc_showSubtitle}, "!isNil 'tsp_loadout_saved'"] call tsp_fnc_action_hold;
+		[_object, "Reset", "\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unbind_ca.paa", {player setUnitLoadout tsp_loadout_original; ["Loadout", "Original"] spawn BIS_fnc_showSubtitle}, "!isNil 'tsp_loadout_original'"] call tsp_fnc_action_hold
 	};
-	if (_type == "Weather") then {[_object, "Weather", tsp_path + "data\actions\weather.paa", {[] spawn {sleep 0.2; findDisplay 46 createDisplay "RscDisplayAttributesModuleWeather"}}, "true"] call tsp_fnc_action_hold};
-	if (_type == "Music") then {[_object, "Music", tsp_path + "data\actions\music.paa", {[] spawn {sleep 0.2; findDisplay 46 createDisplay "RscDisplayAttributesModuleMusic"}}, "true"] call tsp_fnc_action_hold};
+	if (_type == "Weather") then {[_object, "Weather", "data\actions\hold_weather.paa", {[] spawn {sleep 0.2; findDisplay 46 createDisplay "RscDisplayAttributesModuleWeather"}}, "true"] call tsp_fnc_action_hold};
+	if (_type == "Music") then {[_object, "Music", "data\actions\hold_music.paa", {[] spawn {sleep 0.2; findDisplay 46 createDisplay "RscDisplayAttributesModuleMusic"}}, "true"] call tsp_fnc_action_hold};
 	if (_type == "Sleep") then {
 		[
 			_object, "Sleep", "\a3\ui_f_oldman\data\IGUI\Cfg\holdactions\holdAction_sleep_ca.paa", {[] spawn tsp_fnc_action_sleep}, 

@@ -109,7 +109,7 @@ tsp_fnc_intro_guide = {  //-- The numbers Mason, what do they mean!?
 
 tsp_fnc_guide = {  //-- Helicopter hand signal guidance
     params ["_unit", ["_area", [heli_far,heli_center,heli_left,heli_right]]];
-    _unit disableAI "ANIM"; _unit disableAI "MOVE";	[_unit, "Acts_JetsCrewaidR_idle"] remoteExec ["switchMove", 0];
+    _unit disableAI "ANIM"; _unit disableAI "MOVE"; _unit switchMove "Acts_JetsCrewaidR_idle";
 	_unit addEventHandler ["AnimDone", {params ["_unit", "_anim"]; _unit setVariable ["animDone", true]}];  //-- So we know when an anim ends
     while {sleep 1; alive _unit} do {
         _helis = vehicles select {_veh = _x; _veh isKindOf "Helicopter" && isEngineOn _veh && count (_area select {_veh inArea _x}) > 0};
@@ -123,16 +123,16 @@ tsp_fnc_guide = {  //-- Helicopter hand signal guidance
             if (_depart && isTouchingGround _heli) then {[_unit, "Acts_JetsMarshallingEnginesOn", {_depart && isTouchingGround _heli && count (_area select {_heli inArea _x}) > 0}] call tsp_fnc_guide_anim; continue};
             if (_depart && !isTouchingGround _heli) then {[_unit, "Acts_JetsMarshallingStraight", {_depart && !isTouchingGround _heli && count (_area select {_heli inArea _x}) > 0}] call tsp_fnc_guide_anim; continue};
         };
-		[_unit, "Acts_JetsCrewaidR_idle"] remoteExec ["switchMove", 0];
+        _unit switchMove "Acts_JetsCrewaidR_idle";
     };
 };
 
 tsp_fnc_guide_anim = {
     params ["_unit", "_anim", "_stop"]; if (toLower _anim in toLower animationState _unit) exitWith {};
-    [_unit, _anim + "_in"] remoteExec ["switchMove", 0]; _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
-    [_unit, _anim + "_loop"] remoteExec ["switchMove", 0]; _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
+    _unit switchMove (_anim + "_in"); _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
+    _unit switchMove (_anim + "_loop"); _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
     _unit setVariable ["stop", false]; waitUntil {!(call _stop)};
-    [_unit, _anim + "_out"] remoteExec ["switchMove", 0]; _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
+    _unit switchMove (_anim + "_out"); _unit setVariable ["animDone", false]; waitUntil {_unit getVariable "animDone"};
 };
 
 tsp_fnc_suppress = {  //-- Suppress target ([this, player, {triggerActivated suppress}, currentWeapon this] spawn tsp_fnc_suppress)
@@ -162,12 +162,12 @@ tsp_fnc_fastrope = {  //-- Static ACE fastrope
 };
 
 tsp_fnc_lights = {  //-- Toggle lights on/off
-	params ["_lights", ["_sleep", 1], ["_distance", 550]]; 
+	params ["_lights", ["_sleep", 1], ["_distance", 550], ["_path", if (isNil "tsp_path") then {""} else {tsp_path}]]; 
 	tsp_fnc_lights_wait = true;
 	{
 		_x hideObjectGlobal !isObjectHidden _x;
-		if (tsp_path == "") then {playSound3D [if (isObjectHidden _x) then {getMissionPath "data\sounds\off.ogg"} else {getMissionPath "data\sounds\on.ogg"}, _x, false, getPosASL _x, 5, random 2 max 0.5 min 2, _distance]};
-		if (tsp_path != "") then {playSound3D [if (isObjectHidden _x) then {tsp_path + "data\sounds\off.ogg"} else {tsp_path + "data\sounds\on.ogg"}, _x, false, getPosASL _x, 5, random 2 max 0.5 min 2, _distance]};
+		if (_path == "") then {playSound3D [if (isObjectHidden _x) then {getMissionPath "data\sounds\off.ogg"} else {getMissionPath "data\sounds\on.ogg"}, _x, false, getPosASL _x, 5, random 2 max 0.5 min 2, _distance]};
+		if (_path != "") then {playSound3D [if (isObjectHidden _x) then {_path + "data\sounds\off.ogg"} else {_path + "data\sounds\on.ogg"}, _x, false, getPosASL _x, 5, random 2 max 0.5 min 2, _distance]};
 		sleep (random _sleep + (_sleep/2));
 	} forEach _lights;
 	tsp_fnc_lights_wait = nil;
@@ -253,6 +253,8 @@ tsp_fnc_wake = {  //-- https://www.youtube.com/watch?v=7vObEK3Lbp4
 };
 
 if (true) exitWith {};  //-- Notes past this point
+
+//-- Fun faces: Adams,Conway,Hladas,Dwarden,Ivan,Jay,Miller,Nikos,Pettka,kerry_B2
 
 [
 	west, ["bari", "primary"], "Kill Bari", "Kill that boi.", 

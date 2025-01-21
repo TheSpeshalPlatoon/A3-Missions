@@ -1,6 +1,4 @@
-[] call compileScript ['scripts\action.sqf'];
-[] call compileScript ['scripts\killhouse.sqf'];
-[] call compileScript ['scripts\utility.sqf'];
+[] call compileScript ['scripts\killhouse.sqf'];  //-- Overwrite if loaded from tsp_core
 
 [] spawn {
     waitUntil {sleep 1; !isNull findDisplay 46};  //-- Wait until loaded in

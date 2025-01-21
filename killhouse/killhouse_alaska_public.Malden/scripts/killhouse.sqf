@@ -340,8 +340,8 @@ furniture_livonia = [
     ["a3\structures_f_enoch\furniture\cases\dhangar_borwnskrin\dhangar_brownskrin_open.p3d",1,3,0,-0.5,0,false,true,false,false,360], 
     ["Land_WoodenBed_01_F",1,4,0,0.5,0,true,false,false,false,0], 
 
-    ["a3\structures_f_enoch\furniture\decoration\piano\piano.p3d",1,4,0,0,0.9,false,true,false,false,20],
-    ["a3\structures_f_enoch\furniture\various\carpet_2_dz.p3d",1,2,0,0,0.2,false,true,false,false,30],
+    ["a3\structures_f_enoch\furniture\decoration\piano\piano.p3d",1,4,0,0,0,false,true,false,false,20],
+    ["a3\structures_f_enoch\furniture\various\carpet_2_dz.p3d",1,2,0,0,0,false,true,false,false,30],
     ["Land_TableBig_01_F",1,3,0,0,0,false,true,false,false,30],
     ["Land_WoodenCrate_01_F",1,2,90,-0.5,0,true,false,false,false,30],
     ["Land_WoodenCrate_01_stack_x3_F",1,2,90,0,0,false,true,true,false,30],
