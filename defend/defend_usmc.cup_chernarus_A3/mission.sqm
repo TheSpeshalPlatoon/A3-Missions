@@ -8,61 +8,70 @@ class EditorData
 	toggles=525;
 	class ItemIDProvider
 	{
-		nextID=1628;
+		nextID=1631;
 	};
 	class LayerIndexProvider
 	{
-		nextID=439;
+		nextID=442;
 	};
 	class Camera
 	{
-		pos[]={10430.612,188.62537,2670.084};
-		dir[]={-0.2285206,-0.49008077,0.84119344};
-		up[]={-0.12847982,0.87167549,0.47293964};
-		aside[]={0.96502709,3.1647505e-07,0.26216063};
+		pos[]={9961.668,363.35446,1913.421};
+		dir[]={-0.8710134,-0.38740417,0.30209097};
+		up[]={-0.36601609,0.92190969,0.12694441};
+		aside[]={0.32767901,1.4633406e-07,0.94479156};
 	};
 };
 binarizationWanted=0;
 sourceName="defend_usmc";
 addons[]=
 {
-	"A3_Structures_F_Mil_Helipads",
 	"A3_Characters_F",
 	"A3_Weapons_F",
-	"rhsusf_c_troops"
+	"rhsusf_c_troops",
+	"A3_Structures_F_Mil_Helipads",
+	"A3_Weapons_F_Ammoboxes",
+	"ace_cargo"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=5;
 		class Item0
-		{
-			className="A3_Structures_F_Mil";
-			name="Arma 3 - Military Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item1
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item2
+		class Item1
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item2
 		{
 			className="rhsusf_c_troops";
 			name="RHSUSF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
+		};
+		class Item3
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 	};
 };
@@ -104,2014 +113,2052 @@ class Mission
 	};
 	class Entities
 	{
-		items=1;
+		items=3;
 		class Item0
 		{
-			dataType="Layer";
-			name="mission";
+			dataType="Group";
+			side="West";
 			class Entities
 			{
-				items=2;
+				items=32;
 				class Item0
 				{
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={10303,6.0100002,1601};
-						angles[]={0,0.001403712,0};
+						position[]={10299,6.0114393,1598.05};
+						angles[]={0,0.0052643027,0};
 					};
-					side="Empty";
-					class Attributes
-					{
-						name="tsp_spawnCenter";
-					};
-					id=644;
-					type="Land_HelipadEmpty_F";
-				};
-				class Item1
-				{
-					dataType="Group";
 					side="West";
-					class Entities
-					{
-						items=32;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10299,6.0114393,1598.05};
-								angles[]={0,0.0052643027,0};
-							};
-							side="West";
-							flags=6;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1037;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item1
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10306.498,6.0114393,1597.6233};
-								angles[]={0,0.0053369356,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=989;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10305.435,6.0114393,1597.7209};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=990;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item3
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10305.362,6.0114393,1596.3909};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=991;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10306.423,6.0114393,1596.2991};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=992;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10305.391,6.0114393,1595.304};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=993;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10306.439,6.0114393,1595.2073};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=994;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item7
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10305.367,6.0114393,1593.9485};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=995;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item8
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10306.428,6.0114393,1593.8489};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=996;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item9
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10303.273,6.0114393,1597.8176};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1005;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item10
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10304.326,6.0114393,1597.7249};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1006;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item11
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10303.184,6.0114393,1596.4905};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1007;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item12
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10304.243,6.0114393,1596.3889};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1008;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item13
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10303.216,6.0114393,1595.4006};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1009;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item14
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10304.274,6.0114393,1595.3098};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1010;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item15
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10303.198,6.0114393,1594.0403};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1011;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item16
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10304.256,6.0114393,1593.9553};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1012;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item17
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10301.169,6.0114393,1597.9524};
-								angles[]={0,0.0052643027,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1021;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item18
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10302.219,6.0114393,1597.844};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1022;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item19
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10301.088,6.0114393,1596.6155};
-								angles[]={0,0.0052692452,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1023;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item20
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10302.131,6.0114393,1596.5208};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1024;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item21
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10301.116,6.0114393,1595.5354};
-								angles[]={0,0.0052692452,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1025;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item22
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10302.173,6.0114393,1595.428};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1026;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item23
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10301.098,6.0114393,1594.1653};
-								angles[]={0,0.0052692452,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1027;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item24
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10302.152,6.0114393,1594.0774};
-								angles[]={0,0.0053440887,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1028;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item25
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10300.049,6.0114393,1597.9397};
-								angles[]={0,0.0052643027,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1038;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item26
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10298.915,6.0114393,1596.7151};
-								angles[]={0,0.0052643027,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1039;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item27
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10299.968,6.0114393,1596.6077};
-								angles[]={0,0.0052643027,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1040;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item28
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10298.934,6.0114393,1595.6282};
-								angles[]={0,0.0052643027,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1041;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item29
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10300.001,6.0114393,1595.5334};
-								angles[]={0,0.0052643027,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1042;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item30
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10298.921,6.0114393,1594.2571};
-								angles[]={0,0.005284762,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1043;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-						class Item31
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={10299.978,6.0114393,1594.1819};
-								angles[]={0,0.0052692452,0};
-							};
-							side="West";
-							flags=4;
-							class Attributes
-							{
-								description="Select role in-game@Ungrouped";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_FROG01_wd";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_booniehat2_marpatwd";
-								};
-							};
-							id=1044;
-							type="B_Soldier_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="speaker";
-									expression="_this setspeaker _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="Male09ENG";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="pitch";
-									expression="_this setpitch _value;";
-									class Value
-									{
-										class data
-										{
-											singleType="SCALAR";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
-						};
-					};
+					flags=6;
 					class Attributes
 					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
 					};
-					id=1101;
+					id=1037;
+					type="B_Soldier_F";
 					class CustomAttributes
 					{
 						class Attribute0
 						{
-							property="groupID";
-							expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+							property="speaker";
+							expression="_this setspeaker _value;";
 							class Value
 							{
 								class data
 								{
 									singleType="STRING";
-									value="Ungrouped";
+									value="Male09ENG";
 								};
 							};
 						};
-						nAttributes=1;
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item1
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10306.498,6.0114393,1597.6233};
+						angles[]={0,0.0053369356,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=989;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item2
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10305.435,6.0114393,1597.7209};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=990;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10305.362,6.0114393,1596.3909};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=991;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10306.423,6.0114393,1596.2991};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=992;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10305.391,6.0114393,1595.304};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=993;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item6
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10306.439,6.0114393,1595.2073};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=994;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10305.367,6.0114393,1593.9485};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=995;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item8
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10306.428,6.0114393,1593.8489};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=996;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item9
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10303.273,6.0114393,1597.8176};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1005;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item10
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10304.326,6.0114393,1597.7249};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1006;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item11
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10303.184,6.0114393,1596.4905};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1007;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item12
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10304.243,6.0114393,1596.3889};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1008;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item13
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10303.216,6.0114393,1595.4006};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1009;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item14
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10304.274,6.0114393,1595.3098};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1010;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10303.198,6.0114393,1594.0403};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1011;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item16
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10304.256,6.0114393,1593.9553};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1012;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item17
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10301.169,6.0114393,1597.9524};
+						angles[]={0,0.0052643027,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1021;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item18
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10302.219,6.0114393,1597.844};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1022;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item19
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10301.088,6.0114393,1596.6155};
+						angles[]={0,0.0052692452,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1023;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item20
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10302.131,6.0114393,1596.5208};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1024;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item21
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10301.116,6.0114393,1595.5354};
+						angles[]={0,0.0052692452,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1025;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item22
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10302.173,6.0114393,1595.428};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1026;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item23
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10301.098,6.0114393,1594.1653};
+						angles[]={0,0.0052692452,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1027;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item24
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10302.152,6.0114393,1594.0774};
+						angles[]={0,0.0053440887,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1028;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item25
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10300.049,6.0114393,1597.9397};
+						angles[]={0,0.0052643027,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1038;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item26
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10298.915,6.0114393,1596.7151};
+						angles[]={0,0.0052643027,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1039;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item27
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10299.968,6.0114393,1596.6077};
+						angles[]={0,0.0052643027,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1040;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item28
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10298.934,6.0114393,1595.6282};
+						angles[]={0,0.0052643027,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1041;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item29
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10300.001,6.0114393,1595.5334};
+						angles[]={0,0.0052643027,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1042;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item30
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10298.921,6.0114393,1594.2571};
+						angles[]={0,0.005284762,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1043;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item31
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={10299.978,6.0114393,1594.1819};
+						angles[]={0,0.0052692452,0};
+					};
+					side="West";
+					flags=4;
+					class Attributes
+					{
+						description="Select role in-game@Ungrouped";
+						isPlayable=1;
+						receiveRemoteTargets=1;
+						class Inventory
+						{
+							class uniform
+							{
+								typeName="rhs_uniform_FROG01_wd";
+								isBackpack=0;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							headgear="rhs_booniehat2_marpatwd";
+						};
+					};
+					id=1044;
+					type="B_Soldier_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male09ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						nAttributes=2;
 					};
 				};
 			};
-			id=641;
+			class Attributes
+			{
+			};
+			id=1101;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="groupID";
+					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Ungrouped";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item1
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10303,6.0100002,1601};
+				angles[]={0,0.001403712,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+				name="tsp_spawnCenter";
+			};
+			id=644;
+			type="Land_HelipadEmpty_F";
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={10295.517,6.9024229,1594.229};
+				angles[]={0,1.3780247,0};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this, ""Arsenal"", [missionNamespace getVariable [""role"", -1] isEqualTo -1]] call tsp_fnc_action;" \n "[this, ""Role""] call tsp_fnc_action;" \n "[this, ""Heal""] call tsp_fnc_action;";
+				name="tsp_arsenal_item";
+			};
+			id=1630;
+			type="B_supplyCrate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 	};
 };

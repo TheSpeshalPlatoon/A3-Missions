@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=266;
+		nextID=275;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=80;
+		nextID=89;
 	};
 	class Camera
 	{
-		pos[]={2875.3445,10.068346,6086.8081};
-		dir[]={0.7087611,-0.70267636,0.062479228};
-		up[]={0.69996196,0.71150964,0.061703559};
-		aside[]={0.087812208,0,-0.99613702};
+		pos[]={2873.116,7.0982103,6085.4229};
+		dir[]={0.55710316,-0.81160843,-0.17586377};
+		up[]={0.77396119,0.58420163,-0.24432051};
+		aside[]={-0.30103248,1.4901161e-08,-0.953614};
 	};
 };
 binarizationWanted=0;
@@ -114,13 +114,14 @@ addons[]=
 	"ace_overheating",
 	"A3_Weapons_F_Kart",
 	"ace_grenades",
-	"A3_Structures_F_Enoch_Military_Barracks"
+	"A3_Structures_F_Enoch_Military_Barracks",
+	"ace_medical_treatment"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=65;
+		items=66;
 		class Item0
 		{
 			className="A3_Weapons_F";
@@ -554,6 +555,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item65
+		{
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
 	};
 };
 dlcs[]=
@@ -646,7 +654,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=49;
+		items=53;
 		class Item0
 		{
 			dataType="Object";
@@ -1540,7 +1548,7 @@ class Mission
 			};
 			id=32;
 			type="Land_Bandage_F";
-			atlOffset=-2.3841858e-07;
+			atlOffset=0.021903753;
 		};
 		class Item15
 		{
@@ -2993,8 +3001,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2881.4319,2.7278593,6088.2358};
-						angles[]={0,2.0687039,0};
+						position[]={2875.9006,2.7406087,6084.1831};
+						angles[]={0,1.9649653,-0};
 					};
 					side="West";
 					flags=7;
@@ -3136,7 +3144,7 @@ class Mission
 								isBackpack=1;
 								class MagazineCargo
 								{
-									items=2;
+									items=3;
 									class Item0
 									{
 										name="tsp_breach_block_mag";
@@ -3148,6 +3156,12 @@ class Mission
 										name="30Rnd_65x39_caseless_black_mag";
 										count=2;
 										ammoLeft=30;
+									};
+									class Item2
+									{
+										name="tsp_breach_block_auto_mag";
+										count=4;
+										ammoLeft=1;
 									};
 								};
 								class ItemCargo
@@ -3168,7 +3182,6 @@ class Mission
 							map="ItemMap";
 							compass="ItemCompass";
 							watch="ItemWatch";
-							radio="ItemRadioAcreFlagged";
 							goggles="G_Tactical_Clear";
 							hmd="NVGoggles";
 							headgear="H_HelmetB_grass";
@@ -4577,6 +4590,247 @@ class Mission
 			{
 			};
 			id=264;
+		};
+		class Item49
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2890.762,4.1733222,6081.207};
+						angles[]={0,0.58149135,0};
+					};
+					side="East";
+					flags=3;
+					class Attributes
+					{
+						stance="Up";
+					};
+					id=268;
+					type="O_Soldier_lite_F";
+					atlOffset=0.96099997;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.04;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=267;
+			atlOffset=0.96099997;
+		};
+		class Item50
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2893.197,4.1726999,6079.7246};
+						angles[]={0,0.11021754,0};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						stance="Up";
+					};
+					id=270;
+					type="O_Soldier_lite_F";
+					atlOffset=9.8228455e-05;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.04;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=269;
+			atlOffset=9.8228455e-05;
+		};
+		class Item51
+		{
+			dataType="Group";
+			side="East";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2896.5029,4.1712074,6082.4663};
+						angles[]={0,4.5072641,0};
+					};
+					side="East";
+					flags=7;
+					class Attributes
+					{
+						stance="Middle";
+					};
+					id=272;
+					type="O_Soldier_lite_F";
+					atlOffset=0.00022029877;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male02PER";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1.04;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=271;
+			atlOffset=0.00022029877;
+		};
+		class Item52
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2877.5591,2.7515247,6083.2373};
+				angles[]={0.010000871,0,0.0024897563};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=274;
+			type="ACE_medicalSupplyCrate_advanced";
 		};
 	};
 };

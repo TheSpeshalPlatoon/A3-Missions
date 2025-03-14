@@ -1,5 +1,11 @@
 author = "TheSpeshalPlatoon"; onLoadName = "Killhouse Generator"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
 
+/*class CfgFunctions {  //-- Needed for public release
+	class tsp_mission_action {class functions {class init {file = "scripts\action.sqf"; preInit = true};};};
+	class tsp_mission_killhouse {class functions {class init {file = "scripts\killhouse.sqf"; preInit = true};};};
+	class tsp_mission_utility {class functions {class init {file = "scripts\utility.sqf"; preInit = true};};};
+};*/
+
 //-- Addon mode needs full path (\tsp_core\)
 class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
 #include "\a3\ui_f\hpp\definecommongrids.inc"

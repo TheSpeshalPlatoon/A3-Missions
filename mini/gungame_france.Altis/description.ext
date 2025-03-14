@@ -1,0 +1,26 @@
+enableDebugConsole = 1;
+saving = 0;
+
+respawn = "BASE";
+respawnDelay = 1;
+respawnDialog = 0;
+
+author = "TSP"; 
+onLoadName = "GUN GAME";
+class header {gameType = DM}; 
+
+respawnButton = 1;
+disabledAI = 1;
+
+//-- Delete bodies after 5 seconds
+minPlayerDistance = 1;
+corpseManagerMode = 1;
+corpseLimit = 1;
+corpseRemovalMinTime = 5;
+corpseRemovalMaxTime = 5;
+
+//-- Endings
+class CfgDebriefing {
+	class WIN {title = "YOU WIN"; subtitle = "GAMER";};
+	class LOSE {title = "YOU LOSE"; subtitle = "NOT GAMER";};
+};

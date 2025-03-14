@@ -1,0 +1,203 @@
+#include "\tsp_core\config.hpp"  //-- Light needs full path (\tsp_core\)
+#include "\tsp_core\roles.hpp"  //-- Light needs full path (\tsp_core\)
+author = "TheSpeshalPlatoon"; onLoadName = "In for a Penny";	
+loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+class Header {gameType = COOP}; 
+
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = false;        //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.5;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";   //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 10;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = false;   //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 20;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	//-- USMC
+	{"IoN - Task Force Red", "\tsp_core\data\insignia\1recon.paa", "west", {
+		{"Sword 1", "markers\nato\b_inf.paa", {
+			{"Team Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Contractor", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon"}, "iconManRecon_ca.paa"},
+			{"Contractor (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m69", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Sword 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Team Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Contractor", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon"}, "iconManRecon_ca.paa"},
+			{"Contractor (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner_fast", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}}
+	}},
+	{"ION - Aviation Branch", "\tsp_core\data\insignia\2aviation.paa", "west", {
+		{"Arrow 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Arrow 2", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}}
+	}},
+
+	//-- US Navy
+	{"USN - Rotor Wing Squadron 51", "\tsp_core\data\insignia\hsm51.paa", "west", {
+		{"Whiplash 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Whiplash 2", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}}
+	}}
+};
+
+//-- Environment
+tsp_param_brightness = 0.5;
+tsp_param_time_day = 8; tsp_param_time_night = 12;
+tsp_param_weather = false;
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 10;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 60;
+
+class CfgORBAT {
+    class tura {
+        id = 1; idType = 0; side = "East"; 
+		text = "Tura"; textShort = "Tura"; type = "Infantry"; size = "Company"; commander = "Arib Said"; commanderRank = "General";  
+        description = "One of the many tribes of the Sefrawi Desert, the Tura were historically nomads and caravan raiders. Due to the effects of climate change resulting in water shortages and poor economic conditions throughout the region, the Tura have begun to adopt modern lifestyles, and assimilating themselves into urban centres. Following their successful armed uprising, the Tura have managed to wrest control of the Sefrou-Ramal region from the local government. With the assistance of other non-state actor groups, they have solidified their grip over much of the region. Their equipment consists of cheap weapons and gear, supplemented by anything they can steal from the Sefrawi Army";
+        subordinates[] = {}; 
+        assets[] = {}; 
+    };
+
+	class ion {
+        id = 1; idType = 0; side = "West"; 
+		text = "IoN Services, Task Force Red"; textShort = "IoN Services"; type = "Infantry"; size = "Squad"; commander = "Alexis Marlowe"; commanderRank = "Captain";  
+        description = "IoN Services, Incorporated is a U.S.-based private military company. IoN offers a broad array of business and security-related solutions to a wide base of international clients, ranging from providing strategic resource protection, petrochemical mining, as well as safeguarding nuclear facilities. Since 2013, IoN is known to have successfully fulfilled over 19,850 contracts. Task Force Red is a company sized element tasked with guarding assets owned by the Daltgreen Mining & Exploration company across the Sarharan desert.";
+        subordinates[] = {"ion_baseplate","ion_sword","ion_shield","ion_spear","ion_arrow"}; 
+        assets[] = {}; 
+    };
+		class ion_baseplate: ion {
+			text = "Baseplate"; textShort = "Baseplate"; type = "Infantry"; size = "Brigade"; commander = "Alexis Marlowe"; commanderRank = "Sergeant"; 
+			description = "HQ and management section in charge of Task Force Sahara, based at XXX airbase."; assets[] = {};  
+		};
+		class ion_sword: ion {
+			text = "Sword"; textShort = "Sword"; type = "Infantry"; size = "Brigade"; commander = "Gavin Cross"; commanderRank = "Sergeant"; 
+			description = "Quick response team, used for offensive or responsive operations."; assets[] = {};  
+		};
+		class ion_shield: ion {
+			text = "Shield"; textShort = "Shield"; type = "Infantry"; size = "Brigade"; commander = "Landon Graves"; commanderRank = "Sergeant"; 
+			description = "Security team, assigned to Drilling Site Bravo."; assets[] = {};  
+		};
+		class ion_spear: ion {
+			text = "Spear"; textShort = "Spear"; type = "Infantry"; size = "Brigade"; commander = "Rhett Mercer"; commanderRank = "Sergeant"; 
+			description = "Security and logistics team, assigned to Drilling Site Bravo and IoN HQ."; assets[] = {};  
+		};
+		class ion_arrow: ion {
+			text = "Arrow"; textShort = "Arrow"; type = "Infantry"; size = "Brigade"; commander = "James Holt"; commanderRank = "Sergeant"; 
+			description = "Helicopter section attached to Task Force Sahara, consisting of one transport and one attack helicopter."; assets[] = {};  
+		};
+
+	class sefrawi {
+        id = 1; idType = 0; side = "Independent"; 
+		text = "Sefrawi Army"; textShort = "Sefrawi Army"; type = "Infantry"; size = "Squad"; commander = "Alejandro Matinez"; commanderRank = "General";  
+        description = "The Sefrawi Army are the professional military of the Sefrawi government. They are equipped with a diverse mix of equipment from different origins, they'll use whatever they can get.";
+        subordinates[] = {"sefrawi_ground","3armor","sfia","1commando","sefrawi_air"}; 
+        assets[] = {}; 
+    };
+		class sfia {
+			text = "Sefrawi Freedom and Independence Army"; textShort = "Sefrawi Freedom and Independence Army"; type = "Infantry"; size = "Squad"; commander = "Alejandro Matinez"; commanderRank = "General";  
+			description = "The Sefrawi Freedom and Independence Army (SFIA) is an organised paramilitary force that answers directly to the Sefrawi government. As a state-sanctioned paramilitary force, the SFIA is directly supplied by the Arganan military, however their training and gear is generally at a much lower standard than regular forces, it's force structure is unknown and their alliegence is questionable.";
+			assets[] = {}; 
+		};
+		class sefrawi_ground: sefrawi {
+			text = "Ground Forces"; textShort = "Ground Forces"; type = "Infantry"; size = "Brigade"; commander = "Garcia Rodriguez"; commanderRank = "Major"; 
+			description = "Sefrawi's main conventional combat unit.";
+			subordinates[] = {"1inf","2inf","3armor","6weapons","5service"}; assets[] = {};  
+		};
+			class 1inf: sefrawi {
+				text = "1st Infantry Battalion"; textShort = "1st Infantry"; type = "Infantry"; size = "Battalion"; commander = "Manual Gomez"; commanderRank = "Captain";         
+				description = "Made up of career soldiers, currently working under the United Nations to respond to the crisis in Sefrou Ramal.";
+				subordinates[] = {}; assets[] = {{"rhsusf_M1117_sefrawi",10},{"UK3CB_B_LandRover_Closed_sefrawi",10},{"UK3CB_B_MTVR_Open_sefrawi",40}};  
+			};
+			class 2inf: sefrawi {
+				text = "2nd Infantry Battalion"; textShort = "2nd Infantry"; type = "Infantry"; size = "Battalion"; commander = "Miguel Sanchez"; commanderRank = "Captain";         
+				description = "Stationed in the Sefrawi capital, mix of career and volunteer soldiers.";
+				subordinates[] = {}; assets[] = {{"rhsusf_m113_m2_sefrawi",10},{"UK3CB_B_LandRover_Closed_sefrawi",10},{"UK3CB_B_MTVR_Open_sefrawi",40}};  
+			};
+			class 6weapons: sefrawi {
+				text = "1st Weapons Company"; textShort = "6th Weapons"; type = "Artillery"; size = "Company"; commander = "Carlos Perez"; commanderRank = "Captain"; 
+				description = "Sefrawi's artillery and air defence units.";
+				subordinates[] = {}; assets[] = {{"rhsusf_m109tank_sefrawi",5}};  
+			};
+			class 5service: sefrawi {
+				text = "5th Service Company"; textShort = "5th Service"; type = "Service"; size = "Company"; commander = "Garcia Lopez"; commanderRank = "Captain"; 
+				description = "Contains engineering units and general logistics as well as maritime assets.";
+				subordinates[] = {}; assets[] = {{"rhsusf_m113_m2_sefrawi",5},{"UK3CB_B_MTVR_Open_sefrawi",10},{"UK3CB_B_LandRover_Closed_sefrawi",5},{"I_C_Boat_Transport_02_F",5}};  
+			};
+			
+		class 3armor: sefrawi {
+			text = "3rd Tank Battalion"; textShort = "3rd Tank"; type = "Armored"; size = "Battalion"; commander = "Perez"; commanderRank = "Major"; 
+			description = "Sefrawi's only tank force, largely in disprepair with few functioning vehicles.";
+			subordinates[] = {}; assets[] = {{"UK3CB_B_M60A3_sefrawi",15},{"rhsusf_m1a1tank_sefrawi",10}};  
+		};
+		class 1commando: sefrawi {
+			text = "1st Commando"; textShort = "1st Commando"; type = "Recon"; size = "Company"; commander = "Juan Sanchez"; commanderRank = "Captain"; 
+			description = "Sefrawi's new experimental special forces unit. Comprised of US trained soldiers.";
+			subordinates[] = {}; assets[] = {{"rhsusf_M1117_sefrawi",10},{"UK3CB_B_LandRover_Closed_sefrawi",10}};  
+		};
+		class sefrawi_air: sefrawi {
+			text = "Air Force"; textShort = "Air Force"; type = "AviationSupport"; size = "Company"; commander = "Juan Juan"; commanderRank = "Major";         
+			description = "Stationed on the south airfield, the Sefrawi air force is very small and consists of older, second-hand aircraft procured from other countries.";
+			subordinates[] = {"1rot","5fix"}; assets[] = {};  
+		};
+			class 1rot: sefrawi {
+				text = "1st Rotor Wing"; textShort = "1st Rotor"; type = "Helicopter"; size = "Squadron"; commander = "Antonio Fernandez"; commanderRank = "Captain";         
+				description = "Helicoper units of the Air Force, consists of transport and logistics helicopters.";
+				subordinates[] = {}; assets[] = {{"rhs_uh1h_sefrawi",10}};  
+			};
+			class 5fix: sefrawi {
+				text = "5th Fixed Wing"; textShort = "5th Fixed"; type = "Fighter"; size = "Squadron"; commander = "Mateo"; commanderRank = "Captain";         
+				description = "Fixed wing units of the Air Force, consists of a mix of combat and transport aircraft.";
+				subordinates[] = {}; assets[] = {{"UK3CB_B_Mystere_sefrawi",10}};  
+			};
+};

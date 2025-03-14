@@ -1,0 +1,153 @@
+#include "\tsp_core\config.hpp"  //-- Light needs full path (\tsp_core\)
+author = "TheSpeshalPlatoon"; 
+onLoadName = "MOUT Training Facility";	
+loadScreen = __EVAL(selectRandom["data\overview1.jpg","data\overview2.jpg"]); 
+class Header {gameType = COOP}; 
+
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Forced";    //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 20;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\usmc_1fr.paa", "west", {
+		{"Raider HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon_all","everyone_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon_all","everyone_medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_usmc_engineer", {"usmc_recon_all"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Raider 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon_all","everyone_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon_all","everyone_medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon_all"}, "iconManRecon_ca.paa"},
+			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon_all"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249", {"usmc_recon_all","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon_all"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Raider 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon_all","everyone_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon_all","everyone_medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon_all"}, "iconManRecon_ca.paa"},
+			{"Anti Tank", "tsp_usmc_antitank", {"usmc_recon_all"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner_fast", {"usmc_recon_all","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon_all", "usmc_recon_marksman"}, "iconManRecon_ca.paa"}
+		}},
+		{"Hitman (Scout Snipers)", "markers\nato\b_art.paa", {
+			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon_all","everyone_leader"}, "iconManLeader_ca.paa"},
+			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon_all", "usmc_recon_marksman"}, "iconManRecon_ca.paa"}
+		}}
+	}},
+	{"Army - 3rd Special Forces Group", "\tsp_core\data\insignia\army_3sfg.paa", "west", {
+		{"Sabre HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "tsp_army_sf_teamlead", {"usa_sf_all","everyone_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"usa_sf_all","everyone_medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_army_sf_engineer", {"usa_sf_all"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Sabre 1", "markers\nato\b_inf.paa", {
+			{"Team Leader", "tsp_army_sf_teamlead", {"usa_sf_all","everyone_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"usa_sf_all","everyone_medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"usa_sf_all"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "tsp_army_sf_operatorat", {"usa_sf_all"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_army_sf_autorifleman", {"usa_sf_all", "usa_sf_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_army_sf_engineer", {"usa_sf_all"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Sabre 2", "markers\nato\b_inf.paa", {
+			{"Team Leader", "tsp_army_sf_teamlead", {"usa_sf_all","everyone_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"usa_sf_all","everyone_medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"usa_sf_all"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "B_soldier_LAT_F", {"usa_sf_all"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "tsp_army_sf_machinegunner", {"usa_sf_all", "usa_sf_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_army_sf_engineer", {"usa_sf_all"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Sabre 3 (SNOT)", "markers\nato\b_art.paa", {
+			{"Team Leader", "tsp_army_sf_teamlead", {"usa_sf_all","everyone_leader"}, "iconManLeader_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"usa_sf_all"}, "iconManRecon_ca.paa"},
+			{"Marksman", "tsp_army_sf_marksman", {"usa_sf_all", "usa_sf_marksman"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"Army - 160th SOAR", "\tsp_core\data\insignia\army_soar.paa", "west", {
+		{"Phantom 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"usa_sf_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"usa_sf_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Phantom 2", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"usa_sf_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"usa_sf_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Phantom 3", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"usa_sf_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"usa_sf_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Phantom 4", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"usa_sf_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"usa_sf_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
+		}}
+	}},
+	{"USMC - Aviation Branch", "\tsp_core\data\insignia\usmc_aviation.paa", "west", {
+		{"Razor 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"usmc_recon_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"},\
+			{"Helicopter Crew", "tsp_usn_helipilot", {"usmc_recon_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"}\
+		}},
+		{"Razor 2", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"usmc_recon_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"usmc_recon_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Razor 3", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"usmc_recon_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"usmc_recon_all","west_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
+		}}
+	}}
+};
+
+//-- Environment
+tsp_param_night = 0.3;
+tsp_param_time_day = 6;    tsp_param_time_night = 12;
+tsp_param_weather = true;  tsp_param_weatherTime = 20; 
+tsp_param_fog = 0.2;       tsp_param_fogMin = 0;        tsp_param_fogMax = 0.02;
+tsp_param_wind = 1;        tsp_param_windMin = -1;      tsp_param_windMax = 1;
+tsp_param_overcast = 1;    tsp_param_overcastMin = 0;   tsp_param_overcastMax = 1; 
+tsp_param_rain = 0.5;      tsp_param_rainMin = 0;       tsp_param_rainMax = 1;
+tsp_param_lightning = 1;   tsp_param_lightningMin = 0;  tsp_param_lightningMax = 1;
+tsp_param_wave = 0.5;      tsp_param_waveMin = 0;       tsp_param_waveMax = 1;
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 100;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 2;
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;

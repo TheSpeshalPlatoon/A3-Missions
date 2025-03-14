@@ -1,0 +1,318 @@
+author = "TheSpeshalPlatoon"; onLoadName = "The Narrow Sea"; class Header {gameType = COOP}; //loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.26;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";   //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 30;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\1recon.paa", "west", {
+		{"Raider HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_usmc_engineer", {"usmc_recon"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Raider 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Raider 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Anti Tank", "tsp_usmc_antitank", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner_fast", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Hitman (Scout Snipers)", "markers\nato\b_art.paa", {
+			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
+		}}
+	}},
+	{"USMC - 2nd Light Armoured Reconnaissance", "\tsp_core\data\insignia\2lar.paa", "west", {
+		{"Crocodile 1", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"}
+		}},
+		{"Crocodile 2", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"}
+		}}
+	}},
+	{"USMC - 2nd Aviation Branch", "\tsp_core\data\insignia\2aviation.paa", "west", {
+		{"Thunder 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Thunder 2", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Thunder 3", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}}
+	}},
+	{"USN - Rotor Wing Squadron 51", "\tsp_core\data\insignia\hsm51.paa", "west", {
+		{"Whiplash 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Whiplash 2", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}}
+	}}
+};
+
+//-- Environment
+tsp_param_brightness = 1.1;
+tsp_param_time_day = 1; tsp_param_time_night = 1;
+tsp_param_weather = false;
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
+
+class CfgORBAT {
+	// SLA
+	// 1st Inf Brigade 3000
+	//    11th Inf Battalion 1000
+	//    12th Inf Battalion (Reserves) 1000
+	//    13th Mot Battalion 1000
+	// 	  2nd Armor Battalion 1000
+	//    1st Artillery Company 200
+	//    1st Service Company 200
+	// Navy Battalion 3000
+	//    2nd Guard Company 200
+	//    Especas Company 200
+	// Air Force Company 200
+	//    1st Rotorwing Squadron 30
+	//    2nd Rotorwing Squadron 30
+	//    3rd Fixedwing Squadron 30
+    class sla {
+        id = 1; idType = 0; side = "East"; 
+		text = "Sahrani Liberation Army"; textShort = "Sahrani Liberation Army"; type = "Infantry"; size = "Company"; commander = "Ramirez"; commanderRank = "General";  
+        description = "The Sahrani Liberation Army (SLA) serves as the primary land, air and sea defence force of the Democratic Republic of Sahrani. Since its founding alongside the Communist state in the mid 1900s, the SLA has been involved in an escalating arms race against its main adversary, the South's Royal Army Corps of Sahrani. Prior to its collapse, the SLA was militarily supported by the Soviet Union and received large amounts of donated hardware. In the aftermath of the Cold War, the SLA continues to obtain equipment from its successor state, the Russian Federation, but support by the Russian state pales in comparison to its predecessor.";
+        subordinates[] = {"sla_ground","sla_navy","sla_air"}; 
+        assets[] = {}; 
+    };
+		class sla_ground: sla {
+			text = "Ground Forces"; textShort = "Ground Forces"; type = "Infantry"; size = "Brigade"; commander = "Miguel Lopez"; commanderRank = "Major"; 
+			description = "The SLA's main conventional combat unit.";
+			subordinates[] = {"11inf","12inf","13mot","2armor","1weapons","1service"}; assets[] = {};  
+		};
+			class 11inf: sla {
+				text = "11th Infantry Battalion"; textShort = "11th Infantry"; type = "Infantry"; size = "Battalion"; commander = "Manual Hernandez"; commanderRank = "Captain";         
+				description = "Stationed in North Sahrani, the main fighting force of the SLA, backbone of the push south in the Sahrani invasion.";
+				subordinates[] = {}; assets[] = {{"rhsgref_cdf_reg_uaz",10},{"rhsgref_cdf_ural",40}};  
+			};
+			class 12inf: sla {
+				text = "12th Infantry Battalion (Reserves)"; textShort = "12th Infantry"; type = "Infantry"; size = "Battalion"; commander = "Miguel Sanchez"; commanderRank = "Captain";         
+				description = "Stationed in Bagango, Sahrani, made up of northern civilians conducting their mandatory service.";
+				subordinates[] = {}; assets[] = {{"rhsgref_cdf_reg_uaz",10},{"rhsgref_cdf_ural",40}};
+			};   
+			class 13mot: sla {
+				text = "13th Motor Battalion"; textShort = "13th Motor"; type = "MotorizedInfantry"; size = "Battalion"; commander = "Carlos Garcia"; commanderRank = "Captain";         
+				description = "Stationed on Porto, an island north of Sahrani, made up of well trained soldiers and light-armoured units.";
+				subordinates[] = {}; assets[] = {{"rhs_btr70_sla",10},{"rhs_btr60_sla",20},{"UK3CB_B_MTLB_PKT_SLA",10}};  
+			};
+			class 2armor: sla {
+				text = "2nd Armor Battalion"; textShort = "2nd Armor"; type = "Armored"; size = "Battalion"; commander = "Juan Rodriguez"; commanderRank = "Major"; 
+				description = "The SLA's armored force, consists of heavy armoured vehicles including T-72s and T-55s. Stationed on the northern coast of Sahrani.";
+				subordinates[] = {}; assets[] = {{"rhs_t72ba_sla",15},{"UK3CB_O_T55_CHK",10},{"rhs_bmp1_sla",10}};  
+			};
+			class 1weapons: sla {
+				text = "1st Weapons Company"; textShort = "1st Weapons"; type = "Artillery"; size = "Company"; commander = "Garcia Mateo"; commanderRank = "Captain"; 
+				description = "The SLA's artillery and air defence units, consists of BM-21 and ZSU units. They are also believed to have 2-4 SCUD launchers. Stationed on the northern coast of Sahrani.";
+				subordinates[] = {}; assets[] = {{"UK3CB_TKA_I_MAZ_543_SCUD",2},{"RHS_BM21_sla",8},{"rhs_zsu234_aa_sla",5},{"UK3CB_B_MTLB_ZU23_SLA",10}};  
+			};
+			class 1service: sla {
+				text = "1st Service Company"; textShort = "1st Service"; type = "Service"; size = "Company"; commander = "Mateo Perez"; commanderRank = "Captain"; 
+				description = "The backbone of the SLA. Contains engineering units and general logistics. Stationed in the north of Sahrani and on Porto";
+				subordinates[] = {}; assets[] = {{"UK3CB_B_MTLB_PKT_SLA",10},{"rhsgref_cdf_ural",10},{"rhsgref_cdf_reg_uaz",5}};  
+			};
+		class sla_navy: sla {
+			text = "SLA Navy"; textShort = "Navy"; type = "Maritime"; size = "Battalion"; commander = "Santiago Gomez"; commanderRank = "Major";         
+			description = "Stationed on Porto, the SLA navy is very small, consisting of just 3 landing ships and other smaller vessels.";
+			subordinates[] = {"1mar","2guard","especas"}; assets[] = {};  
+		};
+			class 1mar: sla {
+				text = "1st Maritime Company"; textShort = "1st Maritime"; type = "Infantry"; size = "Company"; commander = "Juan Garcia"; commanderRank = "Captain";         
+				description = "Sailors of the SLA navy.";
+				subordinates[] = {};
+				assets[] = {{"CUP_Type072_Main",3},{"I_C_Boat_Transport_02_F",6}};  
+			};
+			class 2guard: sla {
+				text = "2nd Guard Company"; textShort = "2nd Guard"; type = "Infantry"; size = "Company"; commander = "Juan Carlos"; commanderRank = "Captain";         
+				description = "Infantry units of the SLA navy, designated to guarding navy installations and conducting logistics operations.";
+				subordinates[] = {}; assets[] = {{"UK3CB_I_MTLB_PKT_CDF",10},{"rhsgref_BRDM2",10},{"rhsgref_cdf_reg_uaz",10},{"UK3CB_I_G_V3S_Open",20}};  
+			};
+			class especas: sla {
+				text = "Especas Company"; textShort = "Especas"; type = "Recon"; size = "Company"; commander = "Carlos Garcia"; commanderRank = "Captain";         
+				description = "Special forces of the SLA navy, usually assigned as personal bodyguards for DRS leaders and SLA officers.";
+				subordinates[] = {}; assets[] = {{"rhsgref_BRDM2",5},{"rhsgref_cdf_reg_uaz",5}};  
+			};   
+		class sla_air: sla {
+			text = "SLA Air Force"; textShort = "Air Force"; type = "AviationSupport"; size = "Company"; commander = "Manual Gomez"; commanderRank = "Major";         
+			description = "Stationed on a make shift airfield, the SLA air force is very small and consists of soviet-era aircraft.";
+			subordinates[] = {"1rot","2rot","1fix"}; assets[] = {{"RHS_Mi8MT_sla",4},{"RHS_Mi8MTV3_sla",2},{"rhsgref_cdf_su25",4},{"UK3CB_I_Mig21_CDF_AT1",4}};  
+		};
+			class 1rot: sla {
+				text = "1st Rotor Wing"; textShort = "1st Rotor"; type = "Helicopter"; size = "Squadron"; commander = "Garcia Gomez"; commanderRank = "Captain";         
+				description = "Helicoper units of the SLA Air Force, consists of transport and logistics helicopters.";
+				subordinates[] = {}; assets[] = {{"RHS_Mi8MT_sla",5}};  
+			};
+			class 2rot: sla {
+				text = "1nd Rotor Wing"; textShort = "2nd Rotor"; type = "Helicopter"; size = "Squadron"; commander = "Alejandro Carlos"; commanderRank = "Captain";         
+				description = "Helicoper units of the SLA Air Force, consists of ground support helicopters.";
+				subordinates[] = {}; assets[] = {{"RHS_Mi8MTV3_sla",3}};  
+			};
+			class 1fix: sla {
+				text = "1st Fixed Wing"; textShort = "1st Fixed"; type = "Fighter"; size = "Squadron"; commander = "Diego Rodriguez"; commanderRank = "Captain";         
+				description = "Fixed wing units of the SLA Air Force, consists of SU-25s and Mig-21's.";
+				subordinates[] = {}; assets[] = {{"rhsgref_cdf_su25",5},{"UK3CB_I_Mig21_CDF_AT1",5}};  
+			};
+
+	// RACS
+	// 22nd Inf Brigade 2000
+	//    1st Inf Battalion 1000
+	//    2nd Inf Battalion (Reserves) 1000
+	// 23rd Armor Company 200
+	// 24th Artillery Company 200
+	// 25th Service Company 200
+	// 27th Scout Company 200
+	// Air Force Company 200
+	//    31st Rotorwing Squadron 30
+	//    32rd Fixedwing Squadron 30
+	//    41st Reconnaissance Squadron 30
+	class racs {
+        id = 1; idType = 0; side = "West"; 
+		text = "Royal Army Corps of Sahrani"; textShort = "Royal Army Corps of Sahrani"; type = "Infantry"; size = "Squad"; commander = "Alejandro Matinez"; commanderRank = "General";  
+        description = "Representing the might of the Kingdom of Sahrani and its predecessor, the Kingdom of South Sahrani, the RACS serves as the nation's primary land, sea and air defence force. An elite Royal Guard unit - largely comprised of former law enforcement officers and paramilitary fighters, also serves as the personal protection detail for Kingdom officials and high-ranking RACS officers. Though the military has received extensive support and training by advisers from the United States, their conventional units are not particularly effective as a fighting force, nor are they as formidable as they may seem. U.S. Army personnel as well as RACS scout troopers regularly deride RACS soldiers for being better suited to the parade ground rather than being on the battlefield.";
+        subordinates[] = {"racs_ground","racs_air","27scout"}; 
+        assets[] = {}; 
+    };
+		class racs_ground: racs {
+			text = "Ground Forces"; textShort = "Ground Forces"; type = "Infantry"; size = "Brigade"; commander = "Garcia Rodriguez"; commanderRank = "Major"; 
+			description = "RACS's main conventional combat unit.";
+			subordinates[] = {"1inf","2inf","23armor","24weapons","25service"}; assets[] = {};  
+		};
+			class 1inf: racs {
+				text = "1st Infantry Battalion"; textShort = "1st Infantry"; type = "Infantry"; size = "Battalion"; commander = "Manual Gomez"; commanderRank = "Captain";         
+				description = "Stationed in Corazol, made up of career soldiers, the main fighting force of the South.";
+				subordinates[] = {}; assets[] = {{"rhsusf_M1117_racs",10},{"UK3CB_B_LandRover_Closed_racs",10},{"UK3CB_B_MTVR_Open_racs",40}};  
+			};
+			class 2inf: racs {
+				text = "2nd Infantry Battalion (Reserves)"; textShort = "2nd Infantry"; type = "Infantry"; size = "Battalion"; commander = "Miguel Sanchez"; commanderRank = "Captain";         
+				description = "Stationed in Paraiso, Sahrani, made up of southern civilians conducting their mandatory service.";
+				subordinates[] = {}; assets[] = {{"rhsusf_m113_m2_racs",10},{"UK3CB_B_LandRover_Closed_racs",10},{"UK3CB_B_MTVR_Open_racs",40}};  
+			};
+			class 23armor: racs {
+				text = "2nd Armor Battalion"; textShort = "23rd Armor"; type = "Armored"; size = "Battalion"; commander = "Perez"; commanderRank = "Major"; 
+				description = "RAC's armored force, consists of heavy armoured vehicles including M1 Abrams and older M60s. Stationed on the south west coast of Sahrani.";
+				subordinates[] = {}; assets[] = {{"UK3CB_B_M60A3_racs",15},{"rhsusf_m1a1tank_racs",10}};  
+			};
+			class 24weapons: racs {
+				text = "1st Weapons Company"; textShort = "24th Weapons"; type = "Artillery"; size = "Company"; commander = "Carlos Perez"; commanderRank = "Captain"; 
+				description = "RAC's artillery and air defence units.";
+				subordinates[] = {}; assets[] = {{"rhsusf_m109tank_racs",5}};  
+			};
+			class 25service: racs {
+				text = "1st Service Company"; textShort = "25h Service"; type = "Service"; size = "Company"; commander = "Garcia Lopez"; commanderRank = "Captain"; 
+				description = "Contains engineering units and general logistics as well as maritime assets. Stationed in the south of Sahrani.";
+				subordinates[] = {}; assets[] = {{"rhsusf_m113_m2_racs",5},{"UK3CB_B_MTVR_Open_racs",10},{"UK3CB_B_LandRover_Closed_racs",5},{"I_C_Boat_Transport_02_F",5}};  
+			};
+		class 27scout: racs {
+			text = "27th Scout Company"; textShort = "27th Scout"; type = "Recon"; size = "Company"; commander = "Juan Sanchez"; commanderRank = "Captain"; 
+			description = "Special forces unit of RACS. Made up of highly trained, career soldiers.";
+			subordinates[] = {}; assets[] = {{"rhsusf_M1117_racs",10},{"UK3CB_B_LandRover_Closed_racs",10}};  
+		};
+		class racs_air: racs {
+			text = "RACS Air Force"; textShort = "Air Force"; type = "AviationSupport"; size = "Company"; commander = "Juan Juan"; commanderRank = "Major";         
+			description = "Stationed on the south airfield, the RACS air force is very small and consists of older, second-hand aircraft procured from other countries.";
+			subordinates[] = {"31rot","32fix","41rec"}; assets[] = {};  
+		}; 
+			class 31rot: racs {
+				text = "31st Rotor Wing"; textShort = "31st Rotor"; type = "Helicopter"; size = "Squadron"; commander = "Antonio Fernandez"; commanderRank = "Captain";         
+				description = "Helicoper units of the RACS Air Force, consists of transport and logistics helicopters.";
+				subordinates[] = {}; assets[] = {{"rhs_uh1h_racs",10}};  
+			};
+			class 32fix: racs {
+				text = "32nd Fixed Wing"; textShort = "32nd Fixed"; type = "Fighter"; size = "Squadron"; commander = "Mateo"; commanderRank = "Captain";         
+				description = "Fixed wing units of the RACS Air Force, consists of MD454 Mysteres.";
+				subordinates[] = {}; assets[] = {{"UK3CB_B_Mystere_racs",10}};  
+			};
+			class 41rec: racs {
+				text = "32nd Reconnaissance Wing"; textShort = "32nd Recon"; type = "Fighter"; size = "Squadron"; commander = "Antonio Rodriguez"; commanderRank = "Captain";         
+				description = "Recon units of the RACS Air Force, consists of light planes.";
+				subordinates[] = {}; assets[] = {{"UK3CB_B_Cessna_T41_racs",5}};  
+			};
+	class inv {
+        id = 1; idType = 0; side = "West"; 
+		text = "Invasion Task Force"; textShort = "Invasion Task Force"; type = "Maritime"; size = "FireTeam"; commander = "Liko Hernandez"; commanderRank = "General";  
+        description = "Invasion task force for Porto offensive.";
+        subordinates[] = {"1inf","27scout","21strecon"}; assets[] = {}; 
+    };
+		class 21strecon: racs {
+			text = "21st Marine Reconnaissance"; textShort = "21st Recon"; type = "Recon"; size = "Company"; commander = "James Riley"; commanderRank = "Captain";         
+			description = "Marine Recon units riding with the US 5th Fleet.";
+			subordinates[] = {}; assets[] = {};  
+		};
+};

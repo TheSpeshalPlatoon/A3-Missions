@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4698;
+		nextID=4929;
 	};
 	class Camera
 	{
-		pos[]={11639.266,20.08733,4438.9106};
-		dir[]={-0.49316958,-0.23979676,0.83624429};
-		up[]={-0.12181725,0.97082442,0.20655984};
-		aside[]={0.8613776,1.0221265e-07,0.50799268};
+		pos[]={11619.485,44.654564,4461.5005};
+		dir[]={0.66675872,-0.6277144,-0.40176737};
+		up[]={0.53765202,0.77844155,-0.32397214};
+		aside[]={-0.51611364,6.6502253e-09,-0.85652339};
 	};
 };
 binarizationWanted=0;
@@ -104,11 +104,11 @@ addons[]=
 	"A3_Weapons_F_Acc",
 	"A3_Weapons_F_Exp",
 	"A3_Weapons_F_Pistols_Pistol_Heavy_01",
+	"DSA_Spooks",
 	"jsrs_soundmod_complete_edition",
 	"jsrs_soundmod_ce_reloadingsounds",
 	"ace_attach",
 	"A3_Weapons_F_Items",
-	"ace_medical_engine",
 	"ace_medical_treatment",
 	"tsp_medical",
 	"UK3CB_Factions_Equipment_Vests",
@@ -419,28 +419,27 @@ class AddonsMetaData
 		};
 		class Item42
 		{
+			className="DSA_Spooks";
+			name="Drongos Spooks and Anomalies";
+			author="Drongo";
+		};
+		class Item43
+		{
 			className="A3_Sounds_F";
 			name="Arma 3 - Sound Effects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item43
+		class Item44
 		{
 			className="jsrs_soundmod_ce_reloadingsounds";
 			name="jsrs_soundmod_ce_reloadingsounds";
 			author="LordJarhead";
 		};
-		class Item44
+		class Item45
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item45
-		{
-			className="ace_medical_engine";
-			name="ACE3 - Medical Engine";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
@@ -53634,6 +53633,7 @@ class Mission
 							};
 							id=1343;
 							type="PortableFlagPole_01_F";
+							atlOffset=-9.5367432e-07;
 							class CustomAttributes
 							{
 								class Attribute0
