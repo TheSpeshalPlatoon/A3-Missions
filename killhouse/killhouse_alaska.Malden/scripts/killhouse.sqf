@@ -10,7 +10,7 @@ tsp_fnc_killhouse = {
 
         ["_lockChance", 0.5], ["_openingChance", 0.2], ["_doorChance", 0.95], 
         ["_wallTypes", ["Bro_MSW_2m"]], ["_outerWallType", "Bro_MSW_2m_conc"], ["_wallLength", 2],
-        ["_doorTypes", ["Bro_MSW_2m_d", "Bro_MSW_2m_d", "Bro_MSW_2m_de"]], ["_openDoorTypes", ["Bro_MSW_2m_de"]], ["_outerDoorType", "Bro_MSW_2m_d_conc"], 
+        ["_doorTypes", ["Bro_MSW_2m_d", "Bro_MSW_2m_d", "Bro_MSW_2m_de"]], ["_openDoorTypes", ["Bro_MSW_2m_de"]], ["_outerDoorTypes", ["Bro_MSW_2m_d_conc"]], 
 
         ["_units", []], ["_usedCells", []], ["_helpers", []], ["_openings", []], ["_relations", []], ["_index", 0], ["_doors", []], ["_walls", []], ["_furniture", []], ["_sleep", 0],  //0.001
         ["_deadType", "Sign_Pointer_Yellow_F"], ["_helperTypes", [
@@ -23,14 +23,14 @@ tsp_fnc_killhouse = {
 
     //-- Check if killhouse is clear of players before generating, set reset to true to delete old killhouse
 	if (count (allPlayers select {alive _x && _x inArea _area}) > 0) exitWith {["", "Killhouse is still occupied."] spawn "BIS_fnc_showSubtitle", _x};
-	{[_x,1,0] call bis_fnc_door} forEach ((_start nearObjects [_outerDoorType, 5]) + (_end nearObjects [_outerDoorType, 5]));  //-- Close outer doors
-    _enterance = (_start nearObjects [_outerDoorType, 5])#0;
+    {{[_x,1,0] call bis_fnc_door; [_x,2,0] call bis_fnc_door} forEach ((_start nearObjects [_x, 5]) + (_end nearObjects [_x, 5]))} forEach _outerDoorTypes;  //-- Close outer doors
+    _enterance = (_start nearObjects [_outerDoorTypes#0, 5])#0;
     _blocker = createSimpleObject ["A3\structures_f\data\DoorLocks\planks_1.p3d", getPosASL _start]; _blocker attachTo [_enterance, [0,-0.2,-1.3]];
     _blocker spawn {while {sleep 1; alive _this} do {playSound3D ["a3\sounds_f\vehicles\armor\noises\tank_building_0"+str (round random 3 + 1)+".wss", _this, false, getPosASL _this, 5, random 2 max 0.5 min 2, 25]}};
     playSound3D ["a3\sounds_f\ambient\quakes\earthquake"+str (round random 3 + 1)+".wss", _blocker, false, getPosASL _blocker, 5, 1, 50];
     {["", "Generating Killhouse..."] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _start < _height});
     _start setVariable ["reset", true, true]; _start setVariable ["generating", true, true]; sleep 2;  //-- Sleep so old killhouse has time to delete
-    {deleteVehicle _x} forEach (nearestObjects [_area, [], sqrt(_width^2 + _height^2)] select {!(typeOf _x in [_outerWallType, _outerDoorType, "Land_ConnectorTent_01_floor_light_F"]) && !(isPlayer _x) && !(_x == _area) && (_x inArea _area)});  //-- Remove objects
+    {deleteVehicle _x} forEach (nearestObjects [_area, [], sqrt(_width^2 + _height^2)] select {simulationEnabled _x && !(_x == _area) && (_x inArea _area)});  //-- Remove objects
     {deleteVehicle _x} forEach (allDeadMen inAreaArray _area);  //-- Remove dead bodies
     {["", "Generating Killhouse..."] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _start < _height});
 
@@ -117,10 +117,10 @@ tsp_fnc_killhouse = {
     {  //-- For For each cell
         _helper = _x; 
         _furthest = _helpers select {typeOf _x == typeOf _helper}; _furthest = _furthest apply {[_x distance2D _helper, _x]}; _furthest sort false; _furthest = _furthest#0#1;  //-- Get furthest cell in room
-        _nearestWalls = (nearestObjects [_helper, [], _wallLength]) select {!isObjectHidden _x && typeOf _x in _wallTypes + [_outerWallType]};     //-- Get all nearby walls   
-        _nearestOpenings = (nearestObjects [_helper, [_outerDoorType], _wallLength+1] + _openings) select {_x distance2D _helper < _wallLength};  //-- Get all nearby openings
-        _nearestHelpers = (nearestObjects [_helper, [], _wallLength+1.7]) select {typeOf _x in [typeOf _helper]};                                //-- Get cell count around helper
-        _nearestUnits = _units select {_x distance2D _helper < _wallLength};                                                                    //-- Get all nearyby units
+        _nearestWalls = (nearestObjects [_helper, [], _wallLength]) select {!isObjectHidden _x && typeOf _x in _wallTypes + [_outerWallType]};    //-- Get all nearby walls   
+        _nearestOpenings = (nearestObjects [_helper, _outerDoorTypes, _wallLength+1] + _openings) select {_x distance2D _helper < _wallLength};  //-- Get all nearby openings
+        _nearestHelpers = (nearestObjects [_helper, [], _wallLength+1.7]) select {typeOf _x in [typeOf _helper]};                               //-- Get cell count around helper
+        _nearestUnits = _units select {_x distance2D _helper < _wallLength};                                                                   //-- Get all nearyby units
 
         //-- Targets
         _unitCommon = count _nearestWalls > 1 && count _nearestOpenings == 0 && count _nearestUnits == 0 && count _units < _unitsMax;
@@ -177,7 +177,7 @@ tsp_fnc_killhouse = {
     if !(_start getVariable "reset") then {{["", "Killhouse Clear!"] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _end < (_height*2)})};
     if !(_start getVariable "reset") then {playSound3D ["A3\Missions_F_Oldman\Data\sound\beep.ogg", _end, false, getPosASL _end, 5, 1, 100]};  //-- BEEP	
 	waitUntil {sleep 0.5; count (allPlayers select {alive _x && _x inArea _area}) == 0 || _start getVariable "reset"};  //-- Wait until all players are out or new house generated
-	{[_x,1,0] call bis_fnc_door} forEach ((_start nearObjects [_outerDoorType, 5]) + (_end nearObjects [_outerDoorType, 5]));  //-- Close outer doors
+    {{[_x,1,0] call bis_fnc_door; [_x,2,0] call bis_fnc_door} forEach ((_start nearObjects [_x, 5]) + (_end nearObjects [_x, 5]))} forEach _outerDoorTypes;  //-- Close outer doors
     {deleteVehicle _x} forEach (_helpers + _units + _doors + _walls + _furniture);  //-- Bye bye
     {["", "Killhouse Reset."] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _end < (_height*2)});
 };
@@ -191,7 +191,7 @@ tsp_fnc_killhouse_flood = {  //-- Fucky wucky recursive stuff below
 };
 
 tsp_fnc_killhouse_menu = {
-	params ["_start", "_end", "_area", "_width", "_height", "_size", ["_display", findDisplay 46 createDisplay "RscDisplayEmpty"]]; tsp_killhouse_params = _this;
+	params ["_start", "_end", "_area", "_width", "_height", "_size", "_walls", ["_display", findDisplay 46 createDisplay "RscDisplayEmpty"]]; tsp_killhouse_params = _this;
 
 	_title = _display ctrlCreate ["RscText", 9998]; _w = 0.4; _h = 0.042; _y = 0.375; _title ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
 	_title ctrlSetFont "PuristaMedium"; _title ctrlSetText "GENERATE KILLHOUSE"; _title ctrlSetBackgroundColor [11/100,50/100,20/100,0.9]; _title ctrlCommit 0;	
@@ -242,9 +242,9 @@ tsp_fnc_killhouse_menu = {
 	_button = _display ctrlCreate ["RscButtonMenu", 9998]; _w = 0.4; _h = 0.042; _y = - 0.373; _button ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
 	_button ctrlSetText "GENERATE"; _button ctrlSetFont "PuristaLight"; _button ctrlCommit 0; _button setVariable ["display", _display]; 
 	_button ctrlAddEventHandler ["buttonClick", {
-		params ["_control"]; tsp_killhouse_params params ["_start", "_end", "_area", ["_width", 6], ["_height", 18], ["_size", 5]]; 
+		params ["_control"]; tsp_killhouse_params params ["_start", "_end", "_area", ["_width", 6], ["_height", 18], ["_size", 5], ["_walls", tsp_killhouse_walls]]; 
         _side = if (tsp_killhouse_theme in ["Tanoa", "Livonia"]) then {resistance} else {east};
-		[[
+        ([
             _start, _end, _area, _width, _height, _size,  //-- Width, height, room size
 			5, 20, tsp_killhouse_hostages,  //-- Min, max, hostage chance
 			tsp_killhouse_enemies, _side, missionNameSpace getVariable ["enemy_"+tsp_killhouse_theme, []],  //-- Enemy chance, side, type
@@ -252,7 +252,7 @@ tsp_fnc_killhouse_menu = {
 			tsp_killhouse_targets, missionNameSpace getVariable ["target_"+tsp_killhouse_theme, ["Target_F"]],  //-- Target chance, type
 			tsp_killhouse_furniture, missionNameSpace getVariable ["furniture_"+tsp_killhouse_theme, []],  //-- Furniture chance, type
             tsp_killhouse_locks, 0.5, 0.95  //--  Locked, openings, doors
-        ], tsp_fnc_killhouse] remoteExec ["spawn", 2];
+        ] + _walls) remoteExec ["tsp_fnc_killhouse", 2];
 		_control getVariable "display" closeDisplay 1;
 	}];
     while {_display isNotEqualTo displayNull} do {if (kh1_start getVariable ['generating', false]) exitWith {_display closeDisplay 1;}};
@@ -261,13 +261,16 @@ tsp_fnc_killhouse_menu = {
 tsp_killhouse_themes = ["Altis", "Tanoa", "Livonia"];
 if (isClass (configFile >> "CfgPatches" >> "CUP_StandaloneTerrains_Core") && isClass (configFile >> "CfgPatches" >> "UK3CB_Factions_Common")) then {tsp_killhouse_themes pushBack "Takistan"};
 if (isClass (configFile >> "CfgPatches" >> "CUP_StandaloneTerrains_Core") && isClass (configFile >> "CfgPatches" >> "rhsgref_infantry")) then {tsp_killhouse_themes pushBack "Chernarus"};
-tsp_killhouse_theme = "Altis";
+tsp_killhouse_theme = "Altis";  //-- Default selection
+
 tsp_killhouse_enemies = 0.5;
 tsp_killhouse_hostages = 0.01;
 tsp_killhouse_civilians = 0.05;
 tsp_killhouse_furniture = 0.2;
 tsp_killhouse_targets = 0;
 tsp_killhouse_locks = 0.5;
+tsp_killhouse_walls = [["Bro_MSW_2m"],"Bro_MSW_2m_conc",2,["Bro_MSW_2m_d", "Bro_MSW_2m_d", "Bro_MSW_2m_de"],["Bro_MSW_2m_de"],["Bro_MSW_2m_d_conc"]];
+
 enemy_altis = ["O_G_Soldier_AR_F","O_G_medic_F","O_G_Soldier_GL_F","O_G_Soldier_M_F","O_G_officer_F","O_G_Soldier_F","O_G_Soldier_lite_F","O_G_Soldier_SL_F","O_G_Soldier_TL_F"];
 enemy_tanoa = ["I_C_Soldier_Bandit_7_F","I_C_Soldier_Bandit_3_F","I_C_Soldier_Bandit_5_F","I_C_Soldier_Bandit_1_F","I_C_Soldier_Bandit_4_F","I_C_Soldier_Bandit_8_F","I_C_Soldier_Para_7_F","I_C_Soldier_Para_2_F","I_C_Soldier_Para_4_F","I_C_Soldier_Para_1_F"];
 enemy_livonia = ["I_L_Criminal_SG_F","I_L_Criminal_SMG_F","I_L_Hunter_F","I_L_Looter_Rifle_F","I_L_Looter_Pistol_F","I_L_Looter_SG_F","I_L_Looter_SMG_F"];
@@ -277,11 +280,13 @@ enemy_takistan = if (isClass (configFile >> "CfgPatches" >> "tsp_faction_tkm")) 
 } else {
     ["UK3CB_TKM_O_AR","UK3CB_TKM_O_GL","UK3CB_TKM_O_LMG","UK3CB_TKM_O_MG","UK3CB_TKM_O_MG_ASST","UK3CB_TKM_O_MK","UK3CB_TKM_O_MD","UK3CB_TKM_O_RIF_3","UK3CB_TKM_O_RIF_1","UK3CB_TKM_O_RIF_2","UK3CB_TKM_O_WAR"]
 };
+
 civilian_altis = ["C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_6_F","C_Man_Fisherman_01_F","C_man_p_fugitive_F"];
 civilian_tanoa = ["C_Man_casual_1_F_tanoan","C_Man_casual_2_F_tanoan","C_Man_casual_3_F_tanoan","C_man_sport_1_F_tanoan","C_man_sport_2_F_tanoan","C_man_sport_3_F_tanoan","C_Man_casual_4_F_tanoan","C_Man_casual_5_F_tanoan","C_Man_casual_6_F_tanoan"];
 civilian_livonia = ["C_Man_1_enoch_F","C_Man_2_enoch_F","C_Man_3_enoch_F","C_Man_4_enoch_F","C_Man_5_enoch_F","C_Man_6_enoch_F","C_Farmer_01_enoch_F"];
 civilian_chernarus = ["tsp_civilian_citizen","tsp_civilian_farmwife","tsp_civilian_hooker","tsp_civilian_housewife","tsp_civilian_madam","tsp_civilian_pilot","tsp_civilian_priest","tsp_civilian_profiteer","tsp_civilian_rocker","tsp_civilian_secretary","tsp_civilian_sportswoman","tsp_civilian_teacher","tsp_civilian_woodlander","tsp_civilian_workwoman","tsp_civilian_worker"];
 civilian_takistan = ["tsp_civilian_tak1","tsp_civilian_tak2","tsp_civilian_tak3","tsp_civilian_tak6","tsp_civilian_takwoman2","tsp_civilian_takwoman1","tsp_civilian_takwoman3"];
+
 furniture_altis = [
     ["Land_ArmChair_01_F",2,2,0,-0.1,0,false,false,true,true,0],  //-- Class // max, radius, rotation, offset, vertical // wall, open, corner, cornerDir, randomDir
 
