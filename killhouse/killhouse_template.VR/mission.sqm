@@ -18187,7 +18187,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""Arsenal"", [missionNamespace getVariable [""role"", -1] isEqualTo -1], [missionNamespace getVariable [""role"", -1] isEqualTo -1]] call tsp_fnc_action; [this, ""Role""] call tsp_fnc_action;";
+								init="[this, ""Arsenal"", [(getMissionConfigValue [""tsp_param_mission"", ""false""]) isEqualTo ""false""], [(getMissionConfigValue [""tsp_param_mission"", ""false""]) isEqualTo ""false""]] call tsp_fnc_action; [this, ""Role""] call tsp_fnc_action;";
 							};
 							id=462;
 							type="B_supplyCrate_F";
