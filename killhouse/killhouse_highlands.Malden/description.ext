@@ -1,20 +1,22 @@
 author = "TheSpeshalPlatoon"; onLoadName = "Killhouse Generator"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
 
+/*
 class CfgFunctions {  //-- Needed for public release
 	class tsp_mission_action {class functions {class init {file = "scripts\action.sqf"; preInit = true};};};
 	class tsp_mission_killhouse {class functions {class init {file = "scripts\killhouse.sqf"; preInit = true};};};
 	class tsp_mission_utility {class functions {class init {file = "scripts\utility.sqf"; preInit = true};};};
 };
+*/
 
 //-- Addon mode needs full path (\tsp_core\)
-//class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
-//#include "\a3\ui_f\hpp\definecommongrids.inc"
-//#include "\tsp_core\scripts\chvd.hpp"
-//#include "\tsp_core\scripts\gui.hpp"
-//#include "\tsp_core\roles.hpp"
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in addon mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
 
-//tsp_param_mission = true;               //-- Run TSP mission scripts
-//tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
 tsp_param_spawn = false;              //-- Show spawn map at all
 tsp_param_spawnStart = false;        //-- Show spawn screen on initial spawn
 tsp_param_spawnScale = 0.07;        //-- Spawn screen scale, smaller is closer

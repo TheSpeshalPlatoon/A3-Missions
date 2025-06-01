@@ -1,0 +1,215 @@
+author = "Goosey"; onLoadName = "Going Hunting."; onLoadMission = "Airborne soldiers tighten the noose around Kaska's main bridge."; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";    //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 360;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 45;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 0.6;    //-- AI spotting
+
+tsp_roles[] = {
+	//-- US Army
+	{"USA - 2nd Infantry Brigade Combat Team (Airborne)", "data\501bct.paa", "west", {
+		{"Ruffneck HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_army_ocp_officer", {"usa_grunt","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "rhsusf_army_ocp_engineer", {"usa_grunt"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Ruffneck 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_army_ocp_squadleader", {"usa_grunt","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_army_ocp_teamleader", {"usa_grunt"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_army_ocp_rifleman", {"usa_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_army_ocp_riflemanat", {"usa_grunt","usa_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Grenadier", "rhsusf_army_ocp_grenadier", {"usa_grunt"}, "iconMan_ca.paa"},
+			{"Autorifleman", "rhsusf_army_ocp_autorifleman", {"usa_grunt","us_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "rhsusf_army_ocp_rifleman_m590", {"usa_grunt"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Ruffneck 2", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_army_ocp_squadleader", {"usa_grunt","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_army_ocp_teamleader", {"usa_grunt"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_army_ocp_rifleman", {"usa_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_army_ocp_riflemanat", {"usa_grunt","usa_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Grenadier", "rhsusf_army_ocp_grenadier", {"usa_grunt"}, "iconMan_ca.paa"},
+			{"Autorifleman", "rhsusf_army_ocp_autorifleman", {"usa_grunt","us_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", "rhsusf_army_ocp_marksman", {"usa_grunt","us_sniper","usa_sniper"}, "iconMan_ca.paa"}
+		}},
+		{"Ruffneck 3 (Weapons)", "markers\nato\b_art.paa", {
+			{"Squad Leader", "rhsusf_army_ocp_squadleader", {"usa_grunt","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_army_ocp_teamleader", {"usa_grunt"}, "iconManLeader_ca.paa"},
+			{"Machine Gunner", "rhsusf_army_ocp_machinegunner", {"usa_grunt","us_autorifle"}, "iconManMG_ca.paa"},
+			{"Ammo Bearer", "rhsusf_army_ocp_machinegunnera", {"usa_grunt","us_autorifle"}, "iconMan_ca.paa"},
+			{"Missile Specialist", "rhsusf_army_ocp_javelin", {"usa_grunt","usa_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Assistant Missile Specialist", "rhsusf_army_ocp_javelin_assistant", {"usa_grunt","usa_missile","us_missile"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"USA - 40th Cavalry Regiment", "data\40cav.paa", "west", {
+		{"Talon 1", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_army_ocp_crewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
+		}}
+	}}
+};
+
+tsp_param_night = 0.3;     tsp_param_time_day = 1;      tsp_param_time_night = 1;
+tsp_param_weather = false;  tsp_param_weatherTime = 20; 
+tsp_param_fog = 0.2;       tsp_param_fogMin = 0;        tsp_param_fogMax = 0.02;
+tsp_param_wind = 1;        tsp_param_windMin = -1;      tsp_param_windMax = 1;
+tsp_param_overcast = 1;    tsp_param_overcastMin = 0;   tsp_param_overcastMax = 1; 
+tsp_param_rain = 0.5;      tsp_param_rainMin = 0;       tsp_param_rainMax = 1;
+tsp_param_lightning = 1;   tsp_param_lightningMin = 0;  tsp_param_lightningMax = 1;
+tsp_param_wave = 0.5;      tsp_param_waveMin = 0;       tsp_param_waveMax = 1;
+
+class CfgDebriefing
+{  
+
+	class End1
+	{
+		title = "Mission Complete";
+		subtitle = "Job well done!";
+		description = "Remaining forces have been annihilated, now all that's left is their main airbase.";
+		pictureBackground = "end.jpg";
+		picture = "b_inf";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
+
+class CfgORBAT {
+//-- MAP
+    class usarpac {
+        id = 1; 
+        idType = 0; 
+        side = "West"; 
+        text = "US Army Pacific"; 
+        textShort = "USARPAC"; 
+		insignia = "data\usarpac.paa";
+        description = "The United States Army Pacific (USARPAC) is an Army Service Component Command which serves as the Army service component for United States Indo-Pacific Command."; 
+        type = "Infantry"; 
+        size = "Corps"; 
+        assets[] = {}; 
+        subordinates[] = {"usarj","501bct"}; 
+        commander = "Paul J. LaCamera"; 
+        commanderRank = "General"; 
+    };
+    class afrf {
+        id = 1; 
+        idType = 0; 
+        side = "East"; 
+        text = "Battlegroup Полый"; 
+        textShort = "Battlegroup Полый"; 
+        description = "The battlegroup responsible for invading the island. Approximate combined units: 6 Battalion Tactical Groups. Total force strength unknown, total estimated: 3000+"; 
+        type = "Infantry"; 
+        size = "Brigade"; 
+        assets[] = {{"rhs_t72bd_tv",6},{"rhs_btr80a_vdv",4},{"rhs_btr80_vdv",4},{"rhs_bmd2",4},{"RHS_Ka52_vvs",3},{"RHS_Mi8MTV3_heavy_vvs",8},{"RHS_Mi24V_vvs",4},}; 
+        subordinates[] = {}; 
+        commander = "Malyutka Barkov 'Red'"; 
+        commanderRank = "General"; 
+    };
+    class usmc {
+        id = 1; 
+        idType = 0; 
+        side = "West"; 
+        text = "3rd Marine Expeditionary Force"; 
+        textShort = "III-MEF"; 
+		insignia = "data\3mef.paa";
+        description = "III MEF is the nucleus of a joint and coalition Stand-In Force within the First Island Chain. In competition, III MEF assures and expands access for the joint force across the Indo-Pacific. In crisis, it provides in-place response forces to secure allies and partners while deterring adversary aggression. In conflict, III MEF fights from advanced naval bases as part of a naval expeditionary force and enables Joint Force objectives in the Indo-Pacific."; 
+        type = "Infantry"; 
+        size = "Corps"; 
+        assets[] = {}; 
+        subordinates[] = {}; 
+        commander = "H. Stacy Clardy"; 
+        commanderRank = "General"; 
+    };
+		class usarj: usarpac {
+            text = "US Army Japan"; 
+            textShort = "USARJ"; 
+			insignia = "data\usarj.paa";
+            description = "United States Army, Japan (USARJ) is a Major Command of the United States Army. It operates port facilities and a series of logistics installations throughout Honshū and Okinawa. USARJ participates actively with the Japan Ground Self-Defense Force in bilateral training exercises and the development of bilateral plans. It commands and supports United States Army assigned units, attached units, and augmentation forces and employs these forces in support of the commander. USARJ maintains and strengthens the credibility of deterrent power in the Pacific through maintenance of defense facilities, war reserves and operational project stocks. USARJ is headquartered at Camp Zama.";
+            type = "Infantry";  
+            size = "Division"; 
+            assets[] = {}; 
+            subordinates[] = {}; 
+            commander = "David B. Womack"; 
+            commanderRank = "General"; 
+        };
+            class 501bct: usarpac {
+                text = "501st Infantry Regiment"; 
+                textShort = "501st Infantry Regiment"; 
+				insignia = "data\501bct.paa";
+                description = "The 501st Infantry Regiment, is an airborne forces regiment of the United States Army with a long history, having served in World War II and the Vietnam War, both as part of the 101st Airborne Division, as well as the War in Afghanistan. It is the first airborne unit by designation in the United States Armed Forces. Its 1st Battalion is assigned to the 2nd Infantry Brigade Combat Team (Airborne), 11th Airborne Division, located at Fort Richardson, Alaska.";
+                type = "Infantry";  
+                size = "Regiment"; 
+                assets[] = {{"rhsusf_m1240a1_m2_usarmy_d",2},{"rhsusf_M1078A1P2_D_fmtv_usarmy",5}}; 
+                subordinates[] = {"40cav"}; 
+                commander = "Jonathan G. Peterson"; 
+                commanderRank = "Colonel"; 
+            };     
+            class 40cav: usarpac {   
+                text = "40th Cavalry Regiment"; 
+                textShort = "40th Cavalry Regiment"; 
+				insignia = "data\40cav.paa";
+                description = "The 40th Armor Regiment was a regiment of the Armored Branch of the United States Army until the inactivation of its last element, its 1st Battalion, in 1996. It was redesignated and reactivated in 2005 as the 40th Cavalry Regiment and assigned to the 4th Brigade (Airborne), 25th Infantry Division and In 2022 it became part oof the 2nd Infantry Brigade Combat Team (Airborne), 11th Airborne Division."; 
+                type = "Cavalry"; 
+                size = "Regiment"; 
+                assets[] = {{"rhsusf_stryker_m1126_m2_d",4},{"rhsusf_m1a2sep2d_usarmy",4},{"rhsusf_M1078A1P2_D_fmtv_usarmy",6}}; 
+                subordinates[] = {}; 
+                commander = "Craig J. Nelson"; 
+                commanderRank = "Colonel"; 
+            }; 
+};
