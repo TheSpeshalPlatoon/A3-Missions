@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=341;
+		nextID=488;
 	};
 	class MarkerIDProvider
 	{
@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={2879.0334,7.8897409,5959.2051};
-		dir[]={-0.37373951,-0.62018687,-0.68985838};
-		up[]={-0.29541981,0.78447253,-0.5452956};
-		aside[]={-0.87935585,-2.9524526e-06,0.47639355};
+		pos[]={2881.6172,10.746725,6068.9868};
+		dir[]={-0.83427787,-0.54852271,0.055731565};
+		up[]={-0.54730344,0.83613533,0.036561172};
+		aside[]={0.066653818,-2.6571797e-08,0.99777716};
 	};
 };
 binarizationWanted=0;
@@ -262,14 +262,14 @@ class Mission
 		year=2035;
 		month=7;
 		day=6;
-		hour=0;
-		minute=4;
+		hour=5;
+		minute=-20;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
 	};
 	class Entities
 	{
-		items=35;
+		items=30;
 		class Item0
 		{
 			dataType="Group";
@@ -1901,372 +1901,6 @@ class Mission
 		};
 		class Item23
 		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2868.7898,2.6808364,6072.2397};
-						angles[]={0,3.7164168,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="OPTRE_BR55";
-								firemode="OPTRE_BR55:Single";
-								class primaryMuzzleMag
-								{
-									name="OPTRE_36Rnd_95x40_Mag";
-									ammoLeft=36;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Rook40_F";
-								class primaryMuzzleMag
-								{
-									name="16Rnd_9x21_Mag";
-									ammoLeft=17;
-								};
-							};
-							class uniform
-							{
-								typeName="U_O_CombatUniform_ocamo";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_HarnessOGL_brn";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="16Rnd_9x21_Mag";
-										count=2;
-										ammoLeft=17;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellRed";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="Chemlight_red";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item6
-									{
-										name="OPTRE_36Rnd_95x40_Mag";
-										count=6;
-										ammoLeft=36;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							hmd="NVGoggles_OPFOR";
-							headgear="H_HelmetLeaderO_ocamo";
-						};
-					};
-					id=311;
-					type="O_Soldier_GL_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male03PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=310;
-		};
-		class Item24
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2871.5999,2.7530434,6070.4229};
-						angles[]={0,3.7164168,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						isPlayer=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="comp21_spiker";
-								firemode="comp21_spiker:FullAuto";
-								class primaryMuzzleMag
-								{
-									name="comp21_spiker_mag";
-									ammoLeft=40;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Rook40_F";
-								class primaryMuzzleMag
-								{
-									name="16Rnd_9x21_Mag";
-									ammoLeft=17;
-								};
-							};
-							class uniform
-							{
-								typeName="U_O_CombatUniform_ocamo";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_HarnessOGL_brn";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="16Rnd_9x21_Mag";
-										count=2;
-										ammoLeft=17;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellRed";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="Chemlight_red";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item6
-									{
-										name="comp21_spiker_mag";
-										count=6;
-										ammoLeft=40;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							hmd="NVGoggles_OPFOR";
-							headgear="H_HelmetLeaderO_ocamo";
-						};
-					};
-					id=315;
-					type="O_Soldier_GL_F";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male03PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=314;
-		};
-		class Item25
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2867.9656,2.6698816,6072.5005};
-						angles[]={0,3.7164168,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-					};
-					id=300;
-					type="O_Soldier_GL_F";
-					atlOffset=-2.3841858e-07;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male03PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=301;
-			atlOffset=-2.3841858e-07;
-		};
-		class Item26
-		{
 			dataType="Marker";
 			position[]={2866.7561,2.6359999,6077.9229};
 			name="respawn_east";
@@ -2274,7 +1908,7 @@ class Mission
 			id=318;
 			atlOffset=-0.00024938583;
 		};
-		class Item27
+		class Item24
 		{
 			dataType="Group";
 			side="East";
@@ -2381,7 +2015,7 @@ class Mission
 			};
 			id=323;
 		};
-		class Item28
+		class Item25
 		{
 			dataType="Group";
 			side="East";
@@ -2461,7 +2095,7 @@ class Mission
 			};
 			id=325;
 		};
-		class Item29
+		class Item26
 		{
 			dataType="Group";
 			side="East";
@@ -2542,7 +2176,7 @@ class Mission
 			};
 			id=327;
 		};
-		class Item30
+		class Item27
 		{
 			dataType="Group";
 			side="East";
@@ -2623,7 +2257,7 @@ class Mission
 			};
 			id=331;
 		};
-		class Item31
+		class Item28
 		{
 			dataType="Group";
 			side="East";
@@ -2704,7 +2338,7 @@ class Mission
 			};
 			id=333;
 		};
-		class Item32
+		class Item29
 		{
 			dataType="Group";
 			side="East";
@@ -2716,300 +2350,25 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2877.0901,3.4914389,5957.6348};
-						angles[]={0,0.57482386,0};
+						position[]={2873.5967,2.817136,6068.3291};
+						angles[]={0,3.3991292,-0};
 					};
 					side="East";
 					flags=7;
 					class Attributes
 					{
-						init="THIS DISABLEAI ""MOVE""";
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="comp21_spiker";
-								firemode="comp21_spiker:FullAuto";
-								class primaryMuzzleMag
-								{
-									name="comp21_spiker_mag";
-									ammoLeft=40;
-								};
-							};
-							class vest
-							{
-								typeName="comp21_brute_bandolier_banished";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="comp21_spiker_mag";
-										count=5;
-										ammoLeft=40;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							hmd="comp21_brute_neckguard";
-						};
+						isPlayer=1;
 					};
-					id=336;
-					type="comp21_brute";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.02;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="face";
-							expression="_this setface _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Default";
-								};
-							};
-						};
-						nAttributes=3;
-					};
+					id=486;
+					type="O_Soldier_A_F";
+					atlOffset=6.4373016e-06;
 				};
 			};
 			class Attributes
 			{
 			};
-			id=335;
-		};
-		class Item33
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2878.7253,3.4914389,5956.3018};
-						angles[]={0,0.57482386,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="THIS DISABLEAI ""MOVE""";
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="comp21_spiker";
-								firemode="comp21_spiker:FullAuto";
-								class primaryMuzzleMag
-								{
-									name="comp21_spiker_mag";
-									ammoLeft=40;
-								};
-							};
-							class uniform
-							{
-								typeName="comp21_brute_minor_shoulder_grey";
-								isBackpack=0;
-							};
-							class vest
-							{
-								typeName="comp21_brute_bandolier";
-								isBackpack=0;
-							};
-							class backpack
-							{
-								typeName="comp21_brute_anklets_bare";
-								isBackpack=1;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							hmd="comp21_brute_neckguard";
-							headgear="comp21_brute_minor_helmet2_grey";
-						};
-					};
-					id=338;
-					type="comp21_brute";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.02;
-								};
-							};
-						};
-						class Attribute2
-						{
-							property="face";
-							expression="_this setface _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="comp21_brute_torgar";
-								};
-							};
-						};
-						nAttributes=3;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=337;
-		};
-		class Item34
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2877.7366,3.4914389,5956.4678};
-						angles[]={0,0.57482386,0};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						init="THIS DISABLEAI ""MOVE""";
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="comp21_bruteshot";
-								firemode="comp21_bruteshot:FullAuto";
-								class primaryMuzzleMag
-								{
-									name="comp21_bruteshot_mag";
-									ammoLeft=6;
-								};
-							};
-							class uniform
-							{
-								typeName="comp21_brute_minor_shoulder_blue";
-								isBackpack=0;
-							};
-							class vest
-							{
-								typeName="comp21_brute_bandolier_covenant";
-								isBackpack=0;
-							};
-							class backpack
-							{
-								typeName="comp21_brute_anklets_blue";
-								isBackpack=1;
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-							hmd="comp21_brute_neckguard";
-							headgear="comp21_brute_minor_helmet1_blue";
-						};
-					};
-					id=340;
-					type="comp21_brute";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01PER";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1.02;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=339;
+			id=487;
+			atlOffset=6.4373016e-06;
 		};
 	};
 };

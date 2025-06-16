@@ -103,7 +103,7 @@ tsp_fnc_killhouse = {
     //-- Fill some of the holes with doors
     {if (random 1 < _doorChance) then {sleep _sleep;
         _opening = _x;
-        _doorType = selectRandom (if (count (_doors select {_x distance2D _opening < _wallLength}) == 0) then {_doorTypes} else {_openDoorTypes});
+        _doorType = selectRandom (if (count (_doors select {_x distance2D _opening < (_wallLength+1)}) == 0) then {_doorTypes} else {_openDoorTypes});
         _door = createVehicle [_doorType, [0,0,0], [], 0, "CAN_COLLIDE"]; _door attachTo [_opening, [0,0,0]]; detach _door; _door allowDamage false;
         if (random 1 < _lockChance) then {_door setVariable ["bis_disabled_Door_1", 1, true]};
         if (random 1 > 0.5) then {_door setDir (getDir _door + 180)};
@@ -219,13 +219,13 @@ tsp_fnc_killhouse_menu = {
 	_civilians ctrlSetFont "PuristaLight"; _civilians ctrlSetText "CIVILIANS:"; _civilians ctrlCommit 0;
 	_civilians = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = 0.00; _civilians ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
 	_civilians ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_civilians = _newValue}];
-	_civilians sliderSetRange [0, 0.1]; _civilians sliderSetPosition tsp_killhouse_civilians; _civilians ctrlCommit 0;
+	_civilians sliderSetRange [0, 0.5]; _civilians sliderSetPosition tsp_killhouse_civilians; _civilians ctrlCommit 0;
 
 	_hostages = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = -0.05; _hostages ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
 	_hostages ctrlSetFont "PuristaLight"; _hostages ctrlSetText "HOSTAGES:"; _hostages ctrlCommit 0;
 	_hostages = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = -0.10; _hostages ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
 	_hostages ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_hostages = _newValue}];
-	_hostages sliderSetRange [0, 0.1]; _hostages sliderSetPosition tsp_killhouse_hostages; _hostages ctrlCommit 0;
+	_hostages sliderSetRange [0, 0.5]; _hostages sliderSetPosition tsp_killhouse_hostages; _hostages ctrlCommit 0;
 
 	_locks = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = -0.15; _locks ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
 	_locks ctrlSetFont "PuristaLight"; _locks ctrlSetText "LOCKED:"; _locks ctrlCommit 0;
@@ -264,7 +264,7 @@ if (isClass (configFile >> "CfgPatches" >> "CUP_StandaloneTerrains_Core") && isC
 tsp_killhouse_theme = "Altis";  //-- Default selection
 
 tsp_killhouse_enemies = 0.5;
-tsp_killhouse_hostages = 0.01;
+tsp_killhouse_hostages = 0.05;
 tsp_killhouse_civilians = 0.05;
 tsp_killhouse_furniture = 0.2;
 tsp_killhouse_targets = 0;
@@ -275,17 +275,20 @@ enemy_altis = ["O_G_Soldier_AR_F","O_G_medic_F","O_G_Soldier_GL_F","O_G_Soldier_
 enemy_tanoa = ["I_C_Soldier_Bandit_7_F","I_C_Soldier_Bandit_3_F","I_C_Soldier_Bandit_5_F","I_C_Soldier_Bandit_1_F","I_C_Soldier_Bandit_4_F","I_C_Soldier_Bandit_8_F","I_C_Soldier_Para_7_F","I_C_Soldier_Para_2_F","I_C_Soldier_Para_4_F","I_C_Soldier_Para_1_F"];
 enemy_livonia = ["I_L_Criminal_SG_F","I_L_Criminal_SMG_F","I_L_Hunter_F","I_L_Looter_Rifle_F","I_L_Looter_Pistol_F","I_L_Looter_SG_F","I_L_Looter_SMG_F"];
 enemy_chernarus = ["rhsgref_ins_arifleman_rpk","rhsgref_ins_commander","rhsgref_ins_machinegunner","rhsgref_ins_medic","rhsgref_ins_squadleader","rhsgref_ins_rifleman","rhsgref_ins_rifleman_akm","rhsgref_ins_rifleman_aks74","rhsgref_ins_rifleman_aksu","rhsgref_ins_grenadier","rhsgref_ins_saboteur","rhsgref_ins_engineer"];
-enemy_takistan = if (isClass (configFile >> "CfgPatches" >> "tsp_faction_tkm")) then {
-    ["tsp_tkm_mg42","tsp_tkm_pkm","tsp_tkm_rpk","tsp_tkm_doctor","tsp_tkm_ak74","tsp_tkm_akm","tsp_tkm_gp25","tsp_tkm_k98","tsp_tkm_l1a1","tsp_tkm_m1","tsp_tkm_m16","tsp_tkm_mosin","tsp_tkm_sapper","tsp_tkm_warlord"]
-} else {
-    ["UK3CB_TKM_O_AR","UK3CB_TKM_O_GL","UK3CB_TKM_O_LMG","UK3CB_TKM_O_MG","UK3CB_TKM_O_MG_ASST","UK3CB_TKM_O_MK","UK3CB_TKM_O_MD","UK3CB_TKM_O_RIF_3","UK3CB_TKM_O_RIF_1","UK3CB_TKM_O_RIF_2","UK3CB_TKM_O_WAR"]
-};
+enemy_takistan = ["UK3CB_TKM_O_AR","UK3CB_TKM_O_GL","UK3CB_TKM_O_LMG","UK3CB_TKM_O_MG","UK3CB_TKM_O_MG_ASST","UK3CB_TKM_O_MK","UK3CB_TKM_O_MD","UK3CB_TKM_O_RIF_3","UK3CB_TKM_O_RIF_1","UK3CB_TKM_O_RIF_2","UK3CB_TKM_O_WAR"];
+enemy_takistan_tsp = ["tsp_tkm_mg42","tsp_tkm_pkm","tsp_tkm_rpk","tsp_tkm_doctor","tsp_tkm_ak74","tsp_tkm_akm","tsp_tkm_gp25","tsp_tkm_k98","tsp_tkm_l1a1","tsp_tkm_m1","tsp_tkm_m16","tsp_tkm_mosin","tsp_tkm_sapper","tsp_tkm_warlord"];
 
 civilian_altis = ["C_man_polo_1_F","C_man_polo_2_F","C_man_polo_3_F","C_man_polo_4_F","C_man_polo_5_F","C_man_polo_6_F","C_Man_Fisherman_01_F","C_man_p_fugitive_F"];
 civilian_tanoa = ["C_Man_casual_1_F_tanoan","C_Man_casual_2_F_tanoan","C_Man_casual_3_F_tanoan","C_man_sport_1_F_tanoan","C_man_sport_2_F_tanoan","C_man_sport_3_F_tanoan","C_Man_casual_4_F_tanoan","C_Man_casual_5_F_tanoan","C_Man_casual_6_F_tanoan"];
 civilian_livonia = ["C_Man_1_enoch_F","C_Man_2_enoch_F","C_Man_3_enoch_F","C_Man_4_enoch_F","C_Man_5_enoch_F","C_Man_6_enoch_F","C_Farmer_01_enoch_F"];
-civilian_chernarus = ["tsp_civilian_citizen","tsp_civilian_farmwife","tsp_civilian_hooker","tsp_civilian_housewife","tsp_civilian_madam","tsp_civilian_pilot","tsp_civilian_priest","tsp_civilian_profiteer","tsp_civilian_rocker","tsp_civilian_secretary","tsp_civilian_sportswoman","tsp_civilian_teacher","tsp_civilian_woodlander","tsp_civilian_workwoman","tsp_civilian_worker"];
-civilian_takistan = ["tsp_civilian_tak1","tsp_civilian_tak2","tsp_civilian_tak3","tsp_civilian_tak6","tsp_civilian_takwoman2","tsp_civilian_takwoman1","tsp_civilian_takwoman3"];
+civilian_chernarus = ["C_Man_1_enoch_F","C_Man_2_enoch_F","C_Man_3_enoch_F","C_Man_4_enoch_F","C_Man_5_enoch_F","C_Man_6_enoch_F","C_Farmer_01_enoch_F"];
+civilian_chernarus_tsp = ["tsp_civilian_citizen","tsp_civilian_farmwife","tsp_civilian_hooker","tsp_civilian_housewife","tsp_civilian_madam","tsp_civilian_pilot","tsp_civilian_priest","tsp_civilian_profiteer","tsp_civilian_rocker","tsp_civilian_secretary","tsp_civilian_sportswoman","tsp_civilian_teacher","tsp_civilian_woodlander","tsp_civilian_workwoman","tsp_civilian_worker"];
+civilian_chernarus_3cb = ["UK3CB_CHC_C_ACT","UK3CB_CHC_C_CIT","UK3CB_CHC_C_COACH","UK3CB_CHC_C_DOC","UK3CB_CHC_C_HIKER","UK3CB_CHC_C_LABOUR","UK3CB_CHC_C_PILOT","UK3CB_CHC_C_PRIEST","UK3CB_CHC_C_PROF","UK3CB_CHC_C_VILL","UK3CB_CHC_C_WOOD","UK3CB_CHC_C_WORKER"];
+civilian_takistan = ["UK3CB_TKC_C_CIV","UK3CB_TKC_C_DOC","UK3CB_TKC_C_PILOT","UK3CB_TKC_C_SPOT","UK3CB_TKC_C_WORKER"];
+civilian_takistan_tsp = ["tsp_civilian_tak1","tsp_civilian_tak2","tsp_civilian_tak3","tsp_civilian_tak6","tsp_civilian_takwoman2","tsp_civilian_takwoman1","tsp_civilian_takwoman3"];
+
+if (isClass (configFile >> "CfgPatches" >> "UK3CB_Factions_Common")) then {civilian_chernarus = civilian_chernarus_3cb};
+if (isClass (configFile >> "CfgPatches" >> "tsp_faction_tkm")) then {civilian_chernarus = civilian_chernarus_tsp; civilian_takistan = civilian_takistan_tsp; enemy_takistan = enemy_takistan_tsp};
 
 furniture_altis = [
     ["Land_ArmChair_01_F",2,2,0,-0.1,0,false,false,true,true,0],  //-- Class // max, radius, rotation, offset, vertical // wall, open, corner, cornerDir, randomDir

@@ -1,0 +1,103 @@
+author = "Goosey"; onLoadName = "Repo Man"; onLoadMission = "A joint CIA/JSOC Task Force recover a stolen prototype aircraft."; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.26;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";   //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 30;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	{"CIA/JSOC - Task Force Delilah", "data\ciajsoc.paa", "west", {
+		{"Empire", "markers\nato\b_hq.paa", {
+			{"Element Coordinator", "tsp_ion_teamlead", {"soc_delta","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_ion_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_ion_engineer", {"soc_delta"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Lancer (CIA)", "markers\nato\b_inf.paa", {
+			{"Element Leader", "tsp_ion_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_ion_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Agent", "tsp_ion_contractor", {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Specialist (LAT)", "tsp_ion_contractor", {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_ion_autorifleman", {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_ion_breacher", {"soc_delta"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Caster (SFOD-D)", "markers\nato\b_inf.paa", {
+			{"Element Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_army_sf_operator", {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Operator (HAT)", "tsp_army_sf_operatorat", {"soc_delta","usa_missile","soc_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Ammo Bearer", "tsp_army_sf_operator", {"soc_delta"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Archer (Snipers)", "markers\nato\b_art.paa", {
+			{"Team Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Agent", "tsp_ion_contractor", {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Marksman", "tsp_army_sf_marksman", {"soc_delta","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"USA - 160th SOAR", "\tsp_core\data\insignia\soar.paa", "west", {
+		{"Phantom 1 (Commanche Pilot)", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "rhsusf_army_ocp_helipilot", {"soc_special","us_heli","us_leader"}, "iconManOfficer_ca.paa"}
+		}}
+	}}
+};
+
+//-- Environment
+tsp_param_brightness = 1.1;
+tsp_param_time_day = 1; tsp_param_time_night = 1;
+tsp_param_weather = false;
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;

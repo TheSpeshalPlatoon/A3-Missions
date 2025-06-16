@@ -1,0 +1,300 @@
+author = "Goosey"; onLoadName = "Resistance Moderate,"; onLoadMission = "Marines from the 3rd Marine Division Advance And Secure the first island of Kaska."; class Header {gameType = ZEUS}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";    //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 360;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 45;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	//-- USMC
+	{"USMC - 3rd Marine Division", "data\3mar.paa", "west", {
+		{"Dagger HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_usmc_marpat_wd_fso", {"usmc_grunt","us_leader"}, "iconManCommander_ca.paa"},
+			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "rhsusf_usmc_marpat_wd_engineer", {"usmc_grunt"}, "iconManEngineer_ca.paa"},
+			{"Explosive Specialist", "rhsusf_usmc_marpat_wd_explosives", {"usmc_grunt"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Dagger 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_marpat_wd_squadleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_usmc_marpat_wd_rifleman", {"usmc_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_usmc_marpat_wd_riflemanat", {"usmc_grunt","usmc_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Grenadier", "rhsusf_usmc_marpat_wd_grenadier", {"usmc_grunt","usmc_grenadier"}, "iconMan_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_marpat_wd_autorifleman_m249", {"usmc_grunt"}, "iconManMG_ca.paa"},
+			{"Ammo Bearer", "rhsusf_usmc_marpat_wd_rifleman_m4", {"usmc_grunt"}, "iconMan_ca.paa"}
+		}},
+		{"Dagger 2", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_marpat_wd_squadleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_usmc_marpat_wd_rifleman", {"usmc_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_usmc_marpat_wd_rifleman_law", {"usmc_grunt","usmc_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Grenadier", "rhsusf_usmc_marpat_wd_grenadier", {"usmc_grunt","usmc_grenadier"}, "iconMan_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_marpat_wd_autorifleman", {"usmc_grunt","us_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", "rhsusf_usmc_marpat_wd_marksman", {"usmc_grunt","us_sniper","usmc_sniper"}, "iconMan_ca.paa"}
+		}},
+		{"Dagger 3 (CAAT)", "markers\nato\b_art.paa", {
+			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_marpat_wd_machinegunner", {"usmc_grunt"}, "iconManMG_ca.paa"},
+			{"Ammo Bearer", "rhsusf_usmc_marpat_wd_machinegunner_ass", {"usmc_grunt"}, "iconMan_ca.paa"},
+			{"Anti Tank", "rhsusf_usmc_marpat_wd_javelin", {"usmc_grunt","usmc_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"AT Assistant", "rhsusf_usmc_marpat_wd_javelin_assistant", {"usmc_grunt","usmc_missile","us_missile"}, "iconMan_ca.paa"}
+		}},
+	}},
+	{"USMC - III MEF", "data\3mef.paa", "west", {
+		{"Swordmaster", "markers\nato\b_hq.paa", {
+			{"Battalion Commander", "rhsusf_usmc_marpat_wd_officer", {"usmc_grunt","us_leader"}, "iconManLeader_ca.paa"}
+		}},
+		{"Moryo 1", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"}
+		}},
+		{"Moryo 2", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"}
+		}}
+	}}
+};
+
+tsp_param_night = 0.3;     tsp_param_time_day = 1;      tsp_param_time_night = 1;
+tsp_param_weather = false;  tsp_param_weatherTime = 20; 
+tsp_param_fog = 0.2;       tsp_param_fogMin = 0;        tsp_param_fogMax = 0.02;
+tsp_param_wind = 1;        tsp_param_windMin = -1;      tsp_param_windMax = 1;
+tsp_param_overcast = 1;    tsp_param_overcastMin = 0;   tsp_param_overcastMax = 1; 
+tsp_param_rain = 0.5;      tsp_param_rainMin = 0;       tsp_param_rainMax = 1;
+tsp_param_lightning = 1;   tsp_param_lightningMin = 0;  tsp_param_lightningMax = 1;
+tsp_param_wave = 0.5;      tsp_param_waveMin = 0;       tsp_param_waveMax = 1;
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
+
+class CfgORBAT {
+//-- MAP
+    class usarpac {
+        id = 1; 
+        idType = 0; 
+        side = "West"; 
+        text = "US Army Pacific"; 
+        textShort = "USARPAC"; 
+		insignia = "\A3\Ui_f\data\Map\Markers\Flags\usa_ca.paa";
+        description = "The United States Army Pacific (USARPAC) is an Army Service Component Command which serves as the Army service component for United States Indo-Pacific Command."; 
+        type = "Infantry"; 
+        size = "Corps"; 
+        assets[] = {{"rhsusf_M1078A1P2_WD_fmtv_usarmy",5},{"rhsusf_stryker_m1126_m2_wd",5},{"rhsusf_m1a2sep2wd_usarmy",3},{"RHS_AH64D_wd",4},{"RHS_ch_47F",4}}; 
+        subordinates[] = {}; 
+        commander = "Paul J. LaCamera"; 
+        commanderRank = "General"; 
+    };
+    class afrf {
+        id = 1; 
+        idType = 0; 
+        side = "East"; 
+        text = "Battlegroup Полый"; 
+        textShort = "Battlegroup Полый"; 
+		insignia = "";
+        description = "The battlegroup responsible for invading the island. Approximate combined units: 6 Battalion Tactical Groups. Total force strength unknown, total estimated: 3000+"; 
+        type = "Infantry"; 
+        size = "Brigade"; 
+        assets[] = {{"rhs_t72bd_tv",6},{"rhs_btr80a_vdv",4},{"rhs_btr80_vdv",4},{"rhs_bmd2",4},{"RHS_Ka52_vvs",3},{"RHS_Mi8MTV3_heavy_vvs",8},{"RHS_Mi24V_vvs",4},}; 
+        subordinates[] = {}; 
+        commander = "Malyutka Barkov 'Red'"; 
+        commanderRank = "General"; 
+    };
+
+//-- USMC
+    class usmc {
+        id = 1; 
+        idType = 0; 
+        side = "West"; 
+        text = "3rd Marine Expeditionary Force"; 
+        textShort = "III-MEF"; 
+		insignia = "data\3mef.paa";
+        description = "III MEF is the nucleus of a joint and coalition Stand-In Force within the First Island Chain. In competition, III MEF assures and expands access for the joint force across the Indo-Pacific. In crisis, it provides in-place response forces to secure allies and partners while deterring adversary aggression. In conflict, III MEF fights from advanced naval bases as part of a naval expeditionary force and enables Joint Force objectives in the Indo-Pacific."; 
+        type = "Infantry"; 
+        size = "Corps"; 
+        assets[] = {}; 
+        subordinates[] = {"3mar","3mlr","1maw"}; 
+        commander = "H. Stacy Clardy"; 
+        commanderRank = "General"; 
+    };
+        class 3mar: usmc {
+            text = "3rd Marine Division"; 
+            textShort = "3rd MARDIV"; 
+			insignia = "data\3mar.paa";
+            description = "3rd Marine Division operates as a Stand-In Force in the first island chain to secure, seize, or defend key maritime terrain in order to deny and disrupt adversary actions in support of the Fleet, the Joint Force, and partnered and allied forces. 3rd Marine Division has five major subordinate elements: 3rd Marine Littoral Regiment based in Hawaii and 12th Marine Regiment, 4th Marine Regiment, 3rd Reconnaissance Battalion, and Headquarters Battalion based in Okinawa, Japan.";
+            type = "Infantry";  
+            size = "Division"; 
+            assets[] = {}; 
+            subordinates[] = {"1battalion","2battalion","3recon"}; 
+            commander = "Christian F. Wortman"; 
+            commanderRank = "General"; 
+        };
+            class 1battalion: usmc {
+                text = "1st Battalion 3rd Marines"; 
+                textShort = "1/3 Marines"; 
+				insignia = "data\3mar.paa";
+                description = "The main spearheading force of III-MEF during the Kaska Campaign, marines can gain the upper hand in small unit action using a thick, sturdy, and well rounded squad.";
+                type = "Infantry";  
+                size = "Battalion"; 
+                assets[] = {{"UK3CB_B_AAV_US_WDL",4},{"UK3CB_B_MTVR_Closed_USMC_WDL",5}}; 
+                subordinates[] = {}; 
+                commander = "Avery Fiya"; 
+                commanderRank = "Colonel"; 
+            };     
+            class 2battalion: usmc {   
+                text = "2nd Battalion 3rd Marines"; 
+                textShort = "2/3 Marines"; 
+				insignia = "data\3mar.paa";
+                description = "2nd Battalion is reinforced with a tank platoon following a temporary reactivation of the 3rd Tank Battalion for this campaign, they will be the ones carrying the bigger guns for the division."; 
+                type = "MechanizedInfantry"; 
+                size = "Battalion"; 
+                assets[] = {{"UK3CB_B_AAV_US_WDL",4},{"rhsusf_m1a1fep_wd",4},{"UK3CB_B_MTVR_Closed_USMC_WDL",6}}; 
+                subordinates[] = {}; 
+                commander = "Owen Alvarez"; 
+                commanderRank = "Colonel"; 
+            }; 
+        class 3mlr: usmc {
+            text = "3rd Marine Littoral Regiment"; 
+            textShort = "3rd MLR"; 
+            description = "3rd Marine Littoral Regiment was activated on 3 March 2022, on Marine Corps Base Hawaii. The 3rd MLR was redesignated from 3rd Marine Regiment and inherits the lineage of that storied regiment. The Marine Littoral Regiment, as part of the Stand-in-Force, disrupts the adversary in a contested littoral environment through reconnaissance, counter-reconnaissance, and sea denial operations in order to support the maritime campaign..";
+            type = "Infantry";  
+            size = "Regiment"; 
+            assets[] = {{"rhsusf_M142_usmc_WD",2},{"rhsgref_hidf_rhib",4},{"rhsusf_mrzr4_d",4}}; 
+            subordinates[] = {}; 
+            commander = "John G. Lehane"; 
+            commanderRank = "Colonel"; 
+        };          
+        class 1maw: usmc {
+            text = "1st MAW"; 
+            textShort = "1st MAW"; 
+            description = "As the Aviation Combat Element of III-MEF, provides combat ready, task organized forces capable of conducting aviation operations across all six functions of Marine Aviation in naval and expeditionary environments, and commands and controls aviation forces through the Tactical Air Command Center in order to contribute to the accomplishment of our Nation's security objectives as required by standing operational plans in the USINDOPACOM AOR, engagement operations in support of Marine Forces Pacific, overseas contingency operations, and other operations as directed.";
+            type = "Helicopter";  
+            size = "Squadron"; 
+            assets[] = {}; 
+            subordinates[] = {"mag12","mag24","mag36","macg18"}; 
+            commander = "Jeremiah Watson"; 
+            commanderRank = "Major"; 
+        };
+            class mag12: usmc {
+                text = "Marine Aircraft Group 12"; 
+                textShort = "MAG-12"; 
+                description = "Marine Aircraft Group 12 (MAG-12) is an active air group of the United States Marine Corps, tasked with providing fighter and assault support aircraft. It is currently part of the 1st Marine Aircraft Wing (1st MAW), itself an integral part of the III Marine Expeditionary Force, and based at MCAS Iwakuni in Japan."; 
+                type = "Fighter"; 
+                size = "Squad"; 
+                assets[] = {{"JS_JC_FA18E",3},{"JS_JC_FA18F",2},{"RHS_AH1Z_wd",4}}; 
+                subordinates[] = {}; 
+                commander = "Edward Hawkins";
+                commanderRank = "Captain"; 
+            };
+            class mag24: usmc {
+                text = "Marine Aircraft Group 24"; 
+                textShort = "MAG-24"; 
+                description = "Marine Aircraft Group 24 (MAG-24) is a United States Marine Corps aviation unit based at Marine Corps Air Station Kaneohe Bay. MAG-24 is subordinate to the 1st Marine Aircraft Wing and the III Marine Expeditionary Force (III MEF)."; 
+                type = "Helicopter"; 
+                size = "Squad"; 
+                assets[] = {{"RHS_UH1Y",4},{"rhsusf_CH53E_USMC",2},{"ttt_ch46d",4}}; 
+                subordinates[] = {}; 
+                commander = "Andrew Paul";
+                commanderRank = "Captain"; 
+            };
+            class mag36: usmc {
+                text = "Marine Aircraft Group 36"; 
+                textShort = "MAG-36"; 
+                description = "Marine Aircraft Group 36 (MAG-36) is an active air group of the United States Marine Corps, tasked with providing assault support aircraft. It is currently part of the 1st Marine Aircraft Wing (1st MAW), itself an integral part of the III Marine Expeditionary Force, and based at Marine Corps Air Station Futenma in Okinawa, Japan."; 
+                type = "CombatAviation"; 
+                size = "Squad"; 
+                assets[] = {{"RHS_AH1Z_wd",2},{"RHS_UH1Y",4}}; 
+                subordinates[] = {}; 
+                commander = "Jack Doe";
+                commanderRank = "Captain"; 
+            };  
+            class macg18: usmc {
+                text = "Marine Air Control Group 18"; 
+                textShort = "MACG-18"; 
+                description = "1st Marine Aircraft Wing Command, Control, and Communications support for the prosecution of all six functions of Marine Aviation."; 
+                type = "Support"; 
+                size = "Squad"; 
+                assets[] = {}; 
+                subordinates[] = {}; 
+                commander = "Cooper Reyes";
+                commanderRank = "Captain"; 
+            }; 
+        class 3recon: 3mar {
+            text = "3rd Reconnaissance Battalion"; 
+            textShort = "3rd Recon";
+			insignia = "";
+            description = "2 Platoons from the 3rd Reconnaissance Battalion.";
+            type = Recon;  
+            size = Squad; 
+            assets[] = {{"UK3CB_B_MTVR_Closed_USMC_WDL",4},{"rhsgref_hidf_rhib",2}}; 
+            subordinates[] = {"1lar"}; 
+            commander = "David Kovacs"; 
+            commanderRank = "Major"; 
+        };
+		class 1lar: 3recon {
+            text = "1st Light Armored Reconnaissance"; 
+            textShort = "1st LAR"; 
+			insignia = "";
+            description = "Detachment of 5 LAV-25s from the 1st LAR attached to 3rd Recon.";
+            type = "MotorizedInfantry";  
+            size = "Squad"; 
+            assets[] = {{"UK3CB_B_LAV25_US_WDL",3},{"UK3CB_B_LAV25_HQ_US_WDL",2}}; 
+            subordinates[] = {}; 
+            commander = "Gentiane Kronjaeger"; 
+            commanderRank = "Captain"; 
+        };
+};
