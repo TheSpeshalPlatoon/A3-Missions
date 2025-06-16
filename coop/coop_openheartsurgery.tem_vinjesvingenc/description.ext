@@ -1,0 +1,397 @@
+author = "TheSpeshalPlatoon"; onLoadName = "Open Heart Surgery"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.25;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";   //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 20;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\1recon.paa", "west", {
+		{"Raider HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_usmc_engineer", {"usmc_recon"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Raider 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Raider 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Anti Tank", "tsp_usmc_antitank", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner_fast", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Hitman (Scout Snipers)", "markers\nato\b_art.paa", {
+			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
+		}}
+	}},
+	{"USMC - 3rd Marine Raider Battalion", "\tsp_core\data\insignia\raider.paa", "west", {
+		{"Gambler HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_socom_marsoc_elementleader", {"soc_raider","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "rhsusf_socom_marsoc_cso_mechanic", {"soc_raider"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Gambler 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "rhsusf_socom_marsoc_cso", {"soc_raider"}, "iconManRecon_ca.paa"},
+			{"Operator (M203)", "rhsusf_socom_marsoc_cso_grenadier", {"soc_raider","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_army_sf_autorifleman", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "rhsusf_socom_marsoc_cso_breacher", {"soc_raider"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Gambler 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
+			{"Operator (MK17)", "rhsusf_socom_marsoc_cso_mk17", {"soc_raider"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "rhsusf_socom_marsoc_cso", {"soc_raider","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", "rhsusf_socom_marsoc_sniper", {"soc_raider","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"USMC - 2nd Light Armoured Reconnaissance", "\tsp_core\data\insignia\2lar.paa", "west", {
+		{"Crocodile 1", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"}
+		}},
+		{"Crocodile 2", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","west_leader"}, "iconManLeader_ca.paa"}
+		}}
+	}}
+};
+
+//-- Environment
+tsp_param_brightness = 0.5;
+tsp_param_time_day = 1;     tsp_param_time_night = 1;
+tsp_param_weather = false;  tsp_param_weatherTime = 20; 
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 300;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
+
+class CfgORBAT {
+//1st Inf Brigade 3000
+//    1st Inf Battalion
+//    2nd Inf Battalion x
+//2nd Inf Brigade 3000 (Reserves)
+//    3nd Inf Battalion
+//    4th Inf Battalion
+//1st Cav Brigade 3000
+//    1st Cav Battalion x
+//    2nd Cav Battalion
+//1st Mechanized Regiment 1000 x
+//2nd Mechanized Regiment 1000 x
+//Air Force
+//    1nd Rotorwing Squadron 50
+//    2nd Rotorwing Squadron 50 x
+//    3rd Combat Aircraft Squadron 50 x
+//    4th Recoinassence Aircraft Squadron 50 x
+//1st Commando Battalion 300 x
+
+//-- MAP
+    class monyet {
+        id = 1; 
+        idType = 0; 
+        side = West; 
+        text = Monyet Airfield; 
+        textShort = Monyet Airfield; 
+        description = Military airfield, home of the 4th Recoinassence Aircraft Squadron and the 2nd Rotoring Squadron; 
+        type = Helicopter; 
+        size = Squad; 
+        assets[] = {{RHSGREF_A29B_HIDF,2},{rhsgred_hidf_cessna_o3a,2},{RHS_UH1Y_d,4},{RHS_ch_47F,4}}; 
+        subordinates[] = {1rs,4ras}; 
+        commander = Fetu Umbari; 
+        commanderRank = Major; 
+    };
+    class taskforce {
+        id = 1; 
+        idType = 0; 
+        side = West; 
+        text = Task Force Naga; 
+        textShort = Task Force Naga; 
+        description = This task force was formed and tasked with completing various high-risk, high-priority missions.; 
+        type = HQ; 
+        size = Squad; 
+        assets[] = {{rhsgref_hidf_M998_4dr_halftop,4},{rhsgref_hidf_rhib,2},{rhsgref_hidf_m113a3_m2,2},{RHS_UH1Y_d,2}}; 
+        subordinates[] = {1commando, 1mechregiment, 3caw}; 
+        commander = Wehilani 'Marichka' Green; 
+        commanderRank = Major; 
+    };
+    class syndikat {
+        id = 1; 
+        idType = 0; 
+        side = East; 
+        text = Syndikat; 
+        textShort = Syndikat; 
+        description = A gang turned full-scale insurgency in the Horizon Islands. Approximately a combined 800 units on Pulau Monyet and Pulau Gurun. Total force strength unknown, total estimated: 20000+.; 
+        type = Infantry; 
+        size = Brigade; 
+        assets[] = {{rhsgref_tla_btr60,10},{rhsgref_tla_kraz255b1_cargo_open,12},{rhsgref_tla_kraz255b1_cargo_open,18}}; 
+        subordinates[] = {}; 
+        commander = Atonio Bole, Lucas Umaga, Ruru Babitu; 
+        commanderRank = General; 
+    };
+
+//-- OVERALL
+    class hidf {
+        id = 1; 
+        idType = 0; 
+        side = West; 
+        text = Horizon Islands Defense Force; 
+        textShort = Horizon Islands Defense Force; 
+        description = Defense Force created after the Horizon Islands gained their independence from France. The HIDF is a small force of only 12000 active duty units that consists of mutiple infantry/cavalry battalions, a small air wing along with a commando brigade. The force also has a resevists infantry battalion.; 
+        type = Infantry; 
+        size = Platoon; 
+        assets[] = {}; 
+        subordinates[] = {1infbrigade,2infbrigade,1cavbrigade,1mechregiment,2mechregiment,airforce,1commando}; 
+        commander = Liko Naivalu; 
+        commanderRank = General; 
+    };
+        class 1infbrigade: hidf {
+            text = 1st Infantry Brigade; 
+            textShort = 1st Infantry Brigade; 
+            description = The HIDF's main conventional combat unit.;
+            type = Infantry;  
+            size = Brigade; 
+            assets[] = {}; 
+            subordinates[] = {1infbattalion,2infbattalion}; 
+            commander = Fetu Umbari; 
+            commanderRank = Major; 
+        };
+            class 1infbattalion: hidf {
+                text = 1st Infantry Battalion; 
+                textShort = 1st IB; 
+                description = This unit is not involved with this area of operations.;
+                type = Infantry;  
+                size = Squad; 
+                assets[] = {}; 
+                subordinates[] = {}; 
+                commander = Hie Maraiwai; 
+                commanderRank = Captain; 
+            };     
+            class 2infbattalion: hidf {   
+                text = 2nd Infantry Battalion; 
+                textShort = 2nd IB; 
+                description = 3 Platoons from the 2nd Infantry Brigade were deployed to defend FOB Monyet and Monyet airfield. They are also accompanied 4 M113s from the 2nd Mechanized Brigade; 
+                type = Infantry; 
+                size = Squad; 
+                assets[] = {{rhsgref_hidf_m113a3_m2,4},{rhsgref_hidf_M998_4dr_halftop,8}}; 
+                subordinates[] = {}; 
+                commander = Holokai Lomu; 
+                commanderRank = Captain; 
+            }; 
+        class 2infbrigade: hidf {
+            text = 2nd Infantry Brigade; 
+            textShort = 2nd Infantry Brigade; 
+            description = The HIDF's reservist conventional combat unit.;
+            type = Infantry;  
+            size = Brigade; 
+            assets[] = {}; 
+            subordinates[] = {3infbattalion,4infbattalion}; 
+            commander = Siaki Delai; 
+            commanderRank = Major; 
+        };
+            class 3infbattalion: hidf {
+                text = 3rd Infantry Battalion; 
+                textShort = 3rd IB; 
+                description = This unit is not involved with this area of operations.;
+                type = Infantry;  
+                size = Squad; 
+                assets[] = {}; 
+                subordinates[] = {}; 
+                commander = Kahakuhale Tuikabe; 
+                commanderRank = Captain; 
+            };  
+            class 4infbattalion: hidf {
+                text = 4th Infantry Battalion; 
+                textShort = 4th IB; 
+                description = This unit is not involved with this area of operations.;
+                type = Infantry;  
+                size = Squad; 
+                assets[] = {}; 
+                subordinates[] = {}; 
+                commander = Wehilani Pore; 
+                commanderRank = Captain; 
+            };  
+        class 1cavbrigade: hidf {
+            text = 1st Cavalry Brigade; 
+            textShort = 1st Cavalry Brigade; 
+            description = The HIDF's cavalry combat unit.;
+            type = Cavalry;  
+            size = Brigade; 
+            assets[] = {}; 
+            subordinates[] = {1cavbattalion,2cavbattalion}; 
+            commander = Etera Mara; 
+            commanderRank = Major; 
+        };          
+            class 1cavbattalion: hidf {
+                text = 1st Cavalry Battalion; 
+                textShort = 1st CAV; 
+                description = Garrison of remaining troops from a platoon of the 1st Cavalry Battalion after the initial Syndikat offensive.; 
+                type = Cavalry; 
+                size = Squad; 
+                assets[] = {{rhsgref_hidf_m113a3_m2,2},{rhsgref_hidf_M998_4dr_halftop,4}}; 
+                subordinates[] = {}; 
+                commander = Hoku Naitaku; 
+                commanderRank = Captain; 
+            };   
+            class 2cavbattalion: hidf {
+                text = 2nd Cavalry Battalion; 
+                textShort = 2nd CAV; 
+                description = This unit is not involved with this area of operations.;
+                type = Cavalry;  
+                size = Squad; 
+                assets[] = {}; 
+                subordinates[] = {}; 
+                commander = Wehilani Bari; 
+                commanderRank = Captain; 
+            };  
+        class 1mechregiment: taskforce {
+            text = 1st Mechanized Regiment; 
+            textShort = 1st MECH; 
+            description = Detachment of 2 M113s from the 1st Mechanized Regiment attached to the task force.;
+            type = MotorizedInfantry;  
+            size = Squad; 
+            assets[] = {{rhsgref_hidf_m113a3_m2,2}}; 
+            subordinates[] = {}; 
+            commander = Lagi Veniri; 
+            commanderRank = Captain; 
+        };
+        class 2mechregiment: hidf {
+            text = 2nd Mechanized Regiment; 
+            textShort = 2nd MECH; 
+            description = This unit is not involved with this area of operations.;
+            type = MotorizedInfantry;  
+            size = Squad; 
+            assets[] = {}; 
+            subordinates[] = {}; 
+            commander = Ewe Pore; 
+            commanderRank = Captain; 
+        }; 
+        class airforce: hidf {
+            text = Air Force; 
+            textShort = Air Force; 
+            description = The HIDF's air units.;
+            type = Helicopter;  
+            size = Squad; 
+            assets[] = {}; 
+            subordinates[] = {1rs,2rs,3caw,4ras}; 
+            commander = Hemi Vunibaka; 
+            commanderRank = Major; 
+        };
+            class 1rs: hidf {
+                text = 1st Rotorwing Squadron; 
+                textShort = 1st RWS; 
+                description = This unit is not involved with this area of operations.; 
+                type = Helicopter; 
+                size = Squad; 
+                assets[] = {}; 
+                subordinates[] = {}; 
+                commander = Fale Vunibaka;
+                commanderRank = Captain; 
+            };
+            class 2rs: hidf {
+                text = 2nd Rotorwing Squadron; 
+                textShort = 2nd RWS; 
+                description = Squadron of helicopters based out of Monyet Airfield. Mostly destroyed at this point.; 
+                type = Helicopter; 
+                size = Squad; 
+                assets[] = {{RHS_UH1Y_d,4},{RHS_ch_47F,4}}; 
+                subordinates[] = {}; 
+                commander = Ihaia Waqanitoga;
+                commanderRank = Captain; 
+            };
+            class 3caw: hidf {
+                text = 3rd Combat Aircraft Squadron; 
+                textShort = 3rd CAW; 
+                description = Helicopter squadron attached to the task force.; 
+                type = Helicopter; 
+                size = Squad; 
+                assets[] = {{RHS_UH1Y_d,2}}; 
+                subordinates[] = {}; 
+                commander = Malo Mara;
+                commanderRank = Captain; 
+            };  
+            class 4ras: hidf {
+                text = 4th Recoinassence Aircraft Squadron; 
+                textShort = 4th RAS; 
+                description = Scout aircraft squadron.; 
+                type = Helicopter; 
+                size = Squad; 
+                assets[] = {{RHSGREF_A29B_HIDF,2},{rhsgred_hidf_cessna_o3a,2}}; 
+                subordinates[] = {}; 
+                commander = Fetu Vidini;
+                commanderRank = Captain; 
+            }; 
+        class 1commando: taskforce {
+            text = 1st Commando Battalion; 
+            textShort = 1st Commando; 
+            description = 2 Platoons from the HIDF's 1st Commando Battalion.;
+            type = Infantry;  
+            size = Squad; 
+            assets[] = {{rhsgref_hidf_M998_4dr_halftop,4},{rhsgref_hidf_rhib,2}}; 
+            subordinates[] = {}; 
+            commander = Wehilani 'Marichka' Green; 
+            commanderRank = Major; 
+        };
+};
+
