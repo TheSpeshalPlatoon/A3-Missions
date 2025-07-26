@@ -1,15 +1,15 @@
 if (!isServer) exitWith {};
 
 [
-    west, ["Arty"], "Destroy Artillery Piece", "local milita has 3 artillery guns, we got a rough location on where its hidden.", 
+    west, ["Arty"], "Destroy Artillery Piece", "Local milita has 3 artillery guns, we got a rough location on where its hidden.", 
     "Destroy", objnull, {true}, {!alive task_arty}
 ] spawn tsp_fnc_task;
 [
-    west, ["IED"], "Destroy IED shelter", "The milita is making IED's and we got a bead on where its being produced.", 
+    west, ["IED"], "Destroy IED shelter", "The milita is making IED's and we got a beat on where its being produced.", 
     "Destroy", objnull, {true}, {!alive task_IED}
 ] spawn tsp_fnc_task;
 [
-    west, ["Vehicle_Depo"], "Destroy vehicle depo", "locals in the town, revealed where some of the milita's mobile artillery and ammo trucks.", 
+    west, ["Vehicle_Depo"], "Destroy Vehicle Depot", "locals in the town, revealed where some of the milita's mobile artillery and ammo trucks.", 
     "Destroy", getPos task_vehicledepo, {true}, {!alive task_vehicledepo}
 ] spawn tsp_fnc_task;
 [
@@ -21,7 +21,7 @@ if (!isServer) exitWith {};
     "Destroy", objnull, {true}, {!alive task_ammo1}
 ] spawn tsp_fnc_task;
 [
-    west, ["Construction"], "construction site", "an abandon building project, turned into a nest for the milita", 
+    west, ["Construction"], "Construction Site", "An abandon building project, turned into a nest for the milita.", 
     "Attack", getPos milita_base, {true}, { (count (allUnits select {_x inArea Construct1 && side _x == East}) < 1)}
 ] spawn tsp_fnc_task;
 [
@@ -29,7 +29,7 @@ if (!isServer) exitWith {};
     "Destroy", objnull, {true}, {!alive task_ammo2}
 ] spawn tsp_fnc_task;
 [
-    west, ["officer"], "Capture Sargent", "Possible known location is at the construction site turned nest for the milita", "Meet", objnull, 
+    west, ["officer"], "Capture Sargent", "Possible known location is at the construction site turned nest for the milita.", "Meet", objnull, 
     {true}, {count ([ofi] select {alive _x && !(_x inArea ofi_out)}) > 0}, 
     {count ([ofi] select {alive _x}) == 0}
 ] spawn tsp_fnc_task;
@@ -39,7 +39,7 @@ if (!isServer) exitWith {};
     {count ([hos1,hos2,hos3] select {alive _x}) == 0}
 ] spawn tsp_fnc_task;
 [
-    west, ["officer1"], "Capture Lieutenet", "Possible location is at the sawmill", "Meet", getpos offi, 
+    west, ["officer1"], "Capture Lieutenet", "Possible location is at the sawmill.", "Meet", getpos offi, 
     {true}, {count ([offi] select {alive _x && !(_x inArea lieu_out)}) > 0}, 
     {count ([offi] select {alive _x}) == 0}
 ] spawn tsp_fnc_task;

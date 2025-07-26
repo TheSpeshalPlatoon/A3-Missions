@@ -6,16 +6,20 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=513;
+	mods[]=
+	{
+		"WBK_Zombies_AdvancedEditorSettings"
+	};
 	class ItemIDProvider
 	{
 		nextID=23;
 	};
 	class Camera
 	{
-		pos[]={2568.8303,9.5836163,2214.3472};
-		dir[]={0.64018309,-0.57180434,-0.51303554};
-		up[]={0.44620177,0.82038999,-0.35758105};
-		aside[]={-0.6253556,1.4901161e-08,-0.7803399};
+		pos[]={2567.7285,9.5836163,2215.6794};
+		dir[]={0.46513999,-0.68353802,-0.56251371};
+		up[]={0.43558595,0.72991496,-0.52677292};
+		aside[]={-0.77065629,8.9406967e-08,-0.63725227};
 	};
 };
 binarizationWanted=0;
@@ -23,24 +27,24 @@ sourceName="test_radio";
 addons[]=
 {
 	"A3_Structures_F_Items_Electronics",
+	"tsp_music_radio",
 	"A3_Characters_F",
 	"A3_Weapons_F_Rifles_MX",
-	"ace_realisticnames",
 	"ace_scopes",
 	"ace_ballistics",
 	"A3_Weapons_F_Acc",
-	"ace_laserpointer",
 	"A3_Weapons_F",
-	"ace_smallarms",
+	"tsp_music_acoustic",
 	"A3_Weapons_F_Pistols_P07",
+	"DSA_Spooks",
 	"acre_main",
 	"ace_goggles",
 	"ace_nightvision",
 	"ace_hearing",
 	"A3_Weapons_F_Items",
 	"ace_medical_treatment",
+	"tsp_medical",
 	"ace_attach",
-	"ace_chemlights",
 	"A3_Weapons_F_Mark",
 	"ace_reload",
 	"A3_Weapons_F_Mark_Acc",
@@ -52,7 +56,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=19;
+		items=20;
 		class Item0
 		{
 			className="A3_Structures_F";
@@ -62,124 +66,124 @@ class AddonsMetaData
 		};
 		class Item1
 		{
+			className="tsp_music_radio";
+			name="tsp_music_radio";
+		};
+		class Item2
+		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item2
+		class Item3
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item4
 		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item4
+		class Item5
 		{
 			className="ace_ballistics";
 			name="ACE3 - Ballistics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item5
-		{
-			className="ace_laserpointer";
-			name="ACE3 - Laser Pointer";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
 		class Item6
 		{
-			className="ace_smallarms";
-			name="ACE3 - Small Arms";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
+			className="tsp_music_acoustic";
+			name="tsp_music_acoustic";
 		};
 		class Item7
+		{
+			className="DSA_Spooks";
+			name="Drongos Spooks and Anomalies";
+			author="Drongo";
+		};
+		class Item8
 		{
 			className="acre_main";
 			name="ACRE2 - Main";
 			author="ACRE2Team";
 			url="https://github.com/IDI-Systems/acre2";
 		};
-		class Item8
+		class Item9
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item9
+		class Item10
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item10
+		class Item11
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item11
+		class Item12
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item12
+		class Item13
+		{
+			className="tsp_medical";
+			name="tsp_medical";
+		};
+		class Item14
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item13
-		{
-			className="ace_chemlights";
-			name="ACE3 - Chemlights";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item14
+		class Item15
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item16
 		{
 			className="ace_reload";
 			name="ACE3 - Reload";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item16
+		class Item17
 		{
 			className="A3_Soft_F_Gamma";
 			name="Arma 3 - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item18
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
+		class Item19
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
@@ -199,7 +203,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0

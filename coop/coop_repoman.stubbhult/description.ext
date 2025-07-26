@@ -20,7 +20,7 @@ tsp_param_roleStart = true;    //-- Force player to select role at start of
 tsp_param_roleCheck = false;  //-- Gear checking
 tsp_param_dispersion = 30;   //-- AI weapon dispersion
 tsp_param_skill = 1;        //-- AI skill
-tsp_param_spotting = 1;    //-- AI spotting
+tsp_param_spotting = 0.6;    //-- AI spotting
 
 tsp_roles[] = {
 	{"CIA/JSOC - Task Force Delilah", "data\ciajsoc.paa", "west", {
@@ -32,16 +32,16 @@ tsp_roles[] = {
 		{"Lancer (CIA)", "markers\nato\b_inf.paa", {
 			{"Element Leader", "tsp_ion_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "tsp_ion_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
-			{"Agent", "tsp_ion_contractor", {"soc_delta"}, "iconManRecon_ca.paa"},
-			{"Specialist (LAT)", "tsp_ion_contractor", {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "tsp_ion_autorifleman", {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Agent (1)", "tsp_ion_contractor", {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Agent (2)", "tsp_ion_contractor", {"soc_delta"}, "iconManAT_ca.paa"},
+			{"Grenadier", "tsp_ion_grenadier", {"soc_delta","us_grenadier","soc_grenadier"}, "iconManMG_ca.paa"},
 			{"Breacher", "tsp_ion_breacher", {"soc_delta"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Caster (SFOD-D)", "markers\nato\b_inf.paa", {
 			{"Element Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
 			{"Operator", "tsp_army_sf_operator", {"soc_delta"}, "iconManRecon_ca.paa"},
-			{"Operator (HAT)", "tsp_army_sf_operatorat", {"soc_delta","usa_missile","soc_missile"}, "iconManAT_ca.paa"},
+			{"Operator (AT)", "tsp_army_sf_operatorat", {"soc_delta","usa_missile","soc_missile","us_missile"}, "iconManAT_ca.paa"},
 			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
 			{"Ammo Bearer", "tsp_army_sf_operator", {"soc_delta"}, "iconManExplosive_ca.paa"}
 		}},
@@ -70,9 +70,33 @@ class Params {
 	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
 };
 
+class CfgDebriefing
+{  
+
+	class End1
+	{
+		title = "Mission Complete";
+		subtitle = "Job well done!";
+		description = "The Commanche was recovered succesfully all thanks to your effort, our adversaries won't get their hands on our prototype anytime soon.";
+		pictureBackground = "end.jpg";
+		picture = "b_recon";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class End2
+	{
+		title = "Mission Failed";
+		subtitle = "Return To Base.";
+		description = "The Comanche was destroyed. This thing was planned to replace our attack helicopters in 2035 but due to your incompetence we're gonna have to make something from scratch...";
+		pictureBackground = "end.jpg";
+		picture = "b_recon";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
+
 enableDebugConsole = 2; 
 saving = 0; 
 respawn = "BASE"; 
+respawnTemplates[] = {"BASE"};
 respawnDelay = 2; 
 respawnDialog = 0;
 respawnButton = 1;
