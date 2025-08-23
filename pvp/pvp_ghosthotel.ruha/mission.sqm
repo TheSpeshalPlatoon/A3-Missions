@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=1537;
 	mods[]=
 	{
 		"WBK_Zombies_AdvancedEditorSettings"
 	};
 	class ItemIDProvider
 	{
-		nextID=462;
+		nextID=464;
 	};
 	class MarkerIDProvider
 	{
@@ -20,14 +20,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=32;
+		nextID=54;
 	};
 	class Camera
 	{
-		pos[]={4040.8669,266.2388,-40.791451};
-		dir[]={-0.57450455,-0.5268271,0.62650818};
-		up[]={-0.35607427,0.84996653,0.38830623};
-		aside[]={0.73707032,-6.1647734e-07,0.67589062};
+		pos[]={3442.9805,169.41812,198.92618};
+		dir[]={0.81216723,-0.47517917,0.33878779};
+		up[]={0.4385981,0.87987232,0.18295956};
+		aside[]={0.38503149,3.1921081e-07,-0.92300028};
 	};
 };
 binarizationWanted=0;
@@ -43,7 +43,6 @@ addons[]=
 	"ace_hearing",
 	"tsp_medical",
 	"rhsusf_c_weapons",
-	"jsrs_soundmod_2025_Beta_rhs_usf_weapons",
 	"ace_compat_rhs_usf3",
 	"A3_Modules_F_Intel",
 	"RH_de_cfg",
@@ -60,7 +59,6 @@ addons[]=
 	"ace_medical_treatment",
 	"rhs_c_weapons",
 	"rhs_sounds",
-	"jsrs_soundmod_2025_Beta_rhs_afrf_weapons",
 	"ace_compat_rhs_afrf3",
 	"new_shemaghs",
 	"Bro_MSW_Base",
@@ -3816,7 +3814,7 @@ class Mission
 							state=1;
 							class Entities
 							{
-								items=26;
+								items=28;
 								class Item0
 								{
 									dataType="Object";
@@ -4275,9 +4273,43 @@ class Mission
 									type="Bro_MSW_8m_conc";
 									atlOffset=4.4382286;
 								};
+								class Item26
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={3629.2664,38.967171,280.27917};
+										angles[]={0,0.42870662,-0};
+									};
+									side="Empty";
+									flags=5;
+									class Attributes
+									{
+										disableSimulation=1;
+									};
+									id=462;
+									type="Bro_MSW_2m_conc";
+								};
+								class Item27
+								{
+									dataType="Object";
+									class PositionInfo
+									{
+										position[]={3574.8342,38.967663,324.26285};
+										angles[]={0,0.93125498,-0};
+									};
+									side="Empty";
+									flags=5;
+									class Attributes
+									{
+										disableSimulation=1;
+									};
+									id=463;
+									type="Bro_MSW_2m_conc";
+								};
 							};
 							id=30;
-							atlOffset=3.6117134;
+							atlOffset=4.2383766;
 						};
 						class Item1
 						{
@@ -4576,7 +4608,7 @@ class Mission
 						};
 					};
 					id=238;
-					atlOffset=-10.86375;
+					atlOffset=-10.99041;
 				};
 				class Item2
 				{
@@ -4621,18 +4653,19 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={3640.4734,47.579643,219.16574};
-								angles[]={6.0642519,3.143739,6.2731848};
+								position[]={3615.4268,43.577362,308.10959};
+								angles[]={0,3.1382415,0};
 							};
-							areaSize[]={348.7196,0,211.98367};
+							areaSize[]={108.719,0,105.39876};
 							areaIsRectangle=1;
 							flags=1;
 							id=449;
 							type="ModuleCoverMap_F";
+							atlOffset=10.557129;
 						};
 					};
 					id=459;
-					atlOffset=10.120316;
+					atlOffset=2.7335701;
 				};
 				class Item3
 				{
@@ -4713,13 +4746,13 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={3594.7581,33.546875,292.383};
-								angles[]={0,0.64250803,0};
+								position[]={3602.9177,33.586826,303.07486};
+								angles[]={0,3.7860579,0};
 							};
 							init="this setVariable [""description"", ""Abandon Hotel turned Drug dealer's selling hub.""]";
 							id=447;
 							type="ModuleRespawnPosition_F";
-							atlOffset=0.5266304;
+							atlOffset=0.56658936;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -4873,11 +4906,11 @@ class Mission
 						};
 					};
 					id=442;
-					atlOffset=-9.6021996;
+					atlOffset=-9.2284622;
 				};
 			};
 			id=31;
-			atlOffset=-9.309063;
+			atlOffset=-9.390976;
 		};
 	};
 	class Connections
