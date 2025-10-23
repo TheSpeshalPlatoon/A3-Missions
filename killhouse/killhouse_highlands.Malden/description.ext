@@ -1,15 +1,13 @@
 author = "TheSpeshalPlatoon"; onLoadName = "Killhouse Generator"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
 
-/*
 class CfgFunctions {  //-- Needed for public release
 	class tsp_mission_action {class functions {class init {file = "scripts\action.sqf"; preInit = true};};};
 	class tsp_mission_killhouse {class functions {class init {file = "scripts\killhouse.sqf"; preInit = true};};};
 	class tsp_mission_utility {class functions {class init {file = "scripts\utility.sqf"; preInit = true};};};
 };
-*/
 
 //-- Addon mode needs full path (\tsp_core\)
-class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in addon mode
+/*class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in addon mode
 #include "\a3\ui_f\hpp\definecommongrids.inc"
 #include "\tsp_core\scripts\chvd.hpp"
 #include "\tsp_core\scripts\gui.hpp"
@@ -29,7 +27,7 @@ tsp_param_roleCheck = false;  //-- Gear checking
 tsp_param_dispersion = 40;   //-- AI dispersion
 tsp_param_skill = 1;        //-- AI skill
 tsp_param_spotting = 1;    //-- AI spotting
-
+*/
 tsp_roles[] = {
 	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\1recon.paa", "west", {
 		{"Raider HQ", "markers\nato\b_hq.paa", {

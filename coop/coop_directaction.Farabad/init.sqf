@@ -7,5 +7,7 @@ if (!isServer) exitWith {};
 
 [
 	west, ["cache"], "Destroy Weapons Caches", "Enemy weapons caches have been discovered nearby, containing explosives and arms intended for insurgent forces. Your mission is to locate and destroy all identified caches to disrupt enemy supply lines. Ensure complete destruction to prevent any salvage.", 
-	"Destroy", objNull, {true}, {!alive task_cache1 && !alive task_cache2}
+	"Destroy", objNull, {true}, {!alive task_cache1 && !alive task_cache2 && !alive task_cache3 && !alive task_cache4}
 ] spawn tsp_fnc_task;
+
+//ѕмαℓℓ

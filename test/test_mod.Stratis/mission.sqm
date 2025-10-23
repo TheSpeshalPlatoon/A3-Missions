@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=320;
+		nextID=349;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=126;
+		nextID=163;
 	};
 	class Camera
 	{
-		pos[]={2881.3582,9.474371,6085.5654};
-		dir[]={0.33622944,-0.75540709,0.56241453};
-		up[]={0.38761973,0.65525562,0.64837563};
-		aside[]={0.85831285,0,-0.51312697};
+		pos[]={2871.8403,6.7698278,6082.708};
+		dir[]={0.91683781,-0.35656625,0.17965093};
+		up[]={0.34991536,0.93426955,0.068564445};
+		aside[]={0.19229002,4.5140041e-08,-0.98133993};
 	};
 };
 binarizationWanted=0;
@@ -66,14 +66,13 @@ addons[]=
 	"A3_Modules_F_Multiplayer",
 	"A3_Ui_F",
 	"A3_Characters_F_Heads",
-	"tsp_breach_silhouette",
-	"tsp_breach_shock",
 	"A3_Structures_F_EPA_Items_Medical",
 	"A3_Structures_F_Items_Stationery",
 	"A3_Characters_F_Exp_Civil",
 	"A3_Structures_F_Mil_Cargo",
 	"A3_Structures_F_Mil_Barracks",
 	"tsp_breach_block",
+	"tsp_breach_shock",
 	"A3_Structures_F_Argo_Walls_City",
 	"A3_Structures_F_Enoch_Walls_Concrete",
 	"A3_Structures_F_Walls",
@@ -85,6 +84,7 @@ addons[]=
 	"A3_Structures_F_Exp_Military_Barracks_01",
 	"tsp_breach_package",
 	"tsp_breach_linear",
+	"tsp_breach_silhouette",
 	"tsp_breach_stick",
 	"tsp_breach_popper",
 	"ace_explosives",
@@ -338,77 +338,77 @@ class AddonsMetaData
 		};
 		class Item29
 		{
-			className="tsp_breach_silhouette";
-			name="tsp_breach_silhouette";
-		};
-		class Item30
-		{
-			className="tsp_breach_shock";
-			name="tsp_breach_shock";
-		};
-		class Item31
-		{
 			className="A3_Structures_F_EPA";
 			name="Arma 3 Survive Episode - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item32
+		class Item30
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item33
+		class Item31
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item34
+		class Item32
 		{
 			className="tsp_breach_block";
 			name="tsp_breach_block";
 		};
-		class Item35
+		class Item33
+		{
+			className="tsp_breach_shock";
+			name="tsp_breach_shock";
+		};
+		class Item34
 		{
 			className="A3_Structures_F_Argo";
 			name="Arma 3 Malden - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item36
+		class Item35
 		{
 			className="A3_Structures_F_Enoch";
 			name="Arma 3 Contact Platform - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item37
+		class Item36
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item38
+		class Item37
 		{
 			className="A3_Structures_F_Households";
 			name="Arma 3 - Houses";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item39
+		class Item38
 		{
 			className="tsp_breach_package";
 			name="tsp_breach_package";
 		};
-		class Item40
+		class Item39
 		{
 			className="tsp_breach_linear";
 			name="tsp_breach_linear";
+		};
+		class Item40
+		{
+			className="tsp_breach_silhouette";
+			name="tsp_breach_silhouette";
 		};
 		class Item41
 		{
@@ -746,7 +746,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=66;
+		items=69;
 		class Item0
 		{
 			dataType="Object";
@@ -1409,14 +1409,13 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2879.5037,2.7422714,6085.8833};
-						angles[]={0,2.1143413,0};
+						position[]={2868.9561,2.6313791,6086.2886};
+						angles[]={0,2.1143441,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						isPlayer=1;
 						isPlayable=1;
 						receiveRemoteTargets=1;
 						class Inventory
@@ -1541,25 +1540,15 @@ class Mission
 							};
 							class backpack
 							{
-								typeName="B_AssaultPack_Kerry";
+								typeName="B_AssaultPack_rgr";
 								isBackpack=1;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="tsp_breach_silhouette_mag";
-										count=1;
-										ammoLeft=1;
-									};
-								};
 								class ItemCargo
 								{
 									items=1;
 									class Item0
 									{
-										name="tsp_breach_shock";
-										count=1;
+										name="rr_stretcher";
+										count=2;
 									};
 								};
 							};
@@ -1651,7 +1640,7 @@ class Mission
 			};
 			id=32;
 			type="Land_Bandage_F";
-			atlOffset=0.021908522;
+			atlOffset=1.9073486e-06;
 		};
 		class Item15
 		{
@@ -3441,8 +3430,8 @@ class Mission
 				position[]={2871.9622,4.3936071,6069.8989};
 				angles[]={0.022495884,0.41643563,0.012496647};
 			};
-			side="Empty";
-			flags=4;
+			side="West";
+			flags=6;
 			class Attributes
 			{
 			};
@@ -5960,13 +5949,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={2878.7659,2.7467299,6084.6992};
-						angles[]={0,2.1143413,0};
+						position[]={2878.7661,2.746732,6084.6987};
+						angles[]={0,2.1143441,0};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
+						isPlayer=1;
 						isPlayable=1;
 						receiveRemoteTargets=1;
 						class Inventory
@@ -6215,6 +6205,191 @@ class Mission
 			{
 			};
 			id=318;
+		};
+		class Item66
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2871.9824,2.7692983,6069.9121};
+						angles[]={0.0024958209,3.6458182,0.010000736};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						name="guy_2";
+					};
+					id=342;
+					type="B_Soldier_unarmed_F";
+					atlOffset=-1.8835068e-05;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=1;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			class CrewLinks
+			{
+				class LinkIDProvider
+				{
+					nextID=1;
+				};
+				class Links
+				{
+					items=1;
+					class Item0
+					{
+						linkID=0;
+						item0=342;
+						item1=237;
+						class CustomData
+						{
+							role=1;
+						};
+					};
+				};
+			};
+			id=341;
+			atlOffset=-1.8835068e-05;
+		};
+		class Item67
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={2867.6357,2.6441879,6084.2261};
+						angles[]={0,2.0363624,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+					};
+					id=346;
+					type="B_soldier_UAV_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.97000003;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="acre_sys_radio_edenSetup";
+							expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+								};
+							};
+						};
+						nAttributes=3;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=347;
+		};
+		class Item68
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={2880.0066,2.7496581,6084.0747};
+				angles[]={0.0049999533,0,0.0049998914};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+			};
+			id=348;
+			type="Weapon_arifle_MXC_Black_F";
+			atlOffset=-1.1920929e-06;
 		};
 	};
 };

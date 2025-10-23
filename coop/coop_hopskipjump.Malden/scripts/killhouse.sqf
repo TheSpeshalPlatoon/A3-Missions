@@ -1,3 +1,77 @@
+tsp_fnc_killhouse_menu = {
+	params ["_start", "_end", "_area", "_width", "_height", "_size", "_walls", ["_display", findDisplay 46 createDisplay "RscDisplayEmpty"]]; tsp_killhouse_params = _this;
+
+	_title = _display ctrlCreate ["RscText", 9998]; _w = 0.4; _h = 0.042; _y = 0.365; _title ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_title ctrlSetFont "PuristaMedium"; _title ctrlSetText "GENERATE KILLHOUSE"; _title ctrlSetBackgroundColor [11/100,50/100,20/100,0.9]; _title ctrlCommit 0;	
+	
+	_box = _display ctrlCreate ["RscText", 9998]; _w = 0.4; _h = 0.725; _y = -0.025; _box ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_box ctrlSetBackgroundColor [0,0,0,0.7]; _box ctrlCommit 0;
+
+	_theme = _display ctrlCreate ["RscCombo", 9999]; _w = 0.38; _h = 0.045; _y = 0.3; _theme ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	{_theme lbSetData [_theme lbAdd _x, _x]} forEach tsp_killhouse_themes; _theme lbSetCurSel 0; _theme ctrlCommit 0;
+	_theme ctrlAddEventHandler ["LBSelChanged", {params ["_control", "_selectedIndex"]; tsp_killhouse_theme = _control lbData lbCurSel _control}];
+
+	_enemies = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = 0.25; _enemies ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_enemies ctrlSetFont "PuristaLight"; _enemies ctrlSetText "ENEMIES:"; _enemies ctrlCommit 0;
+	_enemies = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = 0.2; _enemies ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_enemies ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_enemies = _newValue}];
+	_enemies sliderSetRange [0, 1]; _enemies sliderSetPosition tsp_killhouse_enemies; _enemies ctrlCommit 0;
+
+	_targets = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = 0.15; _targets ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_targets ctrlSetFont "PuristaLight"; _targets ctrlSetText "TARGETS:"; _targets ctrlCommit 0;
+	_targets = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = 0.1; _targets ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_targets ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_targets = _newValue}];
+	_targets sliderSetRange [0, 1]; _targets sliderSetPosition tsp_killhouse_targets; _targets ctrlCommit 0;
+
+	_civilians = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = 0.05; _civilians ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_civilians ctrlSetFont "PuristaLight"; _civilians ctrlSetText "CIVILIANS:"; _civilians ctrlCommit 0;
+	_civilians = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = 0.00; _civilians ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_civilians ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_civilians = _newValue}];
+	_civilians sliderSetRange [0, 0.5]; _civilians sliderSetPosition tsp_killhouse_civilians; _civilians ctrlCommit 0;
+
+	_hostages = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = -0.05; _hostages ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_hostages ctrlSetFont "PuristaLight"; _hostages ctrlSetText "HOSTAGES:"; _hostages ctrlCommit 0;
+	_hostages = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = -0.10; _hostages ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_hostages ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_hostages = _newValue}];
+	_hostages sliderSetRange [0, 0.5]; _hostages sliderSetPosition tsp_killhouse_hostages; _hostages ctrlCommit 0;
+
+	_locks = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = -0.15; _locks ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_locks ctrlSetFont "PuristaLight"; _locks ctrlSetText "LOCKED:"; _locks ctrlCommit 0;
+	_locks = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = -0.20; _locks ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_locks ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_locks = _newValue}];
+	_locks sliderSetRange [0, 1]; _locks sliderSetPosition tsp_killhouse_locks; _locks ctrlCommit 0;
+
+	_furniture = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = -0.25; _furniture ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_furniture ctrlSetFont "PuristaLight"; _furniture ctrlSetText "FURNITURE:"; _furniture ctrlCommit 0;
+	_furniture = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = -0.30; _furniture ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_furniture ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_furniture = _newValue}];
+	_furniture sliderSetRange [0, 0.7]; _furniture sliderSetPosition tsp_killhouse_furniture; _furniture ctrlCommit 0;
+    
+	_grenades = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = -0.35; _grenades ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_grenades ctrlSetFont "PuristaLight"; _grenades ctrlSetText "REMOVE GRENADES:"; _grenades ctrlCommit 0;
+	_grenades = _display ctrlCreate ["RscCheckBox", 9999]; _w = 0.033; _h = 0.04; _y = -0.353; _grenades ctrlSetPosition [(1.0-_w)*0.5+0.05,((1.0-_h)*0.5)-_y,_w,_h];
+	_grenades ctrlAddEventHandler ["CheckedChanged", {params ["_control", "_checked"]; tsp_killhouse_grenades = (_checked == 1)}];
+	_grenades cbSetChecked tsp_killhouse_grenades; _grenades ctrlCommit 0;
+
+	_button = _display ctrlCreate ["RscButtonMenu", 9998]; _w = 0.4; _h = 0.042; _y = -0.41; _button ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
+	_button ctrlSetText "GENERATE"; _button ctrlSetFont "PuristaLight"; _button ctrlCommit 0; _button setVariable ["display", _display]; 
+	_button ctrlAddEventHandler ["buttonClick", {
+		params ["_control"]; tsp_killhouse_params params ["_start", "_end", "_area", ["_width", 6], ["_height", 18], ["_size", 5], ["_walls", tsp_killhouse_walls]]; 
+        _side = if (tsp_killhouse_theme in ["Tanoa", "Livonia"]) then {resistance} else {east};
+        ([
+            _start, _end, _area, _width, _height, _size,  //-- Width, height, room size
+			5, 20, tsp_killhouse_hostages,  //-- Min, max, hostage chance
+			tsp_killhouse_enemies, _side, missionNameSpace getVariable ["enemy_"+tsp_killhouse_theme, []],  //-- Enemy chance, side, type
+			tsp_killhouse_civilians, missionNameSpace getVariable ["civilian_"+tsp_killhouse_theme, []],  //-- Civil chance, type
+			tsp_killhouse_targets, missionNameSpace getVariable ["target_"+tsp_killhouse_theme, ["Target_F"]],  //-- Target chance, type
+			tsp_killhouse_furniture, missionNameSpace getVariable ["furniture_"+tsp_killhouse_theme, []],  //-- Furniture chance, type
+            tsp_killhouse_locks, 0.5, 0.95  //--  Locked, openings, doors
+        ] + _walls) remoteExec ["tsp_fnc_killhouse", 2];
+		_control getVariable "display" closeDisplay 1;
+	}];
+    while {_display isNotEqualTo displayNull} do {if (kh1_start getVariable ['generating', false]) exitWith {_display closeDisplay 1;}};
+};
+
 tsp_fnc_killhouse = {
     params [
         "_start", "_end", "_area", "_width", "_height", "_size", 
@@ -135,7 +209,7 @@ tsp_fnc_killhouse = {
             _enemy = _group createUnit [selectRandom _enemyTypes, getPos _helper, [], 1, "CAN_COLLIDE"]; 
             _enemy attachTo [_helper, [0,0,0]]; detach _enemy; _enemy disableAI "PATH";
             _enemy setFormDir (_helper getDir _furthest); _enemy setDir (_helper getDir _furthest); 
-            _enemy setUnitPos (selectRandom ["UP", "MIDDLE"]); 
+            _enemy setUnitPos (selectRandom ["UP", "MIDDLE"]);            
             _units pushBack _enemy; sleep _sleep;
             if (random 1 < _hostageChance) then {  //-- Hostages
                 _group = createGroup civilian; _group deleteGroupWhenEmpty true;
@@ -170,6 +244,10 @@ tsp_fnc_killhouse = {
         } forEach (_furnitureTypes call BIS_fnc_arrayShuffle);  //-- Diversity innit
     } forEach _helpers;
 
+    //-- Grenades
+    _grenades = []; {_grenades = _grenades + getArray(configFile >> "CfgWeapons" >> "Throw" >> _x >> "magazines")} forEach (getArray(configFile >> "CfgWeapons" >> "Throw" >> "muzzles"));
+    if (tsp_killhouse_grenades) then {{_unit = _x; {_unit removeMagazines _x} forEach _grenades} forEach _units};
+
     //-- Wait until killhouse is clear or has been replaced
     _start setVariable ["generating", false, true]; _start setVariable ["reset", false, true];
     {["", "Killhouse Generated!"] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _start < _height}); deleteVehicle _blocker;
@@ -190,80 +268,13 @@ tsp_fnc_killhouse_flood = {  //-- Fucky wucky recursive stuff below
     {if !(_x in tsp_kh_hits) then {[_x, _helperTypes, _wallLength, _end, _sleep] call tsp_fnc_killhouse_flood}} forEach _neighbours;  //-- Recursion on neighbours
 };
 
-tsp_fnc_killhouse_menu = {
-	params ["_start", "_end", "_area", "_width", "_height", "_size", "_walls", ["_display", findDisplay 46 createDisplay "RscDisplayEmpty"]]; tsp_killhouse_params = _this;
-
-	_title = _display ctrlCreate ["RscText", 9998]; _w = 0.4; _h = 0.042; _y = 0.375; _title ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_title ctrlSetFont "PuristaMedium"; _title ctrlSetText "GENERATE KILLHOUSE"; _title ctrlSetBackgroundColor [11/100,50/100,20/100,0.9]; _title ctrlCommit 0;	
-	
-	_box = _display ctrlCreate ["RscText", 9998]; _w = 0.4; _h = 0.7; _y = 0.00; _box ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_box ctrlSetBackgroundColor [0,0,0,0.7]; _box ctrlCommit 0;
-
-	_theme = _display ctrlCreate ["RscCombo", 9999]; _w = 0.38; _h = 0.045; _y = 0.3; _theme ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	{_theme lbSetData [_theme lbAdd _x, _x]} forEach tsp_killhouse_themes; _theme lbSetCurSel 0; _theme ctrlCommit 0;
-	_theme ctrlAddEventHandler ["LBSelChanged", {params ["_control", "_selectedIndex"]; tsp_killhouse_theme = _control lbData lbCurSel _control}];
-
-	_enemies = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = 0.25; _enemies ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_enemies ctrlSetFont "PuristaLight"; _enemies ctrlSetText "ENEMIES:"; _enemies ctrlCommit 0;
-	_enemies = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = 0.2; _enemies ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_enemies ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_enemies = _newValue}];
-	_enemies sliderSetRange [0, 1]; _enemies sliderSetPosition tsp_killhouse_enemies; _enemies ctrlCommit 0;
-
-	_targets = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = 0.15; _targets ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_targets ctrlSetFont "PuristaLight"; _targets ctrlSetText "TARGETS:"; _targets ctrlCommit 0;
-	_targets = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = 0.1; _targets ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_targets ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_targets = _newValue}];
-	_targets sliderSetRange [0, 1]; _targets sliderSetPosition tsp_killhouse_targets; _targets ctrlCommit 0;
-
-	_civilians = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = 0.05; _civilians ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_civilians ctrlSetFont "PuristaLight"; _civilians ctrlSetText "CIVILIANS:"; _civilians ctrlCommit 0;
-	_civilians = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = 0.00; _civilians ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_civilians ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_civilians = _newValue}];
-	_civilians sliderSetRange [0, 0.5]; _civilians sliderSetPosition tsp_killhouse_civilians; _civilians ctrlCommit 0;
-
-	_hostages = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = -0.05; _hostages ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_hostages ctrlSetFont "PuristaLight"; _hostages ctrlSetText "HOSTAGES:"; _hostages ctrlCommit 0;
-	_hostages = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = -0.10; _hostages ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_hostages ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_hostages = _newValue}];
-	_hostages sliderSetRange [0, 0.5]; _hostages sliderSetPosition tsp_killhouse_hostages; _hostages ctrlCommit 0;
-
-	_locks = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = -0.15; _locks ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_locks ctrlSetFont "PuristaLight"; _locks ctrlSetText "LOCKED:"; _locks ctrlCommit 0;
-	_locks = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = -0.20; _locks ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_locks ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_locks = _newValue}];
-	_locks sliderSetRange [0, 1]; _locks sliderSetPosition tsp_killhouse_locks; _locks ctrlCommit 0;
-
-	_furniture = _display ctrlCreate ["RscText", 9998]; _w = 0.39; _h = 0.042; _y = -0.25; _furniture ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_furniture ctrlSetFont "PuristaLight"; _furniture ctrlSetText "FURNITURE:"; _furniture ctrlCommit 0;
-	_furniture = _display ctrlCreate ["RscXSliderH", 9999]; _w = 0.38; _h = 0.045; _y = -0.30; _furniture ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_furniture ctrlAddEventHandler ["SliderPosChanged", {params ["_control", "_newValue"]; tsp_killhouse_furniture = _newValue}];
-	_furniture sliderSetRange [0, 0.7]; _furniture sliderSetPosition tsp_killhouse_furniture; _furniture ctrlCommit 0;
-
-	_button = _display ctrlCreate ["RscButtonMenu", 9998]; _w = 0.4; _h = 0.042; _y = - 0.373; _button ctrlSetPosition [(1.0-_w)*0.5,((1.0-_h)*0.5)-_y,_w,_h];
-	_button ctrlSetText "GENERATE"; _button ctrlSetFont "PuristaLight"; _button ctrlCommit 0; _button setVariable ["display", _display]; 
-	_button ctrlAddEventHandler ["buttonClick", {
-		params ["_control"]; tsp_killhouse_params params ["_start", "_end", "_area", ["_width", 6], ["_height", 18], ["_size", 5], ["_walls", tsp_killhouse_walls]]; 
-        _side = if (tsp_killhouse_theme in ["Tanoa", "Livonia"]) then {resistance} else {east};
-        ([
-            _start, _end, _area, _width, _height, _size,  //-- Width, height, room size
-			5, 20, tsp_killhouse_hostages,  //-- Min, max, hostage chance
-			tsp_killhouse_enemies, _side, missionNameSpace getVariable ["enemy_"+tsp_killhouse_theme, []],  //-- Enemy chance, side, type
-			tsp_killhouse_civilians, missionNameSpace getVariable ["civilian_"+tsp_killhouse_theme, []],  //-- Civil chance, type
-			tsp_killhouse_targets, missionNameSpace getVariable ["target_"+tsp_killhouse_theme, ["Target_F"]],  //-- Target chance, type
-			tsp_killhouse_furniture, missionNameSpace getVariable ["furniture_"+tsp_killhouse_theme, []],  //-- Furniture chance, type
-            tsp_killhouse_locks, 0.5, 0.95  //--  Locked, openings, doors
-        ] + _walls) remoteExec ["tsp_fnc_killhouse", 2];
-		_control getVariable "display" closeDisplay 1;
-	}];
-    while {_display isNotEqualTo displayNull} do {if (kh1_start getVariable ['generating', false]) exitWith {_display closeDisplay 1;}};
-};
-
 tsp_killhouse_themes = ["Altis", "Tanoa", "Livonia"];
 if (isClass (configFile >> "CfgPatches" >> "CUP_StandaloneTerrains_Core") && isClass (configFile >> "CfgPatches" >> "UK3CB_Factions_Common")) then {tsp_killhouse_themes pushBack "Takistan"};
 if (isClass (configFile >> "CfgPatches" >> "CUP_StandaloneTerrains_Core") && isClass (configFile >> "CfgPatches" >> "rhsgref_infantry")) then {tsp_killhouse_themes pushBack "Chernarus"};
 tsp_killhouse_theme = "Altis";  //-- Default selection
 
 tsp_killhouse_enemies = 0.5;
+tsp_killhouse_grenades = false;
 tsp_killhouse_hostages = 0.05;
 tsp_killhouse_civilians = 0.05;
 tsp_killhouse_furniture = 0.2;
