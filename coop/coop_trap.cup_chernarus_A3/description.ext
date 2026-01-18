@@ -1,0 +1,118 @@
+author = "Goosey"; onLoadName = "It's a TRAP!"; onLoadMission = "1st Recon's Direct Action Platoon (DAP) is tasked with conducting a Tactical Recovery of Aircraft and Personnel (TRAP)"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = false;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";    //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = false;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 70;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	//-- USMC
+	{"USMC - 1st Reconnaissance Battalion DAP", "\tsp_core\data\insignia\1recon.paa", "west", {
+		{"Razor HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
+			{"SARC Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer (REQUIRED)", "tsp_usmc_engineer", {"usmc_recon"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Razor 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader_lite", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"SARC Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman_lite", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at_lite", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249_lite", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Razor 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader_lite", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"SARC Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman_lite", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Anti Tank", "tsp_usmc_antitank", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner_lite", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Archer (Scout Snipers)", "markers\nato\b_art.paa", {
+			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader_lite", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_lite", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
+		}}
+	}},
+};
+
+tsp_param_brightness = 0.3; tsp_param_time_day = 1;      tsp_param_time_night = 1;
+tsp_param_weather = true;   tsp_param_weatherTime = 20; 
+tsp_param_fog = 0.2;        tsp_param_fogMin = 0;        tsp_param_fogMax = 0.02;
+tsp_param_wind = 1;         tsp_param_windMin = -1;      tsp_param_windMax = 1;
+tsp_param_overcast = 1;     tsp_param_overcastMin = 0;   tsp_param_overcastMax = 1; 
+tsp_param_rain = 0.5;       tsp_param_rainMin = 0;       tsp_param_rainMax = 1;
+tsp_param_lightning = 1;    tsp_param_lightningMin = 0;  tsp_param_lightningMax = 1;
+tsp_param_wave = 0.5;       tsp_param_waveMin = 0;       tsp_param_waveMax = 1;
+
+class CfgDebriefing
+{  
+
+	class End1
+	{
+		title = "Mission Complete";
+		subtitle = "Good job:3";
+		description = "You successfully completed your objective.";
+		picture = "b_recon";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnTemplates[] = {"BASE"};
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
+
+class CfgMusic {class darkreach {name = "darkreach"; sound[] = {"data\darkreach.ogg", db-7, 1.0};};}; 
