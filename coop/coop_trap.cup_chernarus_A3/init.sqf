@@ -32,7 +32,7 @@
         uiSleep 8; [3,2,false] call bis_fnc_animatedScreen;
 	}], [5,{
         [4,2,false] call bis_fnc_animatedScreen;
-		[true, ["The U.S. forces were caught by surprise by the invasion."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
+		[true, ["The U.S. forces were caught by surprise."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
         uiSleep 4; [3,1,false] call bis_fnc_animatedScreen;
 	}], [6,{
         [4,1,false] call bis_fnc_animatedScreen;
