@@ -1,0 +1,189 @@
+author = "Goosey"; onLoadName = "CW1: Gunboat Diplomacy"; onLoadMission = "Three ships have sent out an emergency distress call. Interdict and conduct an opposed boarding on all ships."; class Header {gameType = Zeus}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Forced";    //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 65;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	//-- USMC
+	{"USMC - 26th MEU FORECON", "data\26meu.paa", "west", {
+		{"Trojan HQ (Assault Platoon)", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
+			{"SARC Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_usmc_engineer", {"usmc_recon"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Trojan 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Assistant Squad Leader", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_leader"}, "iconManAT_ca.paa"},
+			{"Pointman", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon"}, "iconMan_ca.paa"},
+			{"Rifleman", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManRecon_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Trojan 2", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Assistant Squad Leader", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_leader"}, "iconManAT_ca.paa"},
+			{"Pointman", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon"}, "iconMan_ca.paa"},
+			{"Rifleman", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManRecon_ca.paa"},
+			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Butler (R&S Snipers)", "markers\nato\b_art.paa", {
+			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader_fast", {"usmc_recon","us_sniper","usmc_sniper","us_leader"}, "iconManLeader_ca.paa"},
+			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
+		}}
+	}},
+	{"USMC - 26th MEU BLT (2/6)", "data\26mar.paa", "west", {
+		{"Apache HQ (Security Platoon)", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_usmc_marpat_wd_fso", {"usmc_grunt","us_leader"}, "iconManCommander_ca.paa"},
+			{"Forward Air Controller", "rhsusf_usmc_marpat_wd_fso", {"usmc_grunt","us_leader"}, "iconManLeader_ca.paa"}
+		}},
+		{"Apache 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_marpat_wd_squadleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_usmc_marpat_wd_rifleman", {"usmc_grunt"}, "iconMan_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_marpat_wd_autorifleman_m249", {"usmc_grunt"}, "iconManMG_ca.paa"}
+		}},
+		{"Apache 2", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_marpat_wd_squadleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_usmc_marpat_wd_rifleman", {"usmc_grunt"}, "iconMan_ca.paa"},
+			{"Grenadier", "rhsusf_usmc_marpat_wd_grenadier", {"usmc_grunt","usmc_grenadier"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"USMC - MSOT 8311", "\tsp_core\data\insignia\raider.paa", "west", {
+		{"Dealer (HQ)", "markers\nato\b_hq.paa", {
+			{"Team Leader", "rhsusf_socom_marsoc_elementleader", {"soc_raider","us_leader"}, "iconManCommander_ca.paa"},
+			{"Team Chief (FAC)", "rhsusf_socom_marsoc_elementleader", {"soc_raider","us_leader"}, "iconManCommander_ca.paa"},
+			{"Breacher", "rhsusf_socom_marsoc_cso_breacher", {"soc_raider"}, "iconManExplosive_ca.paa"},
+			{"Engineer", "rhsusf_socom_marsoc_cso_mechanic", {"soc_raider"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Avent", "markers\nato\b_inf.paa", {
+			{"Element Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader"}, "iconManLeader_ca.paa"},
+			{"Assistant Leader", "rhsusf_socom_marsoc_cso_breacher", {"soc_raider"}, "iconManExplosive_ca.paa"},
+			{"SARC Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
+			{"CSO", "rhsusf_socom_marsoc_cso", {"soc_raider"}, "iconManRecon_ca.paa"},
+			{"CSO (Weapons)", "rhsusf_socom_marsoc_cso_grenadier", {"soc_raider","usa_missile","us_autorifle","soc_autorifle"}, "iconManAT_ca.paa"}
+		}},
+		{"Booker", "markers\nato\b_inf.paa", {
+			{"Element Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader"}, "iconManLeader_ca.paa"},
+			{"Assistant Leader", "rhsusf_socom_marsoc_cso_breacher", {"soc_raider"}, "iconManExplosive_ca.paa"},
+			{"SARC Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
+			{"CSO", "rhsusf_socom_marsoc_cso", {"soc_raider"}, "iconManRecon_ca.paa"},
+			{"CSO (Weapons)", "rhsusf_socom_marsoc_cso_grenadier", {"soc_raider","usa_missile","us_autorifle","soc_autorifle"}, "iconManAT_ca.paa"}
+		}}
+	}},
+	{"USMC - VMM-162 (REIN)", "data\162vmm.paa", "west", {
+		{"Eagle 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Eagle 2", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Eagle 3", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}}
+	}},
+	{"USN - Rotor Wing Squadron 51", "\tsp_core\data\insignia\hsm51.paa", "west", {
+		{"Stingray 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Stingray 2", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","west_leader"}, "iconManOfficer_ca.paa"}
+		}}
+	}}
+};
+
+tsp_param_brightness = 0.3; tsp_param_time_day = 1;      tsp_param_time_night = 1;
+tsp_param_weather = false;   tsp_param_weatherTime = 20; 
+tsp_param_fog = 0.2;        tsp_param_fogMin = 0;        tsp_param_fogMax = 0.02;
+tsp_param_wind = 1;         tsp_param_windMin = -1;      tsp_param_windMax = 1;
+tsp_param_overcast = 1;     tsp_param_overcastMin = 0;   tsp_param_overcastMax = 1; 
+tsp_param_rain = 0.5;       tsp_param_rainMin = 0;       tsp_param_rainMax = 1;
+tsp_param_lightning = 1;    tsp_param_lightningMin = 0;  tsp_param_lightningMax = 1;
+tsp_param_wave = 0.5;       tsp_param_waveMin = 0;       tsp_param_waveMax = 1;
+
+class CfgDebriefing
+{  
+	class End1
+	{
+		title = "Mission Failed";
+		subtitle = "Return To Base.";
+		description = "The assault force failed to secure the vessels.";
+		pictureBackground = "end.jpg";
+		picture = "b_naval";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+	class End2
+	{
+		title = "Mission Complete";
+		subtitle = "Well executed!";
+		description = "All vessels are now safe and have returned back to its crew.";
+		pictureBackground = "end.jpg";
+		picture = "b_naval";
+		pictureColor[] = {0.0,0.3,0.6,1};
+	};
+};
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnTemplates[] = {"BASE"};
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
