@@ -1,24 +1,20 @@
+if !("tsp_gear_fast" in activatedAddons) then {
+    soc_all = getMissionConfigValue ["soc_all", [""]] + ["rhsusf_opscore_coy_cover","rhsusf_opscore_coy_cover_pelt","rhsusf_opscore_fg","rhsusf_opscore_fg_pelt","rhsusf_opscore_fg_pelt_cam","rhsusf_opscore_fg_pelt_nsw","rhsusf_opscore_mc_cover","rhsusf_opscore_mc_cover_pelt","rhsusf_opscore_mc_cover_pelt_nsw","rhsusf_opscore_mc_cover_pelt_cam","rhsusf_opscore_mc","rhsusf_opscore_mc_pelt","rhsusf_opscore_mc_pelt_nsw","rhsusf_opscore_paint","rhsusf_opscore_paint_pelt","rhsusf_opscore_paint_pelt_nsw","rhsusf_opscore_paint_pelt_nsw_cam","rhsusf_opscore_rg_cover","rhsusf_opscore_rg_cover_pelt","rhsusf_opscore_ut","rhsusf_opscore_ut_pelt","rhsusf_opscore_ut_pelt_cam","rhsusf_opscore_ut_pelt_nsw","rhsusf_opscore_ut_pelt_nsw_cam","rhsusf_opscore_mar_fg","rhsusf_opscore_mar_fg_pelt","rhsusf_opscore_mar_ut","rhsusf_opscore_mar_ut_pelt"];
+    soc_seal = getMissionConfigValue ["soc_seal", [""]] + ["rhsusf_opscore_aor1","rhsusf_opscore_aor1_pelt","rhsusf_opscore_aor1_pelt_nsw","rhsusf_opscore_aor2","rhsusf_opscore_aor2_pelt","rhsusf_opscore_aor2_pelt_nsw"];
+};
+
 [] spawn {
     waitUntil {sleep 1; !isNull findDisplay 46};  //-- Wait until loaded in
     [player, [zone_play], "You are out of bounds!", {[_this, [zone_play, zone_captive]] spawn tsp_fnc_zone_launch}, {alive _this}, 1, 1] spawn tsp_fnc_zone;
     player addEventHandler ["Respawn", {[player, [zone_play], "You are out of bounds!", {[_this, [zone_play, zone_captive]] spawn tsp_fnc_zone_launch}, {alive _this}, 1, 1] spawn tsp_fnc_zone}];
-    player addEventHandler ["Killed", {tsp_loadout_retain = getUnitLoadout player}];  //-- Save loadout after death
-    player addEventHandler ["Respawn", {player setUnitLoadout tsp_loadout_retain}];  //-- Restore loadout after respawn
     while {sleep 1; true} do {
         1 fadeEnvironment (if (player inArea zone_inside_1 || player inArea zone_inside_2) then {0.25} else {1});
-        player setCaptive (player inArea zone_captive);  //-- Captive on the catwalk
-        if (player inArea zone_banana && random 1 < 0.25 && speed player > 5) then {
-            playSound3D ["tsp_core\data\sounds\slip.ogg", player, false, getPosASL player, 5, 1, 10];
-            [player, [player]] spawn tsp_fnc_zone_launch;
-        };
+        player setCaptive (player inArea zone_captive || "Oppos" in (player getVariable ["role", ""]));  //-- Captive on the catwalk
+        if (player inArea zone_banana && random 1 < 0.25 && speed player > 5) then {playSound3D ["tsp_core\data\sounds\slip.ogg", player, true, getPosASL player, 5, 1, 10]; [player, [player]] spawn tsp_fnc_zone_launch};
     };
 };
 
-[player, [
-	"tsp_syn_thug1", "tsp_syn_thug2", "tsp_syn_thug3", "tsp_syn_thug4",	"tsp_syn_machinegunner", "tsp_syn_marksman",
-	"I_C_Soldier_Bandit_1_F", "I_C_Soldier_Bandit_2_F", "I_C_Soldier_Bandit_3_F", "I_C_Soldier_Bandit_4_F", "I_C_Soldier_Bandit_5_F", "I_C_Soldier_Bandit_6_F",	"I_C_Soldier_Bandit_7_F", "I_C_Soldier_Bandit_8_F",
-	"I_C_Soldier_Para_1_F",	"I_C_Soldier_Para_2_F",	"I_C_Soldier_Para_3_F",	"I_C_Soldier_Para_4_F",	"I_C_Soldier_Para_5_F",	"I_C_Soldier_Par_6_F","I_C_Soldier_Para_7_F", "I_C_Soldier_Para_8_F", "I_C_Soldier_Camo_F"
-], [zone_zombie], resistance, {true}, {}, 250, 2, 30, 350] spawn tsp_fnc_zombience;
+[player, ["rhsgref_ins_grenadier_rpg","rhsgref_ins_arifleman_rpk","rhsgref_ins_crew","rhsgref_ins_machinegunner","rhsgref_ins_medic","rhsgref_ins_militiaman_mosin","rhsgref_ins_rifleman","rhsgref_ins_rifleman_akm","rhsgref_ins_rifleman_aks74","rhsgref_ins_rifleman_aksu","rhsgref_ins_grenadier","rhsgref_ins_rifleman_RPG26","rhsgref_ins_saboteur","rhsgref_ins_engineer","rhsgref_ins_sniper","rhsgref_ins_spotter"], [zone_zombie], east, {true}, {}, 200, 2, 30, 400] spawn tsp_fnc_zombience;
 
 if (!isServer) exitWith {}; 
 
