@@ -18,9 +18,9 @@ if !("tsp_gear_fast" in activatedAddons) then {
 
 if (!isServer) exitWith {}; 
 
-[west,"pilot","Rescue Pilot","Pilots stuck at the crash site need to be evacuated.","Heli",getPos task_pilot,{true},{[task_pilot, [zone_inside]] call tsp_fnc_zone_triggers},{!alive task_pilot}] spawn tsp_fnc_task;
-[west,"hvt1","Kill/Capture","Dead or alive.","Kill",getPos task_hvt1,{true},{[task_hvt1, [zone_inside]] call tsp_fnc_zone_triggers || !alive task_hvt1}] spawn tsp_fnc_task;
-[west,"hvt2","Kill/Capture","Dead or alive.","Kill",getPos task_hvt2,{true},{[task_hvt2, [zone_inside]] call tsp_fnc_zone_triggers || !alive task_hvt2}] spawn tsp_fnc_task;
-[west,"hvt3","Kill/Capture","Dead or alive.","Kill",getPos task_hvt3,{true},{[task_hvt3, [zone_inside]] call tsp_fnc_zone_triggers || !alive task_hvt3}] spawn tsp_fnc_task;
+[west,"pilot","Rescue Pilot","Pilots stuck at the crash site need to be evacuated.","Heli",getPos task_pilot,{true},{[task_pilot, [zone_capture]] call tsp_fnc_zone_triggers},{!alive task_pilot}] spawn tsp_fnc_task;
+[west,"hvt1","Kill/Capture","Dead or alive.","Kill",getPos task_hvt1,{true},{[task_hvt1, [zone_capture]] call tsp_fnc_zone_triggers || !alive task_hvt1}] spawn tsp_fnc_task;
+[west,"hvt2","Kill/Capture","Dead or alive.","Kill",getPos task_hvt2,{true},{[task_hvt2, [zone_capture]] call tsp_fnc_zone_triggers || !alive task_hvt2}] spawn tsp_fnc_task;
+[west,"hvt3","Kill/Capture","Dead or alive.","Kill",getPos task_hvt3,{true},{[task_hvt3, [zone_capture]] call tsp_fnc_zone_triggers || !alive task_hvt3}] spawn tsp_fnc_task;
 [west,"cache1","Destroy Cache","Destroy ammo cache containing IEDs.","Rifle",getPos task_cache1,{true},{!alive task_cache1}] spawn tsp_fnc_task;
 [west,"cache2","Destroy Cache","Destroy ammo cache containing IEDs.","Rifle",getPos task_cache2,{true},{!alive task_cache2}] spawn tsp_fnc_task;

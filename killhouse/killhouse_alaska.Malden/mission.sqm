@@ -8,18 +8,18 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=9680;
+		nextID=9684;
 	};
 	class LayerIndexProvider
 	{
-		nextID=8635;
+		nextID=9179;
 	};
 	class Camera
 	{
-		pos[]={11663.53,69.954208,4434.2563};
-		dir[]={-0.73956966,-0.61885089,0.26500502};
-		up[]={-0.58262211,0.78546959,0.20876764};
-		aside[]={0.33734652,2.5564805e-07,0.94145644};
+		pos[]={11669.862,92.850624,4391.4058};
+		dir[]={-0.553424,-0.65040696,0.52033073};
+		up[]={-0.47386038,0.75958353,0.44552457};
+		aside[]={0.6850062,3.229361e-07,0.72857106};
 	};
 };
 binarizationWanted=0;
@@ -103,8 +103,6 @@ addons[]=
 	"A3_Weapons_F_Acc",
 	"A3_Weapons_F_Exp",
 	"A3_Weapons_F_Pistols_Pistol_Heavy_01",
-	"jsrs_soundmod_complete_edition",
-	"jsrs_soundmod_ce_reloadingsounds",
 	"ace_attach",
 	"A3_Weapons_F_Items",
 	"ace_medical_treatment",
@@ -123,7 +121,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=54;
+		items=53;
 		class Item0
 		{
 			className="A3_Rocks_F_Exp";
@@ -408,86 +406,80 @@ class AddonsMetaData
 		};
 		class Item41
 		{
-			className="A3_Sounds_F";
-			name="Arma 3 - Sound Effects";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item42
-		{
-			className="jsrs_soundmod_ce_reloadingsounds";
-			name="jsrs_soundmod_ce_reloadingsounds";
-			author="LordJarhead";
-		};
-		class Item43
-		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item44
+		class Item42
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item45
+		class Item43
 		{
 			className="tsp_medical";
 			name="tsp_medical";
 		};
-		class Item46
+		class Item44
 		{
 			className="UK3CB_Factions_Equipment";
 			name="3CB Factions - Equipment";
 			author="3 Commando Brigade";
 			url="www.3commandobrigade.com";
 		};
-		class Item47
+		class Item45
 		{
 			className="A3_Soft_F";
 			name="Arma 3 Alpha - Unarmored Land Vehicles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item48
+		class Item46
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item49
+		class Item47
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item50
+		class Item48
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item51
+		class Item49
+		{
+			className="A3_Sounds_F";
+			name="Arma 3 - Sound Effects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item50
 		{
 			className="A3_Sounds_F_Enoch";
 			name="Arma 3 Contact Platform - Sound Effects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item52
+		class Item51
 		{
 			className="ace_ai";
 			name="ACE3 - AI";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item53
+		class Item52
 		{
 			className="Desert";
 			name="Desert";
@@ -608,14 +600,14 @@ class Mission
 	};
 	class Entities
 	{
-		items=6;
+		items=5;
 		class Item0
 		{
 			dataType="Layer";
 			name="mission";
 			class Entities
 			{
-				items=25;
+				items=26;
 				class Item0
 				{
 					dataType="Layer";
@@ -57322,8 +57314,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11583.242,22.747009,4439.9736};
-								angles[]={0,1.1225467,0};
+								position[]={11583.242,22.746592,4439.9741};
+								angles[]={0,1.1225435,0};
 							};
 							side="Empty";
 							class Attributes
@@ -57333,7 +57325,7 @@ class Mission
 							};
 							id=2305;
 							type="Land_HelipadEmpty_F";
-							atlOffset=7.8044071;
+							atlOffset=7.8039999;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -57474,6 +57466,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
+								name="arrow_1";
 								disableSimulation=1;
 							};
 							id=2309;
@@ -57549,17 +57542,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11598.025,16.354465,4429.7632};
-								angles[]={0,3.1412966,1.5707964};
+								position[]={11598.025,16.354,4429.7632};
+								angles[]={0,3.1412959,1.5707964};
 							};
 							side="Empty";
 							class Attributes
 							{
+								name="arrow_2";
 								disableSimulation=1;
 							};
 							id=2410;
 							type="UserTexture_1x2_F";
-							atlOffset=1.4471731;
+							atlOffset=1.4467077;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -57645,18 +57639,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11497.683,15.943537,4439.7988};
+								position[]={11497.683,15.943322,4439.7988};
 								angles[]={0,4.977592,0};
 							};
 							side="Empty";
 							class Attributes
 							{
 								init="[this, tsp_spawnCenter] call BIS_fnc_attachToRelative; this setObjectScale 0.3; ";
+								name="r50";
 								disableSimulation=1;
 							};
 							id=2558;
 							type="UserTexture_1x2_F";
-							atlOffset=0.97121429;
+							atlOffset=0.97099972;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -57693,18 +57688,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11446.571,15.569242,4421.2598};
+								position[]={11446.571,15.569137,4421.2598};
 								angles[]={0,4.7157927,0};
 							};
 							side="Empty";
 							class Attributes
 							{
 								init="[this, tsp_spawnCenter] call BIS_fnc_attachToRelative; this setObjectScale 0.3; ";
+								name="r100";
 								disableSimulation=1;
 							};
 							id=2559;
 							type="UserTexture_1x2_F";
-							atlOffset=1.7161045;
+							atlOffset=1.7159996;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -57748,6 +57744,7 @@ class Mission
 							class Attributes
 							{
 								init="[this, tsp_spawnCenter] call BIS_fnc_attachToRelative; this setObjectScale 0.3; ";
+								name="r150";
 								disableSimulation=1;
 							};
 							id=2561;
@@ -57796,6 +57793,7 @@ class Mission
 							class Attributes
 							{
 								init="[this, tsp_spawnCenter] call BIS_fnc_attachToRelative; this setObjectScale 0.3; ";
+								name="r200";
 								disableSimulation=1;
 							};
 							id=2563;
@@ -57837,18 +57835,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11310.701,16.629902,4441.291};
+								position[]={11310.701,16.629654,4441.291};
 								angles[]={0,4.7157927,0};
 							};
 							side="Empty";
 							class Attributes
 							{
 								init="[this, tsp_spawnCenter] call BIS_fnc_attachToRelative; this setObjectScale 0.3; ";
+								name="r250";
 								disableSimulation=1;
 							};
 							id=2565;
 							type="UserTexture_1x2_F";
-							atlOffset=1.177247;
+							atlOffset=1.1769991;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -57885,7 +57884,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11628.956,15.945669,4418.7109};
+								position[]={11628.956,15.737576,4418.7109};
 								angles[]={6.2824869,3.142221,4.7131572};
 							};
 							side="Empty";
@@ -57897,7 +57896,7 @@ class Mission
 							};
 							id=3234;
 							type="Land_InvisibleBarrier_F";
-							atlOffset=1.0899715;
+							atlOffset=0.8818779;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -58065,17 +58064,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11601.694,16.34868,4487.1401};
+								position[]={11601.694,16.348774,4487.1401};
 								angles[]={0,6.1922359,0};
 							};
 							side="Empty";
 							class Attributes
 							{
+								name="green";
 								disableSimulation=1;
 							};
 							id=2316;
 							type="UserTexture1m_F";
-							atlOffset=1.5919056;
+							atlOffset=1.5919991;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -58781,7 +58781,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] call tsp_fnc_replace";
 								name="healbox_1";
 								disableSimulation=1;
 							};
@@ -58817,7 +58817,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] call tsp_fnc_replace";
 								name="healbox_2";
 								disableSimulation=1;
 							};
@@ -58847,19 +58847,19 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11628.864,16.180569,4419.21};
+								position[]={11628.864,16.180929,4419.21};
 								angles[]={0,4.712389,0};
 							};
 							side="Empty";
 							class Attributes
 							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] call tsp_fnc_replace";
 								name="healbox_3";
 								disableSimulation=1;
 							};
 							id=5075;
 							type="Land_HelipadEmpty_F";
-							atlOffset=1.3236399;
+							atlOffset=1.3240004;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -58889,7 +58889,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] call tsp_fnc_replace";
 								name="healbox_4";
 								disableSimulation=1;
 							};
@@ -58919,17 +58919,18 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11603.1,16.203083,4487.2222};
-								angles[]={6.2787523,6.2804761,0};
+								position[]={11603.1,16.203396,4487.2222};
+								angles[]={6.2787523,6.2804799,0};
 							};
 							side="Empty";
 							class Attributes
 							{
+								name="orochi";
 								disableSimulation=1;
 							};
 							id=5081;
 							type="UserTexture1m_F";
-							atlOffset=1.4406872;
+							atlOffset=1.441;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -58966,10 +58967,11 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={11553.693,19.179787,4445.8286};
+								position[]={11553.693,19.180212,4445.8286};
 								angles[]={0.027925268,1.7225527,6.1995139};
 							};
 							side="Empty";
+							flags=4;
 							class Attributes
 							{
 								init="_obj = [this, ""SkeetMachine""] call tsp_fnc_replace; _obj enableSimulation false; " \n "[         " \n "    _obj, ""Turn On"", ""\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_unloaddevice_ca.paa"",       " \n "    {(_this#0) spawn tsp_fnc_skeet}, ""!(_target getVariable ['skeeting', false])""      " \n "] call tsp_fnc_action_hold;      " \n "[         " \n "    _obj, ""Turn Off"", ""\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_loaddevice_ca.paa"",       " \n "    {(_this#0) spawn tsp_fnc_skeet}, ""(_target getVariable ['skeeting', false])""      " \n "] call tsp_fnc_action_hold;  ";
@@ -58977,7 +58979,7 @@ class Mission
 							};
 							id=5086;
 							type="Land_Portable_generator_F";
-							atlOffset=2.6905746;
+							atlOffset=1.1444092e-05;
 						};
 						class Item50
 						{
@@ -59034,7 +59036,7 @@ class Mission
 						};
 					};
 					id=1629;
-					atlOffset=1.8080683;
+					atlOffset=1.8081064;
 				};
 				class Item4
 				{
@@ -84190,6 +84192,19 @@ class Mission
 								};
 								class Attribute1
 								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								class Attribute2
+								{
 									property="unitName";
 									expression="_this setname _value;";
 									class Value
@@ -84201,7 +84216,7 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
+								class Attribute3
 								{
 									property="face";
 									expression="_this setface _value;";
@@ -84214,7 +84229,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=3;
+								nAttributes=4;
 							};
 						};
 						class Item1
@@ -84380,6 +84395,19 @@ class Mission
 								};
 								class Attribute3
 								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								class Attribute4
+								{
 									property="unitName";
 									expression="_this setname _value;";
 									class Value
@@ -84391,7 +84419,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=4;
+								nAttributes=5;
 							};
 						};
 						class Item2
@@ -84558,6 +84586,19 @@ class Mission
 								};
 								class Attribute3
 								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								class Attribute4
+								{
 									property="unitName";
 									expression="_this setname _value;";
 									class Value
@@ -84569,7 +84610,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=4;
+								nAttributes=5;
 							};
 						};
 						class Item3
@@ -84737,6 +84778,19 @@ class Mission
 								};
 								class Attribute3
 								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								class Attribute4
+								{
 									property="unitName";
 									expression="_this setname _value;";
 									class Value
@@ -84748,7 +84802,7 @@ class Mission
 										};
 									};
 								};
-								nAttributes=4;
+								nAttributes=5;
 							};
 						};
 					};
@@ -84757,6 +84811,23 @@ class Mission
 					};
 					id=4995;
 					atlOffset=3.0722361;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="groupID";
+							expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Instructors";
+								};
+							};
+						};
+						nAttributes=1;
+					};
 				};
 				class Item16
 				{
@@ -86373,2866 +86444,2866 @@ class Mission
 					id=9660;
 					atlOffset=4.4745636;
 				};
+				class Item25
+				{
+					dataType="Group";
+					side="West";
+					class Entities
+					{
+						items=18;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11643.702,14.728882,4453.5};
+								angles[]={0,4.5179768,0};
+							};
+							side="West";
+							flags=6;
+							class Attributes
+							{
+								init="if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayer=1;
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier1_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_desert";
+								};
+							};
+							id=5047;
+							type="B_recon_F";
+							atlOffset=-0.072557449;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11643.838,14.728882,4452.4941};
+								angles[]={0,4.5179834,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier2_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_camo";
+								};
+							};
+							id=5048;
+							type="B_recon_F";
+							atlOffset=-0.072557449;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11644.172,14.728939,4450.3506};
+								angles[]={0,4.5179834,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_flashlight";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier1_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_snakeskin";
+								};
+							};
+							id=5049;
+							type="B_recon_F";
+							atlOffset=-0.072500229;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11644.056,14.728882,4451.4019};
+								angles[]={0,4.5179834,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_tshirt";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier1_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_light_desert";
+								};
+							};
+							id=5050;
+							type="B_recon_F";
+							atlOffset=-0.072557449;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11644.354,14.755379,4449.3154};
+								angles[]={0.023993526,4.5179586,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MXC_F";
+										optics="optic_Holosight";
+										flashlight="acc_flashlight";
+										firemode="arifle_MXC_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier2_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetSpecB_paint2";
+								};
+							};
+							id=5051;
+							type="B_recon_F";
+							atlOffset=-0.060159683;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item5
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11644.692,14.807193,4448.0977};
+								angles[]={0.023993526,4.5180302,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_tshirt";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier2_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_light_grass";
+								};
+							};
+							id=5052;
+							type="B_recon_F";
+							atlOffset=-0.031731606;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item6
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11645.177,14.728882,4453.8188};
+								angles[]={0,4.5179768,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier1_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_desert";
+								};
+							};
+							id=5053;
+							type="B_recon_F";
+							atlOffset=-0.072557449;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item7
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11645.313,14.728882,4452.8135};
+								angles[]={0,4.5179768,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier2_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_camo";
+								};
+							};
+							id=5054;
+							type="B_recon_F";
+							atlOffset=-0.072557449;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item8
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11645.646,14.72891,4450.6699};
+								angles[]={0,4.5179834,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_flashlight";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier1_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_snakeskin";
+								};
+							};
+							id=5055;
+							type="B_recon_F";
+							atlOffset=-0.072528839;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item9
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11645.53,14.728882,4451.7212};
+								angles[]={0,4.5179834,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_tshirt";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier1_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_light_desert";
+								};
+							};
+							id=5056;
+							type="B_recon_F";
+							atlOffset=-0.072557449;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item10
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11645.829,14.747544,4449.6348};
+								angles[]={0.023993526,4.5179586,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MXC_F";
+										optics="optic_Holosight";
+										flashlight="acc_flashlight";
+										firemode="arifle_MXC_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier2_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetSpecB_paint2";
+								};
+							};
+							id=5057;
+							type="B_recon_F";
+							atlOffset=-0.061863899;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item11
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11646.167,14.79933,4448.417};
+								angles[]={0.023993526,4.5180302,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_tshirt";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier2_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_light_grass";
+								};
+							};
+							id=5058;
+							type="B_recon_F";
+							atlOffset=-0.033464432;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item12
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11646.849,14.732313,4454.2368};
+								angles[]={6.2799835,4.5179768,0.0032018756};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier1_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_desert";
+								};
+							};
+							id=5059;
+							type="B_recon_F";
+							atlOffset=-0.072439194;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item13
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11646.983,14.72946,4453.231};
+								angles[]={6.2799835,4.5179844,0.0032018756};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier2_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_camo";
+								};
+							};
+							id=5060;
+							type="B_recon_F";
+							atlOffset=-0.072505951;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11647.318,14.728901,4451.0874};
+								angles[]={0,4.5179834,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_flashlight";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier1_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_snakeskin";
+								};
+							};
+							id=5061;
+							type="B_recon_F";
+							atlOffset=-0.072538376;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11647.201,14.728882,4452.1387};
+								angles[]={0,4.5179844,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_tshirt";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier1_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_light_desert";
+								};
+							};
+							id=5062;
+							type="B_recon_F";
+							atlOffset=-0.072557449;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item16
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11647.5,14.737506,4450.0518};
+								angles[]={0,4.5179834,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MXC_F";
+										optics="optic_Holosight";
+										flashlight="acc_flashlight";
+										firemode="arifle_MXC_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_vest";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier2_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetSpecB_paint2";
+								};
+							};
+							id=5063;
+							type="B_recon_F";
+							atlOffset=-0.063933372;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item17
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={11647.838,14.789313,4448.8345};
+								angles[]={0.023993526,4.5180302,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Scout";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class primaryWeapon
+									{
+										name="arifle_MX_F";
+										optics="optic_Holosight";
+										flashlight="acc_pointer_IR";
+										firemode="arifle_MX_F:Single";
+										class primaryMuzzleMag
+										{
+											name="30Rnd_65x39_caseless_mag";
+											ammoLeft=30;
+										};
+									};
+									class handgun
+									{
+										name="hgun_Pistol_heavy_01_F";
+										optics="optic_MRD";
+										class primaryMuzzleMag
+										{
+											name="11Rnd_45ACP_Mag";
+											ammoLeft=15;
+										};
+									};
+									class uniform
+									{
+										typeName="U_B_CombatUniform_mcam_tshirt";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="Chemlight_green";
+												count=6;
+												ammoLeft=1;
+											};
+										};
+										class ItemCargo
+										{
+											items=1;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=3;
+											};
+										};
+									};
+									class vest
+									{
+										typeName="V_PlateCarrier2_rgr";
+										isBackpack=0;
+										class MagazineCargo
+										{
+											items=7;
+											class Item0
+											{
+												name="11Rnd_45ACP_Mag";
+												count=2;
+												ammoLeft=15;
+											};
+											class Item1
+											{
+												name="HandGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item2
+											{
+												name="MiniGrenade";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item3
+											{
+												name="SmokeShell";
+												count=2;
+												ammoLeft=1;
+											};
+											class Item4
+											{
+												name="SmokeShellPurple";
+												count=1;
+												ammoLeft=1;
+											};
+											class Item5
+											{
+												name="30Rnd_65x39_caseless_mag";
+												count=4;
+												ammoLeft=30;
+											};
+											class Item6
+											{
+												name="30Rnd_65x39_caseless_mag_Tracer";
+												count=4;
+												ammoLeft=30;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									goggles="G_Bandanna_khk";
+									hmd="NVGoggles";
+									headgear="H_HelmetB_light_grass";
+								};
+							};
+							id=5064;
+							type="B_recon_F";
+							atlOffset=-0.035460472;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+					};
+					class Attributes
+					{
+					};
+					id=2586;
+					atlOffset=-0.072557449;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="groupID";
+							expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Class";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=1625;
-			atlOffset=1.9931135;
+			atlOffset=0.37116909;
 		};
 		class Item1
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=18;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11643.702,14.728882,4453.5};
-						angles[]={0,4.5179768,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayer=1;
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier1_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_desert";
-						};
-					};
-					id=5047;
-					type="B_recon_F";
-					atlOffset=-0.072557449;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11643.838,14.728882,4452.4941};
-						angles[]={0,4.5179834,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier2_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_camo";
-						};
-					};
-					id=5048;
-					type="B_recon_F";
-					atlOffset=-0.072557449;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11644.172,14.728939,4450.3506};
-						angles[]={0,4.5179834,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_flashlight";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier1_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_snakeskin";
-						};
-					};
-					id=5049;
-					type="B_recon_F";
-					atlOffset=-0.072500229;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11644.056,14.728882,4451.4019};
-						angles[]={0,4.5179834,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_tshirt";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier1_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_light_desert";
-						};
-					};
-					id=5050;
-					type="B_recon_F";
-					atlOffset=-0.072557449;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11644.354,14.755379,4449.3154};
-						angles[]={0.023993526,4.5179586,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MXC_F";
-								optics="optic_Holosight";
-								flashlight="acc_flashlight";
-								firemode="arifle_MXC_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier2_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetSpecB_paint2";
-						};
-					};
-					id=5051;
-					type="B_recon_F";
-					atlOffset=-0.060159683;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11644.692,14.807193,4448.0977};
-						angles[]={0.023993526,4.5180302,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_tshirt";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier2_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_light_grass";
-						};
-					};
-					id=5052;
-					type="B_recon_F";
-					atlOffset=-0.031731606;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11645.177,14.728882,4453.8188};
-						angles[]={0,4.5179768,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier1_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_desert";
-						};
-					};
-					id=5053;
-					type="B_recon_F";
-					atlOffset=-0.072557449;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11645.313,14.728882,4452.8135};
-						angles[]={0,4.5179768,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier2_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_camo";
-						};
-					};
-					id=5054;
-					type="B_recon_F";
-					atlOffset=-0.072557449;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item8
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11645.646,14.72891,4450.6699};
-						angles[]={0,4.5179834,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_flashlight";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier1_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_snakeskin";
-						};
-					};
-					id=5055;
-					type="B_recon_F";
-					atlOffset=-0.072528839;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item9
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11645.53,14.728882,4451.7212};
-						angles[]={0,4.5179834,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_tshirt";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier1_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_light_desert";
-						};
-					};
-					id=5056;
-					type="B_recon_F";
-					atlOffset=-0.072557449;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item10
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11645.829,14.747544,4449.6348};
-						angles[]={0.023993526,4.5179586,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MXC_F";
-								optics="optic_Holosight";
-								flashlight="acc_flashlight";
-								firemode="arifle_MXC_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier2_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetSpecB_paint2";
-						};
-					};
-					id=5057;
-					type="B_recon_F";
-					atlOffset=-0.061863899;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item11
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11646.167,14.79933,4448.417};
-						angles[]={0.023993526,4.5180302,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_tshirt";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier2_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_light_grass";
-						};
-					};
-					id=5058;
-					type="B_recon_F";
-					atlOffset=-0.033464432;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item12
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11646.849,14.732313,4454.2368};
-						angles[]={6.2799835,4.5179768,0.0032018756};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier1_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_desert";
-						};
-					};
-					id=5059;
-					type="B_recon_F";
-					atlOffset=-0.072439194;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item13
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11646.983,14.72946,4453.231};
-						angles[]={6.2799835,4.5179844,0.0032018756};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier2_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_camo";
-						};
-					};
-					id=5060;
-					type="B_recon_F";
-					atlOffset=-0.072505951;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item14
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11647.318,14.728901,4451.0874};
-						angles[]={0,4.5179834,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_flashlight";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier1_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_snakeskin";
-						};
-					};
-					id=5061;
-					type="B_recon_F";
-					atlOffset=-0.072538376;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item15
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11647.201,14.728882,4452.1387};
-						angles[]={0,4.5179844,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_tshirt";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier1_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_light_desert";
-						};
-					};
-					id=5062;
-					type="B_recon_F";
-					atlOffset=-0.072557449;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item16
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11647.5,14.737506,4450.0518};
-						angles[]={0,4.5179834,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MXC_F";
-								optics="optic_Holosight";
-								flashlight="acc_flashlight";
-								firemode="arifle_MXC_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_vest";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier2_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetSpecB_paint2";
-						};
-					};
-					id=5063;
-					type="B_recon_F";
-					atlOffset=-0.063933372;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item17
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={11647.838,14.789313,4448.8345};
-						angles[]={0.023993526,4.5180302,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this}; if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Scout";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class primaryWeapon
-							{
-								name="arifle_MX_F";
-								optics="optic_Holosight";
-								flashlight="acc_pointer_IR";
-								firemode="arifle_MX_F:Single";
-								class primaryMuzzleMag
-								{
-									name="30Rnd_65x39_caseless_mag";
-									ammoLeft=30;
-								};
-							};
-							class handgun
-							{
-								name="hgun_Pistol_heavy_01_F";
-								optics="optic_MRD";
-								class primaryMuzzleMag
-								{
-									name="11Rnd_45ACP_Mag";
-									ammoLeft=15;
-								};
-							};
-							class uniform
-							{
-								typeName="U_B_CombatUniform_mcam_tshirt";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="Chemlight_green";
-										count=6;
-										ammoLeft=1;
-									};
-								};
-								class ItemCargo
-								{
-									items=1;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=3;
-									};
-								};
-							};
-							class vest
-							{
-								typeName="V_PlateCarrier2_rgr";
-								isBackpack=0;
-								class MagazineCargo
-								{
-									items=7;
-									class Item0
-									{
-										name="11Rnd_45ACP_Mag";
-										count=2;
-										ammoLeft=15;
-									};
-									class Item1
-									{
-										name="HandGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item2
-									{
-										name="MiniGrenade";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item3
-									{
-										name="SmokeShell";
-										count=2;
-										ammoLeft=1;
-									};
-									class Item4
-									{
-										name="SmokeShellPurple";
-										count=1;
-										ammoLeft=1;
-									};
-									class Item5
-									{
-										name="30Rnd_65x39_caseless_mag";
-										count=4;
-										ammoLeft=30;
-									};
-									class Item6
-									{
-										name="30Rnd_65x39_caseless_mag_Tracer";
-										count=4;
-										ammoLeft=30;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							goggles="G_Bandanna_khk";
-							hmd="NVGoggles";
-							headgear="H_HelmetB_light_grass";
-						};
-					};
-					id=5064;
-					type="B_recon_F";
-					atlOffset=-0.035460472;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=2586;
-			atlOffset=-0.072557449;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="groupID";
-					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="Class";
-						};
-					};
-				};
-				nAttributes=1;
-			};
-		};
-		class Item2
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -89243,7 +89314,7 @@ class Mission
 			title="CUP: Skeet Machine";
 			id=3905;
 		};
-		class Item3
+		class Item2
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -89255,7 +89326,7 @@ class Mission
 			id=3903;
 			atlOffset=-0.083061218;
 		};
-		class Item4
+		class Item3
 		{
 			dataType="Comment";
 			class PositionInfo
@@ -89266,7 +89337,7 @@ class Mission
 			id=3904;
 			atlOffset=0.023219109;
 		};
-		class Item5
+		class Item4
 		{
 			dataType="Comment";
 			class PositionInfo

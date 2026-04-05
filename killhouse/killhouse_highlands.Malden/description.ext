@@ -12,7 +12,6 @@ class CfgFunctions {  //-- Needed for public release
 #include "\tsp_core\scripts\chvd.hpp"
 #include "\tsp_core\scripts\gui.hpp"
 #include "\tsp_core\roles.hpp"
-
 tsp_param_mission = true;               //-- Run TSP mission scripts
 tsp_param_addons = false;              //-- Run TSP addon scripts
 tsp_param_spawn = false;              //-- Show spawn map at all
@@ -33,27 +32,27 @@ tsp_roles[] = {
 		{"Raider HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "tsp_usmc_engineer", {"usmc_recon"}, "iconManEngineer_ca.paa"}
+			{"Engineer", {"rhsusf_usmc_marpat_wd_explosives", "tsp_usmc_engineer"}, {"usmc_recon"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Raider 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon"}, "iconManRecon_ca.paa"},
 			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
 			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+			{"Breacher", {"rhsusf_usmc_marpat_wd_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Raider 2 (Weapons)", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Anti Tank", "tsp_usmc_antitank", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner_fast", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon"}, "iconManRecon_ca.paa"},
+			{"Anti Tank", {"tsp_usmc_antitank", "rhsusf_usmc_recon_marpat_wd_rifleman_at"}, {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_usmc_marpat_wd_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Hitman (Scout Snipers)", "markers\nato\b_art.paa", {
-			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
-			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
+			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader_fast", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_leader","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
 		}}
 	}},
 	{"USMC - 3rd Marine Raider Battalion", "\tsp_core\data\insignia\raider.paa", "west", {
@@ -63,99 +62,99 @@ tsp_roles[] = {
 			{"Engineer", "rhsusf_socom_marsoc_cso_mechanic", {"soc_raider"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Gambler 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "rhsusf_socom_marsoc_cso", {"soc_raider","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Operator (M203)", "rhsusf_socom_marsoc_cso_grenadier", {"soc_raider","usa_missile","us_grenadier","soc_grenadier"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "tsp_army_sf_autorifleman", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Operator", "rhsusf_socom_marsoc_cso", {"soc_raider"}, "iconManRecon_ca.paa"},
+			{"Operator (M203)", "rhsusf_socom_marsoc_cso_grenadier", {"soc_raider","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsusf_socom_marsoc_cso_light", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
 			{"Breacher", "rhsusf_socom_marsoc_cso_breacher", {"soc_raider"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Gambler 2 (Weapons)", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
-			{"Operator (MK17)", "rhsusf_socom_marsoc_cso_mk17", {"soc_raider","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Operator (MK17)", "rhsusf_socom_marsoc_cso_mk17", {"soc_raider"}, "iconManRecon_ca.paa"},
 			{"Operator (AT)", "rhsusf_socom_marsoc_cso", {"soc_raider","usa_missile"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Machine Gunner", "rhsusf_socom_marsoc_cso_mk17_light", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
 			{"Marksman", "rhsusf_socom_marsoc_sniper", {"soc_raider","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
 		}}
 	}},
 	{"USN - Seal Team 2", "\tsp_core\data\insignia\2seal.paa", "west", {
 		{"Neptune HQ", "markers\nato\b_hq.paa", {
-			{"Platoon Leader", "tsp_usn_sailor", {"soc_seal","us_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "tsp_usn_sailor", {"soc_seal","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "tsp_usn_sailor", {"soc_seal"}, "iconManEngineer_ca.paa"}
+			{"Platoon Leader", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Neptune 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "tsp_usn_sailor", {"soc_seal","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_usn_sailor", {"soc_seal","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "tsp_usn_sailor", {"soc_seal","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Operator (AT)", "tsp_usn_sailor", {"soc_seal","usa_missile"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "tsp_usn_sailor", {"soc_seal","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_usn_sailor", {"soc_seal"}, "iconManExplosive_ca.paa"}
+			{"Squad Leader", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Neptune 2 (Weapons)", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "tsp_usn_sailor", {"soc_seal","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_usn_sailor", {"soc_seal","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "tsp_usn_sailor", {"soc_seal","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Operator (AT)", "tsp_usn_sailor", {"soc_seal","usa_missile"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "tsp_usn_sailor", {"soc_seal","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
-			{"Marksman", "tsp_usn_sailor", {"soc_seal","soc_sniper"}, "iconMan_ca.paa"}
+			{"Squad Leader", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", {"rhsusf_socom_swcc_crewman", "tsp_usn_sailor"}, {"soc_seal","soc_sniper"}, "iconMan_ca.paa"}
 		}}
 	}},
 	{"USA - 3rd Special Forces Group", "\tsp_core\data\insignia\sf.paa", "west", {
 		{"Sabre HQ", "markers\nato\b_hq.paa", {
-			{"Platoon Leader", "tsp_army_sf_teamlead", {"soc_special","us_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "tsp_army_sf_medic", {"soc_special","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "tsp_army_sf_engineer", {"soc_special"}, "iconManEngineer_ca.paa"}
+			{"Platoon Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_special","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_medic"}, {"soc_special","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_engineer"}, {"soc_special"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Sabre 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "tsp_army_sf_teamlead", {"soc_special","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_army_sf_medic", {"soc_special","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "tsp_army_sf_operator", {"soc_special","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Operator (AT)", "tsp_army_sf_operatorat", {"soc_special","usa_missile"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "tsp_army_sf_autorifleman", {"soc_special","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_army_sf_engineer", {"soc_special"}, "iconManExplosive_ca.paa"}
+			{"Squad Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_special","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_medic"}, {"soc_special","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operator"}, {"soc_special"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operatorat"}, {"soc_special","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_autorifleman"}, {"soc_special","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_engineer"}, {"soc_special"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Sabre 2 (Weapons)", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "tsp_army_sf_teamlead", {"soc_special","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_army_sf_medic", {"soc_special","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "tsp_army_sf_operator", {"soc_special","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Operator (AT)", "B_soldier_LAT_F", {"soc_special","usa_missile"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_special","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_army_sf_engineer", {"soc_special"}, "iconManExplosive_ca.paa"}
+			{"Squad Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_special","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_medic"}, {"soc_special","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operator"}, {"soc_special"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operatorat"}, {"soc_special","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_machinegunner"}, {"soc_special","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_engineer"}, {"soc_special"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Sabre 3 (SNOT)", "markers\nato\b_art.paa", {
-			{"Team Leader", "tsp_army_sf_teamlead", {"soc_special","us_leader"}, "iconManLeader_ca.paa"},
-			{"Operator", "tsp_army_sf_operator", {"soc_special"}, "iconManRecon_ca.paa"},
-			{"Marksman", "tsp_army_sf_marksman", {"soc_special","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+			{"Team Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_special","us_leader"}, "iconManLeader_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operator"}, {"soc_special"}, "iconManRecon_ca.paa"},
+			{"Marksman", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_marksman"}, {"soc_special","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
 		}}
 	}},
 	{"USA - 1st Special Forces Operational Detachment Delta ", "\tsp_core\data\insignia\1sfod.paa", "west", {
 		{"Shadow HQ", "markers\nato\b_hq.paa", {
-			{"Platoon Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "tsp_army_sf_engineer", {"soc_delta"}, "iconManEngineer_ca.paa"}
+			{"Platoon Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_delta","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_medic"}, {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_engineer"}, {"soc_delta"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Shadow 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "tsp_army_sf_operator", {"soc_delta","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Operator (AT)", "tsp_army_sf_operatorat", {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "tsp_army_sf_autorifleman", {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_army_sf_engineer", {"soc_delta"}, "iconManExplosive_ca.paa"}
+			{"Squad Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_medic"}, {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operator"}, {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operatorat"}, {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_autorifleman"}, {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_engineer"}, {"soc_delta"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Shadow 2 (Weapons)", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "tsp_army_sf_operator", {"soc_delta","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Operator (AT)", "B_soldier_LAT_F", {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_army_sf_engineer", {"soc_delta"}, "iconManExplosive_ca.paa"}
+			{"Squad Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_medic"}, {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operator"}, {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operatorat"}, {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_machinegunner"}, {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_engineer"}, {"soc_delta"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Shadow 3 (SNOT)", "markers\nato\b_art.paa", {
-			{"Team Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
-			{"Operator", "tsp_army_sf_operator", {"soc_delta"}, "iconManRecon_ca.paa"},
-			{"Marksman", "tsp_army_sf_marksman", {"soc_delta","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+			{"Team Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operator"}, {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Marksman", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_marksman"}, {"soc_delta","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
 		}}
 	}}
 };
