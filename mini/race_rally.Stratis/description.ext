@@ -1,4 +1,4 @@
-author = "TheSpeshalPlatoon"; onLoadName = "Rally"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]);  //-- "vehicle_", "modded_", "task_", "cup_", "tsp_"
+author = "TheSpeshalPlatoon"; onLoadName = "Rally"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]);
 
 //-- Addon mode needs full path (\tsp_core\)
 class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
@@ -8,7 +8,7 @@ class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_co
 #include "\tsp_core\roles.hpp"
 
 tsp_param_mission = true;               //-- Run TSP mission scripts
-tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_addons = false;              //-- Run TSP addon scripts
 tsp_param_spawn = true;               //-- Show spawn map at all
 tsp_param_spawnStart = false;        //-- Show spawn screen on initial spawn
 tsp_param_spawnScale = 0.5;         //-- Spawn screen scale, smaller is closer

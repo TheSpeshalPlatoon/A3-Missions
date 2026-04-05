@@ -1,0 +1,58 @@
+enableDebugConsole = 1;
+saving = 0;
+
+respawn = "BASE";
+respawnDelay = 1;
+respawnDialog = 0;
+
+author = "TheSpeshalPlatoon"; 
+onLoadName = "PROPHUNT";
+class header {gameType = DM}; 
+
+respawnButton = 1;
+disabledAI = 1;
+
+//-- Delete bodies after 5 seconds
+corpseManagerMode = 1;
+corpseLimit = 0;
+corpseRemovalMinTime = 5;
+corpseRemovalMaxTime = 5;
+
+//-- Endings
+class CfgDebriefing {
+	class PROP {title = "PROPS WIN"; subtitle = "At least one prop survived";};
+	class PROP2 {title = "PROPS WIN"; subtitle = "All seekers died";};
+	class SEEKER {title = "SEEKERS WIN"; subtitle = "All props died";};
+};
+
+//-- Settings
+class Params {
+	class hideTime {
+		title = "Hiding Time";
+		texts[] = {"5","15","30","60","120","240","360"};
+		values[] = {5,15,30,60,120,240,360};
+		default = 30;
+		isGlobal = 1;
+	};
+	class seekTime {
+		title = "Seeking Time";
+		texts[] = {"60","120","240","360"};
+		values[] = {60,120,240,360};
+		default = 240;
+		isGlobal = 1;
+	};
+	class damage_prop {
+		title = "Prop Damage";
+		texts[] = {"5","10","20","30","50","100"};
+		values[] = {5,10,20,30,50,100};
+		default = 30;
+		isGlobal = 1;
+	};	
+	class damage_man {
+		title = "Man Damage";
+		texts[] = {"2","5","10","20","30"};
+		values[] = {2,5,10,20,30};
+		default = 5;
+		isGlobal = 1;
+	};
+};
