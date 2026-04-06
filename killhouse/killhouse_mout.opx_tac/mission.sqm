@@ -8,7 +8,7 @@ class EditorData
 	toggles=522;
 	class ItemIDProvider
 	{
-		nextID=9489;
+		nextID=9492;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=12740;
+		nextID=12799;
 	};
 	class Camera
 	{
-		pos[]={1511.803,65.806213,838.15399};
-		dir[]={-0.68614215,-0.48644567,0.54091179};
-		up[]={-0.38201737,0.87370908,0.30115852};
-		aside[]={0.61909699,1.5861588e-08,0.78532016};
+		pos[]={1260.4934,40.460236,1234.9639};
+		dir[]={-0.7571556,-0.58778375,0.2850233};
+		up[]={-0.55010092,0.80901617,0.20707928};
+		aside[]={0.35230592,-1.078588e-07,0.93589109};
 	};
 };
 binarizationWanted=0;
@@ -757,7 +757,7 @@ class Mission
 			name="mission";
 			class Entities
 			{
-				items=19;
+				items=20;
 				class Item0
 				{
 					dataType="Object";
@@ -74636,7 +74636,7 @@ class Mission
 											};
 											id=5669;
 											type="Land_Hammer_F";
-											atlOffset=0.95961761;
+											atlOffset=0.95959473;
 											class CustomAttributes
 											{
 												class Attribute0
@@ -74758,7 +74758,7 @@ class Mission
 										};
 									};
 									id=5815;
-									atlOffset=0.63779449;
+									atlOffset=0.63812256;
 								};
 								class Item1
 								{
@@ -75877,11 +75877,11 @@ class Mission
 								};
 							};
 							id=9089;
-							atlOffset=0.028198242;
+							atlOffset=0.028282166;
 						};
 					};
 					id=7192;
-					atlOffset=0.21607208;
+					atlOffset=0.21611404;
 				};
 				class Item17
 				{
@@ -75904,7 +75904,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={1418.797,37.25,874.72498};
-					angle=3.3175917;
+					angle=3.3175912;
 					class Attributes
 					{
 						name="zone_capture";
@@ -75917,2447 +75917,2457 @@ class Mission
 					id=8943;
 					type="EmptyDetectorArea10x10";
 				};
+				class Item19
+				{
+					dataType="Group";
+					side="West";
+					class Entities
+					{
+						items=30;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1341.5442,37.558578,779.55743};
+								angles[]={0,4.9066768,0};
+							};
+							side="West";
+							flags=6;
+							class Attributes
+							{
+								init="if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayer=1;
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7010;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1341.2886,37.558578,778.57513};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7011;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1340.7853,37.558578,776.46497};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7012;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1341.0762,37.558578,777.48187};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7013;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1340.562,37.558578,775.43781};
+								angles[]={0,4.9066586,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7014;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item5
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1340.4132,37.601887,774.1828};
+								angles[]={0,4.9067302,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7015;
+							type="rhsusf_army_ocp_rifleman";
+							atlOffset=0.043308258;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item6
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1343.0297,37.558578,779.29364};
+								angles[]={0,4.9066768,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7016;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item7
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1342.7743,37.558578,778.31183};
+								angles[]={0,4.9066768,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7017;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item8
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1342.271,37.558578,776.2016};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7018;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item9
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1342.5618,37.558578,777.21844};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7019;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item10
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1342.0476,37.558578,775.17444};
+								angles[]={0,4.9066586,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7020;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item11
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1341.8987,37.580238,773.91943};
+								angles[]={0,4.9067302,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7021;
+							type="rhsusf_army_ocp_rifleman";
+							atlOffset=0.021659851;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item12
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1344.7352,37.558578,779.04681};
+								angles[]={0,4.9066768,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7022;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item13
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1344.4786,37.558578,778.06488};
+								angles[]={0,4.9066849,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7023;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1343.9763,37.558578,775.95435};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7024;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1344.2662,37.558578,776.97156};
+								angles[]={0,4.9066849,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7025;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item16
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1343.752,37.558578,774.92706};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7026;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item17
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1343.6033,37.558578,773.67255};
+								angles[]={0,4.9067302,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7027;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item18
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1346.4421,37.558578,778.76239};
+								angles[]={0,4.9066768,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7028;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item19
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1346.1865,37.558578,777.78009};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7029;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item20
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1345.6832,37.558578,775.66986};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7030;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item21
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1345.9742,37.558578,776.68677};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7031;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item22
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1345.46,37.558578,774.6427};
+								angles[]={0,4.9066586,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7032;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item23
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1345.3112,37.567894,773.38776};
+								angles[]={0,4.9067302,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7033;
+							type="rhsusf_army_ocp_rifleman";
+							atlOffset=0.0093154907;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item24
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1347.9276,37.558578,778.49854};
+								angles[]={0,4.9066768,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7034;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item25
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1347.6722,37.558578,777.51678};
+								angles[]={0,4.9066768,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7035;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item26
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1347.1689,37.558578,775.40656};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7036;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item27
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1347.4597,37.558578,776.4234};
+								angles[]={0,4.9066839,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7037;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item28
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1346.9457,37.558578,774.37939};
+								angles[]={0,4.9066586,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7038;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item29
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1346.7968,37.558578,773.12439};
+								angles[]={0,4.9067302,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select Role In-Game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_acu_oefcp";
+										isBackpack=0;
+										class ItemCargo
+										{
+											items=3;
+											class Item0
+											{
+												name="FirstAidKit";
+												count=1;
+											};
+											class Item1
+											{
+												name="rhsusf_ANPVS_14";
+												count=1;
+											};
+											class Item2
+											{
+												name="rhsusf_patrolcap_ocp";
+												count=1;
+											};
+										};
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									radio="ItemRadio";
+								};
+							};
+							id=7039;
+							type="rhsusf_army_ocp_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+					};
+					class Attributes
+					{
+					};
+					id=6972;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="groupID";
+							expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Ungrouped";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=155;
-			atlOffset=0.28079605;
+			atlOffset=0.2939682;
 		};
 		class Item1
 		{
 			dataType="Group";
 			side="West";
-			class Entities
-			{
-				items=30;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1341.5442,37.558578,779.55743};
-						angles[]={0,4.9066768,0};
-					};
-					side="West";
-					flags=6;
-					class Attributes
-					{
-						init="if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayer=1;
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7010;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1341.2886,37.558578,778.57513};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7011;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1340.7853,37.558578,776.46497};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7012;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1341.0762,37.558578,777.48187};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7013;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item4
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1340.562,37.558578,775.43781};
-						angles[]={0,4.9066586,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7014;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item5
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1340.4132,37.601887,774.1828};
-						angles[]={0,4.9067302,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7015;
-					type="rhsusf_army_ocp_rifleman";
-					atlOffset=0.043308258;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item6
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1343.0297,37.558578,779.29364};
-						angles[]={0,4.9066768,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7016;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item7
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1342.7743,37.558578,778.31183};
-						angles[]={0,4.9066768,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7017;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item8
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1342.271,37.558578,776.2016};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7018;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item9
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1342.5618,37.558578,777.21844};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7019;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item10
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1342.0476,37.558578,775.17444};
-						angles[]={0,4.9066586,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7020;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item11
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1341.8987,37.580238,773.91943};
-						angles[]={0,4.9067302,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						receiveRemoteTargets=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7021;
-					type="rhsusf_army_ocp_rifleman";
-					atlOffset=0.021659851;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item12
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1344.7352,37.558578,779.04681};
-						angles[]={0,4.9066768,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7022;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item13
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1344.4786,37.558578,778.06488};
-						angles[]={0,4.9066849,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7023;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item14
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1343.9763,37.558578,775.95435};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7024;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item15
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1344.2662,37.558578,776.97156};
-						angles[]={0,4.9066849,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7025;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item16
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1343.752,37.558578,774.92706};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7026;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item17
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1343.6033,37.558578,773.67255};
-						angles[]={0,4.9067302,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7027;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item18
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1346.4421,37.558578,778.76239};
-						angles[]={0,4.9066768,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7028;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item19
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1346.1865,37.558578,777.78009};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7029;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item20
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1345.6832,37.558578,775.66986};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7030;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item21
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1345.9742,37.558578,776.68677};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7031;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item22
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1345.46,37.558578,774.6427};
-						angles[]={0,4.9066586,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7032;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item23
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1345.3112,37.567894,773.38776};
-						angles[]={0,4.9067302,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7033;
-					type="rhsusf_army_ocp_rifleman";
-					atlOffset=0.0093154907;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item24
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1347.9276,37.558578,778.49854};
-						angles[]={0,4.9066768,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7034;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item25
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1347.6722,37.558578,777.51678};
-						angles[]={0,4.9066768,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7035;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item26
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1347.1689,37.558578,775.40656};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7036;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item27
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1347.4597,37.558578,776.4234};
-						angles[]={0,4.9066839,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7037;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item28
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1346.9457,37.558578,774.37939};
-						angles[]={0,4.9066586,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7038;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-				class Item29
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1346.7968,37.558578,773.12439};
-						angles[]={0,4.9067302,0};
-					};
-					side="West";
-					flags=4;
-					class Attributes
-					{
-						init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-						description="Select Role In-Game@Ungrouped";
-						isPlayable=1;
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="rhs_uniform_acu_oefcp";
-								isBackpack=0;
-								class ItemCargo
-								{
-									items=3;
-									class Item0
-									{
-										name="FirstAidKit";
-										count=1;
-									};
-									class Item1
-									{
-										name="rhsusf_ANPVS_14";
-										count=1;
-									};
-									class Item2
-									{
-										name="rhsusf_patrolcap_ocp";
-										count=1;
-									};
-								};
-							};
-							map="ItemMap";
-							compass="ItemCompass";
-							watch="ItemWatch";
-							radio="ItemRadio";
-						};
-					};
-					id=7039;
-					type="rhsusf_army_ocp_rifleman";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male09ENG";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=1;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
 			class Attributes
 			{
 			};
-			id=6972;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="groupID";
-					expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="Ungrouped";
-						};
-					};
-				};
-				nAttributes=1;
-			};
+			id=9489;
+			atlOffset=-44.5;
 		};
 	};
 };
