@@ -6,30 +6,47 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=513;
-	mods[]=
-	{
-		"WBK_Zombies_AdvancedEditorSettings"
-	};
 	class ItemIDProvider
 	{
 		nextID=125;
 	};
 	class LayerIndexProvider
 	{
-		nextID=11;
+		nextID=13;
 	};
 	class Camera
 	{
-		pos[]={1351.9958,90.401115,5734.3359};
-		dir[]={-0.41161528,-0.85840207,0.30614781};
-		up[]={-0.68878073,0.51296544,0.51229572};
-		aside[]={0.59679818,4.3888576e-08,0.80239612};
+		pos[]={1319.4312,34.39896,5740.2285};
+		dir[]={0.1958144,-0.5172112,0.83319241};
+		up[]={0.11833068,0.85585213,0.50349909};
+		aside[]={0.97350568,-3.5326229e-07,-0.22878975};
 	};
 };
 binarizationWanted=0;
 sourceName="zeus_usmc";
 addons[]=
 {
+	"rhsusf_c_mtvr",
+	"UK3CB_Factions_Vehicles_LAV25",
+	"CUP_Misc3_Config",
+	"A3_Structures_F_Mil_BagBunker",
+	"A3_Props_F_Orange_Humanitarian_Supplies",
+	"CUP_WarfareBuildings",
+	"CUP_StandaloneTerrains_Core_Faction",
+	"A3_Structures_F_Civ_Constructions",
+	"ace_dragging",
+	"A3_Structures_F_Argo_Military_Fortifications",
+	"A3_Structures_F_Bootcamp_Civ_SportsGrounds",
+	"A3_Structures_F_System",
+	"A3_Supplies_F_Heli_Fuel",
+	"A3_Structures_F_Heli_Ind_Airport",
+	"A3_Characters_F",
+	"A3_Weapons_F",
+	"rhsusf_c_troops",
+	"A3_Structures_F_Mil_Helipads",
+	"A3_Props_F_Orange_Civilian_InfoBoards",
+	"A3_Props_F_Orange_Humanitarian_Camps",
+	"A3_Modules_F_Multiplayer"
 };
 class AddonsMetaData
 {
@@ -109,43 +126,43 @@ class AddonsMetaData
 		};
 		class Item11
 		{
+			className="A3_Supplies_F_Heli";
+			name="Arma 3 Helicopters - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item12
+		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item12
+		class Item13
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item13
+		class Item14
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item14
+		class Item15
 		{
 			className="rhsusf_c_troops";
 			name="RHSUSF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item15
+		class Item16
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item16
-		{
-			className="A3_Supplies_F_Heli";
-			name="Arma 3 Helicopters - Ammoboxes and Supplies";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -189,7 +206,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=5;
+		items=1;
 		class Item0
 		{
 			dataType="Layer";
@@ -231,6 +248,7 @@ class Mission
 					};
 					id=60;
 					type="UK3CB_B_LAV25_US_WDL";
+					atlOffset=-7.4386597e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -592,7 +610,7 @@ class Mission
 					};
 					id=62;
 					type="UK3CB_B_LAV25_HQ_US_WDL";
-					atlOffset=1.9073486e-06;
+					atlOffset=-7.4386597e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -943,7 +961,7 @@ class Mission
 					name="nosim";
 					class Entities
 					{
-						items=18;
+						items=22;
 						class Item0
 						{
 							dataType="Object";
@@ -1338,7 +1356,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={1340.262,21.693661,5756.5918};
-								angles[]={0,1.6523817,-0};
+								angles[]={0,1.6523817,0};
 							};
 							side="Empty";
 							flags=5;
@@ -1372,7 +1390,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={1338.2228,22.252928,5751.9697};
-								angles[]={0,5.4185696,-0};
+								angles[]={0,5.4185696,0};
 							};
 							side="Empty";
 							flags=5;
@@ -1407,7 +1425,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={1339.5549,22.606661,5753.7837};
-								angles[]={0,2.0320742,-0};
+								angles[]={0,2.0320742,0};
 							};
 							side="Empty";
 							flags=5;
@@ -1575,9 +1593,75 @@ class Mission
 								nAttributes=1;
 							};
 						};
+						class Item18
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1288.2313,21.586111,5797.0464};
+								angles[]={0.052451372,2.2263298,6.2731848};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=124;
+							type="Misc_cargo_cont_net1";
+						};
+						class Item19
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1286.8795,21.238039,5803.0806};
+								angles[]={0.082313478,0,6.2307339};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=122;
+							type="Misc_cargo_cont_net2";
+							atlOffset=1.9073486e-06;
+						};
+						class Item20
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1286.9615,20.994322,5801.8726};
+								angles[]={0.082313478,0,6.2307339};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=121;
+							type="FlexibleTank_01_forest_F";
+							atlOffset=-0.0010433197;
+						};
+						class Item21
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={1286.5082,21.066051,5801.0239};
+								angles[]={0.037482351,0,6.2756925};
+							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+							};
+							id=123;
+							type="FlexibleTank_01_forest_F";
+						};
 					};
 					id=64;
-					atlOffset=-0.056818008;
+					atlOffset=-0.045370102;
 				};
 				class Item4
 				{
@@ -3920,73 +4004,7 @@ class Mission
 				};
 			};
 			id=63;
-			atlOffset=-0.04343605;
-		};
-		class Item1
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1286.9615,20.994322,5801.8726};
-				angles[]={0.082313478,0,6.2307339};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=121;
-			type="FlexibleTank_01_forest_F";
-			atlOffset=-0.0010433197;
-		};
-		class Item2
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1286.8795,21.238039,5803.0806};
-				angles[]={0.082313478,0,6.2307339};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=122;
-			type="Misc_cargo_cont_net2";
-			atlOffset=1.9073486e-06;
-		};
-		class Item3
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1286.5082,21.066051,5801.0239};
-				angles[]={0.037482351,0,6.2756925};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=123;
-			type="FlexibleTank_01_forest_F";
-		};
-		class Item4
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={1288.2313,21.586111,5797.0464};
-				angles[]={0.052451372,2.2263298,6.2731848};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-			};
-			id=124;
-			type="Misc_cargo_cont_net1";
+			atlOffset=-0.043670654;
 		};
 	};
 };
