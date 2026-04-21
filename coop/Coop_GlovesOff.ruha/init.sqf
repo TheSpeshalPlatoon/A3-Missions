@@ -1,19 +1,19 @@
 if (!isServer) exitWith {};
 
 [
-    west, ["Bunker"], "Tunnel Network", "Intel suggests the milita has underground access, It's used as an ammo cache and there could be an officer in there.", 
+    west, ["Bunker"], "Tunnel Network", "We have a rough position marked on your map, This could lead you into their underground bunker.", 
     "Attack", objnull, {true}, { (count (allUnits select {_x inArea Bunker1 && side _x == East}) < 1)}
 ] spawn tsp_fnc_task;
 [
-    west, ["ammo_bunker"], "Destroy Ammo cache", "Possible known location is in the underground network.", 
+    west, ["ammo_bunker"], "Destroy Ammo cache", "We have reasaon to believe thier ammo is being stored in a makeshift underground bunker.", 
     "Destroy", objnull, {true}, {!alive task_ammo1}
 ] spawn tsp_fnc_task;
 [
-    west, ["Construction"], "Construction Site", "An abandon building project, turned into a nest for the militia.", 
+    west, ["Construction"], "Construction Site", "An abandon building project, turned nest for the militia.", 
     "Attack", getPos milita_base, {true}, { (count (allUnits select {_x inArea Construct1 && side _x == East}) < 1)}
 ] spawn tsp_fnc_task;
 [
-    west, ["ammo_construciton"], "Destroy Ammo cache", "Possible known location is in the construction site turned nest for the militia.", 
+    west, ["ammo_construciton"], "Destroy Equipment cache", "Might be located at the construction site, Bring Demo for these caches..", 
     "Destroy", objnull, {true}, {!alive task_ammo2}
 ] spawn tsp_fnc_task;
 [
@@ -21,17 +21,18 @@ if (!isServer) exitWith {};
     "Destroy", objnull, {true}, {!alive task_ammo3}
 ] spawn tsp_fnc_task;
 [
-    west, ["officer2"], "Capture cell leader", "Possible known location is at the construction site turned nest for the militia.", "Meet", objnull, 
+    west, ["officer2"], "Capture cell leader", "Last known location is the construction site.", "Meet", objnull, 
     {true}, {count ([HVT2] select {alive _x && (_x inArea HVT2_out)}) > 0}, 
     {count ([HVT2] select {alive _x}) == 0}
 ] spawn tsp_fnc_task;
 [
-    west, ["officer1"], "Capture cell leader", "Possible location is at the sawmill.", "Meet", getpos HVT1, 
+    west, ["officer1"], "Capture cell leader", "Possible location at the sawmill.", "Meet", getpos HVT1, 
     {true}, {count ([HVT1] select {alive _x && (_x inArea HVT1_out)}) > 0}, 
     {count ([HVT1] select {alive _x}) == 0}
 ] spawn tsp_fnc_task;
 [
-    west, ["hotel_officer"], "Capture Officers", "We just got a report from the lithuanians, A russian officer and militan commander is meeting up at the abandon hotel. Find and bring them back alive!", "Meet", getpos koman1, 
+    west, ["hotel_officer"], "Capture Officers", "Thanks to the HVTs you brougt back alive, They kindly gave us intel on their commanding officer.
+     He's at a hotel down south, head down there and bring him back alive. Russians are likely in play so keep an eye out for any russian officer.", "Meet", getpos koman1, 
     {"officer1" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"] && "Construction" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"] && "Bunker" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"]}, 
     {count ([koman1, koman2] select {alive _x && (_x inArea komandir_out)}) > 0}, 
     {count ([koman1, koman2] select {alive _x}) == 0}

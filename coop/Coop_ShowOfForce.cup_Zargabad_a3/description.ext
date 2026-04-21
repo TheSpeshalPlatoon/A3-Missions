@@ -1,0 +1,1584 @@
+author = "N1C0"; onLoadName = "Rolling Steel"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["data\overview1.jpg"]);  
+
+//-- Addon mode needs full path (\tsp_core\)
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = true;               //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer/
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";    //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 70;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+
+tsp_roles[] = {
+	//-- US Army
+	{"USA - 1st Cavalry Regiment", "data\1stCav.paa", "west", {
+		{"BlackJack HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_army_ocp_officer", {"usa_grunt","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "rhsusf_army_ocp_engineer", {"usa_grunt"}, "iconManEngineer_ca.paa"}
+		}},
+		{"BlackJack 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_army_ocp_squadleader", {"usa_grunt","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_army_ocp_teamleader", {"usa_grunt"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_army_ocp_rifleman", {"usa_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_army_ocp_riflemanat", {"usa_grunt","usa_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Grenadier", "rhsusf_army_ocp_grenadier", {"usa_grunt"}, "iconMan_ca.paa"},
+			{"Autorifleman", "rhsusf_army_ocp_autorifleman", {"usa_grunt","us_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "rhsusf_army_ocp_rifleman_m590", {"usa_grunt"}, "iconManExplosive_ca.paa"}
+		}},
+		{"BlackJack 2", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_army_ocp_squadleader", {"usa_grunt","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_army_ocp_teamleader", {"usa_grunt"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_army_ocp_rifleman", {"usa_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_army_ocp_riflemanat", {"usa_grunt","usa_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Grenadier", "rhsusf_army_ocp_grenadier", {"usa_grunt"}, "iconMan_ca.paa"},
+			{"Autorifleman", "rhsusf_army_ocp_autorifleman", {"usa_grunt","us_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", "rhsusf_army_ocp_marksman", {"usa_grunt","us_sniper","usa_sniper"}, "iconMan_ca.paa"}
+		}},
+		{"BlackJack 3 (Weapons)", "markers\nato\b_art.paa", {
+			{"Squad Leader", "rhsusf_army_ocp_squadleader", {"usa_grunt","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_army_ocp_teamleader", {"usa_grunt"}, "iconManLeader_ca.paa"},
+			{"Machine Gunner", "rhsusf_army_ocp_machinegunner", {"usa_grunt","us_autorifle"}, "iconManMG_ca.paa"},
+			{"Ammo Bearer", "rhsusf_army_ocp_machinegunnera", {"usa_grunt","us_autorifle"}, "iconMan_ca.paa"},
+			{"Missile Specialist", "rhsusf_army_ocp_javelin", {"usa_grunt","usa_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Assistant Missile Specialist", "rhsusf_army_ocp_javelin_assistant", {"usa_grunt","usa_missile","us_missile"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"USA - Iron Brigade", "data\2ndBCT.paa", "west", {
+		{"Wrecker 1", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_army_ocp_crewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
+		}},	
+		{"Wrecker 2", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_army_ocp_crewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
+		}},	
+		{"Wrecker 3", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_army_ocp_crewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
+		}}
+	}}
+};
+
+tsp_param_brightness = 0.3; tsp_param_time_day = 1;      tsp_param_time_night = 1;
+tsp_param_weather = false;   tsp_param_weatherTime = 20; 
+tsp_param_fog = 0.2;        tsp_param_fogMin = 0;        tsp_param_fogMax = 0.02;
+tsp_param_wind = 1;         tsp_param_windMin = -1;      tsp_param_windMax = 1;
+tsp_param_overcast = 1;     tsp_param_overcastMin = 0;   tsp_param_overcastMax = 1; 
+tsp_param_rain = 0.5;       tsp_param_rainMin = 0;       tsp_param_rainMax = 1;
+tsp_param_lightning = 1;    tsp_param_lightningMin = 0;  tsp_param_lightningMax = 1;
+tsp_param_wave = 0.5;       tsp_param_waveMin = 0;       tsp_param_waveMax = 1;
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
+
+//-- Bomb Script from TFB
+#include "CustomControlClasses.h"
+#include "Defines.hpp"
+class RscStructuredText;
+class RscControlsgroup  
+{
+	type = CT_CONTROLS_GROUP;
+	idc = -1;
+	style = ST_MULTI;
+	x = (safeZoneX + (SafezoneW * 0.0163));  // scalability code which resizes correctly no matter what gui size or screen dimensions is used
+	y = (safeZoneY + (SafezoneH * 0.132));   
+	w = (SafezoneW  * 0.31);                 
+	h = (SafezoneH  * 0.752);              
+
+	class VScrollbar 
+	{
+		color[] = {0.5, 0.5, 0.5, 1};
+		width = 0.015;
+		autoScrollSpeed = -1;
+		autoScrollDelay = 0;
+		autoScrollRewind = 0;
+	 arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa"; // Arrow 
+	 arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa"; // Arrow when clicked on 
+	 border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa"; // Slider background (stretched vertically) 
+	 thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa"; // Dragging element (stretched vertically) 
+	};
+
+	class HScrollbar 
+	{
+		color[] = {1, 1, 1, 1};
+		height = 0.028;
+	};
+
+	class ScrollBar
+	{
+		color[] = {1,1,1,0.6};
+		colorActive[] = {1,1,1,1};
+		colorDisabled[] = {1,1,1,0.3};
+	 arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa"; // Arrow 
+	 arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa"; // Arrow when clicked on 
+	 border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa"; // Slider background (stretched vertically) 
+	 thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa"; // Dragging element (stretched vertically) 
+	};
+
+	class Controls {};
+};
+class BadgerDefuse
+{
+	idd = 6700;
+	onLoad = "[{ !isNull findDisplay 6700 }, { [] call TFB_fnc_defuse_bombDialog; }, [], 2] call CBA_fnc_waitUntilAndExecute;";
+	
+	class ControlsBackground
+	{
+		
+		class device_img
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.104375;
+			y = safeZoneY + safeZoneH * 0.19666667;
+			w = safeZoneW * 0.3925;
+			h = safeZoneH * 0.70333334;
+			style = 0+48;
+			text = "fx\device.paa";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = 1;
+			
+		};
+		class clipboard_img
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.42125;
+			y = safeZoneY + safeZoneH * 0.15444445;
+			w = safeZoneW * 0.45625;
+			h = safeZoneH * 0.81888889;
+			style = 0+48;
+			text = "fx\clipboard3.paa";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class slot_wire1
+		{
+			type = 0;
+			idc = 101;
+			x = safeZoneX + safeZoneW * 0.2375;
+			y = safeZoneY + safeZoneH * 0.16777778;
+			w = safeZoneW * 0.08625;
+			h = safeZoneH * 0.13444445;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class slot_wire2
+		{
+			type = 0;
+			idc = 102;
+			x = safeZoneX + safeZoneW * 0.255;
+			y = safeZoneY + safeZoneH * 0.16777778;
+			w = safeZoneW * 0.08625;
+			h = safeZoneH * 0.13444445;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class slot_wire3
+		{
+			type = 0;
+			idc = 103;
+			x = safeZoneX + safeZoneW * 0.2725;
+			y = safeZoneY + safeZoneH * 0.16777778;
+			w = safeZoneW * 0.08625;
+			h = safeZoneH * 0.13444445;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class slot_wire4
+		{
+			type = 0;
+			idc = 104;
+			x = safeZoneX + safeZoneW * 0.2895;
+			y = safeZoneY + safeZoneH * 0.16777778;
+			w = safeZoneW * 0.08625;
+			h = safeZoneH * 0.13444445;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class slot_wire5
+		{
+			type = 0;
+			idc = 105;
+			x = safeZoneX + safeZoneW * 0.307;
+			y = safeZoneY + safeZoneH * 0.16777778;
+			w = safeZoneW * 0.08625;
+			h = safeZoneH * 0.13444445;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class slot_wire6
+		{
+			type = 0;
+			idc = 106;
+			x = safeZoneX + safeZoneW * 0.3245;
+			y = safeZoneY + safeZoneH * 0.16777778;
+			w = safeZoneW * 0.08625;
+			h = safeZoneH * 0.13444445;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class slot_wire7
+		{
+			type = 0;
+			idc = 107;
+			x = safeZoneX + safeZoneW * 0.342;
+			y = safeZoneY + safeZoneH * 0.16777778;
+			w = safeZoneW * 0.08625;
+			h = safeZoneH * 0.13444445;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class slot_wire8
+		{
+			type = 0;
+			idc = 108;
+			x = safeZoneX + safeZoneW * 0.359;
+			y = safeZoneY + safeZoneH * 0.16777778;
+			w = safeZoneW * 0.08625;
+			h = safeZoneH * 0.13444445;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class clipboard_header
+		{
+			type = 0;
+			idc = 0;
+			x = safeZoneX + safeZoneW * 0.5075;
+			y = safeZoneY + safeZoneH * 0.22888889;
+			w = safeZoneW * 0.280625;
+			h = safeZoneH * 0.03333334;
+			style = 2;
+			text = "Defusal Instructions";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0,0,0,1};
+			font = "PuristaSemibold";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class keypad_display1
+		{
+			type = 0;
+			idc = 211;
+			x = safeZoneX + safeZoneW * 0.29;
+			y = safeZoneY + safeZoneH * 0.4175;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display2
+		{
+			type = 0;
+			idc = 212;
+			x = safeZoneX + safeZoneW * 0.304375;
+			y = safeZoneY + safeZoneH * 0.41777778;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display3
+		{
+			type = 0;
+			idc = 213;
+			x = safeZoneX + safeZoneW * 0.31875;
+			y = safeZoneY + safeZoneH * 0.41777778;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display4
+		{
+			type = 0;
+			idc = 214;
+			x = safeZoneX + safeZoneW * 0.333125;
+			y = safeZoneY + safeZoneH * 0.41777778;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display5
+		{
+			type = 0;
+			idc = 215;
+			x = safeZoneX + safeZoneW * 0.3475;
+			y = safeZoneY + safeZoneH * 0.41777778;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display6
+		{
+			type = 0;
+			idc = 216;
+			x = safeZoneX + safeZoneW * 0.361875;
+			y = safeZoneY + safeZoneH * 0.41777778;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display7
+		{
+			type = 0;
+			idc = 217;
+			x = safeZoneX + safeZoneW * 0.375;
+			y = safeZoneY + safeZoneH * 0.41777778;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display8
+		{
+			type = 0;
+			idc = 218;
+			x = safeZoneX + safeZoneW * 0.389;
+			y = safeZoneY + safeZoneH * 0.41777778;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display9
+		{
+			type = 0;
+			idc = 219;
+			x = safeZoneX + safeZoneW * 0.4025;
+			y = safeZoneY + safeZoneH * 0.41777778;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display10
+		{
+			type = 0;
+			idc = 220;
+			x = safeZoneX + safeZoneW * 0.4175;
+			y = safeZoneY + safeZoneH * 0.41777778;
+			w = safeZoneW * 0.009375;
+			h = safeZoneH * 0.035555;
+			style = 0+2;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0.2353,0.2353,0.2431,1};
+			font = "EtelkaMonospacePro";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1.35);
+			
+		};
+		class keypad_display
+		{
+			type = 13;
+			idc = 100;
+			x = safeZoneX + safeZoneW * 0.2875;
+			y = safeZoneY + safeZoneH * 0.4175;
+			w = safeZoneW * 0.15;
+			h = safeZoneH * 0.0388;
+			style = 0;
+			text = "";
+			size = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 2.2);
+			colorBackground[] = {1,1,1,0};
+			class Attributes
+			{
+				color = "#3c3c3e";
+				font = "EtelkaMonospaceProBold";
+				size = 0.774;
+				shadow = 1;
+				valign='top';
+				align='left';
+			};
+			
+		};
+		class clipboard_text_header2
+		{
+			type = 0;
+			idc = 0;
+			x = safeZoneX + safeZoneW * 0.51625;
+			y = safeZoneY + safeZoneH * 0.27111112;
+			w = safeZoneW * 0.265;
+			h = safeZoneH * 0.02111112;
+			style = 0;
+			text = "Battery wires don't count, don't disconnect the battery!";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {0,0,0,1};
+			font = "PuristaMedium";
+			sizeEx = (safeZoneW * 0.265 / 25 * 1.6);
+			
+		};
+		
+		class clipboardgroup: RscControlsGroup {
+			idc = 221;
+			x = safeZoneX + safeZoneW * 0.51625;
+			y = safeZoneY + safeZoneH * 0.31222223;
+			w = safeZoneW * 0.265;
+			h = safeZoneH * 0.50333334;
+			sizeEx = (safeZoneW * 0.265 / 25 * 0.1);
+			class Controls
+			{
+				class clipboard_text: RscStructuredText
+				{
+					type = 13;
+					idc = 222;
+					x = 0;
+					y = 0;
+					w = 0.595;
+					h = 1;
+					style = 0;
+					text = "Test string one <br/> Test string 2";
+					colorBackground[] = {0,0,0,0};
+					colorText[] = {1,1,1,1};
+					class Attributes
+					{
+						font = "PuristaMedium";
+						color = "#000000";
+						align = "left";
+						shadow = false;
+						shadowColor = "#FFFFFF";
+					};
+					size = (safeZoneW * 0.265 / 25 * 1.6);
+				};
+			};
+		};
+		
+		class light_1
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.261;
+			y = safeZoneY + safeZoneH * 0.3495;
+			w = safeZoneW * 0.02;
+			h = safeZoneH * 0.03555556;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class light_2
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.282;
+			y = safeZoneY + safeZoneH * 0.3495;
+			w = safeZoneW * 0.02;
+			h = safeZoneH * 0.03555556;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class light_3
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.3033;
+			y = safeZoneY + safeZoneH * 0.3495;
+			w = safeZoneW * 0.02;
+			h = safeZoneH * 0.03555556;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class light_4
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.323;
+			y = safeZoneY + safeZoneH * 0.3495;
+			w = safeZoneW * 0.02;
+			h = safeZoneH * 0.03555556;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class light_5
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.3445;
+			y = safeZoneY + safeZoneH * 0.3495;
+			w = safeZoneW * 0.02;
+			h = safeZoneH * 0.03555556;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class light_6
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.3645;
+			y = safeZoneY + safeZoneH * 0.3495;
+			w = safeZoneW * 0.02;
+			h = safeZoneH * 0.03555556;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class light_7
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.384375;
+			y = safeZoneY + safeZoneH * 0.3495;
+			w = safeZoneW * 0.02;
+			h = safeZoneH * 0.03555556;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		class light_8
+		{
+			type = 0;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.405625;
+			y = safeZoneY + safeZoneH * 0.3495;
+			w = safeZoneW * 0.02;
+			h = safeZoneH * 0.03555556;
+			style = 0+48;
+			text = "";
+			colorBackground[] = {0,0,0,0};
+			colorText[] = {1,1,1,1};
+			font = "PuristaMedium";
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			
+		};
+		
+	};
+	class Controls
+	{
+		class battery
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.1525;
+			y = safeZoneY + safeZoneH * 0.30444445;
+			w = safeZoneW * 0.01875;
+			h = safeZoneH * 0.14;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0.05};
+			colorBackgroundActive[] = {1,1,1,0.2};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			tooltip = "Remove Battery";
+			tooltipColorBox[] = {0.6,0.6,0.6,1};
+			tooltipColorShade[] = {0.302,0.302,0.302,1};
+			tooltipColorText[] = {1,1,1,1};
+			onMouseButtonClick = "[tfb_active_defusal] call TFB_fnc_defuse_detonate;";
+			
+		};
+		class slot_button1
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.275625;
+			y = safeZoneY + safeZoneH * 0.16888889;
+			w = safeZoneW * 0.011875;
+			h = safeZoneH * 0.13555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0.05};
+			colorBackgroundActive[] = {1,1,1,0.2};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[101, 1, _this select 0] call TFB_fnc_defuse_cutWire;";
+			
+		};
+		class slot_button2
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.291875;
+			y = safeZoneY + safeZoneH * 0.16888889;
+			w = safeZoneW * 0.011875;
+			h = safeZoneH * 0.13555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0.05};
+			colorBackgroundActive[] = {1,1,1,0.2};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[102, 2, _this select 0] call TFB_fnc_defuse_cutWire;";
+			
+		};
+		class slot_button3
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.309375;
+			y = safeZoneY + safeZoneH * 0.16888889;
+			w = safeZoneW * 0.011875;
+			h = safeZoneH * 0.13555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0.05};
+			colorBackgroundActive[] = {1,1,1,0.2};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[103, 3, _this select 0] call TFB_fnc_defuse_cutWire;";
+			
+		};
+		class slot_button4
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.325625;
+			y = safeZoneY + safeZoneH * 0.16888889;
+			w = safeZoneW * 0.011875;
+			h = safeZoneH * 0.13555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0.05};
+			colorBackgroundActive[] = {1,1,1,0.2};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[104, 4, _this select 0] call TFB_fnc_defuse_cutWire;";
+			
+		};
+		class slot_button5
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.34375;
+			y = safeZoneY + safeZoneH * 0.16888889;
+			w = safeZoneW * 0.011875;
+			h = safeZoneH * 0.13555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0.05};
+			colorBackgroundActive[] = {1,1,1,0.2};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[105, 5, _this select 0] call TFB_fnc_defuse_cutWire;";
+			
+		};
+		class slot_button6
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.360625;
+			y = safeZoneY + safeZoneH * 0.16888889;
+			w = safeZoneW * 0.011875;
+			h = safeZoneH * 0.13555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0.05};
+			colorBackgroundActive[] = {1,1,1,0.2};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[106, 6, _this select 0] call TFB_fnc_defuse_cutWire;";
+			
+		};
+		class slot_button7
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.378125;
+			y = safeZoneY + safeZoneH * 0.16888889;
+			w = safeZoneW * 0.011875;
+			h = safeZoneH * 0.13555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0.05};
+			colorBackgroundActive[] = {1,1,1,0.2};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[107, 7, _this select 0] call TFB_fnc_defuse_cutWire;";
+			
+		};
+		class slot_button8
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.395;
+			y = safeZoneY + safeZoneH * 0.16888889;
+			w = safeZoneW * 0.011875;
+			h = safeZoneH * 0.13555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0.05};
+			colorBackgroundActive[] = {1,1,1,0.2};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[108, 8, _this select 0] call TFB_fnc_defuse_cutWire;";
+			
+		};
+		class keypad_star
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.286875;
+			y = safeZoneY + safeZoneH * 0.79777778;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "Reset Code";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.75};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			tooltip = "Reset Code";
+			tooltipColorBox[] = {0.6,0.6,0.6,1};
+			tooltipColorShade[] = {0.302,0.302,0.302,1};
+			tooltipColorText[] = {1,1,1,1};
+			onMouseButtonClick = "['reset'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['reset'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_0
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.31625;
+			y = safeZoneY + safeZoneH * 0.79777778;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.55};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "['0'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['0'] call TFB_fnc_defuse_inputKeypad; ['0'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_hex
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.34625;
+			y = safeZoneY + safeZoneH * 0.79777778;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.75};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			tooltip = "Enter";
+			tooltipColorBox[] = {0.6,0.6,0.6,1};
+			tooltipColorShade[] = {0.302,0.302,0.302,1};
+			tooltipColorText[] = {1,1,1,1};
+			onMouseButtonClick = "['enter'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['enter'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_1
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.2875;
+			y = safeZoneY + safeZoneH * 0.74222223;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "Reset Code";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.50};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			tooltip = "";
+			tooltipColorBox[] = {0,0,0,0};
+			tooltipColorShade[] = {0,0,0,0};
+			tooltipColorText[] = {0,0,0,0};
+			onMouseButtonClick = "['1'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['11'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_2
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.316875;
+			y = safeZoneY + safeZoneH * 0.74222223;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.55};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "['2'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['22'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_3
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.345625;
+			y = safeZoneY + safeZoneH * 0.74333334;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.60};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			tooltip = "";
+			tooltipColorBox[] = {0,0,0,0};
+			tooltipColorShade[] = {0,0,0,0};
+			tooltipColorText[] = {0,0,0,0};
+			onMouseButtonClick = "['3'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['33'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_4
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.286875;
+			y = safeZoneY + safeZoneH * 0.68666667;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "Reset Code";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.65};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			tooltip = "";
+			tooltipColorBox[] = {0,0,0,0};
+			tooltipColorShade[] = {0,0,0,0};
+			tooltipColorText[] = {0,0,0,0};
+			onMouseButtonClick = "['4'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['44'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_5
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.31625;
+			y = safeZoneY + safeZoneH * 0.68666667;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.70};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "['5'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['55'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_6
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.345625;
+			y = safeZoneY + safeZoneH * 0.68666667;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.75};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			tooltip = "";
+			tooltipColorBox[] = {0,0,0,0};
+			tooltipColorShade[] = {0,0,0,0};
+			tooltipColorText[] = {0,0,0,0};
+			onMouseButtonClick = "['6'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['66'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_7
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.286875;
+			y = safeZoneY + safeZoneH * 0.63;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "Reset Code";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,0};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.80};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			tooltip = "";
+			tooltipColorBox[] = {0,0,0,0};
+			tooltipColorShade[] = {0,0,0,0};
+			tooltipColorText[] = {0,0,0,0};
+			onMouseButtonClick = "['7'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['77'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_8
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.31625;
+			y = safeZoneY + safeZoneH * 0.63;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.85};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "['8'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['88'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class keypad_9
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.345625;
+			y = safeZoneY + safeZoneH * 0.63;
+			w = safeZoneW * 0.0175;
+			h = safeZoneH * 0.02666667;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.0015;
+			offsetPressedY = 0.0025;
+			offsetX = 0;
+			offsetY = 0;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\Sounds_F\arsenal\Tools\MineDetector_Beep_01.wss",0.75,0.90};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			tooltip = "";
+			tooltipColorBox[] = {0,0,0,0};
+			tooltipColorShade[] = {0,0,0,0};
+			tooltipColorText[] = {0,0,0,0};
+			onMouseButtonClick = "['9'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "['99'] call TFB_fnc_defuse_inputKeypad;";
+			
+		};
+		class clipboard_next
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.716875;
+			y = safeZoneY + safeZoneH * 0.81666667;
+			w = safeZoneW * 0.075;
+			h = safeZoneH * 0.03222223;
+			style = 0+2;
+			text = "Next Page";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {0,0,0,0.35};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.01;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[true] call TFB_fnc_defuse_updateClipboard;";
+			
+		};
+		class clipboard_prev
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.505;
+			y = safeZoneY + safeZoneH * 0.81666667;
+			w = safeZoneW * 0.075;
+			h = safeZoneH * 0.03222223;
+			style = 0+2;
+			text = "Prev Page";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {0,0,0,0.35};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0,0,0,0};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0,0,0,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.01;
+			offsetPressedY = 0.01;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "[false] call TFB_fnc_defuse_updateClipboard;";
+			
+		};
+		class button_black
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.1925;
+			y = safeZoneY + safeZoneH * 0.294;
+			w = safeZoneW * 0.02375;
+			h = safeZoneH * 0.04555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.02;
+			offsetPressedY = 0.02;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "['buttonBlack'] call TFB_fnc_defuse_inputKeypad;";
+			tooltip = "Change Mode";
+			tooltipColorBox[] = {0.6,0.6,0.6,1};
+			tooltipColorShade[] = {0.302,0.302,0.302,1};
+			tooltipColorText[] = {1,1,1,1};
+			
+		};
+		class button_red
+		{
+			type = 1;
+			idc = -1;
+			x = safeZoneX + safeZoneW * 0.1925;
+			y = safeZoneY + safeZoneH * 0.349;
+			w = safeZoneW * 0.02375;
+			h = safeZoneH * 0.04555556;
+			style = 0;
+			text = "";
+			borderSize = 0;
+			colorBackground[] = {0,0,0,0};
+			colorBackgroundActive[] = {1,1,1,0.25};
+			colorBackgroundDisabled[] = {0,0,0,0};
+			colorBorder[] = {0,0,0,0};
+			colorDisabled[] = {0.2,0.2,0.2,1};
+			colorFocused[] = {0,0,0,0};
+			colorShadow[] = {0,0,0,0};
+			colorText[] = {0.9765,0.8118,0.2902,1};
+			font = "PuristaMedium";
+			offsetPressedX = 0.02;
+			offsetPressedY = 0.02;
+			offsetX = 0.01;
+			offsetY = 0.01;
+			sizeEx = (((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1);
+			soundClick[] = {"\A3\ui_f\data\sound\RscButton\soundClick",0.09,1.0};
+			soundEnter[] = {"\A3\ui_f\data\sound\RscButton\soundEnter",0.09,1.0};
+			soundEscape[] = {"\A3\ui_f\data\sound\RscButton\soundEscape",0.09,1.0};
+			soundPush[] = {"\A3\ui_f\data\sound\RscButton\soundPush",0.09,1.0};
+			onMouseButtonClick = "['buttonRed'] call TFB_fnc_defuse_inputKeypad;";
+			onMouseButtonDblClick = "[tfb_active_defusal] call TFB_fnc_defuse_detonate;";
+			tooltip = "Arm";
+			tooltipColorBox[] = {0.6,0.6,0.6,1};
+			tooltipColorShade[] = {0.302,0.302,0.302,1};
+			tooltipColorText[] = {1,1,1,1};
+			
+		};
+	};
+	
+};
