@@ -1132,6 +1132,7 @@ if (!isServer) exitWith {};
 [
     west, ["Defense"], "Defend Zargabad", "Assist 1st Armored Brigade in defending Zargabad against an enemy counterattack.", "Defend", getPos marker1, 
     {"S1" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"] && "S2" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"] && "S3" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"]},
-	{ (count (allUnits select {_x inArea defense1 && side _x == independent}) < 2)}, {false}, {false},
+    { (count (allUnits select {_x inArea Zargabad_defend && side _x == independent}) < 2)}, {false}, {false},
+    {["Defense"] spawn tsp_fnc_sector_load;},
     {},{"end1" remoteExec ["BIS_fnc_endMission", 0]}
 ] spawn tsp_fnc_task;
