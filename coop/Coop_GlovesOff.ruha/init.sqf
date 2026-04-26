@@ -1,4 +1,13 @@
-if (!isServer) exitWith {};
+[player, [
+"rhsgref_ins_squadleader",
+"rhsgref_ins_machinegunner",
+"rhsgref_ins_grenadier",
+"rhsgref_ins_grenadier_rpg",
+"rhsgref_ins_rifleman_RPG26",
+"rhsgref_ins_machinegunner",
+"rhsgref_ins_rifleman",
+"rhsgref_ins_rifleman_aks74"
+], [zone_zombie, zone_zombie1], east, {true}, {}, 200, 6, 15, 400] spawn tsp_fnc_zombience;if (!isServer) exitWith {};
 
 [
     west, ["Bunker"], "Tunnel Network", "We have a rough position marked on your map, This could lead you into their underground bunker.", 

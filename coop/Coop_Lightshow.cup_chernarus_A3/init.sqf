@@ -2,7 +2,8 @@ if (!isServer) exitWith {};
 
 [
     west, ["coastal"], "Destroy coastal guns", "Take out these guns to allow AAVs and LAVs to beach safely.",
-    "destroy", objnull, {true}, {!alive coast1 && !alive coast2 && !alive coast3 && !alive coast4 && !alive coast5}
+    "destroy", objnull, {true}, {!alive coast1 && !alive coast2 && !alive coast3 && !alive coast4 && !alive coast5}, {false}, {false},
+    {}, {["USMC"] spawn tsp_fnc_sector_load}
 ] spawn tsp_fnc_task;
 [
     west, ["officer"], "Kill HVT", "A Officer with a red cap is known to be around svetloyarsk.", 
