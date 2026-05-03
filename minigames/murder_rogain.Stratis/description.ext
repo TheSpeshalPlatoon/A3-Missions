@@ -1,0 +1,20 @@
+enableDebugConsole = 1;
+saving = 0;
+
+author = "Dino"; 
+onLoadName = "Hide & Seek";
+class header {gameType = DM}; 
+
+respawnButton = 1;
+disabledAI = 1;
+
+//-- Endings
+class CfgDebriefing {
+	class MURDERER {title = "MURDERER WINS"; subtitle = "AHHHHHHHHHHH";};
+	class BYSTANDERS {title = "BYSTANDERS WIN"; subtitle = "AHHHHHHHHHHHHHH";};
+};
+
+//-- Settings
+class Params {
+	class totalTime {title = "Total Time"; texts[] = {"1 Minute","2 Minutes","4 Minutes","6 Minutes"}; values[] = {60,120,240,360}; default = 240; isGlobal = 1;};
+};

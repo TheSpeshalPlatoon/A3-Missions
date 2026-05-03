@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=9179;
+		nextID=9247;
 	};
 	class Camera
 	{
-		pos[]={11669.862,92.850624,4391.4058};
-		dir[]={-0.553424,-0.65040696,0.52033073};
-		up[]={-0.47386038,0.75958353,0.44552457};
-		aside[]={0.6850062,3.229361e-07,0.72857106};
+		pos[]={11643.262,31.268589,4441.9248};
+		dir[]={-0.95539743,-0.20108394,0.21628925};
+		up[]={-0.19612107,0.97957402,0.044399194};
+		aside[]={0.2207993,3.7252903e-09,0.97531933};
 	};
 };
 binarizationWanted=0;
@@ -98,11 +98,14 @@ addons[]=
 	"A3_Modules_F",
 	"A3_Characters_F",
 	"A3_Weapons_F_Rifles_MX",
+	"luds_muzshmoke",
 	"ace_scopes",
 	"ace_ballistics",
 	"A3_Weapons_F_Acc",
 	"A3_Weapons_F_Exp",
 	"A3_Weapons_F_Pistols_Pistol_Heavy_01",
+	"jsrs_soundmod_complete_edition",
+	"jsrs_soundmod_ce_reloadingsounds",
 	"ace_attach",
 	"A3_Weapons_F_Items",
 	"ace_medical_treatment",
@@ -121,7 +124,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=53;
+		items=55;
 		class Item0
 		{
 			className="A3_Rocks_F_Exp";
@@ -385,101 +388,112 @@ class AddonsMetaData
 		};
 		class Item38
 		{
+			className="luds_muzshmoke";
+			name="luds_muzshmoke";
+		};
+		class Item39
+		{
 			className="ace_scopes";
 			name="ACE3 - Scopes";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item39
+		class Item40
 		{
 			className="ace_ballistics";
 			name="ACE3 - Ballistics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item40
+		class Item41
 		{
 			className="A3_Weapons_F_Exp";
 			name="Arma 3 Apex - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item41
-		{
-			className="ace_attach";
-			name="ACE3 - Attach";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
 		class Item42
-		{
-			className="ace_medical_treatment";
-			name="ACE3 - Medical Treatment";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item43
-		{
-			className="tsp_medical";
-			name="tsp_medical";
-		};
-		class Item44
-		{
-			className="UK3CB_Factions_Equipment";
-			name="3CB Factions - Equipment";
-			author="3 Commando Brigade";
-			url="www.3commandobrigade.com";
-		};
-		class Item45
-		{
-			className="A3_Soft_F";
-			name="Arma 3 Alpha - Unarmored Land Vehicles";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item46
-		{
-			className="A3_Modules_F_Curator";
-			name="Arma 3 Zeus Update - Scripted Modules";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item47
-		{
-			className="ace_nightvision";
-			name="ACE3 - Night Vision";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item48
-		{
-			className="ace_hearing";
-			name="ACE3 - Hearing";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item49
 		{
 			className="A3_Sounds_F";
 			name="Arma 3 - Sound Effects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item43
+		{
+			className="jsrs_soundmod_ce_reloadingsounds";
+			name="jsrs_soundmod_ce_reloadingsounds";
+			author="LordJarhead";
+		};
+		class Item44
+		{
+			className="ace_attach";
+			name="ACE3 - Attach";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item45
+		{
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item46
+		{
+			className="tsp_medical";
+			name="tsp_medical";
+		};
+		class Item47
+		{
+			className="UK3CB_Factions_Equipment";
+			name="3CB Factions - Equipment";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item48
+		{
+			className="A3_Soft_F";
+			name="Arma 3 Alpha - Unarmored Land Vehicles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item49
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 		class Item50
+		{
+			className="ace_nightvision";
+			name="ACE3 - Night Vision";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item51
+		{
+			className="ace_hearing";
+			name="ACE3 - Hearing";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item52
 		{
 			className="A3_Sounds_F_Enoch";
 			name="Arma 3 Contact Platform - Sound Effects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item51
+		class Item53
 		{
 			className="ace_ai";
 			name="ACE3 - AI";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item52
+		class Item54
 		{
 			className="Desert";
 			name="Desert";
@@ -7254,7 +7268,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9511;
@@ -7289,7 +7303,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9512;
@@ -7324,7 +7338,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9513;
@@ -7359,7 +7373,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9514;
@@ -7393,7 +7407,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9515;
@@ -7428,7 +7442,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9516;
@@ -7462,7 +7476,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9517;
@@ -7497,7 +7511,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9518;
@@ -7533,7 +7547,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9519;
@@ -7569,7 +7583,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9520;
@@ -7604,7 +7618,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9521;
@@ -7640,7 +7654,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9522;
@@ -7676,7 +7690,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9523;
@@ -7712,7 +7726,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9524;
@@ -7747,7 +7761,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9525;
@@ -7782,7 +7796,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9526;
@@ -7817,7 +7831,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9527;
@@ -7853,7 +7867,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9528;
@@ -7889,7 +7903,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9529;
@@ -7925,7 +7939,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9530;
@@ -7961,7 +7975,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9531;
@@ -7996,7 +8010,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9532;
@@ -8032,7 +8046,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9533;
@@ -8068,7 +8082,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9534;
@@ -8103,7 +8117,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9535;
@@ -8138,7 +8152,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9536;
@@ -8174,7 +8188,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9537;
@@ -8210,7 +8224,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9538;
@@ -8246,7 +8260,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9539;
@@ -8282,7 +8296,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9540;
@@ -8318,7 +8332,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9541;
@@ -8354,7 +8368,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9542;
@@ -8390,7 +8404,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9543;
@@ -8425,7 +8439,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9544;
@@ -8460,7 +8474,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9545;
@@ -8495,7 +8509,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9546;
@@ -8531,7 +8545,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9547;
@@ -8567,7 +8581,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9548;
@@ -8602,7 +8616,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9549;
@@ -8638,7 +8652,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9550;
@@ -8674,7 +8688,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9551;
@@ -8710,7 +8724,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9552;
@@ -8746,7 +8760,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9553;
@@ -8782,7 +8796,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9554;
@@ -8818,7 +8832,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9555;
@@ -8853,7 +8867,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9556;
@@ -8888,7 +8902,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9557;
@@ -8924,7 +8938,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9558;
@@ -8959,7 +8973,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9559;
@@ -8995,7 +9009,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9560;
@@ -9031,7 +9045,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9561;
@@ -9067,7 +9081,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9562;
@@ -9103,7 +9117,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9563;
@@ -9138,7 +9152,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9564;
@@ -9174,7 +9188,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9565;
@@ -9210,7 +9224,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9566;
@@ -9245,7 +9259,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9567;
@@ -9280,7 +9294,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9568;
@@ -9316,7 +9330,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9569;
@@ -9352,7 +9366,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9570;
@@ -9388,7 +9402,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9571;
@@ -9424,7 +9438,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9572;
@@ -9460,7 +9474,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9573;
@@ -9496,7 +9510,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9574;
@@ -9532,7 +9546,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9575;
@@ -9568,7 +9582,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9576;
@@ -9604,7 +9618,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9577;
@@ -9640,7 +9654,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9578;
@@ -9676,7 +9690,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9579;
@@ -9712,7 +9726,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9580;
@@ -9748,7 +9762,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9581;
@@ -9784,7 +9798,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9582;
@@ -9819,7 +9833,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9583;
@@ -9855,7 +9869,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9584;
@@ -9890,7 +9904,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9585;
@@ -9925,7 +9939,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9586;
@@ -9961,7 +9975,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9587;
@@ -9996,7 +10010,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9588;
@@ -10032,7 +10046,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9589;
@@ -10068,7 +10082,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9590;
@@ -10103,7 +10117,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9591;
@@ -10139,7 +10153,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9592;
@@ -10175,7 +10189,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9593;
@@ -10211,7 +10225,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9594;
@@ -10247,7 +10261,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9595;
@@ -10282,7 +10296,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9596;
@@ -10318,7 +10332,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9597;
@@ -10353,7 +10367,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9598;
@@ -10389,7 +10403,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9599;
@@ -10425,7 +10439,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9600;
@@ -10461,7 +10475,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9601;
@@ -10497,7 +10511,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9602;
@@ -10532,7 +10546,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9603;
@@ -10568,7 +10582,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9604;
@@ -10604,7 +10618,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9605;
@@ -10640,7 +10654,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9606;
@@ -10675,7 +10689,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9607;
@@ -10711,7 +10725,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9608;
@@ -10747,7 +10761,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9609;
@@ -10783,7 +10797,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9610;
@@ -10819,7 +10833,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9611;
@@ -10855,7 +10869,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9612;
@@ -10891,7 +10905,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9613;
@@ -10927,7 +10941,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9614;
@@ -10963,7 +10977,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9615;
@@ -10999,7 +11013,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9616;
@@ -11035,7 +11049,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9617;
@@ -11071,7 +11085,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9618;
@@ -11107,7 +11121,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9619;
@@ -11143,7 +11157,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9620;
@@ -11179,7 +11193,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9621;
@@ -11215,7 +11229,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9622;
@@ -11250,7 +11264,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9623;
@@ -11286,7 +11300,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9624;
@@ -11322,7 +11336,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9625;
@@ -11358,7 +11372,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9626;
@@ -11394,7 +11408,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9627;
@@ -11429,7 +11443,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9628;
@@ -11464,7 +11478,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9629;
@@ -11499,7 +11513,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9630;
@@ -11535,7 +11549,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9631;
@@ -11571,7 +11585,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9632;
@@ -11607,7 +11621,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9633;
@@ -11642,7 +11656,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9634;
@@ -11677,7 +11691,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9635;
@@ -11712,7 +11726,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9636;
@@ -11747,7 +11761,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9637;
@@ -11783,7 +11797,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9638;
@@ -11819,7 +11833,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9639;
@@ -11855,7 +11869,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9640;
@@ -11890,7 +11904,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9641;
@@ -11925,7 +11939,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9642;
@@ -11960,7 +11974,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9643;
@@ -11995,7 +12009,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9644;
@@ -12030,7 +12044,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9645;
@@ -12065,7 +12079,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9646;
@@ -12100,7 +12114,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9647;
@@ -12135,7 +12149,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9648;
@@ -12170,7 +12184,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9649;
@@ -12205,7 +12219,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9650;
@@ -12241,7 +12255,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9651;
@@ -12277,7 +12291,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9652;
@@ -12313,7 +12327,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9653;
@@ -12349,7 +12363,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9654;
@@ -12385,7 +12399,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9655;
@@ -12420,7 +12434,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9656;
@@ -12455,7 +12469,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_PiceaAbies_2s.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9657;
@@ -12501,7 +12515,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9430;
@@ -12537,7 +12551,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9431;
@@ -12572,7 +12586,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9432;
@@ -12607,7 +12621,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9433;
@@ -12642,7 +12656,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9434;
@@ -12678,7 +12692,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9435;
@@ -12714,7 +12728,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9436;
@@ -12750,7 +12764,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9437;
@@ -12786,7 +12800,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9438;
@@ -12821,7 +12835,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9439;
@@ -12857,7 +12871,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9440;
@@ -12893,7 +12907,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9441;
@@ -12929,7 +12943,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9442;
@@ -12965,7 +12979,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9443;
@@ -13001,7 +13015,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9444;
@@ -13037,7 +13051,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9445;
@@ -13072,7 +13086,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9446;
@@ -13107,7 +13121,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9447;
@@ -13143,7 +13157,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9448;
@@ -13179,7 +13193,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9449;
@@ -13215,7 +13229,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9450;
@@ -13251,7 +13265,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9451;
@@ -13287,7 +13301,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9452;
@@ -13323,7 +13337,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9453;
@@ -13359,7 +13373,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9454;
@@ -13395,7 +13409,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9455;
@@ -13431,7 +13445,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9456;
@@ -13467,7 +13481,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9457;
@@ -13503,7 +13517,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9458;
@@ -13539,7 +13553,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9459;
@@ -13575,7 +13589,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9460;
@@ -13611,7 +13625,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9461;
@@ -13647,7 +13661,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9462;
@@ -13682,7 +13696,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9463;
@@ -13718,7 +13732,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9464;
@@ -13753,7 +13767,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9465;
@@ -13789,7 +13803,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9466;
@@ -13825,7 +13839,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9467;
@@ -13861,7 +13875,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9468;
@@ -13897,7 +13911,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9469;
@@ -13933,7 +13947,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9470;
@@ -13968,7 +13982,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9471;
@@ -14003,7 +14017,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9472;
@@ -14038,7 +14052,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9473;
@@ -14074,7 +14088,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9474;
@@ -14110,7 +14124,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9475;
@@ -14146,7 +14160,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9476;
@@ -14181,7 +14195,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9477;
@@ -14217,7 +14231,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9478;
@@ -14252,7 +14266,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9479;
@@ -14288,7 +14302,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9480;
@@ -14324,7 +14338,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9481;
@@ -14360,7 +14374,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9482;
@@ -14396,7 +14410,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9483;
@@ -14432,7 +14446,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9484;
@@ -14468,7 +14482,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9485;
@@ -14504,7 +14518,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9486;
@@ -14540,7 +14554,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9487;
@@ -14576,7 +14590,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9488;
@@ -14612,7 +14626,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9489;
@@ -14648,7 +14662,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9490;
@@ -14683,7 +14697,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9491;
@@ -14718,7 +14732,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9492;
@@ -14754,7 +14768,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9493;
@@ -14789,7 +14803,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9494;
@@ -14825,7 +14839,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9495;
@@ -14861,7 +14875,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9496;
@@ -14896,7 +14910,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9497;
@@ -14932,7 +14946,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9498;
@@ -14967,7 +14981,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9499;
@@ -15003,7 +15017,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9500;
@@ -15039,7 +15053,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9501;
@@ -15075,7 +15089,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9502;
@@ -15110,7 +15124,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9503;
@@ -15145,7 +15159,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9504;
@@ -15181,7 +15195,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9505;
@@ -15216,7 +15230,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9506;
@@ -15251,7 +15265,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9507;
@@ -15286,7 +15300,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9508;
@@ -15321,7 +15335,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9509;
@@ -15356,7 +15370,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_piceaabies_3d.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9510;
@@ -44654,7 +44668,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9425;
@@ -44690,7 +44704,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9426;
@@ -44726,7 +44740,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9427;
@@ -44762,7 +44776,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9428;
@@ -44798,7 +44812,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="    [this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
+										init="[this,"""",""\A3\vegetation_f_enoch\Tree\t_stub_picea.p3d""] spawn tsp_fnc_replace;";
 										disableSimulation=1;
 									};
 									id=9429;

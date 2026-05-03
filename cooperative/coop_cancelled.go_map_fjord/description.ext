@@ -1,0 +1,159 @@
+author = "Dino"; onLoadName = "Cancelled"; class Header {gameType = COOP}; //loadScreen = __EVAL(selectRandom["data\overview1.jpg","data\overview2.jpg"]); 
+
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Addon mode needs full path (\tsp_core\)
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = false;              //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Forced";    //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 20;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+tsp_param_brightness = 0.3;
+tsp_param_time_day = 1; 
+tsp_param_time_night = 1; 
+tsp_param_weather = false;
+
+tsp_roles[] = {
+	{"USA - 1st Special Forces Operational Detachment Delta ", "\tsp_core\data\insignia\1sfod.paa", "west", {
+		{"Shadow HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_delta","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_medic"}, {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_engineer"}, {"soc_delta"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Shadow 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_medic"}, {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operator"}, {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operatorat"}, {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_autorifleman"}, {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_engineer"}, {"soc_delta"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Shadow 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_medic"}, {"soc_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operator"}, {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operatorat"}, {"soc_delta","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_machinegunner"}, {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_engineer"}, {"soc_delta"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Shadow 3 (SNOT)", "markers\nato\b_art.paa", {
+			{"Team Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_teamlead"}, {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_operator"}, {"soc_delta"}, "iconManRecon_ca.paa"},
+			{"Marksman", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_sf_marksman"}, {"soc_delta","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+		}}
+	}},
+	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\1recon.paa", "west", {
+		{"Raider HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", {"rhsusf_usmc_marpat_wd_explosives", "tsp_usmc_engineer"}, {"usmc_recon"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Raider 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_usmc_marpat_wd_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Raider 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
+			{"Anti Tank", {"tsp_usmc_antitank", "rhsusf_usmc_recon_marpat_wd_rifleman_at"}, {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner_fast", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_usmc_marpat_wd_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Hitman (Scout Snipers)", "markers\nato\b_art.paa", {
+			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
+			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
+		}}
+	}}
+};
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnTemplates[] = {"BASE"};
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
+
+class CfgSounds {
+	class bcg_wind {name = "bcg_wind"; sound[] = {"\sound\bcg_wind.ogg", 0.3, 1}; titles[] = {1, ""};};
+	class bcg_wind_mild {name = "bcg_wind_mild"; sound[] = {"\sound\bcg_wind_mild.ogg", 0.05, 1}; titles[] = {1, ""};};		
+	class rafala_1 {name = "rafala_1"; sound[] = {"\sound\rafala_1.ogg",1,1}; titles[] = {1, ""};};	
+	class rafala_2 {name = "rafala_2"; sound[] = {"\sound\rafala_2.ogg",1,1}; titles[] = {1, ""};};
+	class rafala_3 {name = "rafala_3"; sound[] = {"\sound\rafala_3.ogg",1,1}; titles[] = {1, ""};};	
+	class rafala_6 {name = "rafala_6"; sound[] = {"\sound\rafala_6.ogg",1,1}; titles[] = {1, ""};};	
+	class rafala_7 {name = "rafala_7"; sound[] = {"\sound\rafala_7.ogg",1,1}; titles[] = {1, ""};};	
+	class rafala_8 {name = "rafala_8"; sound[] = {"\sound\rafala_8.ogg",1,1}; titles[] = {1, ""};};	
+	class rafala_5 {name = "rafala_9"; sound[] = {"\sound\rafala_9.ogg",1,1}; titles[] = {1, ""};};
+	class tree_crack_1 {name = "tree_crack_1"; sound[] = {"\sound\tree_crack_1.ogg", db+5, 1}; titles[] = {1, ""};};
+	class tree_crack_2 {name = "tree_crack_2"; sound[] = {"\sound\tree_crack_2.ogg", db+5, 1}; titles[] = {1, ""};};
+	class tree_crack_3 {name = "tree_crack_3"; sound[] = {"\sound\tree_crack_3.ogg", db+5, 1}; titles[] = {1, ""};};	
+	class tree_crack_4 {name = "tree_crack_4"; sound[] = {"\sound\tree_crack_4.ogg", db+5, 1}; titles[] = {1, ""};};
+	class tree_crack_5 {name = "tree_crack_5"; sound[] = {"\sound\tree_crack_5.ogg", db+5, 1}; titles[] = {1, ""};};
+	class tree_crack_6 {name = "tree_crack_6"; sound[] = {"\sound\tree_crack_6.ogg", db+5, 1}; titles[] = {1, ""};};	
+	class tree_crack_7 {name = "tree_crack_7"; sound[] = {"\sound\tree_crack_7.ogg", db+5, 1}; titles[] = {1, ""};};	
+	class tree_crack_8 {name = "tree_crack_8"; sound[] = {"\sound\tree_crack_8.ogg", db+5, 1}; titles[] = {1, ""};};	
+	class tree_crack_9 {name = "tree_crack_9"; sound[] = {"\sound\tree_crack_9.ogg", db+5, 1}; titles[] = {1, ""};};
+	class lup_01 {name = "lup_01"; sound[] = {"\sound\lup_01.ogg", 1, 1}; titles[] = {};};
+	class lup_02 {name = "lup_02"; sound[] = {"\sound\lup_02.ogg", 1, 1}; titles[] = {};};
+	class lup_03 {name = "lup_03"; sound[] = {"\sound\lup_03.ogg", 1, 1}; titles[] = {};};
+	class tremurat_1 {name = "tremurat_1"; sound[] = {"\sound\tremurat_1.ogg", 1, 1}; titles[] = {1, ""};};
+	class tremurat_2 {name = "tremurat_2"; sound[] = {"\sound\tremurat_2.ogg", 1, 1}; titles[] = {1, ""};};
+	class tremurat_3 {name = "tremurat_3"; sound[] = {"\sound\tremurat_3.ogg", 1, 1}; titles[] = {1, ""};};
+	class tremurat_4 {name = "tremurat_4"; sound[] = {"\sound\tremurat_4.ogg", 1, 1}; titles[] = {1, ""};};	
+	class NoSound  {name = "NoSound"; sound[] = {"", 0, 1}; titles[] = {0, ""};};	
+	class tuse_1 {name = "tuse_1"; sound[] = {"\sound\tuse_1.ogg", 1, 1}; titles[] = {1, ""};};
+	class tuse_2 {name = "tuse_2"; sound[] = {"\sound\tuse_2.ogg", 1, 1}; titles[] = {1, ""};};
+	class tuse_3 {name = "tuse_3"; sound[] = {"\sound\tuse_3.ogg", 1, 1}; titles[] = {1, ""};};
+	class tuse_4 {name = "tuse_4"; sound[] = {"\sound\tuse_4.ogg", 1, 1}; titles[] = {1, ""};};
+	class tuse_5 {name = "tuse_5"; sound[] = {"\sound\tuse_5.ogg", 1, 1}; titles[] = {1, ""};};
+	class tuse_6 {name = "tuse_6"; sound[] = {"\sound\tuse_6.ogg", 1, 1}; titles[] = {1, ""};};	
+};

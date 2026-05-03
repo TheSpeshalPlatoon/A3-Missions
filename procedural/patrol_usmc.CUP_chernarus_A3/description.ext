@@ -1,7 +1,6 @@
-author = "TheSpeshalPlatoon"; onLoadName = "Combat Patrol"; class Header {gameType = PATROL}; //loadScreen = __EVAL(selectRandom["data\overview1.jpg","data\overview2.jpg"]); 
+author = "Dino"; onLoadName = "Combat Patrol"; class Header {gameType = PATROL}; //loadScreen = __EVAL(selectRandom["data\overview1.jpg","data\overview2.jpg"]); 
 
-//-- Addon mode needs full path (\tsp_core\)
-class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Only needed in mission mode
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Addon mode needs full path (\tsp_core\)
 #include "\a3\ui_f\hpp\definecommongrids.inc"
 #include "\tsp_core\scripts\chvd.hpp"
 #include "\tsp_core\scripts\gui.hpp"
@@ -21,13 +20,17 @@ tsp_param_roleCheck = false;  //-- Gear checking
 tsp_param_dispersion = 10;   //-- AI dispersion
 tsp_param_skill = 1;        //-- AI skill
 tsp_param_spotting = 0.1;  //-- AI spotting
+tsp_param_brightness = 1.0; 
+tsp_param_time_day = 12; 
+tsp_param_time_night = 24;
+tsp_param_weather = true;
 
 tsp_roles[] = {
 	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\1recon.paa", "west", {
 		{"Raider HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "tsp_usmc_engineer", {"usmc_recon"}, "iconManEngineer_ca.paa"}
+			{"Engineer", {"rhsusf_usmc_marpat_wd_explosives", "tsp_usmc_engineer"}, {"usmc_recon"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Raider 1", "markers\nato\b_inf.paa", {
 			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
@@ -35,15 +38,15 @@ tsp_roles[] = {
 			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
 			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
 			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+			{"Breacher", {"rhsusf_usmc_marpat_wd_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Raider 2 (Weapons)", "markers\nato\b_inf.paa", {
 			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
 			{"Scout", "rhsusf_usmc_recon_marpat_wd_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Anti Tank", "tsp_usmc_antitank", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+			{"Anti Tank", {"tsp_usmc_antitank", "rhsusf_usmc_recon_marpat_wd_rifleman_at"}, {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
 			{"Machine Gunner", "rhsusf_usmc_recon_marpat_wd_machinegunner_fast", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_usmc_breacher", {"usmc_recon"}, "iconManExplosive_ca.paa"}
+			{"Breacher", {"rhsusf_usmc_marpat_wd_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Hitman (Scout Snipers)", "markers\nato\b_art.paa", {
 			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
@@ -96,17 +99,8 @@ tsp_roles[] = {
 			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"},
 			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","us_heli","west_leader"}, "iconManOfficer_ca.paa"}
 		}}
-	}},
+	}}
 };
-
-tsp_param_brightness = 1.0; tsp_param_time_day = 12;     tsp_param_time_night = 24;
-tsp_param_weather = true;   tsp_param_weatherTime = 20; 
-tsp_param_fog = 0.2;        tsp_param_fogMin = 0;        tsp_param_fogMax = 0.02;
-tsp_param_wind = 1;         tsp_param_windMin = -1;      tsp_param_windMax = 1;
-tsp_param_overcast = 1;     tsp_param_overcastMin = 0;   tsp_param_overcastMax = 1; 
-tsp_param_rain = 0.5;       tsp_param_rainMin = 0;       tsp_param_rainMax = 1;
-tsp_param_lightning = 1;    tsp_param_lightningMin = 0;  tsp_param_lightningMax = 1;
-tsp_param_wave = 0.5;       tsp_param_waveMin = 0;       tsp_param_waveMax = 1;
 
 enableDebugConsole = 2; 
 saving = 0; 

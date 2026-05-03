@@ -1,0 +1,102 @@
+author = "Dino"; onLoadName = "3-Point"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
+
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Addon mode needs full path (\tsp_core\)
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = false;              //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";   //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 20;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+tsp_param_brightness = 0.3; 
+tsp_param_time_day = 1; 
+tsp_param_time_night = 1;
+tsp_param_weather = false;
+
+tsp_roles[] = {
+	{"CDF - 5th Para Special Reconnaissance", "\tsp_core\data\insignia\cdfsf.paa", "west", {
+		{"Spartan HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsgref_cdf_b_para_officer", {"eyewear","ru_all","ru_ammo"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsgref_cdf_b_para_medic", {"eyewear","ru_all","ru_ammo"}, "iconManMedic_ca.paa"},
+			{"Engineer", "rhsgref_cdf_b_para_engineer", {"eyewear","ru_all","ru_ammo"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Spartan 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsgref_cdf_b_para_squadleader", {"eyewear","ru_all","ru_ammo"}, "iconManLeader_ca.paa"},
+			{"Trooper", "rhsgref_cdf_b_para_rifleman", {"eyewear","ru_all","ru_ammo"}, "iconManRecon_ca.paa"},
+			{"Trooper (AT)", "rhsgref_cdf_b_para_grenadier_rpg", {"eyewear","ru_all","ru_ammo"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsgref_cdf_b_para_autorifleman", {"eyewear","ru_all","ru_ammo"}, "iconManMG_ca.paa"},
+			{"Breacher", "rhsgref_cdf_b_para_engineer", {"eyewear","ru_all","ru_ammo"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Spartan 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsgref_cdf_b_para_squadleader", {"eyewear","ru_all","ru_ammo"}, "iconManLeader_ca.paa"},
+			{"Trooper", "rhsgref_cdf_b_para_rifleman_lite", {"eyewear","ru_all","ru_ammo"}, "iconManRecon_ca.paa"},
+			{"Trooper (AT)", "rhsgref_cdf_b_para_grenadier_rpg", {"eyewear","ru_all","ru_ammo"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsgref_cdf_b_para_machinegunner", {"eyewear","ru_all","ru_ammo"}, "iconManMG_ca.paa"},
+			{"Marksman", "rhsgref_cdf_b_para_marksman", {"eyewear","ru_all","ru_ammo"}, "iconManRecon_ca.paa"}
+		}},
+		{"Coka", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsgref_cdf_b_para_crew", {"eyewear","ru_all","ru_ammo"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsgref_cdf_b_para_crew", {"eyewear","ru_all","ru_ammo"}, "iconManMedic_ca.paa"}
+		}}
+	}},
+	{"USMC - Razor Team", "\tsp_core\data\insignia\1recon.paa", "west", {
+		{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
+		{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
+		{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
+		{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
+		{"Breacher", {"rhsusf_usmc_marpat_wd_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"},
+		{"Marksman", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
+	}}
+};
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnTemplates[] = {"BASE"};
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 200;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
