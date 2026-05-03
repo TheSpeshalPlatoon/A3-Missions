@@ -65,7 +65,7 @@ if (!isServer) exitWith {};
 [west, "secondary", ["Secondary objective is to Kill or Capture a High Value Target.", "Secondary Objective"], objNull, "CREATED", -1, true, "Target"] call BIS_fnc_taskCreate;
 
 [
-    west, ["arty", "primary"], "Destroy Artillery", "Your primary objective is to destroy two enemy artillery guns positioned behind the dam. These guns are actively targeting friendly positions at Zelenegorsk and must be eliminated.", 
+    west, ["arty", "primary"], "Destroy Artillery", "Your primary objective is to destroy two enemy artillery guns positioned behind the dam. These guns are actively targeting friendly positions at Zelenogorsk and must be eliminated.", 
     "Destroy", getPos task_arties, {true}, {!alive task_arty1 && !alive task_arty2}
 ] spawn tsp_fnc_task;
 
