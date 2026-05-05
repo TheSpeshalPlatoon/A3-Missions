@@ -1,4 +1,4 @@
-author = "N1C0"; onLoadName = "Fallen Angel"; class Header {gameType = COOP}; //loadScreen = __EVAL(selectRandom["data\overview1.jpg","data\overview2.jpg"]); 
+author = "N1C0"; onLoadName = "Fallen Angel"; class Header {gameType = COOP}; = __EVAL(selectRandom["overview.jpg"]); 
 
 class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Addon mode needs full path (\tsp_core\)
 #include "\a3\ui_f\hpp\definecommongrids.inc"
@@ -8,8 +8,8 @@ class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_co
 
 tsp_param_mission = true;               //-- Run TSP mission scripts
 tsp_param_addons = true;               //-- Run TSP addon scripts
-tsp_param_spawn = true;               //-- Show spawn map at all
-tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawn = false;               //-- Show spawn map at all
+tsp_param_spawnStart = false;         //-- Show spawn screen on initial spawn
 tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer
 tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
 tsp_param_spectate = "Dynamic";   //-- "Disabled", "Dynamic", "Forced"
