@@ -12,14 +12,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=570;
+		nextID=602;
 	};
 	class Camera
 	{
-		pos[]={4816,267.83798,3763.5103};
-		dir[]={0.22191626,-0.66807419,0.710401};
-		up[]={0.19920176,0.74405658,0.63769352};
-		aside[]={0.95460951,-7.6199649e-07,-0.2981959};
+		pos[]={4849.8491,38.774265,3935.0486};
+		dir[]={0.50433618,-0.34016287,0.79383504};
+		up[]={0.1824528,0.94031298,0.28718811};
+		aside[]={0.8441506,2.0199805e-06,-0.53629434};
 	};
 };
 binarizationWanted=0;
@@ -12682,19 +12682,6 @@ class Mission
 									{
 										class Attribute0
 										{
-											property="hide_cargo";
-											expression="_this animate ['hide_cargo',_value,true];_this lockCargo (_value == 1)";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=1;
-												};
-											};
-										};
-										class Attribute1
-										{
 											property="VehicleCustomization";
 											expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
 											class Value
@@ -12792,6 +12779,19 @@ class Mission
 															};
 														};
 													};
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="hide_cargo";
+											expression="_this animate ['hide_cargo',_value,true];_this lockCargo (_value == 1)";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
 												};
 											};
 										};
@@ -12959,19 +12959,6 @@ class Mission
 									{
 										class Attribute0
 										{
-											property="hide_cargo";
-											expression="_this animate ['hide_cargo',_value,true];_this lockCargo (_value == 1)";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=1;
-												};
-											};
-										};
-										class Attribute1
-										{
 											property="VehicleCustomization";
 											expression="if (local _this) then {([_this] + _value + [true]) call (uinamespace getvariable 'BIS_fnc_initVehicle')};";
 											class Value
@@ -13069,6 +13056,19 @@ class Mission
 															};
 														};
 													};
+												};
+											};
+										};
+										class Attribute1
+										{
+											property="hide_cargo";
+											expression="_this animate ['hide_cargo',_value,true];_this lockCargo (_value == 1)";
+											class Value
+											{
+												class data
+												{
+													singleType="SCALAR";
+													value=1;
 												};
 											};
 										};
