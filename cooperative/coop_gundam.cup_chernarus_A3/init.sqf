@@ -56,13 +56,13 @@
 ], "darkreach", {[true] call tsp_fnc_role; [] spawn tsp_fnc_spawn_map}] spawn tsp_fnc_intro;  //-- Slides, music, code to run at the end
 
 [player, [
-"rhsgref_ins_spotter", "rhsgref_ins_sniper", "rhsgref_ins_saboteur", "rhsgref_ins_rifleman_aks74", "rhsgref_ins_rifleman_akm", "rhsgref_ins_rifleman_RPG26", "rhsgref_ins_grenadier", "rhsgref_ins_rifleman"
+"rhsgref_ins_spotter", "rhsgref_ins_squadleader", "tsp_chdkz_radio", "rhsgref_ins_sniper", "rhsgref_ins_saboteur", "rhsgref_ins_rifleman_aks74", "rhsgref_ins_rifleman_akm", "rhsgref_ins_rifleman_RPG26", "rhsgref_ins_grenadier", "rhsgref_ins_rifleman"
 ], [zone_zombie], east, {true}, {}, 250, 2, 25, 350] spawn tsp_fnc_zombience;
 
 if (!isServer) exitWith {}; 
 
-[west, "primary", ["Main objective is to Destroy two Artillery pieces.", "Primary Objectives"], objNull, "CREATED", -1, true, "meet"] call BIS_fnc_taskCreate;
-[west, "secondary", ["Secondary objective is to Kill or Capture a High Value Target.", "Secondary Objective"], objNull, "CREATED", -1, true, "Target"] call BIS_fnc_taskCreate;
+[west, "primary", ["Main objective is to Destroy two artillery guns.", "Primary Objectives"], objNull, "CREATED", -1, true, "meet"] call BIS_fnc_taskCreate;
+[west, "secondary", ["Secondary objective is to kill or capture a High Value Target.", "Secondary Objective"], objNull, "CREATED", -1, true, "Target"] call BIS_fnc_taskCreate;
 
 [
     west, ["arty", "primary"], "Destroy Artillery", "Your primary objective is to destroy two enemy artillery guns positioned behind the dam. These guns are actively targeting friendly positions at Zelenogorsk and must be eliminated.", 
@@ -70,12 +70,12 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 
 [
-	west, ["officer", "secondary"], "Kill or Capture HVT", "SIGINT recently picked up radio chatter coming from a VDV officer. Locate and capture or eliminate the guy. Be on the lookout for any blue berets.", 
+	west, ["officer", "secondary"], "Kill or Capture HVT", "SIGINT recently picked up radio chatter coming from a VDV officer. Locate and capture or eliminate the guy. Be on the lookout for any important looking blue berets.", 
 	"Kill", objNull, {true}, {[task_officer, [zone_capture]] call tsp_fnc_zone_triggers || !alive task_officer}
 ] spawn tsp_fnc_task;
 
 [
-    west, ["extract", "primary"], "Exfiltrate", "Exfiltrate out of the hot zone before the enemy overwhelms you!", "run", objNull, 
+    west, ["extract", "primary"], "Exfiltrate.", "Exfiltrate out of the hot zone before the enemy overwhelms you!", "run", objNull, 
     {count (["arty", "officer"] select {_x call BIS_fnc_taskState == "SUCCEEDED"}) == 2}, {count (allPlayers select {_x inArea trigger_extract}) == 0}, {false}, {false}, 
 	{["reinf_air"] spawn tsp_fnc_sector_load; ["reinf_armor"] spawn tsp_fnc_sector_load;}
 ] spawn tsp_fnc_task;
