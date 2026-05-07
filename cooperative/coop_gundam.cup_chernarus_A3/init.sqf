@@ -77,7 +77,7 @@ if (!isServer) exitWith {};
 [
     west, ["extract", "primary"], "Exfiltrate.", "Exfiltrate out of the hot zone before the enemy overwhelms you!", "run", objNull, 
     {count (["arty", "officer"] select {_x call BIS_fnc_taskState == "SUCCEEDED"}) == 2}, {count (allPlayers select {_x inArea trigger_extract}) == 0}, {false}, {false}, 
-	{["reinf_air"] spawn tsp_fnc_sector_load; ["reinf_armor"] spawn tsp_fnc_sector_load;}
+	{["reinf_air"] spawn tsp_fnc_sector_load; ["reinf_groun"] spawn tsp_fnc_sector_load;}
 ] spawn tsp_fnc_task;
 
 [
