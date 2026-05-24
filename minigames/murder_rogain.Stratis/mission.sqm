@@ -8,81 +8,75 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=97;
+		nextID=119;
 	};
 	class LayerIndexProvider
 	{
-		nextID=13;
+		nextID=18;
 	};
 	class Camera
 	{
-		pos[]={5144.5933,324.28638,5880.189};
-		dir[]={-0.81745636,-0.5613457,0.12905955};
-		up[]={-0.55447793,0.82758135,0.087540656};
-		aside[]={0.15594785,7.4505806e-009,0.98776543};
+		pos[]={4980.2969,254.58411,5861.8057};
+		dir[]={0.64262152,-0.49985737,0.5806852};
+		up[]={0.37087831,0.86610401,0.33513179};
+		aside[]={0.67045128,7.21775e-08,-0.74196345};
 	};
 };
 binarizationWanted=0;
 sourceName="murder_rogain";
 addons[]=
 {
-	"A3_Characters_F",
-	"A3_Characters_F_Exp_Civil",
-	"A3_Weapons_F",
-	"a2_uniforms_male",
 	"A3_Modules_F_Curator_Misc",
 	"A3_Structures_F_Mil_Helipads",
-	"A3_Modules_F_Intel"
+	"A3_Modules_F_Intel",
+	"A3_Characters_F",
+	"A3_Characters_F_Exp_Civil",
+	"A3_Weapons_F"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=7;
+		items=6;
 		class Item0
-		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item1
-		{
-			className="A3_Characters_F_Exp";
-			name="Arma 3 Apex - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item2
-		{
-			className="A3_Weapons_F";
-			name="Arma 3 Alpha - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item3
-		{
-			className="a2_uniforms_male";
-			name="a2_uniforms_male";
-		};
-		class Item4
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item5
+		class Item1
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item6
+		class Item2
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="A3_Characters_F_Exp";
+			name="Arma 3 Apex - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item5
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
@@ -120,1474 +114,14 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=1;
 		class Item0
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5016.5698,207.93216,5874.4111};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=5;
-					type="C_man_1";
-					atlOffset=1.5258789e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=4;
-			atlOffset=1.5258789e-005;
-		};
-		class Item1
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5016.0366,207.93066,5874.9619};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=7;
-					type="C_man_1";
-					atlOffset=1.5258789e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=6;
-			atlOffset=1.5258789e-005;
-		};
-		class Item2
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5015.897,207.83836,5873.7295};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=9;
-					type="C_man_1";
-					atlOffset=-1.5258789e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=8;
-			atlOffset=-1.5258789e-005;
-		};
-		class Item3
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5015.3647,207.84241,5874.2822};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=11;
-					type="C_man_1";
-					atlOffset=-1.5258789e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=10;
-			atlOffset=-1.5258789e-005;
-		};
-		class Item4
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5015.2847,207.75685,5873.0889};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=13;
-					type="C_man_1";
-					atlOffset=-1.5258789e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=12;
-			atlOffset=-1.5258789e-005;
-		};
-		class Item5
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5014.7515,207.76083,5873.6416};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=15;
-					type="C_man_1";
-					atlOffset=-1.5258789e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=14;
-			atlOffset=-1.5258789e-005;
-		};
-		class Item6
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5014.6118,207.72549,5872.4072};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=17;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=16;
-		};
-		class Item7
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5014.0786,207.72841,5872.96};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=19;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=18;
-		};
-		class Item8
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5017.646,207.93462,5873.292};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=21;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=20;
-		};
-		class Item9
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5017.1138,208.11211,5873.8447};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=23;
-					type="C_man_1";
-					atlOffset=0.17877197;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=22;
-			atlOffset=0.17877197;
-		};
-		class Item10
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5016.9741,207.84003,5872.6123};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=25;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=24;
-		};
-		class Item11
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5016.4409,207.98689,5873.1631};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=27;
-					type="C_man_1";
-					atlOffset=0.14834595;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=26;
-			atlOffset=0.14834595;
-		};
-		class Item12
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5016.3608,207.75781,5871.9717};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=29;
-					type="C_man_1";
-					atlOffset=1.5258789e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=28;
-			atlOffset=1.5258789e-005;
-		};
-		class Item13
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5015.8276,207.75255,5872.5225};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=31;
-					type="C_man_1";
-					atlOffset=-1.5258789e-005;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=30;
-			atlOffset=-1.5258789e-005;
-		};
-		class Item14
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5015.688,207.7177,5871.29};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=33;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=32;
-		};
-		class Item15
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5015.1558,207.72198,5871.8428};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=35;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=34;
-		};
-		class Item16
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5014.0806,207.71414,5871.8564};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=37;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=36;
-		};
-		class Item17
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5015.1567,207.70546,5870.7393};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=39;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=38;
-		};
-		class Item18
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5014.6245,207.70972,5871.29};
-						angles[]={0,0.76267833,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dude@Dude";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=41;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=40;
-		};
-		class Item19
-		{
-			dataType="Group";
-			side="Civilian";
-			class Entities
-			{
-				items=1;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={5013.4399,207.71675,5872.4106};
-						angles[]={0,0.73826241,0};
-					};
-					side="Civilian";
-					flags=7;
-					class Attributes
-					{
-						init="this setUnitLoadout [[],[],[],[selectRandom [""a2_lhd1"",""a2_lhd2"",""a2_lhd3"",""a2_lhd4"",""a2_lhd5"",""a2_lhd6"",""a2_lhd7""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];";
-						description="Dave@Dave";
-						isPlayable=1;
-						stance="Up";
-						class Inventory
-						{
-							class uniform
-							{
-								typeName="a2_lhd6";
-								isBackpack=0;
-							};
-							map="ItemMap";
-						};
-					};
-					id=43;
-					type="C_man_1";
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="speaker";
-							expression="_this setspeaker _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Male01GRE";
-								};
-							};
-						};
-						class Attribute1
-						{
-							property="pitch";
-							expression="_this setpitch _value;";
-							class Value
-							{
-								class data
-								{
-									singleType="SCALAR";
-									value=0.97000003;
-								};
-							};
-						};
-						nAttributes=2;
-					};
-				};
-			};
-			class Attributes
-			{
-			};
-			id=42;
-		};
-		class Item20
 		{
 			dataType="Layer";
 			name="mrdr";
 			class Entities
 			{
-				items=20;
+				items=21;
 				class Item0
 				{
 					dataType="Logic";
@@ -1626,16 +160,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5045.4922,207.67894,5863.9648};
+						position[]={5045.4922,207.67873,5863.9648};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos";
 					};
 					id=48;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1659,16 +191,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5005.0664,207.96939,5870.1733};
+						position[]={5005.0659,207.96899,5870.1729};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_1";
 					};
 					id=55;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00015258789;
+					atlOffset=0.65600586;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1692,16 +223,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5039.9512,209.69055,5876.3823};
+						position[]={5039.9512,209.69072,5876.3818};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_2";
 					};
 					id=56;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00015258789;
+					atlOffset=0.00032043457;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1725,16 +255,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5040.0024,209.04201,5881.9795};
+						position[]={5040.002,209.04185,5881.98};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_3";
 					};
 					id=57;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00015258789;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1758,16 +286,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4993.6025,207.67624,5869.1279};
+						position[]={4993.603,207.67606,5869.1279};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_4";
 					};
 					id=58;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00015258789;
+					atlOffset=1.003006;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1791,16 +318,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5007.8267,208.55544,5887.6953};
+						position[]={5007.8271,208.55528,5887.6948};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_5";
 					};
 					id=59;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00015258789;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1824,16 +349,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4878.9736,190.85451,5903.1777};
+						position[]={4878.9741,190.85445,5903.1782};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_6";
 					};
 					id=60;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00015258789;
+					atlOffset=9.1552734e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1857,16 +381,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5045.9971,202.32634,5954.4453};
+						position[]={5045.9971,202.32625,5954.4448};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_7";
 					};
 					id=61;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1890,16 +412,16 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4946.3564,195.31415,5862.605};
+						position[]={4946.356,195.31383,5862.605};
 					};
 					side="Empty";
+					flags=4;
 					class Attributes
 					{
-						name="spawnPos_8";
 					};
 					id=62;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
+					atlOffset=-1.5258789e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1923,16 +445,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4871.7319,180.57938,5878.5742};
+						position[]={4871.7319,180.57918,5878.5742};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_9";
 					};
 					id=63;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
+					atlOffset=1.5258789e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1956,16 +477,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4873.5752,183.61633,5938.5205};
+						position[]={4873.5752,183.61623,5938.52};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_10";
 					};
 					id=64;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
+					atlOffset=1.5258789e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -1989,16 +509,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4925.9697,195.44661,5903.1592};
+						position[]={4925.9702,195.44658,5903.1592};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_11";
 					};
 					id=65;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2022,16 +540,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4960.7065,207.8018,5906.0444};
+						position[]={4960.707,207.80162,5906.0439};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_12";
 					};
 					id=66;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2055,16 +571,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4989.2715,211.56044,5923.0684};
+						position[]={4989.271,211.56006,5923.0679};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_13";
 					};
 					id=67;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
+					atlOffset=2.5246887;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2088,16 +603,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5003.1323,209.21849,5935.3506};
+						position[]={5003.1318,209.21825,5935.3511};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_14";
 					};
 					id=68;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
+					atlOffset=0.61302185;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2121,16 +635,15 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5020.2158,212.54356,5945.6533};
+						position[]={5020.2158,212.54391,5945.6528};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_15";
 					};
 					id=69;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
+					atlOffset=0.0005645752;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2154,16 +667,14 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={5041.8345,208.89052,5930.9253};
+						position[]={5041.834,208.89032,5930.9248};
 					};
 					side="Empty";
 					class Attributes
 					{
-						name="spawnPos_16";
 					};
 					id=70;
 					type="Land_HelipadEmpty_F";
-					atlOffset=0.00021362305;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -2230,7 +741,7 @@ class Mission
 								class data
 								{
 									singleType="STRING";
-									value="<font face='PuristaBold' color='#fce300' size='20'>MURDER</font>        " \n "<br/><br/>        " \n "Theres a murderer on the loose!";
+									value="<font face='PuristaBold' color='#fce300' size='20'>MURDER</font>" \n "<br/><br/>" \n "Theres a murderer on the loose!";
 								};
 							};
 						};
@@ -2263,9 +774,1486 @@ class Mission
 						nAttributes=5;
 					};
 				};
+				class Item20
+				{
+					dataType="Group";
+					side="Civilian";
+					class Entities
+					{
+						items=20;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5016.4238,207.95801,5874.9512};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=7;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=99;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5016.957,207.96097,5874.4004};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=100;
+							type="C_man_1";
+							atlOffset=0.0014953613;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5016.2832,207.86462,5873.7188};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=101;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5015.752,207.86588,5874.2715};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=102;
+							type="C_man_1";
+							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5015.6719,207.78032,5873.0781};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=103;
+							type="C_man_1";
+							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item5
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5015.1387,207.7843,5873.6309};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=104;
+							type="C_man_1";
+							atlOffset=-1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item6
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5014.998,207.72826,5872.3965};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=105;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item7
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5014.4648,207.73116,5872.9492};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=106;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item8
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5018.0332,207.96593,5873.2813};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=107;
+							type="C_man_1";
+							atlOffset=0.0039520264;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item9
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5017.5,207.96062,5873.834};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=108;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item10
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5017.3613,207.86737,5872.6016};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=109;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item11
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5016.8281,207.86589,5873.1523};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=110;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item12
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5016.748,207.7859,5871.9609};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=111;
+							type="C_man_1";
+							atlOffset=1.5258789e-05;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item13
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5016.2148,207.77818,5872.5117};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=112;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5016.0742,207.72656,5871.2793};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=113;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5015.543,207.72473,5871.832};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=114;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item16
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5014.4668,207.71686,5871.8457};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=115;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item17
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5015.543,207.70818,5870.7285};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=116;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item18
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5015.0117,207.71246,5871.2793};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=117;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+						class Item19
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={5013.8262,207.71889,5872.3506};
+								angles[]={0,0.76267397,0};
+							};
+							side="Civilian";
+							flags=5;
+							class Attributes
+							{
+								init="if (!local this) exitWith {}; " \n "this setUnitLoadout [[],[],[],[""a2_crew_""+selectRandom[""blue"",""brown"",""green"",""red"",""violet"",""white"",""yellow""],[]],[],[],"""","""",[],["""","""","""","""","""",""""]];  " \n "[this] joinSilent (createGroup civilian);";
+								description="Dude@Dudes";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								stance="Up";
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="a2_lhd6";
+										isBackpack=0;
+									};
+									map="ItemMap";
+								};
+							};
+							id=118;
+							type="C_man_1";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male01GRE";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=0.97000003;
+										};
+									};
+								};
+								class Attribute2
+								{
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
+										};
+									};
+								};
+								nAttributes=3;
+							};
+						};
+					};
+					class Attributes
+					{
+					};
+					id=98;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="groupID";
+							expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Dudes";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
 			};
 			id=45;
-			atlOffset=-10.039047;
+			atlOffset=-6.565506;
 		};
 	};
 };

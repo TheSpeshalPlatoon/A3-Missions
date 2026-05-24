@@ -22,8 +22,7 @@ psy_fnc_movement = {
 	};
 };
 
-//-- CLIENT
-[] spawn {
+[] spawn {  //-- CLIENT
 	waitUntil {sleep 1; !isNil "psy_unit"};
 	player addEventHandler ["Killed", {["Initialize", [player, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator}];
 	[player, [psy_zone], "You are out of bounds!", {[_this, [psy_zone]] spawn tsp_fnc_zone_launch}, {alive psy_witness1 || alive psy_witness2 || alive psy_witness3}] spawn tsp_fnc_zone;
@@ -62,25 +61,23 @@ psy_fnc_movement = {
 	};
 };
 
-//-- SERVER
-if (isServer) then {
-	addMissionEventHandler ["EntityKilled", {  //-- Any time something dies
-		params ["_killed", "_killer", "_instigator"];
-		if (side _killer == west && !isPlayer _killed) then {_killer spawn {sleep 4; _this setDamage 1}; [player, "Acts_Stunned_Unconscious"] remoteExec ["switchMove"]};
-		if (_killed == psy_unit) then {["WIN"] remoteExec ["BIS_fnc_endMission"]};             //-- If psy_unit is killed, game is won
-		if (_killed == psy_unit) then {[player, "Acts_Dance_02"] remoteExec ["switchMove"]};  //-- If psy_unit is killed, game is won
-		if (_killed == psy_witness1 || _killed == psy_witness2 || _killed == psy_witness3) then {  //-- If witnesses killed, then:
-			"F_20mm_Red" createvehicle ([getPos _killed select 0, getPos _killed select 1, 25]);  //-- Launch flare
-			if (count ([psy_witness1, psy_witness2, psy_witness3] select {alive _x}) > 0) exitWith {["", "A witness has been killed!"] remoteExec ["BIS_fnc_showSubtitle", 0]};
-			["", "All witnesses are dead, VerifiedPsycho is trying to escape!"] remoteExec ["BIS_fnc_showSubtitle", 0];
-		};
-	}];
-	psy_witness1 = [[psy_zone] call BIS_fnc_randomPosTrigger] call psy_fnc_civilian; publicVariable "psy_witness1";
-	psy_witness2 = [[psy_zone] call BIS_fnc_randomPosTrigger] call psy_fnc_civilian; publicVariable "psy_witness2";
-	psy_witness3 = [[psy_zone] call BIS_fnc_randomPosTrigger] call psy_fnc_civilian; publicVariable "psy_witness3";
-	for "_i" from 1 to 25 do {[[[psy_zone] call BIS_fnc_randomPosTrigger] call psy_fnc_civilian, psy_zone] spawn psy_fnc_movement};  //-- Create NPC civilians
-	waitUntil {sleep 1; !isNil "psy_unit"}; _startPos = getPos psy_unit; 
-	waitUntil {sleep 1; time > 30 || psy_unit distance _startPos > 10}; psy_start = true; publicVariable "psy_start";
-	waitUntil {sleep 1; psy_unit distance psy_zone > 150}; ["LOSE"] remoteExec ["BIS_fnc_endMission"]; 
-	{[_x, "Acts_Stunned_Unconscious"] remoteExec ["switchMove"]} forEach (allUnits select {side _x == west});
-};
+if (!isServer) exitWith {};
+addMissionEventHandler ["EntityKilled", {  //-- Any time something dies
+	params ["_killed", "_killer", "_instigator"];
+	if (side _killer == west && !isPlayer _killed) then {_killer spawn {sleep 4; _this setDamage 1}; [player, "Acts_Stunned_Unconscious"] remoteExec ["switchMove"]};
+	if (_killed == psy_unit) then {["WIN"] remoteExec ["BIS_fnc_endMission"]};             //-- If psy_unit is killed, game is won
+	if (_killed == psy_unit) then {[player, "Acts_Dance_02"] remoteExec ["switchMove"]};  //-- If psy_unit is killed, game is won
+	if (_killed == psy_witness1 || _killed == psy_witness2 || _killed == psy_witness3) then {  //-- If witnesses killed, then:
+		"F_20mm_Red" createvehicle ([getPos _killed select 0, getPos _killed select 1, 25]);  //-- Launch flare
+		if (count ([psy_witness1, psy_witness2, psy_witness3] select {alive _x}) > 0) exitWith {["", "A witness has been killed!"] remoteExec ["BIS_fnc_showSubtitle", 0]};
+		["", "All witnesses are dead, VerifiedPsycho is trying to escape!"] remoteExec ["BIS_fnc_showSubtitle", 0];
+	};
+}];
+psy_witness1 = [[psy_zone] call BIS_fnc_randomPosTrigger] call psy_fnc_civilian; publicVariable "psy_witness1";
+psy_witness2 = [[psy_zone] call BIS_fnc_randomPosTrigger] call psy_fnc_civilian; publicVariable "psy_witness2";
+psy_witness3 = [[psy_zone] call BIS_fnc_randomPosTrigger] call psy_fnc_civilian; publicVariable "psy_witness3";
+for "_i" from 1 to 25 do {[[[psy_zone] call BIS_fnc_randomPosTrigger] call psy_fnc_civilian, psy_zone] spawn psy_fnc_movement};  //-- Create NPC civilians
+waitUntil {sleep 1; !isNil "psy_unit"}; _startPos = getPos psy_unit; 
+waitUntil {sleep 1; time > 30 || psy_unit distance _startPos > 10}; psy_start = true; publicVariable "psy_start";
+waitUntil {sleep 1; psy_unit distance psy_zone > 150}; ["LOSE"] remoteExec ["BIS_fnc_endMission"]; 
+{[_x, "Acts_Stunned_Unconscious"] remoteExec ["switchMove"]} forEach (allUnits select {side _x == west});

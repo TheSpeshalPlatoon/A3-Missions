@@ -2,7 +2,9 @@ if (player getVariable ["pilot", false]) exitWith {};  //-- Helicopter pilot doe
 
 [] spawn {
 	[[], {race_zones = ((getMissionLayerEntities "zones")#0) select {_x isKindOf "EmptyDetector"}; publicVariable "race_zones"}] remoteExec ["call", 2];  //-- Server
-	waitUntil {!isNil "race_zones"}; [player, race_zones, "You are off the track!", {(vehicle _this) setDamage 1; _this setDamage 1}, {alive _this}, 1, 1] spawn tsp_fnc_zone;  //-- Zones
+	waitUntil {!isNil "race_zones"}; 
+	acex_viewrestriction_mode = 0;
+	[player, race_zones, "You are off the track!", {(vehicle _this) setDamage 1; _this setDamage 1}, {alive _this}, 10, 5] spawn tsp_fnc_zone;  //-- Zones
 	waitUntil {player distance tsp_start < 5}; waitUntil {player distance tsp_start > 10};
 	_startTime = time;
 	while {sleep 1; alive player} do {
