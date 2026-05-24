@@ -1,6 +1,6 @@
 [] spawn {  //-- Client
 	waitUntil {time > 5};
-	if (side player == west) exitWith {[player, [zone_west, zone_west2], "You are out of bounds!", {[_this, [zone_west, zone_west2]] spawn tsp_fnc_zone_launch}] spawn tsp_fnc_zone};
+	if (side player == west) exitWith {[player, [zone_west], "You are out of bounds!", {[_this, [zone_west]] spawn tsp_fnc_zone_launch}] spawn tsp_fnc_zone};
 	if (side player == east) exitWith {[player, [zone_east], "You are out of bounds!", {[_this, [zone_east]] spawn tsp_fnc_zone_launch}] spawn tsp_fnc_zone};
 	if (side player == resistance) exitWith {[player, [zone_resistance], "You are out of bounds!", {[_this, [zone_resistance]] spawn tsp_fnc_zone_launch}] spawn tsp_fnc_zone};
 };

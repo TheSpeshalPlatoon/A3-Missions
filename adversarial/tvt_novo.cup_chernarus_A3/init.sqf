@@ -9,8 +9,8 @@
 	if (!isServer) exitWith {};
 	waitUntil {time > 1};
 	while {sleep 5; true} do {  //-- Win conditions
-		if (count (playableUnits select {!isObjectHidden _x && side _x == west}) == 0) exitWith {[[], {"east" call BIS_fnc_endMission}] remoteExec ["spawn", 0]};  //-- All BLUFOR dead, RESISTANCE wins
-		if (count (playableUnits select {!isObjectHidden _x && side _x == east}) == 0) exitWith {[[], {"west" call BIS_fnc_endMission}] remoteExec ["spawn", 0]};  //-- All EAST dead, BLUFOR wins
-		//if (count (playableUnits select {!isObjectHidden _x && side _x == resistance}) == 0) exitWith {[[], {"west" call BIS_fnc_endMission}] remoteExec ["spawn", 0]};  //-- All RESISTANCE dead, BLUFOR wins
+		if (count (playableUnits select {!isObjectHidden _x && side group _x == west}) == 0) exitWith {[[], {"east" call BIS_fnc_endMission}] remoteExec ["spawn", 0]};  //-- All BLUFOR dead, RESISTANCE wins
+		if (count (playableUnits select {!isObjectHidden _x && side group _x == east}) == 0) exitWith {[[], {"west" call BIS_fnc_endMission}] remoteExec ["spawn", 0]};  //-- All EAST dead, BLUFOR wins
+		//if (count (playableUnits select {!isObjectHidden _x && side group _x == resistance}) == 0) exitWith {[[], {"west" call BIS_fnc_endMission}] remoteExec ["spawn", 0]};  //-- All RESISTANCE dead, BLUFOR wins
 	};
 };
