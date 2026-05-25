@@ -7,7 +7,7 @@
 	"tsp_tka_rifleman",
 	"tsp_tka_rifleman_akm",
 	"tsp_tka_rifleman_lite"
-], [zone_zombie], east, {true}, {}, 200, 4, 30, 400] spawn tsp_fnc_zombience;
+], [zone_zombie], east, {true}, {}, 100, 6, 30, 250] spawn tsp_fnc_zombience;
 
 //-- Bomb Script from TFB
 tfb_debug = false;
@@ -92,9 +92,11 @@ tfb_fnc_defuse_detonate = {
 	_colorArrays = _bomb getVariable "TFB_BombColors";
 	if !(isNil "_colorArrays") then {if (count (_colorArrays select 0) < 1) exitWith {}};
 	closeDialog 2;
-	deleteVehicle _bomb;
+	//deleteVehicle _bomb;
 	_munition = "Bomb_03_F" createVehicle (_bomb modelToWorld [0,0,0]);
 	triggerAmmo _munition;
+	_bomb setVariable ["exploded", true];
+	_bomb setPos [999,999,999];
 };
 tfb_fnc_defuse_dialog = {
 	params ["_areaUnderCursor", "_unitUnderCursor"];
@@ -193,33 +195,12 @@ tfb_fnc_defuse_generatebomb = {
 
 	//generate bomb maker name
 	_maker = selectRandom [
-		"Ashton",
-		"Aeriyn",
-		"KingOfWar117",
-		"Jayhawk",
-		"Campo",
-		"sernwei01",
-		"Sin_Puay_Loo",
-		"ASUS",
-		"BigBear",
-		"chickin",
-		"Salty",
-		"GasChamber",
-		"Bronze",
-		"A-san",
-		"Noodle",
-		"NocturnalEagle",
-		"Prorune117",
-		"Davidddd",
-		"NIGEL",
-		"Artyom",
-		"Viper",
-		"PlantShooter",
-		"Des506",
-		"Fusion",
-		"Rish",
-		"Nico",
-		"cra"
+		"Arytom",
+		"Markov",
+		"Ivan",
+		"Jahid",
+		"lisan al-gahib",
+		"shakii"
 	];
 
 	//generate mode breakdown
@@ -900,6 +881,7 @@ tfb_fnc_defuse_remove = {
 		_action = _bomb getVariable "TFB_BombAction";
 		_bomb removeAction _action;
 	};
+	_bomb setVariable ["defused", true];
 };
 tfb_fnc_defuse_updateclipboard = {
 	playSound "Orange_Leaflet_Investigate_02";
@@ -1117,21 +1099,45 @@ tfb_fnc_defuse_updatekeypad = {
 if (!isServer) exitWith {};
 
 [
-    west, ["S1"], "Sector 1", "Eliminate all hostiles in this sector and Defuse Dirty Bomb", 
-    "Attack", getPos C1, {true}, { (count (allUnits select {_x inArea Zone1 && side _x == independent}) < 1)}
+    west, ["s1"], "Sector 1", "Complete the objectives and clear the area.", 
+    "Defend", getPos C1, {true}, {"cache" call BIS_fnc_taskState in ["SUCCEEDED"] && "bomb1" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"]}
 ] spawn tsp_fnc_task;
 [
-    west, ["S2"], "Sector 2", "Eliminate all hostiles in this sector and Defuse Dirty Bomb", 
-    "Attack", getPos C2, {true}, { (count (allUnits select {_x inArea Zone2 && side _x == independent}) < 1)}
+    west, ["cache","s1"], "Destroy weapons cache", "They have a cache located somewhere in the construction zone.",
+    "destroy", objnull, {true}, {!alive task_cache1 && !alive task_cache2}
 ] spawn tsp_fnc_task;
 [
-    west, ["S3"], "Sector 3", "Eliminate all hostiles in this sector and Defuse Dirty Bomb", 
-    "Attack", getPos C3, {true}, { (count (allUnits select {_x inArea Zone3 && side _x == independent}) < 1)}
+    West, ["bomb1", "s1"], "Defuse Bomb", "Find and Defuse bomb.",
+    "intel", objnull, {true}, {bomb1 getVariable ["defused", false]}, {bomb1 getVariable ["exploded", false]}
 ] spawn tsp_fnc_task;
 [
-    west, ["Defense"], "Defend Zargabad", "Assist 1st Armored Brigade in defending Zargabad against an enemy counterattack.", "Defend", getPos marker1, 
-    {"S1" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"] && "S2" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"] && "S3" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"]},
-    { (count (allUnits select {_x inArea Zargabad_defend && side _x == independent}) < 2)}, {false}, {false},
-    {["Defense"] spawn tsp_fnc_sector_load;},
+    west, ["s2"], "Sector 2", "Complete the objectives and clear the area.", 
+    "Defend", getPos C2, {true}, {"officer" call BIS_fnc_taskState in ["SUCCEEDED"] && "bomb2" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"]}
+] spawn tsp_fnc_task;
+[
+    west, ["officer","s2"], "Kill 3 Officers", "Their in an apartment and its fully garrisoned, We know their in Sector 2.",
+    "destroy", objnull, {true}, {!alive task_officer1 && !alive task_officer2 && !alive task_officer3}
+] spawn tsp_fnc_task;
+[
+    West, ["bomb2", "s2"], "Defuse Bomb", "Find and Defuse bomb.",
+    "intel", objnull, {true}, {bomb2 getVariable ["defused", false]}, {bomb2 getVariable ["exploded", false]}
+] spawn tsp_fnc_task;
+[
+    west, ["s3"], "Sector 3", "Complete the objectives and clear the area.", 
+    "Defend", getPos C3, {true}, {"clear" call BIS_fnc_taskState in ["SUCCEEDED"] && "bomb3" call BIS_fnc_taskState in ["SUCCEEDED","FAILED"]}
+] spawn tsp_fnc_task;
+[
+    West, ["clear","s3"], "Secure the area", "Kill the remaining syrian forces.",
+    "Attack", objnull, {true}, { (count (allunits select {_x inArea secure_S3 && side _x == East}) <1)}
+] spawn tsp_fnc_task;
+[
+    West, ["bomb3", "s3"], "Defuse Bomb", "Find and Defuse bomb.",
+    "intel", objnull, {true}, {bomb3 getVariable ["defused", false]}, {bomb3 getVariable ["exploded", false]}
+] spawn tsp_fnc_task;
+[
+    west, ["defend"], "Defend Zargabad", "Assist 1st Armored Brigade in defending Zargabad against an enemy counterattack.", "Defend", getPos zargabad_defense, 
+    {"s1" call BIS_fnc_taskState in ["SUCCEEDED"] && "s2" call BIS_fnc_taskState in ["SUCCEEDED"] && "s3" call BIS_fnc_taskState in ["SUCCEEDED"]},
+    { (count (allUnits select {_x inArea defend_zargabad && side _x == independent}) < 2)}, {false}, {false},
+    {["zargabad_defend"] spawn tsp_fnc_sector_load;},
     {},{"end1" remoteExec ["BIS_fnc_endMission", 0]}
 ] spawn tsp_fnc_task;
