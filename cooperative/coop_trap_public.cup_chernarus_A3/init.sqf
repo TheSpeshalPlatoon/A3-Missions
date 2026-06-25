@@ -53,7 +53,7 @@
         uiSleep 3;  //-- Wait 3 seconds
         [3,1,false] call bis_fnc_animatedScreen;  //-- fade out, 1 seconds long
     }]
-], "darkreach", {[true] call tsp_fnc_role; [] spawn tsp_fnc_spawn_map}] spawn tsp_fnc_intro;  //-- Slides, music, code to run at the end
+], "darkreach", {[] spawn tsp_fnc_spawn}] spawn tsp_fnc_intro;  //-- Slides, music, code to run at the end
 
 [player, [
 "rhs_vdv_rifleman", "rhs_vdv_grenadier", "rhs_vdv_grenadier_alt", "rhs_vdv_LAT", "rhs_vdv_RShG2", "rhs_vdv_rifleman_alt", "rhs_vdv_arifleman", "rhs_vdv_arifleman_rpk", "rhs_vdv_grenadier_rpg", "rhs_vdv_machinegunner", "rhs_vdv_medic", "rhs_vdv_at"

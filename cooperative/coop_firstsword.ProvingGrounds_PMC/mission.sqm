@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2875;
+		nextID=2910;
 	};
 	class Camera
 	{
-		pos[]={1968.5353,97.03022,911.02936};
-		dir[]={0.47950178,-0.60946023,0.63137877};
-		up[]={0.36860538,0.7928164,0.48535803};
-		aside[]={0.79637295,-8.8941306e-08,-0.60480654};
+		pos[]={1582.3328,183.13029,818.72876};
+		dir[]={-0.48199156,-0.69559896,0.53275728};
+		up[]={-0.46667305,0.71842951,0.51582563};
+		aside[]={0.7415567,-1.5334808e-07,0.67089385};
 	};
 };
 binarizationWanted=0;
@@ -115,14 +115,13 @@ addons[]=
 	"A3_Structures_F_Naval_Piers",
 	"rhsgref_c_a2port_armor",
 	"CUP_CAMisc_ACR_Shooting_range",
-	"A3_Structures_F_EPA_Civ_Camping",
-	"A3_Characters_F"
+	"A3_Structures_F_EPA_Civ_Camping"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=64;
+		items=63;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -528,13 +527,6 @@ class AddonsMetaData
 			className="CUP_CAMisc_ACR_Shooting_range";
 			name="CUP_CAMisc_ACR_Shooting_range";
 		};
-		class Item63
-		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
 	};
 };
 dlcs[]=
@@ -556,6 +548,9 @@ randomSeed=3384139;
 class ScenarioData
 {
 	author="ASmallDinosaur";
+};
+class CustomAttributes
+{
 };
 class Mission
 {
@@ -585,7 +580,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=1;
 		class Item0
 		{
 			dataType="Layer";
@@ -61101,6 +61096,7 @@ class Mission
 				{
 					dataType="Layer";
 					name="reinf_bmp";
+					state=1;
 					class Entities
 					{
 						items=5;
@@ -63908,163 +63904,6 @@ class Mission
 			};
 			id=3117;
 			atlOffset=1.1936989;
-		};
-		class Item1
-		{
-			dataType="Group";
-			side="West";
-			class Entities
-			{
-				items=4;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2001.562,54.184402,932.02667};
-					};
-					side="West";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-						isPlayer=1;
-					};
-					id=3356;
-					type="B_Soldier_TL_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2006.562,52.628334,927.02667};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=3357;
-					type="B_soldier_AR_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1996.562,54.923588,927.02667};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=3358;
-					type="B_Soldier_GL_F";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2011.562,51.775623,922.02667};
-					};
-					side="West";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=3359;
-					type="B_soldier_LAT_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=3355;
-		};
-		class Item2
-		{
-			dataType="Group";
-			side="East";
-			class Entities
-			{
-				items=4;
-				class Item0
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2003.309,52.706589,997.65796};
-					};
-					side="East";
-					flags=7;
-					class Attributes
-					{
-						rank="SERGEANT";
-					};
-					id=3361;
-					type="O_Soldier_TL_F";
-				};
-				class Item1
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2008.309,52.358982,992.65796};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.44999999;
-						rank="CORPORAL";
-					};
-					id=3362;
-					type="O_Soldier_AR_F";
-				};
-				class Item2
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={1998.309,53.013321,992.65796};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=3363;
-					type="O_Soldier_GL_F";
-				};
-				class Item3
-				{
-					dataType="Object";
-					class PositionInfo
-					{
-						position[]={2013.309,52.006504,987.65796};
-					};
-					side="East";
-					flags=5;
-					class Attributes
-					{
-						skill=0.40000001;
-					};
-					id=3364;
-					type="O_Soldier_LAT_F";
-				};
-			};
-			class Attributes
-			{
-			};
-			id=3360;
 		};
 	};
 	class Connections

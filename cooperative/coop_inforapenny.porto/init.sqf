@@ -66,7 +66,7 @@ Your mission is to first support Team Sword in securing the drilling site, once 
 		[5,2,"\tsp_core\data\sahara\04_f.paa",nil,nil,1] call bis_fnc_animatedScreen; [6,2,8,nil,1.2] call bis_fnc_animatedScreen;
 		uiSleep 3; [3,2,false] call bis_fnc_animatedScreen;
 	}]
-], "Music_FreeRoam_Russian_Theme", {[true] call tsp_fnc_role; [] spawn tsp_fnc_spawn_map}] spawn tsp_fnc_intro;
+], "Music_FreeRoam_Russian_Theme", {[] spawn tsp_fnc_spawn}] spawn tsp_fnc_intro;
 
 if (!isServer) exitWith {};
 [west, ["doors"], "Close Doors", "The latest weather report indicates that a severe sandstorm is rolling in, close up the barracks before it arrives.", 

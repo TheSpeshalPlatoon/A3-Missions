@@ -1,4 +1,4 @@
-author = "Dino"; onLoadName = "Court"; class Header {gameType = TDM}; loadScreen = __EVAL(selectRandom["overview.jpg"]);  
+author = "Dino"; onLoadName = "Court"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]); 
 
 class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Addon mode needs full path (\tsp_core\)
 #include "\a3\ui_f\hpp\definecommongrids.inc"
@@ -10,20 +10,22 @@ tsp_param_mission = true;               //-- Run TSP mission scripts
 tsp_param_addons = false;              //-- Run TSP addon scripts
 tsp_param_spawn = false;              //-- Show spawn map at all
 tsp_param_spawnStart = false;        //-- Show spawn screen on initial spawn
-tsp_param_spawnScale = 0.5;         //-- Spawn screen scale, smaller is closer
-tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spawnScale = 0.25;        //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Original"; //-- "Retain", "Original", "Saved"
 tsp_param_spectate = "Forced";    //-- "Disabled", "Dynamic", "Forced"
 tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
-tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_role = false;         //-- Custom CfgRole select screen
 tsp_param_roleStart = false;   //-- Force player to select role at start of 
 tsp_param_roleCheck = false;  //-- Gear checking
 tsp_param_dispersion = 20;   //-- AI weapon dispersion
 tsp_param_skill = 1;        //-- AI skill
 tsp_param_spotting = 1;    //-- AI spotting
-tsp_param_brightness = 0.3; 
-tsp_param_time_day = 6;
-tsp_param_time_night = 12;
+tsp_param_brightness = 0.5;
+tsp_param_time_day = 5;
+tsp_param_time_night = 10;
 tsp_param_weather = true;
+
+tsp_roles[] = {};
 
 class Params {
 	#define GUERFRIENDLY_DEFAULT -1
@@ -32,12 +34,18 @@ class Params {
 	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
 };
 
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnTemplates[] = {"BASE"};
+respawnDelay = 2; 
+respawnDialog = 0;
 respawnButton = 1;
 forceRotorLibSimulation = 0;
 disabledAI = 1;
 briefing = 1;  //-- Skip map screen
 
-minPlayerDistance = 200;  //-- Garbage collector despawn distance
+minPlayerDistance = 300;  //-- Garbage collector despawn distance
 
 corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
 corpseLimit = 30;

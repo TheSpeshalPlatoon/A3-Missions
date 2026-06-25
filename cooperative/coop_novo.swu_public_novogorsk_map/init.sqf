@@ -58,7 +58,7 @@
 		[5,2,"data\05_f.paa",nil,nil,1] call bis_fnc_animatedScreen; [6,2,8,nil,1.2] call bis_fnc_animatedScreen;
 		uiSleep 6; [3,2,false] call bis_fnc_animatedScreen;
 	}]
-], {[true] call tsp_fnc_map; 5 fadeMusic 0; sleep 5; playMusic ""; 5 fadeMusic 1}] spawn tsp_fnc_intro;
+], {[true] call tsp_fnc_spawn; 5 fadeMusic 0; sleep 5; playMusic ""; 5 fadeMusic 1}] spawn tsp_fnc_intro;
 
 if (!isServer) exitWith {};
 

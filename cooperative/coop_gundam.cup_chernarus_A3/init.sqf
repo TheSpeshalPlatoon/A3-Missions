@@ -53,7 +53,7 @@
         uiSleep 3;  //-- Wait 3 seconds
         [3,1,false] call bis_fnc_animatedScreen;  //-- fade out, 1 seconds long
     }]
-], "darkreach", {[true] call tsp_fnc_role; [] spawn tsp_fnc_spawn_map}] spawn tsp_fnc_intro;  //-- Slides, music, code to run at the end
+], "darkreach", {[] spawn tsp_fnc_spawn}] spawn tsp_fnc_intro;  //-- Slides, music, code to run at the end
 
 [player, [
 "rhsgref_ins_spotter", "rhsgref_ins_squadleader", "tsp_chdkz_radio", "rhsgref_ins_sniper", "rhsgref_ins_saboteur", "rhsgref_ins_rifleman_aks74", "rhsgref_ins_rifleman_akm", "rhsgref_ins_rifleman_RPG26", "rhsgref_ins_grenadier", "rhsgref_ins_rifleman"

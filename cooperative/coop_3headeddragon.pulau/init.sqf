@@ -104,7 +104,7 @@ tsp_fnc_talk = {
 		[5,2,"data\06_f.paa",nil,nil,1] call bis_fnc_animatedScreen; [6,2,8,nil,1.2] call bis_fnc_animatedScreen;
 		uiSleep 3; [3,2,false] call bis_fnc_animatedScreen;
 	}]
-], "LeadTrack01_F_EXP", {[true] call tsp_fnc_role; [] spawn tsp_fnc_spawn_map}] spawn tsp_fnc_intro;
+], "LeadTrack01_F_EXP", {[] spawn tsp_fnc_spawn}] spawn tsp_fnc_intro;
 
 ["CAManBase", "init", {  //-- Talking to civilians
 	params ["_unit"]; 
@@ -112,13 +112,13 @@ tsp_fnc_talk = {
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
 if (!isServer) exitWith {};
+
 tsp_totalIntel = 0; tsp_totalMoney = 0; tsp_chanceIntel = 0.5; tsp_chanceTalk = 0.5; 
 {publicVariable _x} forEach ["tsp_totalIntel", "tsp_totalMoney", "tsp_chanceIntel", "tsp_chanceTalk"];
 
 ["CAManBase", "init", {  //-- Intel drop
-	params ["_unit"]; 
-	if (side _unit != resistance || random 1 > tsp_chanceIntel) exitWith {};
-	_unit spawn {sleep 2; _this addMagazine (selectRandom ["Files", "FileTopSecret", "Keys", "MobilePhone", "FlashDisk", "Money", "Money_bunch", "Money_roll", "Money_stack"])};
+	params ["_unit"]; if (side _unit != resistance || random 1 > tsp_chanceIntel) exitWith {};
+	_unit spawn {sleep 2; _this addMagazine (selectRandom ["Files", "FileTopSecret", "MobilePhone", "FlashDisk", "Keys", "Money", "Money_bunch", "Money_roll", "Money_stack"])};
 }, true, [], true] call CBA_fnc_addClassEventHandler;
 
 [west, "main", [localize "STR_TASK_MAIN_DESC", localize "STR_TASK_MAIN_TITLE"], objNull, "CREATED", -1, true, "Meet"] call BIS_fnc_taskCreate;
@@ -126,109 +126,28 @@ tsp_totalIntel = 0; tsp_totalMoney = 0; tsp_chanceIntel = 0.5; tsp_chanceTalk = 
 
 [west, ["general", "main"], [localize "STR_TASK_GENERAL_DESC", localize "STR_TASK_GENERAL_TITLE"], objNull, "CREATED", -1, true, "Target"] call BIS_fnc_taskCreate;
 [west, ["general_locate", "general"], [localize "STR_TASK_GENERAL_LOCATE_DESCRIPTION", "Locate"], objNull, "CREATED", -1, true, "Scout"] call BIS_fnc_taskCreate;
-
 [west, ["warlord", "main"], [localize "STR_TASK_WARLORD_DESC", localize "STR_TASK_WARLORD_TITLE"], objNull, "CREATED", -1, true, "Target"] call BIS_fnc_taskCreate;
 [west, ["warlord_locate", "warlord"], [localize "STR_TASK_WARLORD_LOCATE_DESCRIPTION", localize "STR_TASK_LOCATE_TITLE"], objNull, "CREATED", -1, true, "Scout"] call BIS_fnc_taskCreate;
-
 [west, ["dealer", "main"], [localize "STR_TASK_DEALER_DESC", localize "STR_TASK_DEALER_TITLE"], objNull, "CREATED", -1, true, "Target"] call BIS_fnc_taskCreate;
 [west, ["dealer_locate", "dealer"], [localize "STR_TASK_DEALER_LOCATE_DESCRIPTION", localize "STR_TASK_LOCATE_TITLE"], objNull, "CREATED", -1, true, "Scout"] call BIS_fnc_taskCreate;
-
 [west, ["journo", "main"], [localize "STR_TASK_JOURNO_DESC", localize "STR_TASK_JOURNO_TITLE"], objNull, "CREATED", -1, true, "Armor"] call BIS_fnc_taskCreate;
 [west, ["journo_locate", "journo"], [localize "STR_TASK_JOURNO_LOCATE_DESCRIPTION", localize "STR_TASK_LOCATE_TITLE"], objNull, "CREATED", -1, true, "Scout"] call BIS_fnc_taskCreate;
 
-[  //-- Camp2
-	west, ["camp2", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", getPos camp2_t, 
-	{tsp_totalIntel >= 5}, {"camp2" call tsp_fnc_sector_check && (count (allUnits select {_x distance camp2_t < 30 && side _x == independent}) == 0)}
-] spawn tsp_fnc_task;
+[west, ["camp2", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", "sector_camp2", {tsp_totalIntel >= 4}, {"camp2" call tsp_fnc_sector_check && ["camp2", "", sector_camp2, 50, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["camp3", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", "sector_camp3", {tsp_totalIntel >= 6}, {"camp3" call tsp_fnc_sector_check && ["camp3", "", sector_camp3, 50, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["camp1", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", "sector_camp1", {tsp_totalIntel >= 10}, {"camp1" call tsp_fnc_sector_check && ["camp1", "", sector_camp1, 50, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["aaa1", "side"], localize "STR_TASK_AAA1_TITLE", localize "STR_TASK_AAA1_DESC", "Destroy", "sector_aaa1", {tsp_totalIntel >= 12}, {!alive ("task_aaa1" call tsp_fnc_sector_variable)}] spawn tsp_fnc_task;
+[west, ["pow1", "side"], localize "STR_TASK_POW_TITLE", localize "STR_TASK_POW1_DESC", "Meet", "sector_pow1", {tsp_totalIntel >= 15}, {(count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_pow1" call tsp_fnc_sector_variable) < 50}) > 0)}, {!alive ("task_pow1" call tsp_fnc_sector_variable)}] spawn tsp_fnc_task;
+[west, ["arti1", "side"], localize "STR_TASK_ARTI1_TITLE", localize "STR_TASK_ARTI1_DESC", "Destroy", "sector_arti1", {tsp_totalIntel >= 18}, {!alive ("task_arti1" call tsp_fnc_sector_variable)}] spawn tsp_fnc_task;
+[west, ["crash", "side"], localize "STR_TASK_CRASH_TITLE", localize "STR_TASK_CRASH_DESC", "Heli", "sector_crash", {tsp_totalIntel >= 20}, {count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_crash1" call tsp_fnc_sector_variable) < 50}) > 0}, {!alive ("task_crash1" call tsp_fnc_sector_variable)}] spawn tsp_fnc_task;
+[west, ["cache1", "side"], localize "STR_TASK_CACHE_TITLE", localize "STR_TASK_CACHE1_DESC", "Rifle", "sector_cache1", {tsp_totalIntel >= 22}, {!alive ("task_cache1" call tsp_fnc_sector_variable)}] spawn tsp_fnc_task;
+[west, ["camp5", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", "sector_camp5", {tsp_totalIntel >= 24}, {"camp5" call tsp_fnc_sector_check && ["camp5", "", sector_camp5, 50, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["pow2", "side"], localize "STR_TASK_POW_TITLE", localize "STR_TASK_POW2_DESC", "Meet", "sector_pow2", {tsp_totalIntel >= 27}, {count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_pow2" call tsp_fnc_sector_variable) < 50}) > 0}, {!alive ("task_pow2" call tsp_fnc_sector_variable)}] spawn tsp_fnc_task;
+[west, ["camp4", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", "sector_camp4", {tsp_totalIntel >= 30}, {"camp4" call tsp_fnc_sector_check && ["camp4", "", sector_camp4, 50, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["cache2", "side"], localize "STR_TASK_CACHE_TITLE", localize "STR_TASK_CACHE2_DESC", "Rifle", "sector_cache2", {tsp_totalIntel >= 32}, {!alive ("task_cache2" call tsp_fnc_sector_variable)}] spawn tsp_fnc_task;
+[west, ["camp6", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", "sector_camp6", {tsp_totalIntel >= 35}, {"camp6" call tsp_fnc_sector_check && ["camp6", "", sector_camp6, 50, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
 
-[  //-- Camp3
-	west, ["camp3", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", getPos camp3_t, 
-	{tsp_totalIntel >= 6}, {"camp3" call tsp_fnc_sector_check && (count (allUnits select {_x distance camp3_t < 30 && side _x == independent}) == 0)}
-] spawn tsp_fnc_task;
-
-[  //-- Camp1
-	west, ["camp1", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", getPos camp1_t, 
-	{tsp_totalIntel >= 10}, {"camp1" call tsp_fnc_sector_check && (count (allUnits select {_x distance camp1_t < 30 && side _x == independent}) == 0)}
-] spawn tsp_fnc_task;
-
-[  //-- AAA1
-	west, ["aaa1", "side"], localize "STR_TASK_AAA1_TITLE", localize "STR_TASK_AAA1_DESC", "Destroy", getPos aaa1_t, 
-	{tsp_totalIntel >= 12}, {!alive ("task_aaa1" call tsp_fnc_sector_variable)}
-] spawn tsp_fnc_task;
-
-[  //-- Pow1
-	west, ["pow1", "side"], localize "STR_TASK_POW_TITLE", localize "STR_TASK_POW1_DESC", "Meet", getPos pow1_t, 
-	{tsp_totalIntel >= 15}, {(count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_pow1" call tsp_fnc_sector_variable) < 50}) > 0)}, 
-	{!alive ("task_pow1" call tsp_fnc_sector_variable)}
-] spawn tsp_fnc_task;
-
-[  //-- Arti1
-	west, ["arti1", "side"], localize "STR_TASK_ARTI1_TITLE", localize "STR_TASK_ARTI1_DESC", "Destroy", getPos arti1_t, 
-	{tsp_totalIntel >= 18}, {!alive ("task_arti1" call tsp_fnc_sector_variable)}
-] spawn tsp_fnc_task;
-
-[  //-- Crash
-	west, ["crash", "side"], localize "STR_TASK_CRASH_TITLE", localize "STR_TASK_CRASH_DESC", "Heli", getPos crash_t, 
-	{tsp_totalIntel >= 20}, {count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_crash1" call tsp_fnc_sector_variable) < 50}) > 0}, 
-	{!alive ("task_crash1" call tsp_fnc_sector_variable)}
-] spawn tsp_fnc_task;
-
-[  //-- Cache1
-	west, ["cache1", "side"], localize "STR_TASK_CACHE_TITLE", localize "STR_TASK_CACHE1_DESC", "Rifle", getPos cache1_t, 
-	{tsp_totalIntel >= 22}, {!alive ("task_cache1" call tsp_fnc_sector_variable)}
-] spawn tsp_fnc_task;
-
-[  //-- Camp5
-	west, ["camp5", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", getPos camp5_t,  
-	{tsp_totalIntel >= 24}, {"camp5" call tsp_fnc_sector_check && (count (allUnits select {_x distance camp5_t < 30 && side _x == independent}) == 0)}
-] spawn tsp_fnc_task;
-
-[  //-- Pow2
-	west, ["pow2", "side"], localize "STR_TASK_POW_TITLE", localize "STR_TASK_POW2_DESC", "Meet", getPos pow2_t, 
-	{tsp_totalIntel >= 27}, {count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_pow2" call tsp_fnc_sector_variable) < 50}) > 0}, 
-	{!alive ("task_pow2" call tsp_fnc_sector_variable)}
-] spawn tsp_fnc_task;
-
-[  //-- Camp4
-	west, ["camp4", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", getPos camp4_t, 
-	{tsp_totalIntel >= 30}, {"camp4" call tsp_fnc_sector_check && (count (allUnits select {_x distance camp4_t < 30 && side _x == independent}) == 0)}
-] spawn tsp_fnc_task;
-
-[  //-- Cache2
-	west, ["cache2", "side"], localize "STR_TASK_CACHE_TITLE", localize "STR_TASK_CACHE2_DESC", "Rifle", getPos cache2_t,  
-	{tsp_totalIntel >= 32}, {!alive ("task_cache2" call tsp_fnc_sector_variable)}
-] spawn tsp_fnc_task;
-
-[  //-- Camp6
-	west, ["camp6", "side"], localize "STR_TASK_CAMP_TITLE", localize "STR_TASK_CAMP_DESC", "Attack", getPos camp6_t, 
-	{tsp_totalIntel >= 35}, {"camp6" call tsp_fnc_sector_check && (count (allUnits select {_x distance camp6_t < 30 && side _x == independent}) == 0)}
-] spawn tsp_fnc_task;
-
-[  //-- General
-	west, ["general_kill", "general"], localize "STR_TASK_KILL_TITLE", localize "STR_TASK_GENERAL_KILL_DESC", "Kill", getPos general_out_t,  
-	{tsp_totalIntel >= 42 && ["dealer_kill"] call BIS_fnc_taskExists && ["warlord_kill"] call BIS_fnc_taskExists}, 
-	{count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_general" call tsp_fnc_sector_variable) < 50}) > 0 || !alive ("task_general" call tsp_fnc_sector_variable)}, 
-	{false}, {false}, {["general_locate", "SUCCEEDED"] call BIS_fnc_taskSetState}
-] spawn tsp_fnc_task;
-
-[  //-- Dealer
-	west, ["dealer_kill", "dealer"], localize "STR_TASK_KILL_TITLE", localize "STR_TASK_DEALER_KILL_DESC", "Kill", getPos dealer_t, 
-	{tsp_totalIntel >= 37}, 
-	{count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_dealer" call tsp_fnc_sector_variable) < 50}) > 0 || !alive ("task_dealer" call tsp_fnc_sector_variable)}, 
-	{false}, {false},{["dealer_locate", "SUCCEEDED"] call BIS_fnc_taskSetState}
-] spawn tsp_fnc_task;
-
-[  //-- Warlord
-	west, ["warlord_kill", "warlord"], localize "STR_TASK_KILL_TITLE", localize "STR_TASK_WARLORD_KILL_DESC", "Kill", getPos warlord_t, 
-	{tsp_totalIntel >= 40}, 
-	{count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_warlord" call tsp_fnc_sector_variable) < 50}) > 0 || !alive ("task_warlord" call tsp_fnc_sector_variable)}, 
-	{false}, {false}, {["warlord_locate", "SUCCEEDED"] call BIS_fnc_taskSetState}
-] spawn tsp_fnc_task;
-
-[  //-- Journo
-	west, ["journo_rescue", "journo"], localize "STR_TASK_JOURNO_RESCUE_TITLE", localize "STR_TASK_JOURNO_RESCUE_DESC", "Meet", getPos journo_t, 
-	{tsp_totalIntel >= 35}, 
-	{count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_journo1" call tsp_fnc_sector_variable) < 50}) > 0 || count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_journo2" call tsp_fnc_sector_variable) < 50}) > 0}, 
-	{!alive ("task_journo1" call tsp_fnc_sector_variable) && !alive ("task_journo2" call tsp_fnc_sector_variable)}, 
-	{false}, {["journo_locate", "SUCCEEDED"] call BIS_fnc_taskSetState}
-] spawn tsp_fnc_task;
+[west, ["journo_rescue", "journo"], localize "STR_TASK_JOURNO_RESCUE_TITLE", localize "STR_TASK_JOURNO_RESCUE_DESC", "Meet", "sector_journo", {tsp_totalIntel >= 37}, {count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_journo1" call tsp_fnc_sector_variable) < 50}) > 0 || count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_journo2" call tsp_fnc_sector_variable) < 50}) > 0}, {!alive ("task_journo1" call tsp_fnc_sector_variable) && !alive ("task_journo2" call tsp_fnc_sector_variable)}, {false}, {["journo_locate", "SUCCEEDED"] call BIS_fnc_taskSetState}] spawn tsp_fnc_task;
+[west, ["dealer_kill", "dealer"], localize "STR_TASK_KILL_TITLE", localize "STR_TASK_DEALER_KILL_DESC", "Kill", "sector_dealer", {tsp_totalIntel >= 40}, {count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_dealer" call tsp_fnc_sector_variable) < 50}) > 0 || !alive ("task_dealer" call tsp_fnc_sector_variable)}, {false}, {false},{["dealer_locate", "SUCCEEDED"] call BIS_fnc_taskSetState}] spawn tsp_fnc_task;
+[west, ["warlord_kill", "warlord"], localize "STR_TASK_KILL_TITLE", localize "STR_TASK_WARLORD_KILL_DESC", "Kill", "sector_warlord", {tsp_totalIntel >= 42}, {count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_warlord" call tsp_fnc_sector_variable) < 50}) > 0 || !alive ("task_warlord" call tsp_fnc_sector_variable)}, {false}, {false}, {["warlord_locate", "SUCCEEDED"] call BIS_fnc_taskSetState}] spawn tsp_fnc_task;
+[west, ["general_kill", "general"], localize "STR_TASK_KILL_TITLE", localize "STR_TASK_GENERAL_KILL_DESC", "Kill", "sector_general_out", {tsp_totalIntel >= 44 && ["dealer_kill"] call BIS_fnc_taskExists && ["warlord_kill"] call BIS_fnc_taskExists}, {count ([spawnPos_airfield, spawnPos_monyet, spawnPos_seliu] select {_x distance ("task_general" call tsp_fnc_sector_variable) < 50}) > 0 || !alive ("task_general" call tsp_fnc_sector_variable)}, {false}, {false}, {["general_locate", "SUCCEEDED"] call BIS_fnc_taskSetState}] spawn tsp_fnc_task;

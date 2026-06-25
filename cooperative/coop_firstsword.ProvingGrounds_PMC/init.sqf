@@ -57,7 +57,7 @@
 		[5,2,"tsp_core\data\greensea\05_f.paa",nil,nil,1] call bis_fnc_animatedScreen; [6,2,8,nil,1.2] call bis_fnc_animatedScreen;
 		uiSleep 6; [3,2,false] call bis_fnc_animatedScreen;
 	}]
-], "balalaika", {[true] call tsp_fnc_role; [] spawn tsp_fnc_spawn_map}] spawn tsp_fnc_intro;
+], "balalaika", {[] spawn tsp_fnc_spawn}] spawn tsp_fnc_intro;
 
 if (!isServer) exitWith {};
 

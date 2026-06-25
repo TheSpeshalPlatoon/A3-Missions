@@ -79,7 +79,7 @@ tsp_fnc_role_available = {  //-- Check if fole is available
 	true
 };
 
-tsp_fnc_role_arsenal = {  //-- [player, ["soc_raider","west_leader","myGun"]] call tsp_fnc_role_arsenal;
+tsp_fnc_role_arsenal = {  //-- [player, ["soc_raider","us_leader","myGun"]] call tsp_fnc_role_arsenal;
 	params ["_unit", ["_data", []], ["_data1", []], ["_data2", []], ["_data3", []]]; if (!local _unit) exitWith {};   //-- _data1, _data2 and _data3 - poor man's recursion
 	{if ("ACE" in _x) then {_data3 pushBack _x; continue}; _data1 = _data1+(missionNameSpace getVariable [_x, getMissionConfigValue [_x, [_x]]])} forEach _data;    //-- If _x is variable/config, get data, else just add the item [_x]
 	{if ("ACE" in _x) then {_data3 pushBack _x; continue}; _data2 = _data2+(missionNameSpace getVariable [_x, getMissionConfigValue [_x, [_x]]])} forEach _data1;  //-- If _x is variable/config, get data, else just add the item [_x]
