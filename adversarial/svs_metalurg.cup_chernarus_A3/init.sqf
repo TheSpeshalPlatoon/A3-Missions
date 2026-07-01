@@ -1,4 +1,5 @@
 [] spawn {  //-- Client
+	[false, true] call acre_api_fnc_setupMission;
 	if (!isNil "svs_start") exitWith {[player, true] remoteExec ["hideObjectGlobal", 2]; ["Initialize", [player, [], false, true, true, true, true, true, true, true]] call BIS_fnc_EGSpectator};
 	cutText ["Waiting for players...", "BLACK OUT", 0.001];  //-- Start with black screen
 	waitUntil {!isNil "svs_start"};
@@ -8,16 +9,19 @@
 };
 
 if (isServer) then {  //-- Server
-	waitUntil {time > 10};
+	waitUntil {time > 15};
 
 	_spawns = allMissionObjects "Land_HelipadEmpty_F";
 	_allGroupsWithPlayers = [];	{_allGroupsWithPlayers pushBackUnique group _x} forEach allPlayers;
 	{_spawn = selectRandom _spawns; _spawns deleteAt (_spawns find _spawn); {_x setPos getPos _spawn} forEach (units _x)} forEach _allGroupsWithPlayers;
 	svs_start = true; publicVariable "svs_start";
 
+	sleep (60*5);
+	["The zone has started shrinking!"] remoteExec ["systemChat"];
+
 	_size = (triggerArea zone_player)#0;
-	_final = 200;
-	_duration = 15;
+	_final = 100;
+	_duration = 10;
 	_step = (_size - _final)/((_duration-(_duration/2))*60);
 	[_duration, 0] spawn tsp_fnc_countDown;
 
