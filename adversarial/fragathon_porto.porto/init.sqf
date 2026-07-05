@@ -9,7 +9,7 @@
 };
 
 if (isServer) then {  //-- Server
-	waitUntil {time > 15};
+	waitUntil {time > 5};
 
 	_spawns = allMissionObjects "Land_HelipadEmpty_F";
 	_allGroupsWithPlayers = [];	{_allGroupsWithPlayers pushBackUnique group _x} forEach allPlayers;
@@ -21,7 +21,7 @@ if (isServer) then {  //-- Server
 
 	_size = (triggerArea zone_player)#0;
 	_final = 100;
-	_duration = 10;
+	_duration = 2;
 	_step = (_size - _final)/((_duration-(_duration/2))*60);
 	[_duration, 0] spawn tsp_fnc_countDown;
 
