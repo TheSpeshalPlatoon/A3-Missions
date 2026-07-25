@@ -7,7 +7,7 @@
 	"tsp_tka_rifleman",
 	"tsp_tka_rifleman_akm",
 	"tsp_tka_rifleman_lite"
-], [zone_zombie], east, {true}, {}, 100, 6, 30, 250] spawn tsp_fnc_zombience;
+], [zone_zombie], independent, {true}, {}, 40, 6, 30, 250] spawn tsp_fnc_zombience;
 
 //-- Bomb Script from TFB
 tfb_debug = false;
@@ -1128,7 +1128,7 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     West, ["clear","s3"], "Secure the area", "Kill the remaining syrian forces.",
-    "Attack", objnull, {true}, { (count (allunits select {_x inArea secure_S3 && side _x == East}) <1)}
+    "Attack", objnull, {true}, { (count (allunits select {_x inArea secure_S3 && side _x == Independent}) <1)}
 ] spawn tsp_fnc_task;
 [
     West, ["bomb3", "s3"], "Defuse Bomb", "Find and Defuse bomb.",
