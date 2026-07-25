@@ -5,6 +5,7 @@ class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_co
 #include "\tsp_core\scripts\chvd.hpp"
 #include "\tsp_core\scripts\gui.hpp"
 #include "\tsp_core\roles.hpp"
+#include "defuse\description.hpp"
 
 tsp_param_mission = true;               //-- Run TSP mission scripts
 tsp_param_addons = false;              //-- Run TSP addon scripts
@@ -218,6 +219,37 @@ tsp_roles[] = {
 			{"Helicopter Pilot", "rhsusf_army_ocp_helipilot", {"soc_special","us_heli","us_leader"}, "iconManOfficer_ca.paa"},
 			{"Helicopter Crew", "rhsusf_army_ocp_helicrew", {"soc_special","us_heli","us_leader"}, "iconManOfficer_ca.paa"}
 		}}
+	}},	
+	{"IoN - Task Force Stone", "\tsp_core\data\insignia\ionaviation.paa", "west", {
+		{"Jade (Command)", "markers\nato\b_hq.paa", {
+			{"Element Coordinator", "tsp_ion_teamlead", {"ion_contractor","us_leader"}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_ion_medic", {"ion_contractor","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_ion_engineer", {"ion_contractor"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Aventurine", "markers\nato\b_inf.paa", {
+			{"Element Leader", "tsp_ion_teamlead", {"ion_contractor","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_ion_medic", {"ion_contractor","medic"}, "iconManMedic_ca.paa"},
+			{"Contractor", "tsp_ion_contractor", {"ion_contractor"}, "iconMan_ca.paa"},
+			{"Contractor", "tsp_ion_contractor_fal", {"ion_contractor"}, "iconMan_ca.paa"},
+			{"CQB Specialist", "tsp_ion_formal_mp7", {"ion_contractor"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_ion_breacher", {"ion_contractor"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Topaz", "markers\nato\b_inf.paa", {
+			{"Element Leader", "tsp_ion_teamlead", {"ion_contractor","us_leader"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_ion_medic", {"ion_contractor","medic"}, "iconManMedic_ca.paa"},
+			{"Contractor", "tsp_ion_contractor", {"ion_contractor"}, "iconMan_ca.paa"},
+			{"Contractor", "tsp_ion_contractor_akm", {"ion_contractor"}, "iconMan_ca.paa"},
+			{"Autorifleman", "tsp_ion_autorifleman", {"ion_contractor","ion_autorifle"}, "iconManMG_ca.paa"},
+			{"Grenadier", "tsp_ion_grenadier", {"ion_contractor"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Diamond (Snipers)", "markers\nato\b_art.paa", {
+			{"Spotter", "tsp_ion_formal_sr16", {"ion_contractor","us_leader"}, "iconManLeader_ca.paa"},
+			{"Sharpshooter", "tsp_ion_formal_m110", {"ion_contractor", "ion_sniper"}, "iconManRecon_ca.paa"},
+		}},
+		{"Buzzard", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "tsp_ion_helipilot", {"ion_contractor","us_leader","ion_pilot"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_ion_helipilot", {"ion_contractor","us_leader","ion_pilot"}, "iconManOfficer_ca.paa"}
+		}},
 	}}
 };
 

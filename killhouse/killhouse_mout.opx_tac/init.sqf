@@ -16,6 +16,18 @@ if !("tsp_gear_fast" in activatedAddons) then {
 
 [player, ["rhsgref_ins_grenadier_rpg","rhsgref_ins_arifleman_rpk","rhsgref_ins_crew","rhsgref_ins_machinegunner","rhsgref_ins_medic","rhsgref_ins_militiaman_mosin","rhsgref_ins_rifleman","rhsgref_ins_rifleman_akm","rhsgref_ins_rifleman_aks74","rhsgref_ins_rifleman_aksu","rhsgref_ins_grenadier","rhsgref_ins_rifleman_RPG26","rhsgref_ins_saboteur","rhsgref_ins_engineer","rhsgref_ins_sniper","rhsgref_ins_spotter"], [zone_zombie], east, {true}, {}, 200, 2, 30, 400] spawn tsp_fnc_zombience;
 
+[] call compileScript ['defuse\functions.sqf'];
+
+[] spawn {
+    [typeOf bomb, getPosASL bomb] params ["_type", "_pos"];
+    while {!isNil "TFB_fnc_defuse_generateBomb"} do {
+        [bomb, 4, "Bomb_03_F", "6969"] spawn TFB_fnc_defuse_generateBomb;
+        waitUntil {sleep 1; !alive bomb};
+        bomb = createVehicle [_type, _pos, [], 0, "NONE"];
+        bomb setPosASL _pos;
+    };
+};
+
 if (!isServer) exitWith {}; 
 
 [west,"pilot","Rescue Pilot","Pilots stuck at the crash site need to be evacuated.","Heli",getPos task_pilot,{true},{[task_pilot, [zone_capture]] call tsp_fnc_zone_triggers},{!alive task_pilot}] spawn tsp_fnc_task;
