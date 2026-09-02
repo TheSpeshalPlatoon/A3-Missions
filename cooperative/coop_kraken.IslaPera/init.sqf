@@ -18,7 +18,7 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     West, ["coraros"], "Take back the town", "Regain control of coraros and bring order to chaos.",
-    "Attack", objnull, {"meetup" call BIS_fnc_taskState == "SUCCEEDED"}, {"bomb1" call BIS_fnc_taskState in ["SUCCEEDED"] && "bomb2" call BIS_fnc_taskState in ["SUCCEEDED"]  && "secure" call BIS_fnc_taskState in ["SUCCEEDED"]}
+    "Attack", getpos coraros_raid, {"meetup" call BIS_fnc_taskState == "SUCCEEDED"}, {"bomb1" call BIS_fnc_taskState in ["SUCCEEDED"] && "bomb2" call BIS_fnc_taskState in ["SUCCEEDED"]  && "secure" call BIS_fnc_taskState in ["SUCCEEDED"]}
 ] spawn tsp_fnc_task;
 [
     West, ["bomb1","coraros"], "Bomb threat", "The militia has planted bombs in the town, Find and defuse the bomb.",
@@ -34,7 +34,7 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     West, ["port"], "Prava Port", "Raid the port.",
-    "Attack", objnull, {"coraros" call BIS_fnc_taskState == "SUCCEEDED"}, {"chem1" call BIS_fnc_taskState in ["SUCCEEDED"] && "chem2" call BIS_fnc_taskState in ["SUCCEEDED"]  && "control" call BIS_fnc_taskState in ["SUCCEEDED"]}
+    "Attack", getpos port_raid, {"coraros" call BIS_fnc_taskState == "SUCCEEDED"}, {"chem1" call BIS_fnc_taskState in ["SUCCEEDED"] && "chem2" call BIS_fnc_taskState in ["SUCCEEDED"]  && "control" call BIS_fnc_taskState in ["SUCCEEDED"]}
 ] spawn tsp_fnc_task;
 [
     West, ["chem1","port"], "Secure chemical bomb", "Find and Secure the chemical bomb.",
@@ -45,7 +45,7 @@ if (!isServer) exitWith {};
     "Box", objnull, {"coraros" call BIS_fnc_taskState == "SUCCEEDED"}, {!isNil "tsp_chemical_B"}, {false}
 ] spawn tsp_fnc_task;
 [
-    West, ["control","port"], "Secure coraros", "The town is under militia control, Eliminate them and take the town.",
-    "Attack", objnull, {"coraros" call BIS_fnc_taskState == "SUCCEEDED"}, {(count (allunits select {_x inArea secure_coraros && side _x == East}) <1)}
+    West, ["control","port"], "Secure the port", "The port is under militia control, take control of the port.",
+    "Attack", objnull, {"coraros" call BIS_fnc_taskState == "SUCCEEDED"}, {(count (allunits select {_x inArea secure_port && side _x == East}) <1)}
 ] spawn tsp_fnc_task;
 
