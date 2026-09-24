@@ -26,13 +26,13 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"VDV - 76th Guards Razvedka", "data\76vdv.paa", "east", {
-		{"Zvezda HQ", "markers\nato\b_hq.paa", {
+	{"VDV - 76th Guards Razvedka", "\tsp_core\data\insignia\76vdv.paa", "east", {
+		{"Zvezda HQ", "markers\nato\o_hq.paa", {
 			{"Platoon Leader", "rhs_vdv_officer_armored", {"ru_vdv","ru_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
 			{"Engineer", "rhs_vdv_engineer", {"ru_vdv"}, "iconManEngineer_ca.paa"}
 		}},
-		{"Zvezda 1", "markers\nato\b_inf.paa", {
+		{"Zvezda 1", "markers\nato\o_inf.paa", {
 			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
 			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
@@ -40,7 +40,7 @@ tsp_roles[] = {
 			{"Autorifleman", "rhs_vdv_arifleman_rpk", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
 			{"Scout (ASVAL)", "rhs_vdv_rifleman_asval", {"ru_vdv","ru_sniper"}, "iconManRecon_ca.paa"}
 		}},
-		{"Zvezda 2 (Weapons)", "markers\nato\b_inf.paa", {
+		{"Zvezda 2 (Weapons)", "markers\nato\o_inf.paa", {
 			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
 			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
@@ -48,29 +48,28 @@ tsp_roles[] = {
 			{"Machine Gunner", "rhs_vdv_machinegunner", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
 			{"Grenadier", "rhs_vdv_grenadier", {"ru_vdv"}, "iconManExplosive_ca.paa"}
 		}},
-		{"Ohotnik", "markers\nato\b_art.paa", {
+		{"Ohotnik", "markers\nato\o_art.paa", {
 			{"Team Leader", "rhs_vdv_junior_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Anti Tank", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
 			{"Ammo Bearer", "rhs_vdv_strelok_rpg_assist", {"ru_vdv"}, "iconManAT_ca.paa"}
 		}}
 	}},
-	{"VDV - 76th Guards Armor", "data\76vdv.paa", "east", {
-		{"Sokol 1", "markers\nato\b_mech_inf.paa", {
+	{"VDV - 76th Guards Armor", "\tsp_core\data\insignia\76vdv.paa", "east", {
+		{"Sokol 1", "markers\nato\o_mech_inf.paa", {
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}},
-		{"Sokol 2", "markers\nato\b_mech_inf.paa", {
+		{"Sokol 2", "markers\nato\o_mech_inf.paa", {
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}}
 	}},
 	{"Russia - BTG commander", "", "east", {
-		{"Varon", "markers\nato\b_hq.paa", {
+		{"Varon", "markers\nato\o_hq.paa", {
 			{"Battalion Commander", "rhs_vdv_officer_armored", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"}
 		}}
 	}}
 };
-tsp_param_time_day = 1;     tsp_param_time_night = 1;
 
 class Params {
 	#define GUERFRIENDLY_DEFAULT -1
@@ -119,7 +118,7 @@ class CfgORBAT {
         side = "West"; 
         text = "US Army Pacific"; 
         textShort = "USARPAC"; 
-		insignia = "data\usarpac.paa";
+		insignia = "\tsp_core\data\insignia\usarpac.paa";
         description = "The United States Army Pacific (USARPAC) is an Army Service Component Command which serves as the Army service component for United States Indo-Pacific Command."; 
         type = "Infantry"; 
         size = "Corps"; 
@@ -131,7 +130,7 @@ class CfgORBAT {
 			class usarj: usarpac {
             text = "US Army Japan"; 
             textShort = "USARJ"; 
-			insignia = "data\usarj.paa";
+			insignia = "\tsp_core\data\insignia\usarj.paa";
             description = "United States Army, Japan (USARJ) is a Major Command of the United States Army. It operates port facilities and a series of logistics installations throughout Honshū and Okinawa. USARJ participates actively with the Japan Ground Self-Defense Force in bilateral training exercises and the development of bilateral plans. It commands and supports United States Army assigned units, attached units, and augmentation forces and employs these forces in support of the commander. USARJ maintains and strengthens the credibility of deterrent power in the Pacific through maintenance of defense facilities, war reserves and operational project stocks. USARJ is headquartered at Camp Zama.";
             type = "Infantry";  
             size = "Division"; 
@@ -172,7 +171,7 @@ class CfgORBAT {
         side = "West"; 
         text = "3rd Marine Expeditionary Force"; 
         textShort = "III-MEF"; 
-		insignia = "data\3mef.paa";
+		insignia = "\tsp_core\data\insignia\3mef.paa";
         description = "III MEF is the nucleus of a joint and coalition Stand-In Force within the First Island Chain. In competition, III MEF assures and expands access for the joint force across the Indo-Pacific. In crisis, it provides in-place response forces to secure allies and partners while deterring adversary aggression. In conflict, III MEF fights from advanced naval bases as part of a naval expeditionary force and enables Joint Force objectives in the Indo-Pacific."; 
         type = "Infantry"; 
         size = "Corps"; 
@@ -184,7 +183,7 @@ class CfgORBAT {
         class 3mar: usmc {
             text = "3rd Marine Division"; 
             textShort = "3rd MARDIV"; 
-			insignia = "data\3mar.paa";
+			insignia = "\tsp_core\data\insignia\3mar.paa";
             description = "3rd Marine Division operates as a Stand-In Force in the first island chain to secure, seize, or defend key maritime terrain in order to deny and disrupt adversary actions in support of the Fleet, the Joint Force, and partnered and allied forces. 3rd Marine Division has five major subordinate elements: 3rd Marine Littoral Regiment based in Hawaii and 12th Marine Regiment, 4th Marine Regiment, 3rd Reconnaissance Battalion, and Headquarters Battalion based in Okinawa, Japan.";
             type = "Infantry";  
             size = "Division"; 
@@ -196,7 +195,7 @@ class CfgORBAT {
             class 1battalion: usmc {
                 text = "1st Battalion 3rd Marines"; 
                 textShort = "1/3 Marines"; 
-				insignia = "data\3mar.paa";
+				insignia = "\tsp_core\data\insignia\3mar.paa";
                 description = "The main spearheading force of III-MEF during the Kaska Campaign, marines can gain the upper hand in small unit action using a thick, sturdy, and well rounded squad.";
                 type = "Infantry";  
                 size = "Battalion"; 
@@ -208,7 +207,7 @@ class CfgORBAT {
             class 2battalion: usmc {   
                 text = "2nd Battalion 3rd Marines"; 
                 textShort = "2/3 Marines"; 
-				insignia = "data\3mar.paa";
+				insignia = "\tsp_core\data\insignia\3mar.paa";
                 description = "2nd Battalion is reinforced with a tank platoon following a temporary reactivation of the 3rd Tank Battalion for this campaign, they will be the ones carrying the bigger guns for the division."; 
                 type = "MechanizedInfantry"; 
                 size = "Battalion"; 
@@ -286,7 +285,7 @@ class CfgORBAT {
         class 3recon: 3mar {
             text = "3rd Reconnaissance Battalion"; 
             textShort = "3rd Recon";
-			insignia = "data\3recon.paa";
+			insignia = "\tsp_core\data\insignia\3recon.paa";
             description = "2 Platoons from the 3rd Reconnaissance Battalion.";
             type = Recon;  
             size = Squad; 

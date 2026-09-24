@@ -13,6 +13,6 @@ if (!isServer) exitWith {};
 	{true}, {((!alive task_pilot1 || task_pilot1 inArea task_hostage) && (!alive task_pilot2 || task_pilot2 inArea task_hostage) && (alive task_pilot1 || alive task_pilot2))}, {!alive task_pilot1 && !alive task_pilot2}
 ] spawn tsp_fnc_task;
 [
-	west, ["castle"], "Capture Castle", "The castle is a known CHDKZ position. Raid the castle.", "Attack", getPos task_castle, 
-	{true}, {"castle" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_castle && side _x == east}) < 2)}
+	west, ["castle"], "Capture Castle", "The castle is a known CHDKZ position. Raid the castle.", "Attack", "sector_castle", 
+	{true}, {["castle", "", sector_castle, 2] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;

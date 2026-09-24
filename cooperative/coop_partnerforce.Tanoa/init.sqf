@@ -20,39 +20,12 @@ if (!isServer) exitWith {};
 	west, ["bari", "primary"], "Kill/Capture Bari Molia", "Bari Molia runs a cell of Syndikat that has extremist values, intel indicates that he is most likely responsible for the Atlas Bravo, search Syndikat territory for him.<br/><img image='bari.paa' width='200' height='200'/>", 
 	"Kill", objNull, {true}, {task_bari distance lpd < 100 || !alive task_bari}, {false}
 ] spawn tsp_fnc_task;
-[
-	west, ["ambush", "secondary"], "Assist HIDF", "The HIDF assault force was stopped just outside Oumere, assist them.", 
-	"Destroy", objNull, {true}, {"ambush" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_ambush < 300 && side _x == resistance}) < 2)}
-] spawn tsp_fnc_task;
-[
-	west, ["newyork", "secondary"], "New York", "Secure the objective area.", 
-	"Attack", objNull, {true}, {"newyork" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_newyork < 100 && side _x == resistance}) < 2)}
-] spawn tsp_fnc_task;
-[
-	west, ["copenhagen", "secondary"], "Copenhagen", "Secure the objective area.", 
-	"Attack", objNull, {true}, {"copenhagen" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_copenhagen < 100 && side _x == resistance}) < 2)}
-] spawn tsp_fnc_task;
-[
-	west, ["glasgow", "secondary"], "Glasgow", "Secure the objective area.", 
-	"Attack", objNull, {true}, {"glasgow" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_glasgow < 100 && side _x == resistance}) < 2)}
-] spawn tsp_fnc_task;
-[
-	west, ["michigan", "secondary"], "Michigan", "Secure the objective area.", 
-	"Attack", objNull, {true}, {"michigan" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_michigan < 100 && side _x == resistance}) < 2)}
-] spawn tsp_fnc_task;
-[
-	west, ["michigan", "secondary"], "Michigan", "Secure the objective area.", 
-	"Attack", objNull, {true}, {"michigan" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_michigan < 100 && side _x == resistance}) < 2)}
-] spawn tsp_fnc_task;
-[
-	west, ["moscow", "secondary"], "Moscow", "Secure the objective area.", 
-	"Attack", objNull, {true}, {"moscow_inside" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_moscow < 100 && side _x == resistance}) < 2)}
-] spawn tsp_fnc_task;
-[
-	west, ["sydney", "secondary"], "Sydney", "Secure the objective area.", 
-	"Attack", objNull, {true}, {"sydney" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_sydney < 100 && side _x == resistance}) < 2)}
-] spawn tsp_fnc_task;
-[
-	west, ["warsaw", "secondary"], "Warsaw", "Secure the objective area.", 
-	"Attack", objNull, {true}, {"warsaw" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_warsaw < 100 && side _x == resistance}) < 2)}
-] spawn tsp_fnc_task;
+
+[west, ["ambush", "secondary"], "Assist HIDF", "The HIDF assault force was stopped just outside Oumere, assist them.", "Destroy", objNull, {true}, {["ambush", "", sector_ambush, 300, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["newyork", "secondary"], "New York", "Secure the objective area.", 	"Attack", objNull, {true}, {["newyork", "", sector_newyork, 100, 1] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["copenhagen", "secondary"], "Copenhagen", "Secure the objective area.", "Attack", objNull, {true}, {["copenhagen", "", sector_copenhagen, 100, 1] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["glasgow", "secondary"], "Glasgow", "Secure the objective area.",  "Attack", objNull, {true}, {["glasgow", "", sector_glasgow, 100, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["michigan", "secondary"], "Michigan", "Secure the objective area.", "Attack", objNull, {true}, {["michigan", "", sector_michigan, 100, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["moscow", "secondary"], "Moscow", "Secure the objective area.", "Attack", objNull, {true}, {["moscow_close", "", sector_moscow_close, 100, 2] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["sydney", "secondary"], "Sydney", "Secure the objective area.", "Attack", objNull, {true}, {["sydney", "", sector_sydney, 100, 1] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, ["warsaw", "secondary"], "Warsaw", "Secure the objective area.", "Attack", objNull, {true}, {["warsaw", "", sector_warsaw, 100, 0] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;

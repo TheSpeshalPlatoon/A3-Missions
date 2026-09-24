@@ -56,7 +56,18 @@
 ], "darkreach", {[] spawn tsp_fnc_spawn}] spawn tsp_fnc_intro;  //-- Slides, music, code to run at the end
 
 [player, [
-"rhs_vdv_rifleman", "rhs_vdv_grenadier", "rhs_vdv_grenadier_alt", "rhs_vdv_LAT", "rhs_vdv_RShG2", "rhs_vdv_rifleman_alt", "rhs_vdv_arifleman", "rhs_vdv_arifleman_rpk", "rhs_vdv_grenadier_rpg", "rhs_vdv_machinegunner", "rhs_vdv_medic", "rhs_vdv_at"
+    "rhs_vdv_rifleman", 
+    "rhs_vdv_grenadier", 
+    "rhs_vdv_grenadier_alt", 
+    "rhs_vdv_LAT", 
+    "rhs_vdv_RShG2", 
+    "rhs_vdv_rifleman_alt", 
+    "rhs_vdv_arifleman", 
+    "rhs_vdv_arifleman_rpk", 
+    "rhs_vdv_grenadier_rpg", 
+    "rhs_vdv_machinegunner", 
+    "rhs_vdv_medic", 
+    "rhs_vdv_at"
 ], [zone_zombie], east, {true}, {}, 250, 2, 25, 350] spawn tsp_fnc_zombience;
 
 if (!isServer) exitWith {};

@@ -15,11 +15,11 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     west, ["coastal","svet"], "Destroy coastal guns", "Take out these guns to allow AAVs and LAVs to beach safely.",
-    "destroy", objnull, {true}, {!alive coast1 && !alive coast2 && !alive coast3 && !alive coast4 && !alive coast5}
+    "destroy", objNull, {true}, {!alive coast1 && !alive coast2 && !alive coast3 && !alive coast4 && !alive coast5}
 ] spawn tsp_fnc_task;
 [
     west, ["officer","svet"], "Capture Officer", "High ranking officer is known to be in svet, known to be wearing a red cap.", 
-    "Meet", objnull, {true}, {count ([hvt_officer] select {alive _x && (_x inArea hvt_captured)}) > 0}, 
+    "Meet", objNull, {true}, {count ([hvt_officer] select {alive _x && (_x inArea hvt_captured)}) > 0}, 
     {count ([hvt_officer] select {alive _x}) == 0}
 ] spawn tsp_fnc_task;
 [
@@ -28,7 +28,7 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     west, ["Artillery","Checkpoint"], "Destroy Artillery", "We know they have at least 4 2S1s artillery pieces. They most likely have deployed these outside of svet.",
-    "destroy", objnull, {true}, {!alive task_arty1 && !alive task_arty2 && !alive task_arty3 && !alive task_arty4}
+    "destroy", objNull, {true}, {!alive task_arty1 && !alive task_arty2 && !alive task_arty3 && !alive task_arty4}
 ] spawn tsp_fnc_task;
 [
     west, ["defend_svet"], "Hold Off Enemy QRF", "The CHDKZ is sending a wave of QRF from novo. Stop them from breaking into Svet.", "Defend", getPos Secure2, 
@@ -42,7 +42,7 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     west, ["komandir","airfield"], "Capture komandir", "We know there's a high ranking individual at the airfield. known to be wearing a white camo pattern uniform and ushanka.", 
-    "Meet", objnull, {"defend_svet" call BIS_fnc_taskState == "SUCCEEDED"}, {count ([hvt_commander] select {alive _x && (_x inArea hvt_captured)}) > 0}, 
+    "Meet", objNull, {"defend_svet" call BIS_fnc_taskState == "SUCCEEDED"}, {count ([hvt_commander] select {alive _x && (_x inArea hvt_captured)}) > 0}, 
     {count ([hvt_commander] select {alive _x}) == 0}
 ] spawn tsp_fnc_task;
 [
@@ -57,7 +57,7 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     West, ["bomb1","chenaya"], "Defuse Bomb", "Find and Defuse bomb.",
-    "Destroy", objnull, {"defend_krasno" call BIS_fnc_taskState == "SUCCEEDED"}, {wall1 getVariable ["defused", false]}, {wall1 getVariable ["exploded", false]}
+    "Destroy", objNull, {"defend_krasno" call BIS_fnc_taskState == "SUCCEEDED"}, {wall1 getVariable ["defused", false]}, {wall1 getVariable ["exploded", false]}
 ] spawn tsp_fnc_task;
 [
     West, ["novo"], "Secure Novodmitrovsk", "The Chdkz are prepping bombs in the town of novo. Take control of the town and defuse the bombs.",
@@ -65,13 +65,13 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     West, ["bomb2","novo"], "Defuse Bomb", "Find and Defuse bomb.",
-    "Destroy", objnull, {"chenaya" call BIS_fnc_taskState == "SUCCEEDED"}, {wall2 getVariable ["defused", false]}, {wall2 getVariable ["exploded", false]}
+    "Destroy", objNull, {"chenaya" call BIS_fnc_taskState == "SUCCEEDED"}, {wall2 getVariable ["defused", false]}, {wall2 getVariable ["exploded", false]}
 ] spawn tsp_fnc_task;
 [
     West, ["bomb3","novo"], "Defuse Bomb", "Find and Defuse bomb.",
-    "Destroy", objnull, {"chenaya" call BIS_fnc_taskState == "SUCCEEDED"}, {wall3 getVariable ["defused", false]}, {wall3 getVariable ["exploded", false]}
+    "Destroy", objNull, {"chenaya" call BIS_fnc_taskState == "SUCCEEDED"}, {wall3 getVariable ["defused", false]}, {wall3 getVariable ["exploded", false]}
 ] spawn tsp_fnc_task;
 [
     West, ["bomb4","novo"], "Defuse Bomb", "Find and Defuse bomb.",
-    "Destroy", objnull, {"chenaya" call BIS_fnc_taskState == "SUCCEEDED"}, {wall4 getVariable ["defused", false]}, {wall4 getVariable ["exploded", false]}
+    "Destroy", objNull, {"chenaya" call BIS_fnc_taskState == "SUCCEEDED"}, {wall4 getVariable ["defused", false]}, {wall4 getVariable ["exploded", false]}
 ] spawn tsp_fnc_task;

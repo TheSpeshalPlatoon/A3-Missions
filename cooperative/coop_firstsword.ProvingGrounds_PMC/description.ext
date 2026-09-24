@@ -27,12 +27,12 @@ tsp_param_weather = false;
 
 tsp_roles[] = {
 	{"VDV - 45th Guards Spetsnaz", "\tsp_core\data\insignia\45vdv.paa", "east", {
-		{"Shapka HQ", "markers\nato\b_hq.paa", {
+		{"Shapka HQ", "markers\nato\o_hq.paa", {
 			{"Platoon Leader", "rhs_vdv_officer_armored", {"ru_vdv","ru_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
 			{"Engineer", "rhs_vdv_engineer", {"ru_vdv"}, "iconManEngineer_ca.paa"}
 		}},
-		{"Shapka 1", "markers\nato\b_inf.paa", {
+		{"Shapka 1", "markers\nato\o_inf.paa", {
 			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
 			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
@@ -40,7 +40,7 @@ tsp_roles[] = {
 			{"Autorifleman", "rhs_vdv_arifleman_rpk", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
 			{"Scout (ASVAL)", "rhs_vdv_rifleman_asval", {"ru_vdv","ru_sniper"}, "iconManRecon_ca.paa"}
 		}},
-		{"Shapka 2 (Weapons)", "markers\nato\b_inf.paa", {
+		{"Shapka 2 (Weapons)", "markers\nato\o_inf.paa", {
 			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
 			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
@@ -48,18 +48,18 @@ tsp_roles[] = {
 			{"Machine Gunner", "rhs_vdv_machinegunner", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
 			{"Grenadier", "rhs_vdv_grenadier", {"ru_vdv"}, "iconManExplosive_ca.paa"}
 		}},
-		{"Sickel", "markers\nato\b_art.paa", {
+		{"Sickel", "markers\nato\o_art.paa", {
 			{"Team Leader", "rhs_vdv_junior_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Anti Tank", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
 			{"Ammo Bearer", "rhs_vdv_strelok_rpg_assist", {"ru_vdv"}, "iconManAT_ca.paa"}
 		}}
 	}},
 	{"MSV - 2nd Guards Motor Rifle", "\tsp_core\data\insignia\2mot.paa", "east", {
-		{"Tempest 1", "markers\nato\b_mech_inf.paa", {
+		{"Tempest 1", "markers\nato\o_mech_inf.paa", {
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}},
-		{"Tempest 2", "markers\nato\b_mech_inf.paa", {
+		{"Tempest 2", "markers\nato\o_mech_inf.paa", {
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}}
@@ -168,7 +168,7 @@ class CfgORBAT {
 					class 52air: cdf {
 						text = "52nd Airborne Battalion"; textShort = "52nd Airborne"; type = "CombatAviation"; size = "Battalion"; commander = "Anatoli Potapenko"; commanderRank = "Captain";         
 						description = "Stationed in southern Chernarus, made up of well trained soldiers, considered to be special forces.";
-						subordinates[] = {}; assets[] = {{"rhsgref_BRDM2_b",20},{"UK3CB_B_LandRover_Closed_CDF",20},{"rhsgref_cdf_b_gaz66",20}};  
+						subordinates[] = {}; assets[] = {{"rhsgref_BRDM2_b",20},{"UK3CB_B_LandRover_Softtop_Transport_Closed_CDF",20},{"rhsgref_cdf_b_gaz66",20}};  
 					};
 			class cdf_navy: cdf {
 				text = "Navy"; textShort = "Navy"; type = "Maritime"; size = "Battalion"; commander = "Igor Dobryakov"; commanderRank = "Major";         

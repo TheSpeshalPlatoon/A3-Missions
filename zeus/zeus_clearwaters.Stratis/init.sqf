@@ -4,15 +4,15 @@ if (!isServer) exitWith {};
 
 [
 	west, ["liberty", "primary"], "Secure USS Liberty", "<marker name='marker_11'>Board this vessel</marker> and secure it.", 
-	"Defend", getPos DDliberty, {true}, {"liberty" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_liberty && side _x == independent}) < 1)}
+	"Defend", "sector_liberty", {true}, {["liberty", "liberty", sector_liberty, 100, 0] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	west, ["virtuous", "primary"], "Secure USS Virtuous", "Find the vessel and secure it.", 
-	"Defend", objNull, {true}, {"virtuous" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_virtuous && side _x == independent}) < 1)}
+	"Defend", objNull, {true}, {["virtuous", "virtuous", sector_virtuous, 100, 0] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	west, ["hysilens", "primary"], "Secure LST Hysilens", "<marker name='marker_10'>Board this vessel</marker> and secure it.", 
-	"Defend", getPos CChysilens, {true}, {"hysilens" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_hysilens && side _x == independent}) < 1)}
+	"Defend", "sector_hysilens", {true}, {["hysilens", "hysilens", sector_hysilens, 100, 0] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	east, ["mission"], "x", "x", "Attack", objNull, 

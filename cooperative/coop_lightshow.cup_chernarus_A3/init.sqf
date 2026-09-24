@@ -17,12 +17,12 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     west, ["coastal","svet"], "Destroy coastal guns", "Take out these guns to allow AAVs and LAVs to beach safely.",
-    "destroy", objnull, {true}, {!alive coast1 && !alive coast2 && !alive coast3 && !alive coast4 && !alive coast5}, {false}, {false},
+    "destroy", objNull, {true}, {!alive coast1 && !alive coast2 && !alive coast3 && !alive coast4 && !alive coast5}, {false}, {false},
     {}, {["USMC"] spawn tsp_fnc_sector_load}
 ] spawn tsp_fnc_task;
 [
     west, ["officer","svet"], "Kill HVT", "A Officer with a red cap is known to be around svetloyarsk.", 
-    "Kill", objnull, {true}, {!alive Hvt1}
+    "Kill", objNull, {true}, {!alive Hvt1}
 ] spawn tsp_fnc_task;
 [
     West, ["Checkpoint"], "Secure Checkpoint", "Take Control of the checkpoint just outside of svet and delay any QRF from reinforcing the town.",
@@ -30,7 +30,7 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     west, ["Artillery","Checkpoint"], "Destroy Artillery", "We know they have at least 4 2S1s artillery pieces. They most likely have deployed these outside of svet.",
-    "destroy", objnull, {true}, {!alive task_arty1 && !alive task_arty2 && !alive task_arty3 && !alive task_arty4}
+    "destroy", objNull, {true}, {!alive task_arty1 && !alive task_arty2 && !alive task_arty3 && !alive task_arty4}
 ] spawn tsp_fnc_task;
 [
     west, ["Defense"], "Hold Off Enemy QRF", "The CHDKZ is sending a wave of QRF from novo. Stop them from breaking into Svet.", "Defend", getPos Secure2, 

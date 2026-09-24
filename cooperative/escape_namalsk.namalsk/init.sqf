@@ -1,33 +1,54 @@
+
+
 z_towns = [
-	"tsp_civilian_secretary","tsp_civilian_sportswoman","tsp_civilian_hooker","tsp_civilian_workwoman",
-	"tsp_civilian_madam","tsp_civilian_valentina","tsp_civilian_mechanic","tsp_civilian_functionary",
-	"tsp_civilian_citizen","tsp_civilian_worker","tsp_civilian_profiteer","tsp_civilian_woodlander",
-	"tsp_civilian_villager","tsp_civilian_rocker","tsp_civilian_priest","tsp_civilian_policeman",
-	"tsp_civilian_teacher"
+	"tsp_civilian_secretary",
+	"tsp_civilian_sportswoman",
+	"tsp_civilian_hooker",
+	"tsp_civilian_workwoman",
+	"tsp_civilian_madam",
+	"tsp_civilian_farmwife",
+	"tsp_civilian_housewife",
+	"tsp_civilian_baker",
+	"tsp_civilian_ensler",
+	"tsp_civilian_euro",
+	"tsp_civilian_valentina",
+	
+	"tsp_civilian_mechanic",
+	"tsp_civilian_firefighter",
+	"tsp_civilian_paramedic",
+	"tsp_civilian_pilot",
+	"tsp_civilian_functionary",
+	"tsp_civilian_citizen",
+	"tsp_civilian_profiteer",
+	"tsp_civilian_worker",
+	"tsp_civilian_woodlander",
+	"tsp_civilian_villager",
+	"tsp_civilian_rocker",
+	"tsp_civilian_priest",
+	"tsp_civilian_policeman",
+	"tsp_civilian_doctor",
+	"tsp_civilian_teacher",
+	"tsp_civilian_assistant"
 ];
-z_rural = ["tsp_civilian_worker","tsp_civilian_woodlander","tsp_civilian_villager","tsp_civilian_workwoman","tsp_civilian_farmwife","tsp_civilian_housewife"];
+z_rural = [
+	"tsp_civilian_workwoman",
+	"tsp_civilian_farmwife",
+	"tsp_civilian_housewife",
+	"tsp_civilian_worker",
+	"tsp_civilian_woodlander",
+	"tsp_civilian_villager"
+];
 z_industrial = [
-	"RDS_Worker1",
-	"RDS_Worker2",
-	"RDS_Worker3",
-	"RDS_Worker4",
-	"RDS_Woodlander1",
-	"RDS_Woodlander2",
-	"RDS_Woodlander3",
-	"RDS_Woodlander4",
-	"RDS_Villager1",
-	"RDS_Villager2",
-	"RDS_Villager3",
-	"RDS_Villager4",
-	"tsp_civilian_workwoman1",
-	"tsp_civilian_workwoman2",
-	"tsp_civilian_workwoman3",
-	"tsp_civilian_workwoman4",
-	"tsp_civilian_workwoman5",
+	"tsp_civilian_mechanic",
+	"tsp_civilian_worker",
+	"tsp_civilian_woodlander",
+	"tsp_civilian_villager",
+	"tsp_civilian_workwoman",
 	"C_Man_ConstructionWorker_01_Black_F",
 	"C_Man_ConstructionWorker_01_Blue_F",
-	"C_Man_ConstructionWorker_01_Red_F"];
-z_medical = ["tsp_civilian_doctor", "tsp_civilian_teacher"];
+	"C_Man_ConstructionWorker_01_Red_F"
+];
+z_medical = ["tsp_civilian_doctor", "tsp_civilian_teacher",	"tsp_civilian_assistant"];
 z_military = ["rhs_msv_rifleman"];
 z_militaryB = ["rhs_msv_crew"];
 z_militaryO = ["rhs_msv_efreitor"];
@@ -40,7 +61,7 @@ z_time_low = 60; z_time_medium = 20; z_time_high = 10;
 		z_zone_rural_1, z_zone_rural_2, z_zone_rural_3, z_zone_rural_4, z_zone_rural_5, z_zone_rural_6, z_zone_rural_7, z_zone_rural_8, z_zone_rural_9, z_zone_rural_10, z_zone_rural_11, z_zone_rural_12, 
 		z_zone_industrial_1, z_zone_industrial_2, z_zone_industrial_3, z_zone_industrial_4, z_zone_industrial_5, z_zone_industrial_6, z_zone_industrial_7, z_zone_industrial_8, z_zone_industrial_9, z_zone_industrial_10, z_zone_industrial_11, z_zone_industrial_12,
 		z_zone_military_1, z_zone_military_2, z_zone_military_3, z_zone_military_4, z_zone_military_5, z_zone_military_6, z_zone_military_7, z_zone_military_8, z_zone_military_9, z_zone_military_10, z_zone_military_11, z_zone_military_12, z_zone_military_13, z_zone_military_14, z_zone_military_15, z_zone_military_16, z_zone_military_17
-	], east,{true}, {
+	], east, {true}, {
 		if (typeOf _this == "rhs_msv_rifleman") then {_this setUnitLoadout (selectRandom [  //-- Soldiers
 			[["rhs_weap_ak74","rhs_acc_dtk1983","","",["rhs_30Rnd_545x39_7N6M_AK",30],[],""],[],[],["rhs_uniform_afghanka_winter_boots_vsr_2",[["FirstAidKit",1],["ACE_EarPlugs",1],[["tsp_meleeWeapon_ak","","","",[],[],""],1]]],["rhs_chicom",[["rhs_30Rnd_545x39_7N6M_AK",3,30],["rhs_mag_rgd5",2,1],["rhs_mag_rdg2_white",2,1]]],[],"rhs_ssh68_2","",[],["","","ItemRadioAcreFlagged","ItemCompass","ItemWatch",""]],
 			[["rhs_weap_ak74","rhs_acc_dtk1983","","",["rhs_30Rnd_545x39_7N6M_AK",30],[],""],[],[],["rhs_uniform_afghanka_winter_vsr_2",[["FirstAidKit",1],["ACE_EarPlugs",1],[["tsp_meleeWeapon_ak","","","",[],[],""],1]]],["rhs_6b5",[["rhs_30Rnd_545x39_7N6M_AK",3,30],["rhs_mag_rgd5",2,1],["rhs_mag_rdg2_white",2,1]]],[],"rhs_ssh68_2","",[],["","","ItemRadioAcreFlagged","ItemCompass","ItemWatch",""]],
@@ -73,7 +94,7 @@ z_time_low = 60; z_time_medium = 20; z_time_high = 10;
 		_this removeWeapon (handgunWeapon _this);
 		_this removeWeapon (secondaryWeapon _this);
 		[_this] remoteExec ["dev_fnc_zombie_init", _this];
-	}, 50, 2, 60, 120
+	}, 100, 2, 30, 200
 ] spawn tsp_fnc_zombience;
 
 [] execVM "lootsystem\init.sqf";
@@ -86,8 +107,8 @@ tsp_fnc_startAnim = {
 	[_unit, _out] remoteExec ["switchMove", 0]; [_unit, _out] remoteExec ["playMove", 0];
 };
 
-waitUntil {!isNull player};
-cutText ["...", "BLACK OUT", 0.000001];	
+waitUntil {!isNull (findDisplay 46) && time > 1};
+cutText ["...", "BLACK OUT", 0.000001];	sleep 5;
 if (time < 30 && side player == east) then {
 	cutText ["You are a member of an elite Spetsnaz team, sent in to locate sensitive documents.", "BLACK OUT", 0.001]; sleep 7;
 	cutText ["These documents are likely located at Object A1 and A2.", "BLACK OUT", 0.001]; sleep 7;

@@ -26,7 +26,7 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"USMC - 3rd Marine Division", "data\3mar.paa", "west", {
+	{"USMC - 3rd Marine Division", "\tsp_core\data\insignia\3mar.paa", "west", {
 		{"Dagger HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "rhsusf_usmc_marpat_wd_fso", {"usmc_grunt","us_leader"}, "iconManCommander_ca.paa"},
 			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
@@ -61,7 +61,7 @@ tsp_roles[] = {
 			{"AT Assistant", "rhsusf_usmc_marpat_wd_javelin_assistant", {"usmc_grunt","usmc_missile","us_missile"}, "iconMan_ca.paa"}
 		}},
 	}},
-	{"USMC - III MEF", "data\3mef.paa", "west", {
+	{"USMC - III MEF", "\tsp_core\data\insignia\3mef.paa", "west", {
 		{"Swordmaster", "markers\nato\b_hq.paa", {
 			{"Battalion Commander", "rhsusf_usmc_marpat_wd_officer", {"usmc_grunt","us_leader"}, "iconManLeader_ca.paa"}
 		}},
@@ -156,7 +156,7 @@ class CfgORBAT {
         side = "West"; 
         text = "3rd Marine Expeditionary Force"; 
         textShort = "III-MEF"; 
-		insignia = "data\3mef.paa";
+		insignia = "\tsp_core\data\insignia\3mef.paa";
         description = "III MEF is the nucleus of a joint and coalition Stand-In Force within the First Island Chain. In competition, III MEF assures and expands access for the joint force across the Indo-Pacific. In crisis, it provides in-place response forces to secure allies and partners while deterring adversary aggression. In conflict, III MEF fights from advanced naval bases as part of a naval expeditionary force and enables Joint Force objectives in the Indo-Pacific."; 
         type = "Infantry"; 
         size = "Corps"; 
@@ -168,7 +168,7 @@ class CfgORBAT {
         class 3mar: usmc {
             text = "3rd Marine Division"; 
             textShort = "3rd MARDIV"; 
-			insignia = "data\3mar.paa";
+			insignia = "\tsp_core\data\insignia\3mar.paa";
             description = "3rd Marine Division operates as a Stand-In Force in the first island chain to secure, seize, or defend key maritime terrain in order to deny and disrupt adversary actions in support of the Fleet, the Joint Force, and partnered and allied forces. 3rd Marine Division has five major subordinate elements: 3rd Marine Littoral Regiment based in Hawaii and 12th Marine Regiment, 4th Marine Regiment, 3rd Reconnaissance Battalion, and Headquarters Battalion based in Okinawa, Japan.";
             type = "Infantry";  
             size = "Division"; 
@@ -180,7 +180,7 @@ class CfgORBAT {
             class 1battalion: usmc {
                 text = "1st Battalion 3rd Marines"; 
                 textShort = "1/3 Marines"; 
-				insignia = "data\3mar.paa";
+				insignia = "\tsp_core\data\insignia\3mar.paa";
                 description = "The main spearheading force of III-MEF during the Kaska Campaign, marines can gain the upper hand in small unit action using a thick, sturdy, and well rounded squad.";
                 type = "Infantry";  
                 size = "Battalion"; 
@@ -192,7 +192,7 @@ class CfgORBAT {
             class 2battalion: usmc {   
                 text = "2nd Battalion 3rd Marines"; 
                 textShort = "2/3 Marines"; 
-				insignia = "data\3mar.paa";
+				insignia = "\tsp_core\data\insignia\3mar.paa";
                 description = "2nd Battalion is reinforced with a tank platoon following a temporary reactivation of the 3rd Tank Battalion for this campaign, they will be the ones carrying the bigger guns for the division."; 
                 type = "MechanizedInfantry"; 
                 size = "Battalion"; 

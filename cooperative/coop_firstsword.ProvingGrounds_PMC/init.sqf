@@ -18,7 +18,7 @@
 		uiSleep 8; [3,2,false] call bis_fnc_animatedScreen;
 	}], [10,{
 		[4,2,false] call bis_fnc_animatedScreen;
-		[true, ["The ChDKZ and its supporters vowed to challenge the ruling pro-West Party; their ultimate goal being full integration with Russia."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
+		[true, ["ChDKZ and its supporters vowed to challenge the ruling pro-West Party; their ultimate goal being full integration with Russia."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
 		uiSleep 8; [3,2,false] call bis_fnc_animatedScreen;
 	}], [6,{
 		[4,2,false] call bis_fnc_animatedScreen;
@@ -27,7 +27,7 @@
 		uiSleep 4; [3,2,false] call bis_fnc_animatedScreen;
 	}], [10,{
 		[4,2,false] call bis_fnc_animatedScreen;
-		[true, ["In response to its rise, anti-ChDKZ radicals rallied together to form the National Party (NAPA), vowing to stamp out the ChDKZ and its supporters."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
+		[true, ["In response to its rise, anti-ChDKZ radicals rallied together to form the National Party (NAPA), vowing to stamp out ChDKZ and its supporters."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
 		uiSleep 8; [3,2,false] call bis_fnc_animatedScreen;
 	}],	[6,{
 		[4,2,false] call bis_fnc_animatedScreen;
@@ -45,7 +45,7 @@
 		uiSleep 4; [3,2,false] call bis_fnc_animatedScreen;
 	}], [8,{
 		[4,2,false] call bis_fnc_animatedScreen;
-		[true, ["In 2015, Russia launched a full scale invasion with the goal of 'restoring order', in support of the ChDKZ."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
+		[true, ["In 2015, Russia launched a full scale invasion with the goal of 'restoring order', in support of ChDKZ."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
 		uiSleep 6; [3,2,false] call bis_fnc_animatedScreen;
 	}], [10,{
 		[4,2,false] call bis_fnc_animatedScreen;
@@ -66,26 +66,21 @@ if (!isServer) exitWith {};
 	{true}, {!alive task_radar}
 ] spawn tsp_fnc_task;
 [
-	east, ["bridge"], "Bridge", "The bridge is a known CDF position. Capture it and clear the surrounding area of enemy combatants.", "Attack", getPos task_bridge, 
-	{true}, {"bridge" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_bridge < 50 && side _x == west}) < 2)}
+	east, ["bridge"], "Bridge", "The bridge is a known CDF position. Capture it and clear the surrounding area of enemy combatants.", "Attack", "sector_bridge", 
+	{true}, {["bridge", "", sector_bridge, 0, 2, [west]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
-	east, ["farm"], "Farm", "The farm is a known CDF position. Capture it and clear the surrounding area of enemy combatants.", "Attack", getPos task_farm, 
-	{true}, {"farm" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_farm && side _x == west}) < 2)}
+	east, ["farm"], "Farm", "The farm is a known CDF position. Capture it and clear the surrounding area of enemy combatants.", "Attack", "sector_farm", 
+	{true}, {["farm", "", sector_farm, 0, 2, [west]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
-	east, ["gas"], "Gas Station", "The gas station is a known CDF position. Capture it and clear the surrounding area of enemy combatants.", "Attack", getPos task_gas, 
-	{true}, {"gas_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_gas && side _x == west}) < 2)}
+	east, ["gas"], "Gas Station", "The gas station is a known CDF position. Capture it and clear the surrounding area of enemy combatants.", "Attack", "sector_gas", 
+	{true}, {["gas_close", "", sector_gas_close, 0, 2, [west]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
-	east, ["gas_defend"], "Defend", "Enemy reinforcements have been spotted, hold the gas station!", "Defend", getPos task_gas, 
-	{"gas" call BIS_fnc_taskState == "SUCCEEDED"},{!isNil "task_gas_bool" && (count (allUnits select {_x inArea task_gas && side _x == west}) < 2)}, {false}, {false}, 
+	east, ["gas_defend"], "Defend", "Enemy reinforcements have been spotted, hold the gas station!", "Defend", "sector_gas", 
+	{"gas" call BIS_fnc_taskState == "SUCCEEDED"},{!isNil "task_gas_bool" && ["gas", "", sector_gas, 0, 3, [west]] call tsp_fnc_sector_clear}, {false}, {false}, 
 	{["reinf_air"] spawn tsp_fnc_sector_load; ["reinf_bmp"] spawn tsp_fnc_sector_load; [] spawn {sleep 120; task_gas_bool = true}}
-] spawn tsp_fnc_task;
-[
-	west, ["mission"], "x", "x", "Attack", getPos task_bridge, 
-	{true}, {count (["bridge","radar","farm","gas_defend"] select {_x call BIS_fnc_taskState == "SUCCEEDED"}) == 4}, 
-	{false}, {false}, {}, {"end1" remoteExec ["BIS_fnc_endMission", 0]}
 ] spawn tsp_fnc_task;
 
 tsp_fnc_heli = {

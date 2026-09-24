@@ -89,7 +89,7 @@ tsp_cond_invade = {count (["radio", "radar", "scud", "beach", "pilot"] select {_
 ] spawn tsp_fnc_task;
 [
 	west, ["beach", "preparation"], "Secure Beachhead", "Clear the beach in preparation for the landing force's arrival. Eliminate any enemy positions that could affect the landing.", 
-	"GetIn", getPos task_lz, {true}, {"bunkers" call tsp_fnc_sector_check && (count (allUnits select {_x inArea trigger_bunkers && side _x == east}) < 2)}, {false}, {dayTime > 4}
+	"GetIn", "sector_bunkers", {true}, {["bunkers", "bunkers", sector_bunkers, 0, 2] call tsp_fnc_sector_clear}, {false}, {dayTime > 4}
 ] spawn tsp_fnc_task;
 [
 	west, ["scud", "preparation"], "Destroy Scud Launcher", "The SLA has 2 scud missile launchers in their inventory, one is known to be destroyed, and the other is believed to be somewhere on Porto, find and destroy it.", 
@@ -106,25 +106,25 @@ tsp_cond_invade = {count (["radio", "radar", "scud", "beach", "pilot"] select {_
 ] spawn tsp_fnc_task;
 [
 	west, ["port", "invasion"], "Capture Port Area", "Capture all naval installations on the port, including the port itself. Make sure to eliminate all enemies.", 
-	"Attack", getPos task_port, {dayTime > 4 || call tsp_cond_invade}, {"port" call tsp_fnc_sector_check && (count (allUnits select {_x distance task_port < 100 && side _x == east}) < 2)}
+	"Attack", getPos task_port, {dayTime > 4 || call tsp_cond_invade}, {["port", "", task_port, 100, 2] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	west, ["largo", "invasion"], "Capture Largo", "Largo is a small civilian settlement on Porto, scout the settlement for any SLA troops and secure it.", 
-	"Attack", getPos task_largo, {dayTime > 4 || call tsp_cond_invade}, {"largo" call tsp_fnc_sector_check && (count (allUnits select {_x inArea trigger_largo && side _x == east}) < 2)}
+	"Attack", "sector_largo", {dayTime > 4 || call tsp_cond_invade}, {["largo", "", sector_largo, 0, 2] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;	
 [
 	west, ["army", "invasion"], "Capture Army Barracks", "This is the main SLA Army garrison on Porto, most of the Army garrision should be over on Sahrani so the remaining guard troops should be relatively light and concentrated within the compound.", 
-	"Attack", getPos task_army, {dayTime > 4 || call tsp_cond_invade}, {"army_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea trigger_army_close && side _x == east}) < 2)}
+	"Attack", "sector_army_close", {dayTime > 4 || call tsp_cond_invade}, {["army_close", "", sector_army_close, 0, 2] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	west, ["ship", "invasion"], "Board Landing Ship", "The Navy sank an SLA landing ship in the port before it could depart for Sahrani.", 
-	"Navigate", getPos task_ship, {dayTime > 4 || call tsp_cond_invade}, {!alive task_assets && task_intel isEqualTo objNull}
+	"Navigate", "sector_ship_close", {dayTime > 4 || call tsp_cond_invade}, {!alive task_assets && task_intel isEqualTo objNull}
 ] spawn tsp_fnc_task;
-	[
-		west, ["intel", "ship"], "Find Invasion Plans", "Search the ship for any useful intel that could help fight back againt the SLA's invasion of Sahrani.", 
-		"Search", objNull, {dayTime > 4 || call tsp_cond_invade}, {task_intel isEqualTo objNull}
-	] spawn tsp_fnc_task;
-	[
-		west, ["assets", "ship"], "Destroy Assets", "Destroy any vehicles and other assets on the ship to prevent the enemy from using them.", 
-		"Destroy", objNull, {dayTime > 4 || call tsp_cond_invade}, {!alive task_assets}
-	] spawn tsp_fnc_task;
+[
+	west, ["intel", "ship"], "Find Invasion Plans", "Search the ship for any useful intel that could help fight back againt the SLA's invasion of Sahrani.", 
+	"Search", objNull, {"ship" call BIS_fnc_taskState != ""}, {task_intel isEqualTo objNull}
+] spawn tsp_fnc_task;
+[
+	west, ["assets", "ship"], "Destroy Assets", "Destroy any vehicles and other assets on the ship to prevent the enemy from using them.", 
+	"Destroy", objNull, {"ship" call BIS_fnc_taskState != ""}, {!alive task_assets}
+] spawn tsp_fnc_task;

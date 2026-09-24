@@ -5,10 +5,10 @@ class EditorData
 	angleGridStep=0.78539819;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=513;
+	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=1307;
+		nextID=1337;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=726;
+		nextID=935;
 	};
 	class Camera
 	{
-		pos[]={1327.8176,125.86084,1093.7769};
-		dir[]={-1.2363448e-07,-0.70710671,0.70710683};
-		up[]={-1.2363445e-07,0.70710683,0.70710659};
-		aside[]={0.99999988,7.1054274e-15,1.7484552e-07};
+		pos[]={1647.0685,345.34549,1614.7423};
+		dir[]={-0.59925324,-0.48220462,-0.63904178};
+		up[]={-0.32984403,0.87605864,-0.35174462};
+		aside[]={-0.72945094,-1.4901161e-08,0.68403327};
 	};
 };
 binarizationWanted=0;
@@ -103,7 +103,8 @@ addons[]=
 	"A3_Modules_F_Intel",
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Structures_F_Enoch_Military_Radar",
-	"A3_Modules_F_Multiplayer"
+	"A3_Modules_F_Multiplayer",
+	"A3_Modules_F_StrategicMap"
 };
 class AddonsMetaData
 {
@@ -586,7 +587,7 @@ class Mission
 			name="mission";
 			class Entities
 			{
-				items=29;
+				items=33;
 				class Item0
 				{
 					dataType="Layer";
@@ -3724,7 +3725,6 @@ class Mission
 				{
 					dataType="Layer";
 					name="airfield_close";
-					state=1;
 					class Entities
 					{
 						items=5;
@@ -7244,7 +7244,6 @@ class Mission
 							angle=0.59681535;
 							class Attributes
 							{
-								name="task_airfield";
 								text="airfield_close";
 								sizeA=250;
 								sizeB=250;
@@ -7400,7 +7399,7 @@ class Mission
 								formation="COLUMN";
 							};
 							id=531;
-							atlOffset=-26.799999;
+							atlOffset=-0.0076751709;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8399,7 +8398,6 @@ class Mission
 							{
 							};
 							id=491;
-							atlOffset=-26.799999;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -8420,7 +8418,7 @@ class Mission
 						};
 					};
 					id=524;
-					atlOffset=-22.123016;
+					atlOffset=0.0009803772;
 				};
 				class Item2
 				{
@@ -9485,7 +9483,6 @@ class Mission
 							angle=0.59681535;
 							class Attributes
 							{
-								name="task_ammo";
 								text="ammo_close";
 								sizeA=150;
 								sizeB=150;
@@ -11894,7 +11891,7 @@ class Mission
 									};
 									id=1285;
 									type="tsp_tka_rifleman_lite";
-									atlOffset=0.11132813;
+									atlOffset=0.11132812;
 									class CustomAttributes
 									{
 										class Attribute0
@@ -18923,7 +18920,7 @@ class Mission
 							{
 							};
 							id=1107;
-							type="UK3CB_TKA_I_LR_M2";
+							type="UK3CB_TKA_I_LR_Opentop_PKM";
 							atlOffset=-0.016708374;
 							class CustomAttributes
 							{
@@ -18957,7 +18954,7 @@ class Mission
 							{
 							};
 							id=1108;
-							type="UK3CB_TKA_I_LR_SPG9";
+							type="UK3CB_TKA_I_LR_Opentop_SPG9";
 							atlOffset=-0.0029983521;
 							class CustomAttributes
 							{
@@ -19002,7 +18999,7 @@ class Mission
 				class Item11
 				{
 					dataType="Marker";
-					position[]={1656.6217,47.945313,1721.9189};
+					position[]={1656.6217,47.945312,1721.9189};
 					name="marker_0";
 					type="mil_dot";
 					colorName="ColorEAST";
@@ -22284,7 +22281,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
-						textures="WDL";
+						textures="DES";
 					};
 					id=1176;
 					type="UK3CB_B_LAV25_US_WDL";
@@ -22315,7 +22312,7 @@ class Mission
 														class data
 														{
 															singleType="STRING";
-															value="WDL";
+															value="DES";
 														};
 													};
 													class Item1
@@ -22590,7 +22587,7 @@ class Mission
 														class data
 														{
 															singleType="SCALAR";
-															value=1;
+															value=0;
 														};
 													};
 													class Item32
@@ -23151,7 +23148,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 							};
 							id=1236;
 							type="Land_FirstAidKit_01_open_F";
@@ -25277,7 +25274,7 @@ class Mission
 								class data
 								{
 									singleType="STRING";
-									value="USMC Light Armored Recon is ordered to raid behind enemy lines and cripple Takistani Army logistics.<br/><br/>  " \n "Destroy MiG-21 fighters, radar sites, the fuel depot, and ammunition storage at the airfield. <br/><br/>  " \n "Enemy forces in the area are rear-echelon units with outdated equipment and limited combat readiness, but expect pockets of resistance. <br/><br/>  " \n "Move fast, hit hard, and exfiltrate before organized reinforcements can respond.";
+									value="You are a member of a USMC Light Armored Reconnaisance company that has been tasked with conducting a long range patrol behind enemy lines in order cripple Takistani Army logistics.<br/><br/> " \n "Destroy MiG-21 fighters, radar sites, the fuel depot, and ammunition storage at and around the airfield.<br/><br/> " \n "Enemy forces in the area are rear-echelon units with outdated equipment and limited combat readiness, but expect pockets of resistance.<br/><br/> " \n "Move fast, hit hard, and exfiltrate before more organized reinforcements can respond.";
 								};
 							};
 						};
@@ -25358,7 +25355,7 @@ class Mission
 								class data
 								{
 									singleType="STRING";
-									value="Coalition forces have launched a full-scale invasion of Takistan aimed at dismantling the hostile regime. <br/><br/>  " \n "In preparation for the main assault, USMC Light Armored Reconnaissance (LAR) units have been deployed deep behind enemy lines to disrupt Takistani logistics and cripple their ability to reinforce frontline units. <br/><br/>  " \n "The primary area of operations is an airfield serving as a hub for Takistani air assets and supply distribution. Disabling this facility is critical to ensuring air superiority and logistical collapse ahead of the main offensive. " \n "";
+									value="The Takistani Army is a large, conventional force equipped primarily with Soviet-era armor, artillery and aircraft.<br/><br/> " \n "It fields T-72/T-55 tanks, BMPs, artillery, attack helicopters and Su-25s, supported by Scud ballistic missiles and suspected chemical weapons.<br/><br/> " \n "While technologically inferior to Coalition forces, the TKA remains a capable regional military with significant defensive and armored warfare capabilities.";
 								};
 							};
 						};
@@ -25396,12 +25393,11 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={6781.4644,42.281441,9361.5684};
-						angles[]={6.062099,0,6.0548568};
+						position[]={6781.4639,42.281418,9361.5684};
+						angles[]={6.0621047,0,6.0548611};
 					};
 					id=1235;
 					type="ModuleCreateDiaryRecord_F";
-					atlOffset=1.5258789e-05;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -25439,7 +25435,7 @@ class Mission
 								class data
 								{
 									singleType="STRING";
-									value="Following a recent escalation in insurgent activity, Coalition assets have confirmed that Farabad has become a major logistics hub for enemy operations throughout Takistan. <br/><br/>    " \n "Arms trafficking, recruitment, and coordinated attacks have spiked, destabilizing nearby regions. The town's proximity to key mountain passes makes it a strategic node for insurgent movement. <br/><br/>    " \n "Jalali Khara, a known insurgent commander and orchestrator of several ambushes on NATO convoys, has been positively ID'd operating in the sector. Additionally, weapons caches used to arm local cells have been located and must be neutralized. " \n "";
+									value="Tensions have been escalating between Takistan and its neighbours following the collapse of Takistan's oil industry and the resulting political instability.<br/><br/> " \n "Takistani forces have increased military activity along the borders, while disputes over the oil-rich Sharig Plateau have brought relations with Karzeghistan to the breaking point. The Takistani government has threatened military action and the use of chemical weapons if its territorial demands are not met.<br/><br/> " \n "With Takistan possessing Scud missile systems and chemical weapons, the situation presents an imminent threat of regional conflict. Diplomatic efforts have failed, and neighboring states have requested international assistance.<br/><br/> " \n "Coalition forces are now entering Takistan to neutralize the threat and prevent the conflict from spreading throughout the region.";
 								};
 							};
 						};
@@ -25602,16 +25598,32 @@ class Mission
 				};
 				class Item26
 				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={1622.01,42.747326,2864.8569};
+						angles[]={0,3.1753125,0};
+					};
+					side="Empty";
+					class Attributes
+					{
+						name="fakespawn";
+					};
+					id=1255;
+					type="Land_HelipadEmpty_F";
+				};
+				class Item27
+				{
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={1567.281,47.890522,1955.896};
-						angles[]={0.0049916417,3.2458236,0};
+						position[]={1564.6508,47.94873,1940.6709};
+						angles[]={0.0024897563,3.2458236,0};
 					};
 					init="this setVariable [""description"", ""Staging point for raid.""];   " \n "this setVariable [""code"", {(_this#9#0) setPos (getPos fakespawn)}];  ";
-					id=1254;
+					id=1307;
 					type="ModuleRespawnPosition_F";
-					atlOffset=3.8146973e-06;
+					atlOffset=0.00040817261;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -25682,18 +25694,17 @@ class Mission
 						nAttributes=5;
 					};
 				};
-				class Item27
+				class Item28
 				{
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={1736.8823,45.876667,2763.1748};
-						angles[]={0.083601065,3.1897464,0.0027621367};
+						position[]={1605.077,42.622654,2866.051};
+						angles[]={0.0056723198,3.1897464,0.0055326936};
 					};
 					init="this setVariable [""description"", ""Command LAV.""];   " \n "";
-					id=1253;
+					id=1309;
 					type="ModuleRespawnPosition_F";
-					atlOffset=3.8146973e-06;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -25718,7 +25729,7 @@ class Mission
 								class data
 								{
 									singleType="STRING";
-									value="LAV-C2";
+									value="LAV";
 								};
 							};
 						};
@@ -25764,25 +25775,277 @@ class Mission
 						nAttributes=5;
 					};
 				};
-				class Item28
+				class Item29
 				{
-					dataType="Object";
+					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={1622.01,42.747326,2864.8569};
-						angles[]={0,3.1753125,0};
+						position[]={616.06964,63.670277,1085.4419};
 					};
-					side="Empty";
-					class Attributes
+					id=1313;
+					type="ModuleStrategicMapORBAT_F";
+					atlOffset=29.390167;
+					class CustomAttributes
 					{
-						name="fakespawn";
+						class Attribute0
+						{
+							property="ModuleStrategicMapORBAT_F_Path";
+							expression="_this setVariable ['Path',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="missionConfigFile >> ""CfgORBAT"" >> ""tka"" ";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ModuleStrategicMapORBAT_F_Tags";
+							expression="_this setVariable ['Tags',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ModuleStrategicMapORBAT_F_Parent";
+							expression="_this setVariable ['Parent',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ModuleStrategicMapORBAT_F_Tiers";
+							expression="_this setVariable ['Tiers',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="5";
+								};
+							};
+						};
+						nAttributes=4;
 					};
-					id=1255;
-					type="Land_HelipadEmpty_F";
+				};
+				class Item30
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={786.3407,64.769394,320.63965};
+					};
+					id=1333;
+					type="ModuleStrategicMapORBAT_F";
+					atlOffset=29.389393;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ModuleStrategicMapORBAT_F_Path";
+							expression="_this setVariable ['Path',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="missionConfigFile >> ""CfgORBAT"" >> ""53aad""";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ModuleStrategicMapORBAT_F_Tags";
+							expression="_this setVariable ['Tags',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ModuleStrategicMapORBAT_F_Parent";
+							expression="_this setVariable ['Parent',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ModuleStrategicMapORBAT_F_Tiers";
+							expression="_this setVariable ['Tiers',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="5";
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+				class Item31
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={635.05035,64.769638,437.73425};
+					};
+					id=1334;
+					type="ModuleStrategicMapORBAT_F";
+					atlOffset=29.389637;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ModuleStrategicMapORBAT_F_Path";
+							expression="_this setVariable ['Path',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="missionConfigFile >> ""CfgORBAT"" >> ""2fix""";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ModuleStrategicMapORBAT_F_Tags";
+							expression="_this setVariable ['Tags',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ModuleStrategicMapORBAT_F_Parent";
+							expression="_this setVariable ['Parent',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ModuleStrategicMapORBAT_F_Tiers";
+							expression="_this setVariable ['Tiers',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="5";
+								};
+							};
+						};
+						nAttributes=4;
+					};
+				};
+				class Item32
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={1253.874,68.399353,670.66602};
+					};
+					id=1335;
+					type="ModuleStrategicMapORBAT_F";
+					atlOffset=29.389992;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ModuleStrategicMapORBAT_F_Path";
+							expression="_this setVariable ['Path',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="missionConfigFile >> ""CfgORBAT"" >> ""73maintenance""";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ModuleStrategicMapORBAT_F_Tags";
+							expression="_this setVariable ['Tags',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ModuleStrategicMapORBAT_F_Parent";
+							expression="_this setVariable ['Parent',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ModuleStrategicMapORBAT_F_Tiers";
+							expression="_this setVariable ['Tiers',_value,true];";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="5";
+								};
+							};
+						};
+						nAttributes=4;
+					};
 				};
 			};
 			id=901;
-			atlOffset=-5.1304779;
+			atlOffset=24.857571;
 		};
 	};
 	class Connections
@@ -25797,8 +26060,8 @@ class Mission
 			class Item0
 			{
 				linkID=0;
-				item0=1253;
-				item1=1178;
+				item0=1178;
+				item1=1309;
 				class CustomData
 				{
 					type="Sync";

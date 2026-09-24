@@ -8,7 +8,7 @@ class EditorData
 	toggles=10;
 	class ItemIDProvider
 	{
-		nextID=447;
+		nextID=448;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=61;
+		nextID=85;
 	};
 	class Camera
 	{
-		pos[]={17688.625,356.39557,18763.684};
-		dir[]={-0.53789788,-0.4580462,0.70775294};
-		up[]={-0.27716044,0.88892412,0.36468095};
-		aside[]={0.79617828,-6.9511589e-07,0.60510361};
+		pos[]={17766.652,129.07921,12134.781};
+		dir[]={0.46917546,-0.34046358,-0.81487757};
+		up[]={0.16989599,0.94024682,-0.29508194};
+		aside[]={-0.86664587,-2.4799374e-07,-0.49898383};
 	};
 };
 binarizationWanted=0;
@@ -64,13 +64,14 @@ addons[]=
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Modules_F_Multiplayer",
 	"rhs_c_weapons",
-	"A3_Ui_F"
+	"A3_Ui_F",
+	"A3_Props_F_Orange_Humanitarian_Camps"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=32;
+		items=33;
 		class Item0
 		{
 			className="A3_Structures_F_Mil";
@@ -279,6 +280,13 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item32
+		{
+			className="A3_Props_F_Orange";
+			name="Arma 3 Orange - Decorative and Mission Objects";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 dlcs[]=
@@ -288,7 +296,8 @@ dlcs[]=
 	"UK3CB_Factions",
 	"RHS_USAF",
 	"Enoch",
-	"RHS_AFRF"
+	"RHS_AFRF",
+	"Orange"
 };
 randomSeed=7290679;
 class ScenarioData
@@ -332,12 +341,11 @@ class Mission
 			name="mission";
 			class Entities
 			{
-				items=15;
+				items=16;
 				class Item0
 				{
 					dataType="Layer";
 					name="spawn";
-					state=1;
 					class Entities
 					{
 						items=9;
@@ -414,11 +422,10 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={17770.414,127.74342,12133.431};
+								position[]={17770.182,127.74342,12133.55};
 								angles[]={6.2696934,2.6604483,6.271987};
 							};
 							side="Empty";
-							flags=4;
 							class Attributes
 							{
 								createAsSimpleObject=1;
@@ -426,6 +433,7 @@ class Mission
 							};
 							id=327;
 							type="Land_Map_blank_F";
+							atlOffset=0.8605423;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -594,7 +602,7 @@ class Mission
 									flags=5;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}]; " \n "";
+										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];";
 									};
 									id=332;
 									type="tsp_sla_rifleman";
@@ -647,7 +655,7 @@ class Mission
 							{
 							};
 							id=329;
-							atlOffset=67.664726;
+							atlOffset=7.6293945e-06;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -1368,8 +1376,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={17760.145,129.11212,12147.061};
-								angles[]={0.012651038,5.5617981,6.2734237};
+								position[]={17760.488,129.10962,12147.279};
+								angles[]={0.013580916,5.4595985,6.2747655};
 							};
 							side="Empty";
 							flags=4;
@@ -1379,7 +1387,7 @@ class Mission
 							};
 							id=250;
 							type="rhsgref_ins_btr70";
-							atlOffset=0.0014877319;
+							atlOffset=0.0053482056;
 							class CustomAttributes
 							{
 								class Attribute0
@@ -2079,7 +2087,7 @@ class Mission
 						};
 					};
 					id=219;
-					atlOffset=-117.83603;
+					atlOffset=0.81573486;
 				};
 				class Item1
 				{
@@ -2133,7 +2141,7 @@ class Mission
 								textures="RACS";
 							};
 							id=169;
-							type="UK3CB_C_LandRover_Closed";
+							type="UK3CB_C_LandRover_Softtop_Transport_Closed";
 							atlOffset=-8.0108643e-05;
 							class CustomAttributes
 							{
@@ -2338,7 +2346,7 @@ class Mission
 								textures="RACS";
 							};
 							id=170;
-							type="UK3CB_C_LandRover_Closed";
+							type="UK3CB_C_LandRover_Softtop_Transport_Closed";
 							atlOffset=9.5367432e-07;
 							class CustomAttributes
 							{
@@ -4502,7 +4510,7 @@ class Mission
 								textures="RACS";
 							};
 							id=33;
-							type="UK3CB_C_LandRover_Open";
+							type="UK3CB_C_LandRover_Softtop_Transport_Open";
 							atlOffset=-0.068981171;
 							class CustomAttributes
 							{
@@ -5757,7 +5765,7 @@ class Mission
 								textures="RACS";
 							};
 							id=95;
-							type="UK3CB_C_LandRover_Open";
+							type="UK3CB_C_LandRover_Softtop_Transport_Open";
 							atlOffset=0.071389198;
 							class CustomAttributes
 							{
@@ -5961,7 +5969,7 @@ class Mission
 								textures="RACS";
 							};
 							id=93;
-							type="UK3CB_C_LandRover_Closed";
+							type="UK3CB_C_LandRover_Softtop_Transport_Closed";
 							atlOffset=0.071334839;
 							class CustomAttributes
 							{
@@ -6165,7 +6173,7 @@ class Mission
 								textures="RACS";
 							};
 							id=94;
-							type="UK3CB_C_LandRover_Closed";
+							type="UK3CB_C_LandRover_Softtop_Transport_Closed";
 							atlOffset=0.071335793;
 							class CustomAttributes
 							{
@@ -9607,6 +9615,7 @@ class Mission
 					flags=4;
 					class Attributes
 					{
+						init="[this, ""Arsenal""] call tsp_fnc_action;" \n "[this, ""Role""] call tsp_fnc_action;";
 					};
 					id=351;
 					type="rhs_mags_crate";
@@ -9622,7 +9631,7 @@ class Mission
 								class data
 								{
 									singleType="STRING";
-									value="[[[[""hgun_Pistol_Signal_F"",""rhs_weap_rsp30_white"",""rhs_weap_rsp30_red"",""rhs_weap_rsp30_green""],[2,10,10,10]],[[""rhs_30Rnd_762x39mm_bakelite"",""rhs_30Rnd_762x39mm_bakelite_tracer"",""6Rnd_GreenSignal_F"",""6Rnd_RedSignal_F""],[30,30,10,10]],[[""tacticalvest_black"",""rhs_beanie"",""rhs_beanie_green"",""rhs_zsh"",""rhs_zsh_bala"",""rhs_zsh_blk"",""rhs_zsh_blk_bala"",""G_Balaclava_blk"",""Medikit"",""tsp_ifak""],[4,2,4,1,1,1,1,4,2,10]],[[""rhs_sidor""],[6]]],false]";
+									value="[[[[""hgun_Pistol_Signal_F"",""rhs_weap_rsp30_white"",""rhs_weap_rsp30_red"",""rhs_weap_rsp30_green""],[2,10,10,10]],[[""rhs_30Rnd_762x39mm_bakelite"",""rhs_30Rnd_762x39mm_bakelite_tracer"",""6Rnd_GreenSignal_F"",""6Rnd_RedSignal_F"",""rhs_charge_tnt_x2_mag"",""rhs_ec200_mag"",""rhs_ec400_mag"",""rhs_ec200_sand_mag"",""rhs_ec400_sand_mag""],[30,30,10,10,1,2,2,2,2]],[[""tacticalvest_black"",""rhs_beanie"",""rhs_beanie_green"",""rhs_zsh"",""rhs_zsh_bala"",""rhs_zsh_blk"",""rhs_zsh_blk_bala"",""G_Balaclava_blk"",""Medikit"",""tsp_ifak""],[4,2,4,1,1,1,1,4,2,10]],[[""rhs_sidor""],[6]]],false]";
 								};
 							};
 						};
@@ -9844,7 +9853,7 @@ class Mission
 							flags=7;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=378;
@@ -9917,7 +9926,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayer=1;
 								isPlayable=1;
 							};
@@ -9991,7 +10000,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=374;
@@ -10064,7 +10073,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=376;
@@ -10137,7 +10146,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=380;
@@ -10211,7 +10220,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=382;
@@ -10285,7 +10294,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=384;
@@ -10359,7 +10368,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=386;
@@ -10433,7 +10442,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=388;
@@ -10506,7 +10515,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=390;
@@ -10579,7 +10588,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=392;
@@ -10652,7 +10661,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=394;
@@ -10726,7 +10735,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=396;
@@ -10800,7 +10809,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=398;
@@ -10874,7 +10883,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=400;
@@ -10948,7 +10957,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=402;
@@ -11022,7 +11031,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=404;
@@ -11095,7 +11104,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=406;
@@ -11169,7 +11178,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=408;
@@ -11243,7 +11252,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=410;
@@ -11317,7 +11326,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=412;
@@ -11391,7 +11400,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=414;
@@ -11465,7 +11474,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=416;
@@ -11539,7 +11548,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=418;
@@ -11613,7 +11622,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=420;
@@ -11687,7 +11696,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=422;
@@ -11761,7 +11770,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=424;
@@ -11835,7 +11844,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=426;
@@ -11909,7 +11918,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=428;
@@ -11983,7 +11992,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=430;
@@ -12057,7 +12066,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=432;
@@ -12131,7 +12140,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 							};
 							id=434;
@@ -12217,9 +12226,27 @@ class Mission
 						nAttributes=1;
 					};
 				};
+				class Item15
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={17770.658,127.79269,12133.019};
+						angles[]={0,5.5790896,-0};
+					};
+					side="Empty";
+					flags=1;
+					class Attributes
+					{
+						init="[this, ""Heal""] call tsp_fnc_action; ";
+					};
+					id=447;
+					type="Land_FirstAidKit_01_open_F";
+					atlOffset=0.86451721;
+				};
 			};
 			id=220;
-			atlOffset=8.5467987;
+			atlOffset=59.231796;
 		};
 	};
 };

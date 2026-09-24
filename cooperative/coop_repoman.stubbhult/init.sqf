@@ -14,12 +14,12 @@ if (!isServer) exitWith {};
 
 [
     west, ["comanche", "primary"], "Recover The Comanche", "Recover the Comanche from the rogue faction and take it to the <marker name='marker_37'>Rendezvous Point</marker> then switch with the other helicopter provided to extract the element.", 
-    "Heli",objNull,{"radar2" call BIS_fnc_taskState == "SUCCEEDED"},{[task_comanche, [zone_rendezvous]] call tsp_fnc_zone_triggers},{!alive task_comanche}
+    "Heli", objNull, {"radar2" call BIS_fnc_taskState == "SUCCEEDED"},{[task_comanche, [zone_rendezvous]] call tsp_fnc_zone_triggers}, {!alive task_comanche}
 ] spawn tsp_fnc_task;
 
 [
     west, ["shorad", "primary"], "Destroy SHORAD", "Destroy the SHORAD in the form of 2 Linebacker Bradleys (M6A2). they each have 4 stinger launchers that can devistate any helicopter.", 
-    "Destroy", getPos task_shorad, {true}, {!alive task_shorad1 && !alive task_shorad2}
+    "Destroy", getPos task_shorad1, {true}, {!alive task_shorad1 && !alive task_shorad2}
 ] spawn tsp_fnc_task;
 
 [
@@ -41,7 +41,6 @@ if (!isServer) exitWith {};
     west, ["extract", "primary"], "Exfiltrate", "Exfiltrate out of the hot zone by chopper. Defend your positions until the heli arrives.", "run", objNull, 
     {count (["shorad","radar1","radar2","comanche"] select {_x call BIS_fnc_taskState == "SUCCEEDED"}) == 4}, {count (allPlayers select {_x inArea trigger_extract}) == 0}
 ] spawn tsp_fnc_task;
-
 
 [
 	east, ["mission"], "x", "x", "Attack", objNull, 

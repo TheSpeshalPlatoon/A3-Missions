@@ -852,7 +852,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 								disableSimulation=1;
 							};
 							id=6906;
@@ -870,7 +870,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 								disableSimulation=1;
 							};
 							id=6907;
@@ -1218,7 +1218,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 								disableSimulation=1;
 							};
 							id=2615;
@@ -1538,7 +1538,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 							};
 							id=2609;
 							type="CUP_lekarnicka";
@@ -1556,7 +1556,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 							};
 							id=6962;
 							type="CUP_lekarnicka";
@@ -1573,7 +1573,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 							};
 							id=6963;
 							type="CUP_lekarnicka";
@@ -1590,7 +1590,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 							};
 							id=6964;
 							type="CUP_lekarnicka";
@@ -2328,7 +2328,7 @@ class Mission
 							side="Empty";
 							class Attributes
 							{
-								init="[this, ""Weather""] call tsp_fnc_action; " \n "";
+								init="[this, ""Weather""] call tsp_fnc_action;";
 								name="weather";
 							};
 							id=4699;
@@ -2901,7 +2901,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								init="[this, ""Physics""] call tsp_fnc_action;     " \n "[this, ""Garage"", ""true"", [garage_car_pos, 4,{[  " \n "    if (""USMC"" in (player getVariable ""role"")) then {[  " \n "        ""rhsusf_M1232_MC_M2_usmc_d"",""rhsusf_M1232_MC_MK19_usmc_d"",  " \n "        ""rhsusf_m1240a1_usmc_d"",""rhsusf_m1240a1_m2_usmc_d"",""rhsusf_m1240a1_m240_usmc_d"",  " \n "        ""rhsusf_m1240a1_mk19_usmc_d"",""rhsusf_m1240a1_m2crows_usmc_d"",""rhsusf_m1240a1_mk19crows_usmc_d"",  " \n "        ""rhsusf_CGRCAT1A2_usmc_d"",""rhsusf_CGRCAT1A2_M2_usmc_d"",""rhsusf_CGRCAT1A2_Mk19_usmc_d"",    " \n "        ""UK3CB_B_MaxxPro_M2_US_W"", ""UK3CB_B_MaxxPro_MK19_US_W"",     " \n "        ""UK3CB_B_MTVR_Reammo_USMC_WDL"", ""UK3CB_B_MTVR_Closed_USMC_WDL"", ""UK3CB_B_MTVR_Refuel_USMC_WDL"", ""UK3CB_B_MTVR_Open_USMC_WDL"", ""UK3CB_B_MTVR_Recovery_USMC_WDL"", ""UK3CB_B_MTVR_Repair_USMC_WDL"",   " \n "        ""rhsusf_mtvr_mk23_apk_wd"", ""rhsusf_mtvr_mk23_resupply_apk_wd"", ""rhsusf_mtvr_mk23_apk_m2_wd"", ""rhsusf_mtvr_mk23_apk_arm_m2_wd"", ""rhsusf_mtvr_mk27_apk_wd"",   " \n "        ""rhsusf_mtvr_mk27_apk_m2_wd"", ""rhsusf_mtvr_mk37_apk_wd"", ""rhsusf_mtvr_mk37_apk_m2_wd"", ""rhsusf_mtvr_mk23_wd"", ""rhsusf_mtvr_mk23_ammo_wd"",   " \n "        ""rhsusf_mtvr_mk23_resupply_wd"", ""rhsusf_mtvr_mk27_wd"", ""rhsusf_mtvr_mk37_wd""  " \n "    ]},  " \n "  " \n "    if (""Stryker"" in (player getVariable ""role"")) then {[  " \n "        ""rhsusf_m113_usarmy_supply"",""rhsusf_m113_usarmy"",""rhsusf_m113_usarmy_M2_90"",""rhsusf_m113_usarmy_M240"",""rhsusf_m113_usarmy_medical"",  " \n "        ""rhsusf_m113_usarmy_MK19"",""rhsusf_m113_usarmy_MK19_90"",""rhsusf_m113_usarmy_unarmed"",  " \n "        ""rhsusf_M1117_D"",""rhsusf_M1117_O"",  " \n "        ""rhsusf_stryker_m1126_m2_wd"",""rhsusf_stryker_m1126_mk19_wd"",""rhsusf_stryker_m1127_m2_wd"",""rhsusf_stryker_m1132_m2_np_wd"",""rhsusf_stryker_m1132_m2_wd"",""rhsusf_stryker_m1134_wd""  " \n "    ]},  " \n "  " \n "    if (""ARMOR"" in (player getVariable ""role"")) then {[  " \n "        ""RHS_M2A2"",""RHS_M2A2_BUSKI"",""RHS_M2A3"",""RHS_M2A3_BUSKI"",""RHS_M2A3_BUSKIII"",""RHS_M6"",  " \n "        ""rhsusf_m1a1aim_tuski_d"",""rhsusf_m1a1fep_d"",  " \n "        ""rhsusf_m1a1aimd_usarmy"",""rhsusf_m1a2sep1d_usarmy"",""rhsusf_m1a2sep1tuskid_usarmy"",""rhsusf_m1a2sep1tuskiid_usarmy"",""rhsusf_m1a2sep2d_usarmy"",  " \n "        ""UK3CB_B_LAV25_HQ_US_WDL"", ""UK3CB_B_LAV25_US_WDL"", ""UK3CB_B_AAV_US_WDL""   " \n "    ]},  " \n "  " \n "    if (""USMC"" in (player getVariable ""role"") || ""USN"" in (player getVariable ""role"") || ""Special"" in (player getVariable ""role"")) then {[  " \n "        ""rhsusf_m1165_asv_m240_usaf_d"",""rhsusf_mrzr4_d"", ""UK3CB_B_M1030_USMC_WDL"", ""B_Quadbike_01_F"",     " \n "        ""rhsusf_m1165a1_gmv_m134d_m240_socom_d"",""rhsusf_m1165a1_gmv_m2_m240_socom_d"",""rhsusf_m1165a1_gmv_mk19_m240_socom_d"",  " \n "        ""rhsusf_M1084A1R_SOV_M2_D_fmtv_socom"",""rhsusf_M1078A1R_SOV_M2_D_fmtv_socom"",  " \n "        ""rhsusf_M1238A1_socom_d"",""rhsusf_M1238A1_M2_socom_d"",""rhsusf_M1238A1_Mk19_socom_d"",  " \n "        ""rhsusf_M1239_socom_d"",""rhsusf_M1239_M2_socom_d"",""rhsusf_M1239_MK19_socom_d"",""rhsusf_M1239_M2_Deploy_socom_d"",""rhsusf_M1239_MK19_Deploy_socom_d"",  " \n "        ""rhsusf_m1245_m2crows_socom_d"",""rhsusf_m1245_mk19crows_socom_d"",""rhsusf_m1245_m2crows_socom_deploy"",""rhsusf_m1245_mk19crows_socom_deploy""  " \n "    ]},  " \n "  " \n "    if (""USA"" in (player getVariable ""role"")) then {[  " \n "        ""rhsusf_M1078A1P2_D_fmtv_usarmy"",""rhsusf_M1078A1P2_D_flatbed_fmtv_usarmy"",""rhsusf_M1078A1P2_B_D_fmtv_usarmy"",""rhsusf_M1078A1P2_B_D_flatbed_fmtv_usarmy"",  " \n "        ""rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy"",""rhsusf_M1078A1P2_B_M2_D_flatbed_fmtv_usarmy"",""rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy"",""rhsusf_M1083A1P2_D_fmtv_usarmy"",  " \n "        ""rhsusf_M1083A1P2_D_flatbed_fmtv_usarmy"",""rhsusf_M1083A1P2_B_D_fmtv_usarmy"",""rhsusf_M1083A1P2_B_D_flatbed_fmtv_usarmy"",""rhsusf_M1083A1P2_B_M2_D_fmtv_usarmy"",  " \n "        ""rhsusf_M1083A1P2_B_M2_D_flatbed_fmtv_usarmy"",""rhsusf_M1084A1P2_D_fmtv_usarmy"",""rhsusf_M1084A1P2_B_D_fmtv_usarmy"",""rhsusf_M1084A1P2_B_M2_D_fmtv_usarmy"",  " \n "        ""rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy"",  " \n "  " \n "        ""rhsusf_M1220_usarmy_d"",""rhsusf_M1220_M153_M2_usarmy_d"",""rhsusf_M1220_M2_usarmy_d"",""rhsusf_M1220_MK19_usarmy_d"",  " \n "        ""rhsusf_M1230_M2_usarmy_d"",""rhsusf_M1230_MK19_usarmy_d"",""rhsusf_M1230a1_usarmy_d"",  " \n "        ""rhsusf_M1232_usarmy_d"",""rhsusf_M1232_M2_usarmy_d"",""rhsusf_M1232_MK19_usarmy_d"",""rhsusf_M1237_M2_usarmy_d"",""rhsusf_M1237_MK19_usarmy_d"",  " \n "        ""rhsusf_m1240a1_usarmy_d"",""rhsusf_m1240a1_m2_usarmy_d"",""rhsusf_m1240a1_m240_usarmy_d"",""rhsusf_m1240a1_mk19_usarmy_d"",""rhsusf_m1240a1_m2_uik_usarmy_d"",  " \n "        ""rhsusf_m1240a1_m240_uik_usarmy_d"",""rhsusf_m1240a1_mk19_uik_usarmy_d"",""rhsusf_m1240a1_m2crows_usarmy_d"",""rhsusf_m1240a1_mk19crows_usarmy_d"",  " \n "  " \n "        ""rhsusf_M977A4_usarmy_d"",""rhsusf_M977A4_AMMO_usarmy_d"",""rhsusf_M977A4_REPAIR_usarmy_d"",""rhsusf_M977A4_BKIT_usarmy_d"",  " \n "        ""rhsusf_M977A4_AMMO_BKIT_usarmy_d"",""rhsusf_M977A4_BKIT_M2_usarmy_d"",""rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d"",""rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d"",  " \n "        ""rhsusf_M977A4_REPAIR_BKIT_usarmy_d"",""rhsusf_M978A4_usarmy_d"",""rhsusf_M978A4_BKIT_usarmy_d""  " \n "    ]},  " \n "  " \n "    ""rhsusf_m1025_d_m2"",""rhsusf_m1025_d_Mk19"",""rhsusf_m1025_d"",""rhsusf_m1043_d_m2"",""rhsusf_m1043_d_mk19"",""rhsusf_m1043_d"",""rhsusf_m1045_d"",  " \n "    ""rhsusf_m998_d_2dr_fulltop"",""rhsusf_m998_d_2dr_halftop"",""rhsusf_m998_d_2dr"",""rhsusf_m998_d_4dr_fulltop"",""rhsusf_m998_d_4dr"",  " \n "    ""rhsusf_m1151_usarmy_d"",""rhsusf_m1151_m2crows_usarmy_d"",""rhsusf_m1151_mk19crows_usarmy_d"",""rhsusf_m1151_m2_v1_usarmy_d"",""rhsusf_m1151_m2_lras3_v1_usarmy_d"",""rhsusf_m1151_m240_v1_usarmy_d"",  " \n "    ""rhsusf_m1151_mk19_v1_usarmy_d"",""rhsusf_m1151_m2_v2_usarmy_d"",""rhsusf_m1151_m240_v2_usarmy_d"",""rhsusf_m1151_mk19_v2_usarmy_d"",  " \n "    ""rhsusf_m1152_usarmy_d"",""rhsusf_m1152_rsv_usarmy_d"",""rhsusf_m1152_sicps_usarmy_d"",  " \n "    ""rhsusf_m1165_usarmy_d"",""rhsusf_m966_d""  " \n "]}], ""\tsp_core\data\actions\car.paa""] call tsp_fnc_action;      " \n "";
+								init="[this, ""Physics""] call tsp_fnc_action;     " \n "[this, ""Garage"", ""true"", [garage_car_pos, 4,{[  " \n "    if (""USMC"" in (player getVariable ""role"")) then {[  " \n "        ""rhsusf_M1232_MC_M2_usmc_d"",""rhsusf_M1232_MC_MK19_usmc_d"",  " \n "        ""rhsusf_m1240a1_usmc_d"",""rhsusf_m1240a1_m2_usmc_d"",""rhsusf_m1240a1_m240_usmc_d"",  " \n "        ""rhsusf_m1240a1_mk19_usmc_d"",""rhsusf_m1240a1_m2crows_usmc_d"",""rhsusf_m1240a1_mk19crows_usmc_d"",  " \n "        ""rhsusf_CGRCAT1A2_usmc_d"",""rhsusf_CGRCAT1A2_M2_usmc_d"",""rhsusf_CGRCAT1A2_Mk19_usmc_d"",    " \n "        ""UK3CB_B_MaxxPro_M2_US_W"", ""UK3CB_B_MaxxPro_MK19_US_W"",     " \n "        ""UK3CB_B_MTVR_Reammo_USMC_WDL"", ""UK3CB_B_MTVR_Closed_USMC_WDL"", ""UK3CB_B_MTVR_Refuel_USMC_WDL"", ""UK3CB_B_MTVR_Open_USMC_WDL"", ""UK3CB_B_MTVR_Recovery_USMC_WDL"", ""UK3CB_B_MTVR_Repair_USMC_WDL"",   " \n "        ""rhsusf_mtvr_mk23_apk_wd"", ""rhsusf_mtvr_mk23_resupply_apk_wd"", ""rhsusf_mtvr_mk23_apk_m2_wd"", ""rhsusf_mtvr_mk23_apk_arm_m2_wd"", ""rhsusf_mtvr_mk27_apk_wd"",   " \n "        ""rhsusf_mtvr_mk27_apk_m2_wd"", ""rhsusf_mtvr_mk37_apk_wd"", ""rhsusf_mtvr_mk37_apk_m2_wd"", ""rhsusf_mtvr_mk23_wd"", ""rhsusf_mtvr_mk23_ammo_wd"",   " \n "        ""rhsusf_mtvr_mk23_resupply_wd"", ""rhsusf_mtvr_mk27_wd"", ""rhsusf_mtvr_mk37_wd""  " \n "    ]},  " \n "  " \n "    if (""Stryker"" in (player getVariable ""role"")) then {[  " \n "        ""rhsusf_m113_usarmy_supply"",""rhsusf_m113_usarmy"",""rhsusf_m113_usarmy_M2_90"",""rhsusf_m113_usarmy_M240"",""rhsusf_m113_usarmy_medical"",  " \n "        ""rhsusf_m113_usarmy_MK19"",""rhsusf_m113_usarmy_MK19_90"",""rhsusf_m113_usarmy_unarmed"",  " \n "        ""rhsusf_M1117_D"",""rhsusf_M1117_O"",  " \n "        ""rhsusf_stryker_m1126_m2_wd"",""rhsusf_stryker_m1126_mk19_wd"",""rhsusf_stryker_m1127_m2_wd"",""rhsusf_stryker_m1132_m2_np_wd"",""rhsusf_stryker_m1132_m2_wd"",""rhsusf_stryker_m1134_wd""  " \n "    ]},  " \n "  " \n "    if (""ARMOR"" in (player getVariable ""role"")) then {[  " \n "        ""RHS_M2A2"",""RHS_M2A2_BUSKI"",""RHS_M2A3"",""RHS_M2A3_BUSKI"",""RHS_M2A3_BUSKIII"",""RHS_M6"",  " \n "        ""rhsusf_m1a1aim_tuski_d"",""rhsusf_m1a1fep_d"",  " \n "        ""rhsusf_m1a1aimd_usarmy"",""rhsusf_m1a2sep1d_usarmy"",""rhsusf_m1a2sep1tuskid_usarmy"",""rhsusf_m1a2sep1tuskiid_usarmy"",""rhsusf_m1a2sep2d_usarmy"",  " \n "        ""UK3CB_B_LAV25_HQ_US_WDL"", ""UK3CB_B_LAV25_US_WDL"", ""UK3CB_B_AAV_US_WDL""   " \n "    ]},  " \n "  " \n "    if (""USMC"" in (player getVariable ""role"") || ""USN"" in (player getVariable ""role"") || ""Special"" in (player getVariable ""role"")) then {[  " \n "        ""rhsusf_m1165_asv_m240_usaf_d"",""rhsusf_mrzr4_d"", ""UK3CB_B_M1030_USMC_WDL"", ""B_Quadbike_01_F"",     " \n "        ""rhsusf_m1165a1_gmv_m134d_m240_socom_d"",""rhsusf_m1165a1_gmv_m2_m240_socom_d"",""rhsusf_m1165a1_gmv_mk19_m240_socom_d"",  " \n "        ""rhsusf_M1084A1R_SOV_M2_D_fmtv_socom"",""rhsusf_M1078A1R_SOV_M2_D_fmtv_socom"",  " \n "        ""rhsusf_M1238A1_socom_d"",""rhsusf_M1238A1_M2_socom_d"",""rhsusf_M1238A1_Mk19_socom_d"",  " \n "        ""rhsusf_M1239_socom_d"",""rhsusf_M1239_M2_socom_d"",""rhsusf_M1239_MK19_socom_d"",""rhsusf_M1239_M2_Deploy_socom_d"",""rhsusf_M1239_MK19_Deploy_socom_d"",  " \n "        ""rhsusf_m1245_m2crows_socom_d"",""rhsusf_m1245_mk19crows_socom_d"",""rhsusf_m1245_m2crows_socom_deploy"",""rhsusf_m1245_mk19crows_socom_deploy""  " \n "    ]},  " \n "  " \n "    if (""USA"" in (player getVariable ""role"")) then {[  " \n "        ""rhsusf_M1078A1P2_D_fmtv_usarmy"",""rhsusf_M1078A1P2_D_flatbed_fmtv_usarmy"",""rhsusf_M1078A1P2_B_D_fmtv_usarmy"",""rhsusf_M1078A1P2_B_D_flatbed_fmtv_usarmy"",  " \n "        ""rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy"",""rhsusf_M1078A1P2_B_M2_D_flatbed_fmtv_usarmy"",""rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy"",""rhsusf_M1083A1P2_D_fmtv_usarmy"",  " \n "        ""rhsusf_M1083A1P2_D_flatbed_fmtv_usarmy"",""rhsusf_M1083A1P2_B_D_fmtv_usarmy"",""rhsusf_M1083A1P2_B_D_flatbed_fmtv_usarmy"",""rhsusf_M1083A1P2_B_M2_D_fmtv_usarmy"",  " \n "        ""rhsusf_M1083A1P2_B_M2_D_flatbed_fmtv_usarmy"",""rhsusf_M1084A1P2_D_fmtv_usarmy"",""rhsusf_M1084A1P2_B_D_fmtv_usarmy"",""rhsusf_M1084A1P2_B_M2_D_fmtv_usarmy"",  " \n "        ""rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy"",  " \n "  " \n "        ""rhsusf_M1220_usarmy_d"",""rhsusf_M1220_M153_M2_usarmy_d"",""rhsusf_M1220_M2_usarmy_d"",""rhsusf_M1220_MK19_usarmy_d"",  " \n "        ""rhsusf_M1230_M2_usarmy_d"",""rhsusf_M1230_MK19_usarmy_d"",""rhsusf_M1230a1_usarmy_d"",  " \n "        ""rhsusf_M1232_usarmy_d"",""rhsusf_M1232_M2_usarmy_d"",""rhsusf_M1232_MK19_usarmy_d"",""rhsusf_M1237_M2_usarmy_d"",""rhsusf_M1237_MK19_usarmy_d"",  " \n "        ""rhsusf_m1240a1_usarmy_d"",""rhsusf_m1240a1_m2_usarmy_d"",""rhsusf_m1240a1_m240_usarmy_d"",""rhsusf_m1240a1_mk19_usarmy_d"",""rhsusf_m1240a1_m2_uik_usarmy_d"",  " \n "        ""rhsusf_m1240a1_m240_uik_usarmy_d"",""rhsusf_m1240a1_mk19_uik_usarmy_d"",""rhsusf_m1240a1_m2crows_usarmy_d"",""rhsusf_m1240a1_mk19crows_usarmy_d"",  " \n "  " \n "        ""rhsusf_M977A4_usarmy_d"",""rhsusf_M977A4_AMMO_usarmy_d"",""rhsusf_M977A4_REPAIR_usarmy_d"",""rhsusf_M977A4_BKIT_usarmy_d"",  " \n "        ""rhsusf_M977A4_AMMO_BKIT_usarmy_d"",""rhsusf_M977A4_BKIT_M2_usarmy_d"",""rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d"",""rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d"",  " \n "        ""rhsusf_M977A4_REPAIR_BKIT_usarmy_d"",""rhsusf_M978A4_usarmy_d"",""rhsusf_M978A4_BKIT_usarmy_d""  " \n "    ]},  " \n "  " \n "    ""rhsusf_m1025_d_m2"",""rhsusf_m1025_d_Mk19"",""rhsusf_m1025_d"",""rhsusf_m1043_d_m2"",""rhsusf_m1043_d_mk19"",""rhsusf_m1043_d"",""rhsusf_m1045_d"",  " \n "    ""rhsusf_m998_d_2dr_fulltop"",""rhsusf_m998_d_2dr_halftop"",""rhsusf_m998_d_2dr"",""rhsusf_m998_d_4dr_fulltop"",""rhsusf_m998_d_4dr"",  " \n "    ""rhsusf_m1151_usarmy_d"",""rhsusf_m1151_m2crows_usarmy_d"",""rhsusf_m1151_mk19crows_usarmy_d"",""rhsusf_m1151_m2_v1_usarmy_d"",""rhsusf_m1151_m2_lras3_v1_usarmy_d"",""rhsusf_m1151_m240_v1_usarmy_d"",  " \n "    ""rhsusf_m1151_mk19_v1_usarmy_d"",""rhsusf_m1151_m2_v2_usarmy_d"",""rhsusf_m1151_m240_v2_usarmy_d"",""rhsusf_m1151_mk19_v2_usarmy_d"",  " \n "    ""rhsusf_m1152_usarmy_d"",""rhsusf_m1152_rsv_usarmy_d"",""rhsusf_m1152_sicps_usarmy_d"",  " \n "    ""rhsusf_m1165_usarmy_d"",""rhsusf_m966_d""  " \n "]}], ""\tsp_core\data\actions\car.paa""] call tsp_fnc_action;     ";
 								name="garage_car_action";
 							};
 							id=9316;
@@ -3671,7 +3671,7 @@ class Mission
 						position[]={1354.1635,39.314613,848.57959};
 						angles[]={0,1.3810406,0};
 					};
-					init="this setVariable [""description"", ""2 Outdoor shoothouses.""]; " \n "";
+					init="this setVariable [""description"", ""2 Outdoor shoothouses.""];";
 					id=7070;
 					type="ModuleRespawnPosition_F";
 					atlOffset=0.23828125;
@@ -3753,7 +3753,7 @@ class Mission
 						position[]={1417.2476,37.25,954.17114};
 						angles[]={0,0.193941,0};
 					};
-					init="this setVariable [""description"", ""Flat shooting range with a course of fire setup and skeet shooting.""]; " \n "";
+					init="this setVariable [""description"", ""Flat shooting range with a course of fire setup and skeet shooting.""];";
 					id=7071;
 					type="ModuleRespawnPosition_F";
 					class CustomAttributes
@@ -3834,7 +3834,7 @@ class Mission
 						position[]={1414.499,37.525002,842.16699};
 						angles[]={0,1.7523454,0};
 					};
-					init="this setVariable [""description"", ""Warehouse with indoor shooting range.""]; " \n "";
+					init="this setVariable [""description"", ""Warehouse with indoor shooting range.""];";
 					id=7073;
 					type="ModuleRespawnPosition_F";
 					class CustomAttributes
@@ -3915,7 +3915,7 @@ class Mission
 						position[]={1488.9423,37.25,900.35266};
 						angles[]={0,4.1578112,0};
 					};
-					init="this setVariable [""description"", ""Main office for the training facility.""]; " \n "";
+					init="this setVariable [""description"", ""Main office for the training facility.""];";
 					id=7074;
 					type="ModuleRespawnPosition_F";
 					class CustomAttributes
@@ -3996,7 +3996,7 @@ class Mission
 						position[]={1440.567,40.625,898.98999};
 						angles[]={0,1.7334958,0};
 					};
-					init="this setVariable [""description"", ""Small barracks.""]; this setVariable [""code"", {_this#9 params [""_unit"", ""_spawn""]; _unit attachTo [selectRandom [barracks_1,barracks_2,barracks_3,barracks_4],[0,0,0]]; detach _unit}]; " \n "" \n "";
+					init="this setVariable [""description"", ""Small barracks.""]; this setVariable [""code"", {_this#9 params [""_unit"", ""_spawn""]; _unit attachTo [selectRandom [barracks_1,barracks_2,barracks_3,barracks_4],[0,0,0]]; detach _unit}]; " \n "";
 					id=7082;
 					type="ModuleRespawnPosition_F";
 					class CustomAttributes
@@ -78557,7 +78557,7 @@ class Mission
 							class Attributes
 							{
 								init="if (local this && isClass (configFile >> ""CfgPatches"" >> ""rhsusf_xmas"")) then {this setUnitLoadout [[],[],[],[""rhs_uniform_g3_mc"",[[""FirstAidKit"",1],[""Chemlight_green"",2,1]]],[],[],"""",""G_Bandanna_tan"",[],[""ItemMap"","""","""",""ItemCompass"",""ItemWatch"",""""]]};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayer=1;
 								isPlayable=1;
 								receiveRemoteTargets=1;
@@ -78639,7 +78639,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								receiveRemoteTargets=1;
 								class Inventory
@@ -78720,7 +78720,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -78800,7 +78800,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								receiveRemoteTargets=1;
 								class Inventory
@@ -78881,7 +78881,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -78961,7 +78961,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79042,7 +79042,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79122,7 +79122,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79202,7 +79202,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79282,7 +79282,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79362,7 +79362,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79442,7 +79442,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								receiveRemoteTargets=1;
 								class Inventory
@@ -79524,7 +79524,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79604,7 +79604,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79684,7 +79684,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79764,7 +79764,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79844,7 +79844,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -79924,7 +79924,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80004,7 +80004,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80084,7 +80084,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80164,7 +80164,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80244,7 +80244,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80324,7 +80324,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80404,7 +80404,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80485,7 +80485,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80565,7 +80565,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80645,7 +80645,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80725,7 +80725,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80805,7 +80805,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{
@@ -80885,7 +80885,7 @@ class Mission
 							class Attributes
 							{
 								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
-								description="Select Role In-Game@Ungrouped";
+								description="Select role in-game@Ungrouped";
 								isPlayable=1;
 								class Inventory
 								{

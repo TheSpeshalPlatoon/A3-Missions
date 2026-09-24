@@ -2,7 +2,7 @@ if (!isServer) exitWith {};
 
 [
 	west, ["fob"], "Secure FOB", "Secure the enemy-held FOB.", 
-	"Attack", getPos task_base_close, {true}, {"base_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_base_close && side _x == east}) < 2)}, {false}, {false},
+	"Attack", "sector_base_close", {true}, {["base_close", "", sector_base_close, 0, 2] call tsp_fnc_sector_clear}, {false}, {false},
 	{}, {["reinf"] call tsp_fnc_sector_load}
 ] spawn tsp_fnc_task;
 [

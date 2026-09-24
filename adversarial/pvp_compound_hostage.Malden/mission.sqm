@@ -921,7 +921,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="this addAction [""Ground Floor"", {      " \n "  " \n "1 cutText ["""",""BLACK OUT"",1];  " \n "  " \n "sleep 2;  " \n "  " \n "player setPosASL (getPosASL mine1);   " \n "player setDir 181;  " \n "  " \n "sleep 0.5;    " \n " " \n "1 cutText ["""",""BLACK IN"",1];  " \n "  " \n "  " \n "}, nil, 1.5, true, true, """", ""true"", 5, false, """", """"];  " \n "";
+										init="this addAction [""Ground Floor"", {      " \n "  " \n "1 cutText ["""",""BLACK OUT"",1];  " \n "  " \n "sleep 2;  " \n "  " \n "player setPosASL (getPosASL mine1);   " \n "player setDir 181;  " \n "  " \n "sleep 0.5;    " \n " " \n "1 cutText ["""",""BLACK IN"",1];  " \n "  " \n "  " \n "}, nil, 1.5, true, true, """", ""true"", 5, false, """", """"]; ";
 										name="mineDoor2";
 										disableSimulation=1;
 									};
@@ -4582,7 +4582,7 @@ class Mission
 							angle=2.990551;
 							class Attributes
 							{
-								onActivation="{ " \n "    if (isClass (configOf _x >> ""Reflectors"")) then { " \n "        _x switchLight ""OFF""; " \n "    }; " \n "} forEach (ASLtoAGL getPosWorld player nearObjects 99999); " \n " " \n "hint ""The power has been cut.""; " \n "";
+								onActivation="{ " \n "    if (isClass (configOf _x >> ""Reflectors"")) then { " \n "        _x switchLight ""OFF""; " \n "    }; " \n "} forEach (ASLtoAGL getPosWorld player nearObjects 99999); " \n " " \n "hint ""The power has been cut."";";
 								sizeA=3.507;
 								sizeB=2.5;
 								sizeC=5;

@@ -110,7 +110,7 @@ class CfgORBAT {
 					class 52air: cdf {
 						text = "52nd Airborne Battalion"; textShort = "52nd Airborne"; type = "CombatAviation"; size = "Battalion"; commander = "Anatoli Potapenko"; commanderRank = "Captain";         
 						description = "Stationed in southern Chernarus, made up of well trained soldiers, considered to be special forces.";
-						subordinates[] = {}; assets[] = {{"rhsgref_BRDM2_b",20},{"UK3CB_B_LandRover_Closed_CDF",20},{"rhsgref_cdf_b_gaz66",20}};  
+						subordinates[] = {}; assets[] = {{"rhsgref_BRDM2_b",20},{"UK3CB_B_LandRover_Softtop_Transport_Closed_CDF",20},{"rhsgref_cdf_b_gaz66",20}};  
 					};
 			class cdf_navy: cdf {
 				text = "Navy"; textShort = "Navy"; type = "Maritime"; size = "Battalion"; commander = "Igor Dobryakov"; commanderRank = "Major";         

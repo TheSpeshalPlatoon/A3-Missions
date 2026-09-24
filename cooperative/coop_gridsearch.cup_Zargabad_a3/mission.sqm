@@ -29350,7 +29350,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""Acts_Commenting_On_Fight_loop""],["""","""","""",""Acts_Shocked_1_Loop"",""Acts_Shocked_3"",""Acts_Shocked_4_Loop""]] spawn tsp_fnc_animate}]; " \n "";
+												init="this setVariable [""init"",{[_this,[""Acts_Commenting_On_Fight_loop""],["""","""","""",""Acts_Shocked_1_Loop"",""Acts_Shocked_3"",""Acts_Shocked_4_Loop""]] spawn tsp_fnc_animate}];";
 											};
 											id=2093;
 											type="tsp_tka_officer";
@@ -29608,7 +29608,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_animate}];   " \n "";
+												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_animate}];  ";
 												stance="Up";
 											};
 											id=2102;
@@ -29966,7 +29966,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""Acts_Commenting_On_Fight_loop""],["""","""","""",""Acts_Shocked_1_Loop"",""Acts_Shocked_3"",""Acts_Shocked_4_Loop""]] spawn tsp_fnc_animate}]; " \n "";
+												init="this setVariable [""init"",{[_this,[""Acts_Commenting_On_Fight_loop""],["""","""","""",""Acts_Shocked_1_Loop"",""Acts_Shocked_3"",""Acts_Shocked_4_Loop""]] spawn tsp_fnc_animate}];";
 											};
 											id=2203;
 											type="tsp_tka_officer";
@@ -30289,7 +30289,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""Acts_AidlPercMstpSnonWnonDnon_warmup_6_loop"", ""Acts_AidlPercMstpSnonWnonDnon_warmup_7_loop""]] spawn tsp_fnc_animate}]; " \n "";
+												init="this setVariable [""init"",{[_this,[""Acts_AidlPercMstpSnonWnonDnon_warmup_6_loop"", ""Acts_AidlPercMstpSnonWnonDnon_warmup_7_loop""]] spawn tsp_fnc_animate}];";
 												stance="Middle";
 											};
 											id=2212;
@@ -31556,7 +31556,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""Acts_Commenting_On_Fight_loop""],["""","""","""",""Acts_Shocked_1_Loop"",""Acts_Shocked_3"",""Acts_Shocked_4_Loop""]] spawn tsp_fnc_animate}]; " \n "";
+												init="this setVariable [""init"",{[_this,[""Acts_Commenting_On_Fight_loop""],["""","""","""",""Acts_Shocked_1_Loop"",""Acts_Shocked_3"",""Acts_Shocked_4_Loop""]] spawn tsp_fnc_animate}];";
 											};
 											id=2268;
 											type="tsp_tka_officer";
@@ -31816,7 +31816,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_animate}];   " \n "";
+												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_animate}];  ";
 												stance="Up";
 											};
 											id=2278;
@@ -36599,7 +36599,7 @@ class Mission
 											flags=3;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_animate}];   " \n "";
+												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_animate}];  ";
 											};
 											id=2142;
 											type="tsp_ion_guard_akm";
@@ -36660,7 +36660,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_animate}];   " \n "";
+												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_animate}];  ";
 											};
 											id=2141;
 											type="tsp_ion_guard_akm";
@@ -36865,7 +36865,7 @@ class Mission
 											side="Empty";
 											class Attributes
 											{
-												init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+												init="[this, ""Heal""] call tsp_fnc_action; ";
 												name="heal";
 												disableSimulation=1;
 											};
@@ -36907,7 +36907,7 @@ class Mission
 									{
 									};
 									id=2839;
-									type="UK3CB_C_LandRover_Closed";
+									type="UK3CB_C_LandRover_Softtop_Transport_Closed";
 									atlOffset=0.0032293797;
 								};
 								class Item8
@@ -37932,7 +37932,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -38078,7 +38078,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 											};
 											id=2339;
 											type="tsp_tka_medic";
@@ -38112,7 +38112,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -38263,7 +38263,7 @@ class Mission
 											flags=1;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 											};
 											id=2344;
 											type="tsp_tka_teamlead";
@@ -38341,7 +38341,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -38471,7 +38471,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												stance="Down";
 											};
 											id=2355;
@@ -38610,7 +38610,7 @@ class Mission
 									{
 									};
 									id=2391;
-									type="UK3CB_C_LandRover_Closed";
+									type="UK3CB_C_LandRover_Softtop_Transport_Closed";
 								};
 								class Item1
 								{
@@ -42898,7 +42898,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -43027,7 +43027,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -43266,7 +43266,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -43373,7 +43373,7 @@ class Mission
 											flags=1;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -43612,7 +43612,7 @@ class Mission
 											flags=1;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -53690,7 +53690,7 @@ class Mission
 											flags=3;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												stance="Down";
 											};
 											id=2905;
@@ -53752,7 +53752,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												isPlayer=1;
 												stance="Down";
 											};
@@ -55103,7 +55103,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												stance="Down";
 											};
 											id=2918;
@@ -55164,7 +55164,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												stance="Down";
 											};
 											id=2919;
@@ -55367,7 +55367,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												stance="Middle";
 											};
 											id=2937;
@@ -55428,7 +55428,7 @@ class Mission
 											flags=5;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 											};
 											id=2935;
 											type="tsp_tka_antitank";
@@ -55650,7 +55650,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												stance="Middle";
 											};
 											id=2947;
@@ -55711,7 +55711,7 @@ class Mission
 											flags=4;
 											class Attributes
 											{
-												init="this setVariable [""init"",{_this setDamage 1}];";
+												init="this setVariable [""init"",{_this setDamage 1; removeFromRemainsCollector [_this]}];";
 												stance="Middle";
 											};
 											id=2957;

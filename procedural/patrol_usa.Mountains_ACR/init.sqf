@@ -9,15 +9,15 @@ BIS_CP_enemyGrp_fireTeam = configFile >> "CfgGroups" >> "East" >> "o_tsp_tkm" >>
 BIS_CP_enemyGrp_rifleSquad = configFile >> "CfgGroups" >> "East" >> "o_tsp_tkm" >> "Infantry" >> "o_tsp_tkm_squad";
 BIS_CP_enemyTroops = []; {BIS_CP_enemyTroops pushBack getText (_x >> "vehicle")} forEach ("TRUE" configClasses BIS_CP_enemyGrp_rifleSquad);
 
-BIS_CP_enemyVeh_MRAP = selectRandom ["UK3CB_TKM_I_Pickup_DSHKM","UK3CB_TKM_I_Pickup_M2","UK3CB_TKM_I_Datsun_Pkm","UK3CB_TKM_I_Hilux_M2","UK3CB_TKM_I_Hilux_Pkm"];
+BIS_CP_enemyVeh_MRAP = selectRandom ["UK3CB_TKM_O_Pickup_DSHKM","UK3CB_TKM_O_Pickup_M2","UK3CB_TKM_O_Datsun_Pkm","UK3CB_TKM_O_Hilux_M2","UK3CB_TKM_O_Hilux_Pkm"];
 BIS_CP_enemyVeh_Truck = configFile >> "CfgGroups" >> "East" >> "o_tsp_tkm" >> "Infantry" >> "o_tsp_tkm_atteam";
-BIS_CP_enemyVeh_UAV_big = selectRandom ["UK3CB_TKM_I_Hilux_Zu23", "UK3CB_TKM_I_Hilux_Zu23_Front", "UK3CB_TKM_I_BRDM2_HQ", "UK3CB_TKM_I_BRDM2"];
-BIS_CP_enemyVeh_UAV_small = selectRandom ["UK3CB_TKM_I_BTR40_MG"];
+BIS_CP_enemyVeh_UAV_big = selectRandom ["UK3CB_TKM_O_Hilux_Zu23", "UK3CB_TKM_O_Hilux_Zu23_Front", "UK3CB_TKM_O_BRDM2_HQ", "UK3CB_TKM_O_BRDM2"];
+BIS_CP_enemyVeh_UAV_small = selectRandom ["UK3CB_TKM_O_BTR40_MG"];
 
-BIS_CP_enemyVeh_reinf1 = selectRandom ["UK3CB_TKM_I_BMP1","UK3CB_TKM_I_BTR60", "UK3CB_TKM_I_MTLB_PKT", "UK3CB_TKM_I_MTLB_ZU23"];
-BIS_CP_enemyVeh_reinf2 = selectRandom ["UK3CB_TKM_I_BMP1","UK3CB_TKM_I_BTR60", "UK3CB_TKM_I_MTLB_PKT", "UK3CB_TKM_I_MTLB_ZU23"];
-BIS_CP_enemyVeh_reinfAir = selectRandom ["UK3CB_TKM_I_T55", "UK3CB_TKM_I_T34"];
-BIS_CP_supportClasses = ["UK3CB_TKM_I_V3S_Reammo", "UK3CB_TKM_I_V3S_Refuel", "UK3CB_TKM_I_V3S_Repair"];
+BIS_CP_enemyVeh_reinf1 = selectRandom ["UK3CB_TKM_O_BMP1","UK3CB_TKM_O_BTR60", "UK3CB_TKM_O_MTLB_PKT", "UK3CB_TKM_O_MTLB_ZU23"];
+BIS_CP_enemyVeh_reinf2 = selectRandom ["UK3CB_TKM_O_BMP1","UK3CB_TKM_O_BTR60", "UK3CB_TKM_O_MTLB_PKT", "UK3CB_TKM_O_MTLB_ZU23"];
+BIS_CP_enemyVeh_reinfAir = selectRandom ["UK3CB_TKM_O_T55", "UK3CB_TKM_O_T34"];
+BIS_CP_supportClasses = ["UK3CB_TKM_O_V3S_Reammo", "UK3CB_TKM_O_V3S_Refuel", "UK3CB_TKM_O_V3S_Repair"];
 
 BIS_CP_HVT = "tsp_tkm_warlord";
 BIS_CP_Guard = "tsp_tkm_akm";

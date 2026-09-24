@@ -1,8 +1,8 @@
 tsp_fnc_defend_select = {
 	params ["_center"];
-	if !(isServer || serverCommandAvailable "#kick") exitWith {systemChat "Only Admin can select position."};
+	if !(isServer || serverCommandAvailable "#kick") exitWith {systemChat "Only Admin can select position."}; systemChat "Position Selected";
 	{_x setPos _center} forEach playableUnits; [""] remoteExec ["onMapSingleClick", 0]; [[false, false]] remoteExec ["openMap", 0];
-	tsp_defend_start = true; publicVariable "tsp_defend_start"; tsp_arsenal_item setPos [_center#0, _center#1, 60]; [objnull, tsp_arsenal_item] call BIS_fnc_curatorObjectEdited; 
+	tsp_defend_start = true; publicVariable "tsp_defend_start"; tsp_arsenal_item setPos [_center#0, _center#1, 60]; [objNull, tsp_arsenal_item] call BIS_fnc_curatorObjectEdited; 
 	[[side group player, "PAPA_BEAR"], "Enemies are moving quick on your location! Fortify the area and get ready to hold!"] remoteExec ["sideChat"]; sleep 3;
 	[[side group player, "PAPA_BEAR"], "You have approximately 3 minutes before they arrive!"] remoteExec ["sideChat"]; sleep 3;
 	[[side group player, "PAPA_BEAR"], "An airdrop is inbound on your current location!"] remoteExec ["sideChat"]; sleep 120; 
