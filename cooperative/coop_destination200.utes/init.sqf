@@ -18,7 +18,7 @@
 		uiSleep 8; [3,2,false] call bis_fnc_animatedScreen;
 	}], [10,{
 		[4,2,false] call bis_fnc_animatedScreen;
-		[true, ["The ChDKZ and its supporters vowed to challenge the ruling pro-West Party; their ultimate goal being full integration with Russia."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
+		[true, ["ChDKZ and its supporters vowed to challenge the ruling pro-West Party; their ultimate goal being full integration with Russia."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
 		uiSleep 8; [3,2,false] call bis_fnc_animatedScreen;
 	}], [6,{
 		[4,2,false] call bis_fnc_animatedScreen;
@@ -27,7 +27,7 @@
 		uiSleep 4; [3,2,false] call bis_fnc_animatedScreen;
 	}], [10,{
 		[4,2,false] call bis_fnc_animatedScreen;
-		[true, ["In response to its rise, anti-ChDKZ radicals rallied together to form the National Party (NAPA), vowing to stamp out the ChDKZ and its supporters."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
+		[true, ["In response to its rise, anti-ChDKZ radicals rallied together to form the National Party (NAPA), vowing to stamp out ChDKZ and its supporters."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
 		uiSleep 8; [3,2,false] call bis_fnc_animatedScreen;
 	}],	[6,{
 		[4,2,false] call bis_fnc_animatedScreen;
@@ -45,7 +45,7 @@
 		uiSleep 4; [3,2,false] call bis_fnc_animatedScreen;
 	}], [8,{
 		[4,2,false] call bis_fnc_animatedScreen;
-		[true, ["In 2015, Russia launched a full scale invasion with the goal of 'restoring order', in support of the ChDKZ."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
+		[true, ["In 2015, Russia launched a full scale invasion with the goal of 'restoring order', in support of ChDKZ."], 4] spawn BIS_fnc_OM_AS_ShowStaticText;
 		uiSleep 6; [3,2,false] call bis_fnc_animatedScreen;
 	}], [10,{
 		[4,2,false] call bis_fnc_animatedScreen;
@@ -84,20 +84,20 @@ tsp_fnc_explosions = {
 	};
 };
 
-[ao,[[2878.34,3829.61,0],[3685.72,3120.94,0],[3981.51,3118.23,0],[3240.52,3571.66,0],[3536.67,3028.74,0]],["Bo_GBU12_lgb"],10] spawn tsp_fnc_explosions;
+[ao,[[2800,3800,0],[3700,3100,0],[4000,3100,0],[3200,3600.66,0],[3500,3000,0]],["Bo_GBU12_lgb"],10] spawn tsp_fnc_explosions;
 
 [
-	east, "beach", "Secure Beachhead", "Clear the beachhead ahead of main lazo, likely lightly defended due to friendly naval gunfire. Warning, friendly unit lost in nearby town of Strelka.", "Land", getPos task_beach, 
+	east, "beach", "Secure Beachhead", "Clear the beachhead ahead of main lazo, likely lightly defended due to friendly naval gunfire. Warning, friendly unit lost in nearby town of Strelka.", "Land", [4000,3000,0], 
 	{true}, {"aaa" call BIS_fnc_taskState == "SUCCEEDED" && "trench1" call BIS_fnc_taskState == "SUCCEEDED" && "trench2" call BIS_fnc_taskState == "SUCCEEDED"}, {false}, {false},
 	{}, {[] spawn tsp_fnc_lazo}
 ] spawn tsp_fnc_task;
-[west, "aaa", "", "", "", [0,0,0], {true}, {"aaa_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_aaa && side _x == west})) < 2}] spawn tsp_fnc_task;
-[west, "trench1", "", "", "", [0,0,0], {true}, {"trench1_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_trench1 && side _x == west})) < 2}] spawn tsp_fnc_task;
-[west, "trench2", "", "", "", [0,0,0], {true}, {"trench2_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_trench2 && side _x == west})) < 2}] spawn tsp_fnc_task;
+[west, "aaa", "", "", "", [0,0,0], {true}, {["aaa_close", "", sector_aaa_close, 0, 0, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, "trench1", "", "", "", [0,0,0], {true}, {["trench1_close", "", sector_trench1_close, 0, 0, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, "trench2", "", "", "", [0,0,0], {true}, {["trench2_close", "", sector_trench2_close, 0, 0, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
 
 [
-	east, "strelka", "Investigate", "Investigate Strelka for lost pathfinder unit.", "Search", getPos task_strelka, 
-	{true}, {"strelka" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_strelka && side _x == west})) < 2}
+	east, "strelka", "Investigate", "Investigate Strelka for lost pathfinder unit.", "Search", "sector_strelka_close", 
+	{true}, {["strelka", "", sector_strelka_close, 0, 2, [west]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 
 [
@@ -106,41 +106,41 @@ tsp_fnc_explosions = {
 ] spawn tsp_fnc_task;
 
 [
-	east, ["airsouth", "air"], "South", "Secure all Military structures on the south side of the Airfield.", "S", getPos task_airsouth, 
-	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {"beach_aaa" call BIS_fnc_taskState == "SUCCEEDED" && "beach_trench1" call BIS_fnc_taskState == "SUCCEEDED" && "beach_trench2" call BIS_fnc_taskState == "SUCCEEDED"}
+	east, ["airsouth", "air"], "South", "Secure all Military structures on the south side of the Airfield.", "S", [3700,3500,0], 
+	{"air" call BIS_fnc_taskState != ""}, {"beach_aaa" call BIS_fnc_taskState == "SUCCEEDED" && "beach_trench1" call BIS_fnc_taskState == "SUCCEEDED" && "beach_trench2" call BIS_fnc_taskState == "SUCCEEDED"}
 ] spawn tsp_fnc_task;
-[west, "hangar", "", "", "", [0,0,0], {true}, {"hangar_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_hangar && side _x == west})) < 2}] spawn tsp_fnc_task;
-[west, "hq", "", "", "", [0,0,0], {true}, {"hq_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_hq && side _x == west})) < 2}] spawn tsp_fnc_task;
-[west, "radar", "", "", "", [0,0,0], {true}, {"radar_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_radar && side _x == west})) < 2}] spawn tsp_fnc_task;
+[west, "hangar", "", "", "", [0,0,0], {"air" call BIS_fnc_taskState != ""}, {["hangar_close", "", sector_hangar_close, 0, 1, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, "hq", "", "", "", [0,0,0], {"air" call BIS_fnc_taskState != ""}, {["hq_close", "", sector_hq_close, 0, 1, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, "radar", "", "", "", [0,0,0], {"air" call BIS_fnc_taskState != ""}, {["radar_close", "", sector_radar_close, 0, 1, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
 
 [
-	east, ["airnorth", "air"], "North", "Secure all Military structures on the north side of the Airfield.", "N", getPos task_airnorth, 
-	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {"bunker_outside" call BIS_fnc_taskState == "SUCCEEDED" && "atc" call BIS_fnc_taskState == "SUCCEEDED"}
+	east, ["airnorth", "air"], "North", "Secure all Military structures on the north side of the Airfield.", "N", [3600,3700,0], 
+	{"air" call BIS_fnc_taskState != ""}, {"bunker_outside" call BIS_fnc_taskState == "SUCCEEDED" && "atc" call BIS_fnc_taskState == "SUCCEEDED"}
 ] spawn tsp_fnc_task;
-[west, "bunker_outside", "", "", "", [0,0,0], {true}, {"bunker_outside" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_bunker_outside && side _x == west}) < 2)}] spawn tsp_fnc_task;
-[west, "atc", "", "", "", [0,0,0], {true}, {"atc_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_atc && side _x == west})) < 2}] spawn tsp_fnc_task;
+[west, "bunker_outside", "", "", "", [0,0,0], {"air" call BIS_fnc_taskState != ""}, {["bunker_outside", "", sector_bunker_outside, 0, 1, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, "atc", "", "", "", [0,0,0], {"air" call BIS_fnc_taskState != ""}, {["atc_close", "", sector_atc_close, 0, 1, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
 
 [
-	east, ["bunker", "air"], "Bunker", "Secure the Soviet-era underground bunker.", "Container", getPos task_bunker, 
+	east, ["bunker", "air"], "Bunker", "Secure the Soviet-era underground missile bunker which has multiple entrances and runs under the airfield.", "Container", [3700, 3800, 0], 
 	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {"bunker_hall" call BIS_fnc_taskState == "SUCCEEDED" && "bunker_room" call BIS_fnc_taskState == "SUCCEEDED" && "bunker_silo" call BIS_fnc_taskState == "SUCCEEDED"}
 ] spawn tsp_fnc_task;
-[west, "bunker_hall", "", "", "", [0,0,0], {true}, {"bunker_hall" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_bunker_hall && side _x == west})) < 2}] spawn tsp_fnc_task;
-[west, "bunker_room", "", "", "", [0,0,0], {true}, {"bunker_room" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_bunker_room && side _x == west})) < 2}] spawn tsp_fnc_task;
-[west, "bunker_silo", "", "", "", [0,0,0], {true}, {"bunker_silo" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_bunker_silo && side _x == west})) < 2}] spawn tsp_fnc_task;
+[west, "bunker_hall", "", "", "", [0,0,0], {"bunker" call BIS_fnc_taskState != ""}, {["bunker_hall", "", sector_bunker_hall, 0, 1, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, "bunker_room", "", "", "", [0,0,0], {"bunker" call BIS_fnc_taskState != ""}, {["bunker_room", "", sector_bunker_room, 0, 1, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[west, "bunker_silo", "", "", "", [0,0,0], {"bunker" call BIS_fnc_taskState != ""}, {["bunker_silo", "", sector_bunker_silo, 0, 1, [west]] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
 
 [
-	east, "tank", "Armour Base", "Secure all Military structures on the north side of the Airfield.", "Car", getPos task_tank, 
-	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {"tank_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_tank && side _x == west})) < 2}
+	east, "tank", "Armour Base", "Secure all Military structures on the north side of the Airfield.", "Car", "sector_tank_close",
+	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {["tank_close", "", sector_tank_close, 0, 1, [west]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
-	east, "old", "Old Radar Base", "Secure abandoned Soviet-era radar base.", "Listen", getPos task_old, 
-	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {"old_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_old && side _x == west})) < 2}
+	east, "old", "Old Radar Base", "Secure abandoned Soviet-era radar base.", "Listen", "sector_old_close",
+	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {["old_close", "", sector_old_close, 0, 1, [west]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
-	east, "dock", "Dock", "Secure navy dock.", "Boat", getPos task_dock, 
-	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {"dock_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_dock && side _x == west})) < 2}
+	east, "dock", "Dock", "Secure navy dock.", "Boat", "sector_dock_close",
+	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {["dock_close", "", sector_dock_close, 0, 1, [west]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
-	east, "hill", "Hill 71", "Tallest position on Utes, likely a CDF position.", "Scout", getPos task_hill, 
-	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {"hill_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_hill && side _x == west})) < 2}
+	east, "hill", "Hill 71", "Highest position on Utes, likely a CDF position.", "Scout", "sector_hill_close", 
+	{"beach" call BIS_fnc_taskState == "SUCCEEDED"}, {["hill_close", "", sector_hill_close, 0, 1, [west]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;

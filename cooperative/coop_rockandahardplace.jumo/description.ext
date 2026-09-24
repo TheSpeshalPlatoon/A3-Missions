@@ -26,7 +26,7 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"USMC - 3rd Reconnaissance Battalion", "data\3recon.paa", "west", {
+	{"USMC - 3rd Reconnaissance Battalion", "\tsp_core\data\insignia\3recon.paa", "west", {
 		{"Trojan HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
 			{"SARC Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
@@ -53,7 +53,7 @@ tsp_roles[] = {
 			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
 		}}
 	}},
-	{"USMC - 3rd Marine Littoral Regiment", "data\3mef.paa", "west", {
+	{"USMC - 3rd Marine Littoral Regiment", "\tsp_core\data\insignia\3mef.paa", "west", {
 		{"Berger HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "rhsusf_usmc_marpat_wd_fso", {"usmc_grunt","us_leader"}, "iconManCommander_ca.paa"},
 			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
@@ -159,7 +159,7 @@ class CfgORBAT {
         side = "West"; 
         text = "3rd Marine Expeditionary Force"; 
         textShort = "III-MEF"; 
-		insignia = "data\3mef.paa";
+		insignia = "\tsp_core\data\insignia\3mef.paa";
         description = "III MEF is the nucleus of a joint and coalition Stand-In Force within the First Island Chain. In competition, III MEF assures and expands access for the joint force across the Indo-Pacific. In crisis, it provides in-place response forces to secure allies and partners while deterring adversary aggression. In conflict, III MEF fights from advanced naval bases as part of a naval expeditionary force and enables Joint Force objectives in the Indo-Pacific."; 
         type = "Infantry"; 
         size = "Corps"; 
@@ -270,7 +270,7 @@ class CfgORBAT {
         class 3recon: 3mar {
             text = "3rd Reconnaissance Battalion"; 
             textShort = "3rd Recon";
-			insignia = "data\3recon.paa";
+			insignia = "\tsp_core\data\insignia\3recon.paa";
             description = "2 Platoons from the 3rd Reconnaissance Battalion.";
             type = Recon;  
             size = Squad; 
@@ -301,7 +301,7 @@ class CfgORBATOld {
         side = "West"; 
         text = "3rd Marine Expeditionary Force"; 
         textShort = "III-MEF"; 
-		insignia = "data\3mef.paa";
+		insignia = "\tsp_core\data\insignia\3mef.paa";
         description = "III MEF is the nucleus of a joint and coalition Stand-In Force within the First Island Chain. In competition, III MEF assures and expands access for the joint force across the Indo-Pacific. In crisis, it provides in-place response forces to secure allies and partners while deterring adversary aggression. In conflict, III MEF fights from advanced naval bases as part of a naval expeditionary force and enables Joint Force objectives in the Indo-Pacific."; 
         type = "Infantry"; 
         size = "Corps"; 
@@ -412,7 +412,7 @@ class CfgORBATOld {
         class 3recon: 3mar {
             text = "3rd Reconnaissance Battalion"; 
             textShort = "3rd Recon";
-			insignia = "data\3recon.paa";
+			insignia = "\tsp_core\data\insignia\3recon.paa";
             description = "2 Platoons from the 3rd Reconnaissance Battalion.";
             type = Recon;  
             size = Squad; 

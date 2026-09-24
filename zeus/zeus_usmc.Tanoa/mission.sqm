@@ -81,7 +81,6 @@ addons[]=
 	"rhsgref_c_vehicles_ret",
 	"A3_Static_F_Destroyer_Boat_Rack_01",
 	"CUP_WheeledVehicles_TowingTractor",
-	"tsp_faction_external",
 	"cup",
 	"RHS_US_A2_AirImport",
 	"tsp_faction_usn",
@@ -2678,7 +2677,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Teleport""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Teleport""] call tsp_fnc_action; ";
 									};
 									id=9894;
 									type="Land_MapBoard_01_Wall_F";
@@ -2725,7 +2724,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Teleport""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Teleport""] call tsp_fnc_action; ";
 									};
 									id=9895;
 									type="Land_MapBoard_01_Wall_F";
@@ -2772,7 +2771,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Teleport""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Teleport""] call tsp_fnc_action; ";
 									};
 									id=9896;
 									type="Land_MapBoard_01_Wall_F";
@@ -2853,7 +2852,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="_action = [""FastRopeActionYo"",""Fast Rope"","""",{[player, rope] call ace_fastroping_fnc_fastRope},{true},{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;  " \n "[this, 0, [], _action] call ace_interact_menu_fnc_addActionToObject; " \n "";
+										init="_action = [""FastRopeActionYo"",""Fast Rope"","""",{[player, rope] call ace_fastroping_fnc_fastRope},{true},{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;  " \n "[this, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;";
 										name="rope_action";
 									};
 									id=9898;
@@ -3019,7 +3018,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_1";
 									};
 									id=9902;
@@ -3037,7 +3036,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_8";
 									};
 									id=9903;
@@ -3055,7 +3054,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_2";
 									};
 									id=9904;
@@ -3073,7 +3072,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_6";
 									};
 									id=9905;
@@ -3091,7 +3090,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_7";
 									};
 									id=9906;
@@ -3109,7 +3108,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_5";
 									};
 									id=9907;
@@ -3127,7 +3126,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_4";
 									};
 									id=9908;
@@ -3145,7 +3144,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_3";
 									};
 									id=9909;
@@ -4287,7 +4286,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										disableSimulation=1;
 									};
 									id=9932;
@@ -4305,7 +4304,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="this setObjectScale 2; [this, ""Garage"", ""true"", [lpd_sea_pos, 4, {[""UK3CB_B_RHIB_USN"",""UK3CB_B_RHIB_Gunboat_USN"",""rhsgref_hidf_rhib"",""CUP_B_Seafox_USMC"",""CUP_B_Seafox_USV_USMC"",""B_G_Boat_Transport_01_F""]}], ""\tsp_core\data\actions\boat.paa""] call tsp_fnc_action;  " \n "";
+										init="this setObjectScale 2; [this, ""Garage"", ""true"", [lpd_sea_pos, 4, {[""UK3CB_B_RHIB_USN"",""UK3CB_B_RHIB_Gunboat_USN"",""rhsgref_hidf_rhib"",""CUP_B_Seafox_USMC"",""CUP_B_Seafox_USV_USMC"",""B_G_Boat_Transport_01_F""]}], ""\tsp_core\data\actions\boat.paa""] call tsp_fnc_action; ";
 										name="lpd_sea_action";
 										disableSimulation=1;
 									};
@@ -4452,7 +4451,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Teleport""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Teleport""] call tsp_fnc_action; ";
 									};
 									id=9936;
 									type="Land_MapBoard_01_Wall_F";

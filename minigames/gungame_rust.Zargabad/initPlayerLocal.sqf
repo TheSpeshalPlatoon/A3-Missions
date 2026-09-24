@@ -1,7 +1,7 @@
 gg_loadouts = [ 
     [["rhs_weap_m4_handguard_car","Tier1_AAC_M42000_Black","rhs_acc_m4_car_pointer","",["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",30],[],"rhs_acc_m4_handguard"],[],[],["rhs_uniform_acu_ocp",[["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",3,30]]],["V_Chestrig_khk",[["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",7,30]]],[],"","",[],["","","ItemRadioAcreFlagged","","",""]], 
 
-    [["rhs_weap_akm","rhs_acc_dtkakm","","",["rhs_30Rnd_762x39mm_tracer",30],[],""],[],[],["a2_tak2_3",[["rhs_30Rnd_762x39mm_tracer",2,30]]],[],[],"UK3CB_TKM_I_H_Turban_03_1","",[],["","","ItemRadioAcreFlagged","","",""]], 
+    [["rhs_weap_akm","rhs_acc_dtkakm","","",["rhs_30Rnd_762x39mm_tracer",30],[],""],[],[],["a2_tak2_3",[["rhs_30Rnd_762x39mm_tracer",2,30]]],[],[],"UK3CB_TKM_O_H_Turban_03_1","",[],["","","ItemRadioAcreFlagged","","",""]], 
      
     [["rhs_weap_m4a1_carryhandle","","","",["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",30],[],""],[],[],["U_I_G_Story_Protagonist_F",[["rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red",3,30]]],["assaultVest_black",[]],[],"rhssaf_helmet_m97_black_nocamo_black_ess","",[],["","","ItemRadioAcreFlagged","","",""]], 
      

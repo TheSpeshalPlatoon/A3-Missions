@@ -123,7 +123,6 @@ addons[]=
 	"rhsgref_c_vehicles_ret",
 	"A3_Static_F_Destroyer_Boat_Rack_01",
 	"CUP_WheeledVehicles_TowingTractor",
-	"tsp_faction_external",
 	"cup",
 	"RHS_US_A2_AirImport",
 	"tsp_faction_usn",
@@ -5034,7 +5033,7 @@ class Mission
 								init="this setFuel (random 0.3)";
 							};
 							id=1659;
-							type="UK3CB_C_LandRover_Closed";
+							type="UK3CB_C_LandRover_Softtop_Transport_Closed";
 							atlOffset=-0.0018615723;
 						};
 						class Item8
@@ -7703,7 +7702,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="Following a recent escalation in insurgent activity, Coalition assets have confirmed that Farabad has become a major logistics hub for enemy operations throughout Takistan. <br/><br/>    " \n "Arms trafficking, recruitment, and coordinated attacks have spiked, destabilizing nearby regions. The town's proximity to key mountain passes makes it a strategic node for insurgent movement. <br/><br/>    " \n "Jalali Khara, a known insurgent commander and orchestrator of several ambushes on NATO convoys, has been positively ID'd operating in the sector. Additionally, weapons caches used to arm local cells have been located and must be neutralized. " \n "";
+											value="Following a recent escalation in insurgent activity, Coalition assets have confirmed that Farabad has become a major logistics hub for enemy operations throughout Takistan. <br/><br/>    " \n "Arms trafficking, recruitment, and coordinated attacks have spiked, destabilizing nearby regions. The town's proximity to key mountain passes makes it a strategic node for insurgent movement. <br/><br/>    " \n "Jalali Khara, a known insurgent commander and orchestrator of several ambushes on NATO convoys, has been positively ID'd operating in the sector. Additionally, weapons caches used to arm local cells have been located and must be neutralized.";
 										};
 									};
 								};
@@ -10458,7 +10457,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Teleport""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Teleport""] call tsp_fnc_action; ";
 									};
 									id=2980;
 									type="Land_MapBoard_01_Wall_F";
@@ -10505,7 +10504,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Teleport""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Teleport""] call tsp_fnc_action; ";
 									};
 									id=2981;
 									type="Land_MapBoard_01_Wall_F";
@@ -10552,7 +10551,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Teleport""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Teleport""] call tsp_fnc_action; ";
 									};
 									id=2982;
 									type="Land_MapBoard_01_Wall_F";
@@ -10633,7 +10632,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="_action = [""FastRopeActionYo"",""Fast Rope"","""",{[player, rope] call ace_fastroping_fnc_fastRope},{true},{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;  " \n "[this, 0, [], _action] call ace_interact_menu_fnc_addActionToObject; " \n "";
+										init="_action = [""FastRopeActionYo"",""Fast Rope"","""",{[player, rope] call ace_fastroping_fnc_fastRope},{true},{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;  " \n "[this, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;";
 										name="rope_action";
 									};
 									id=2984;
@@ -10799,7 +10798,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_1";
 									};
 									id=2988;
@@ -10817,7 +10816,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_8";
 									};
 									id=2989;
@@ -10835,7 +10834,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_2";
 									};
 									id=2990;
@@ -10853,7 +10852,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_6";
 									};
 									id=2991;
@@ -10871,7 +10870,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_7";
 									};
 									id=2992;
@@ -10889,7 +10888,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_5";
 									};
 									id=2993;
@@ -10907,7 +10906,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_4";
 									};
 									id=2994;
@@ -10925,7 +10924,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										name="heal_3";
 									};
 									id=2995;
@@ -12067,7 +12066,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 										disableSimulation=1;
 									};
 									id=3018;
@@ -12085,7 +12084,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="this setObjectScale 2; [this, ""Garage"", ""true"", [lpd_sea_pos, 4, {[""UK3CB_B_RHIB_USN"",""UK3CB_B_RHIB_Gunboat_USN"",""rhsgref_hidf_rhib"",""CUP_B_Seafox_USMC"",""CUP_B_Seafox_USV_USMC"",""B_G_Boat_Transport_01_F""]}], ""\tsp_core\data\actions\boat.paa""] call tsp_fnc_action;  " \n "";
+										init="this setObjectScale 2; [this, ""Garage"", ""true"", [lpd_sea_pos, 4, {[""UK3CB_B_RHIB_USN"",""UK3CB_B_RHIB_Gunboat_USN"",""rhsgref_hidf_rhib"",""CUP_B_Seafox_USMC"",""CUP_B_Seafox_USV_USMC"",""B_G_Boat_Transport_01_F""]}], ""\tsp_core\data\actions\boat.paa""] call tsp_fnc_action; ";
 										name="lpd_sea_action";
 										disableSimulation=1;
 									};
@@ -12232,7 +12231,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Teleport""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Teleport""] call tsp_fnc_action; ";
 									};
 									id=3022;
 									type="Land_MapBoard_01_Wall_F";

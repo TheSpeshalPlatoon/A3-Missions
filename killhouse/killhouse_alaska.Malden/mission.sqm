@@ -8,24 +8,113 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=9684;
+		nextID=9686;
 	};
 	class LayerIndexProvider
 	{
-		nextID=9995;
+		nextID=10505;
 	};
 	class Camera
 	{
-		pos[]={11654.137,23.262098,4451.5112};
-		dir[]={-0.93974829,-0.26884019,-0.21120241};
-		up[]={-0.26230147,0.96318513,-0.058950573};
-		aside[]={-0.21927561,4.7541107e-08,0.97566801};
+		pos[]={11663.898,70.993904,4420.4131};
+		dir[]={-0.8246184,-0.51321346,0.23814167};
+		up[]={-0.49306077,0.85825944,0.14239062};
+		aside[]={0.27746415,3.2933895e-07,0.96078759};
 	};
 };
 binarizationWanted=0;
 sourceName="killhouse_alaska";
 addons[]=
 {
+	"A3_Rocks_F_Exp_Cliff",
+	"A3_Rocks_F_Enoch",
+	"A3_Structures_F_Mil_Helipads",
+	"A3_Structures_F_Enoch_Military_Training",
+	"A3_Structures_F_Oldman_Decals",
+	"A3_Structures_F_System",
+	"A3_Structures_F_Tank_Decals_Horizontal",
+	"A3_Structures_F_Enoch_Decals_Horizontal",
+	"A3_Props_F_Enoch_Military_Decontamination",
+	"A3_Structures_F_Argo_Decals_Horizontal",
+	"A3_Weapons_F_Ammoboxes",
+	"ace_cargo",
+	"A3_Props_F_Orange_Humanitarian_Camps",
+	"A3_Props_F_Exp_Military_Camps",
+	"A3_Misc_F_Helpers",
+	"A3_Structures_F_Bootcamp_System",
+	"A3_Structures_F_Civ_InfoBoards",
+	"A3_Structures_F_EPA_Walls",
+	"A3_Props_F_Decade_Objectives",
+	"A3_Structures_F_Orange_Humanitarian_Flags",
+	"A3_Structures_F_Enoch_VR_Helpers",
+	"A3_Structures_F_Items_Electronics",
+	"tsp_music_radio",
+	"A3_Structures_F_Civ_Camping",
+	"A3_Structures_F_Heli_Ind_Airport",
+	"A3_Structures_F_Exp_Walls_Concrete",
+	"A3_Structures_F_Mark_Training",
+	"A3_Weapons_F",
+	"ace_sitting",
+	"A3_Structures_F_Civ_Lamps",
+	"A3_Props_F_Enoch_Military_Camps",
+	"A3_Props_F_Exp_Industrial_HeavyEquipment",
+	"A3_Structures_F_Ind_Cargo",
+	"A3_Structures_F_Exp_Civilian_Sheds",
+	"A3_Structures_F_Exp_Civilian_Accessories",
+	"A3_Props_F_Enoch_Civilian_Camping",
+	"A3_Props_F_Enoch_Military_Equipment",
+	"A3_Structures_F_Bootcamp_Civ_SportsGrounds",
+	"A3_Structures_F_Civ_Garbage",
+	"A3_Soft_F_Orange_Van_02",
+	"A3_Props_F_Orange_Civilian_Constructions",
+	"A3_Structures_F_Civ_Constructions",
+	"A3_Structures_F_Exp_Industrial_Materials",
+	"A3_Structures_F_EPB_Civ_Garbage",
+	"ace_dragging",
+	"A3_Structures_F_Civ_Market",
+	"A3_Structures_F_Items_Documents",
+	"A3_Structures_F_Heli_Civ_Market",
+	"A3_Structures_F_Mil_Shelters",
+	"A3_Structures_F_Ind_WindPowerPlant",
+	"A3_Props_F_Orange_Humanitarian_Supplies",
+	"A3_Signs_F",
+	"A3_Structures_F_Enoch_Walls_Concrete",
+	"A3_Structures_F_EPA_Items_Food",
+	"A3_Structures_F_Training",
+	"A3_Structures_F_Civ_Dead",
+	"A3_Structures_F_Wrecks",
+	"A3_Structures_F_Mark_Items_Sport",
+	"cba_xeh",
+	"A3_Props_F_Exp_Infrastructure_Traffic",
+	"A3_Modules_F_Intel",
+	"A3_Ui_F",
+	"Bro_MSW_Base",
+	"A3_Structures_F_Enoch_Infrastructure_Roads",
+	"A3_Structures_F_Ind_Shed",
+	"A3_Props_F_Enoch_Industrial_Electric",
+	"A3_Structures_F_Enoch_Military_Camps",
+	"A3_Structures_F_Items_Vessels",
+	"A3_Structures_F_Kart_Civ_SportsGrounds",
+	"A3_Modules_F",
+	"A3_Characters_F",
+	"A3_Weapons_F_Rifles_MX",
+	"ace_scopes",
+	"A3_Weapons_F_Acc",
+	"A3_Weapons_F_Exp",
+	"A3_Weapons_F_Pistols_Pistol_Heavy_01",
+	"ace_attach",
+	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
+	"tsp_medical",
+	"UK3CB_Factions_Equipment_Vests",
+	"A3_Soft_F_Quadbike_01",
+	"A3_Modules_F_Curator_Curator",
+	"ace_nightvision",
+	"ace_hearing",
+	"A3_Sounds_F",
+	"A3_Sounds_F_Enoch",
+	"ace_ai",
+	"Desert"
 };
 class AddonsMetaData
 {
@@ -57152,7 +57241,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 							};
 							id=2304;
 							type="Land_FirstAidKit_01_open_F";
@@ -57170,7 +57259,7 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+								init="[this, ""Heal""] call tsp_fnc_action; ";
 							};
 							id=2341;
 							type="Land_FirstAidKit_01_open_F";
@@ -58057,7 +58146,7 @@ class Mission
 							flags=5;
 							class Attributes
 							{
-								init="[this, ""Weather""] call tsp_fnc_action; " \n "";
+								init="[this, ""Weather""] call tsp_fnc_action;";
 							};
 							id=1343;
 							type="PortableFlagPole_01_F";
@@ -58931,7 +59020,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="[this, ""Sleep""] call tsp_fnc_action;" \n "";
+								init="[this, ""Sleep""] call tsp_fnc_action;";
 							};
 							id=5124;
 							type="Land_Sleeping_bag_blue_F";
@@ -86045,11 +86134,11 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={11621.094,13.987395,4449.3252};
+						position[]={11634.172,14.803718,4449.3364};
+						angles[]={0.0055886414,0,0};
 					};
 					id=5082;
 					type="ModuleCurator_F";
-					atlOffset=-0.81584358;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -89204,7 +89293,7 @@ class Mission
 				};
 			};
 			id=1625;
-			atlOffset=0.37116909;
+			atlOffset=0.37435818;
 		};
 		class Item1
 		{

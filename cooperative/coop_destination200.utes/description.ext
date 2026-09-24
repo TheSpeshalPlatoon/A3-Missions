@@ -9,13 +9,13 @@ class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_co
 tsp_param_mission = true;               //-- Run TSP mission scripts
 tsp_param_addons = false;              //-- Run TSP addon scripts
 tsp_param_spawn = true;               //-- Show spawn map at all
-tsp_param_spawnStart = false;        //-- Show spawn screen on initial spawn
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
 tsp_param_spawnScale = 0.3;         //-- Spawn screen scale, smaller is closer
 tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
 tsp_param_spectate = "Dynamic";   //-- "Disabled", "Dynamic", "Forced"
 tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
 tsp_param_role = true;          //-- Custom CfgRole select screen
-tsp_param_roleStart = false;   //-- Force player to select role at start of 
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
 tsp_param_roleCheck = false;  //-- Gear checking
 tsp_param_dispersion = 30;   //-- AI weapon dispersion
 tsp_param_skill = 1;        //-- AI skill
@@ -27,12 +27,12 @@ tsp_param_weather = false;
 
 tsp_roles[] = {
 	{"VMF - 11th Frogmen Spetsnaz", "\tsp_core\data\insignia\11frog.paa", "east", {
-		{"Shapka HQ", "markers\nato\b_hq.paa", {
+		{"Shapka HQ", "markers\nato\o_hq.paa", {
 			{"Platoon Leader", "rhs_vdv_officer_armored", {"ru_vdv","ru_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
 			{"Engineer", "rhs_vdv_engineer", {"ru_vdv"}, "iconManEngineer_ca.paa"}
 		}},
-		{"Shapka 1", "markers\nato\b_inf.paa", {
+		{"Shapka 1", "markers\nato\o_inf.paa", {
 			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
 			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
@@ -40,7 +40,7 @@ tsp_roles[] = {
 			{"Autorifleman", "rhs_vdv_arifleman_rpk", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
 			{"Scout (ASVAL)", "rhs_vdv_rifleman_asval", {"ru_vdv","ru_sniper"}, "iconManRecon_ca.paa"}
 		}},
-		{"Shapka 2 (Weapons)", "markers\nato\b_inf.paa", {
+		{"Shapka 2 (Weapons)", "markers\nato\o_inf.paa", {
 			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
 			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
@@ -48,32 +48,32 @@ tsp_roles[] = {
 			{"Machine Gunner", "rhs_vdv_machinegunner", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
 			{"Grenadier", "rhs_vdv_grenadier", {"ru_vdv"}, "iconManExplosive_ca.paa"}
 		}},
-		{"Voron", "markers\nato\b_art.paa", {
+		{"Voron", "markers\nato\o_art.paa", {
 			{"Team Leader", "rhs_vdv_junior_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Anti Tank", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
 			{"Ammo Bearer", "rhs_vdv_strelok_rpg_assist", {"ru_vdv"}, "iconManAT_ca.paa"}
 		}}
 	}},
 	{"VMF - 3rd Mechanized Naval Infantry", "\tsp_core\data\insignia\vmf.paa", "east", {
-		{"Frog 1", "markers\nato\b_mech_inf.paa", {
+		{"Frog 1", "markers\nato\o_mech_inf.paa", {
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}},
-		{"Frog 2", "markers\nato\b_mech_inf.paa", {
+		{"Frog 2", "markers\nato\o_mech_inf.paa", {
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}},
-		{"Frog 3", "markers\nato\b_mech_inf.paa", {
+		{"Frog 3", "markers\nato\o_mech_inf.paa", {
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}}
 	}},
 	{"VMF - 3rd Naval Aviation", "\tsp_core\data\insignia\vmfaviation.paa", "east", {
-		{"Vortex 1", "markers\nato\b_air.paa", {
+		{"Vortex 1", "markers\nato\o_air.paa", {
 			{"Helicopter Pilot", "rhs_pilot_combat_heli", {"vdv_spetsnaz_all","east_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
 			{"Helicopter Crew", "rhs_pilot_combat_heli", {"vdv_spetsnaz_all","east_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
 		}},
-		{"Vortex 2", "markers\nato\b_air.paa", {
+		{"Vortex 2", "markers\nato\o_air.paa", {
 			{"Helicopter Pilot", "rhs_pilot_combat_heli", {"vdv_spetsnaz_all","east_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
 			{"Helicopter Crew", "rhs_pilot_combat_heli", {"vdv_spetsnaz_all","east_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
 		}}
@@ -182,7 +182,7 @@ class CfgORBAT {
 					class 52air: cdf {
 						text = "52nd Airborne Battalion"; textShort = "52nd Airborne"; type = "CombatAviation"; size = "Battalion"; commander = "Anatoli Potapenko"; commanderRank = "Captain";         
 						description = "Stationed in southern Chernarus, made up of well trained soldiers, considered to be special forces.";
-						subordinates[] = {}; assets[] = {{"rhsgref_BRDM2_b",20},{"UK3CB_B_LandRover_Closed_CDF",20},{"rhsgref_cdf_b_gaz66",20}};  
+						subordinates[] = {}; assets[] = {{"rhsgref_BRDM2_b",20},{"UK3CB_B_LandRover_Softtop_Transport_Closed_CDF",20},{"rhsgref_cdf_b_gaz66",20}};  
 					};
 			class cdf_navy: cdf {
 				text = "Navy"; textShort = "Navy"; type = "Maritime"; size = "Battalion"; commander = "Igor Dobryakov"; commanderRank = "Major";         

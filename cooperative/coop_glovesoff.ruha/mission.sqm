@@ -859,7 +859,7 @@ class Mission
 									{
 									};
 									id=739;
-									type="UK3CB_CHD_O_LR_M2";
+									type="UK3CB_CHD_O_LR_Opentop_M2";
 									atlOffset=-0.0012817383;
 									class CustomAttributes
 									{
@@ -927,7 +927,7 @@ class Mission
 									{
 									};
 									id=741;
-									type="UK3CB_CHD_O_LR_SPG9";
+									type="UK3CB_CHD_O_LR_Opentop_SPG9";
 									atlOffset=0.070533752;
 									class CustomAttributes
 									{
@@ -1844,7 +1844,7 @@ class Mission
 									{
 									};
 									id=766;
-									type="UK3CB_CHD_O_LR_Closed";
+									type="UK3CB_CHD_O_LR_Softtop_Transport_Closed";
 									atlOffset=0.0070457458;
 								};
 								class Item1
@@ -1861,7 +1861,7 @@ class Mission
 									{
 									};
 									id=767;
-									type="UK3CB_CHD_O_LR_Closed";
+									type="UK3CB_CHD_O_LR_Softtop_Transport_Closed";
 									atlOffset=0.12517548;
 								};
 							};
@@ -4617,7 +4617,7 @@ class Mission
 									flags=6;
 									class Attributes
 									{
-										init="nul = group this spawn { " \n "    params [""_grp""]; " \n " " \n "    waitUntil { sleep 1; {side _x == west && _x distance leader _grp < 200 && _grp knowsAbout _x > 1.5} count allPlayers > 0 }; " \n "    {_grp setCurrentWaypoint [_grp, -1]} forEach waypoints _grp; " \n "    { " \n "        if (side _x == west && _grp knowsAbout _x > 1.5) then { " \n "            _grp reveal _x; " \n "            _grp doMove getPos _x; " \n "            _grp doTarget _x; " \n "        }; " \n "    } forEach allPlayers; " \n " " \n "    _grp setBehaviour ""COMBAT""; " \n "    _grp setCombatMode ""RED""; " \n "    _grp setSpeedMode ""FULL""; " \n "}; " \n "";
+										init="nul = group this spawn { " \n "    params [""_grp""]; " \n " " \n "    waitUntil { sleep 1; {side _x == west && _x distance leader _grp < 200 && _grp knowsAbout _x > 1.5} count allPlayers > 0 }; " \n "    {_grp setCurrentWaypoint [_grp, -1]} forEach waypoints _grp; " \n "    { " \n "        if (side _x == west && _grp knowsAbout _x > 1.5) then { " \n "            _grp reveal _x; " \n "            _grp doMove getPos _x; " \n "            _grp doTarget _x; " \n "        }; " \n "    } forEach allPlayers; " \n " " \n "    _grp setBehaviour ""COMBAT""; " \n "    _grp setCombatMode ""RED""; " \n "    _grp setSpeedMode ""FULL""; " \n "};";
 									};
 									id=848;
 									type="UK3CB_CHD_O_Hilux_Dshkm";
@@ -10049,7 +10049,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "[this, ""Role""] call tsp_fnc_action;" \n "[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "[this, ""Role""] call tsp_fnc_action;" \n "[this, ""Heal""] call tsp_fnc_action; ";
 									};
 									id=617;
 									type="C_IDAP_supplyCrate_F";
@@ -10084,7 +10084,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "[this, ""Role""] call tsp_fnc_action;" \n "[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "[this, ""Role""] call tsp_fnc_action;" \n "[this, ""Heal""] call tsp_fnc_action; ";
 									};
 									id=618;
 									type="C_IDAP_supplyCrate_F";
@@ -35169,7 +35169,7 @@ class Mission
 									{
 									};
 									id=4005;
-									type="UK3CB_CHD_O_LR_M2";
+									type="UK3CB_CHD_O_LR_Opentop_M2";
 									atlOffset=-0.086074829;
 								};
 								class Item8

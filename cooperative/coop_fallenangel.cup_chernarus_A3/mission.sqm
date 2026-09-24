@@ -1394,7 +1394,7 @@ class Mission
 											flags=4;
 											class Attributes
 											{
-												init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "[this, ""Role""] call tsp_fnc_action;" \n "[this, ""Heal""] call tsp_fnc_action;  " \n "";
+												init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "[this, ""Role""] call tsp_fnc_action;" \n "[this, ""Heal""] call tsp_fnc_action; ";
 											};
 											id=4220;
 											type="C_IDAP_supplyCrate_F";
@@ -10068,7 +10068,7 @@ class Mission
 							{
 								name="farm";
 								text="Waves";
-								onActivation="[] spawn {" \n "    sleep 30;" \n "    [""Wave1""] spawn tsp_fnc_sector_load; sleep (5*60);" \n "    [""Wave2""] spawn tsp_fnc_sector_load; sleep (10*60);" \n "    [""Wave3""] spawn tsp_fnc_sector_load; sleep (10*60);" \n "    [""Wave4""] spawn tsp_fnc_sector_load; sleep (10*60);" \n "    wavesFinished = true; publicVariable ""wavesFinished"";" \n "    [""Exfil""] spawn tsp_fnc_sector_load; sleep (2*60);" \n "    exfilArrive = true; publicVariable ""exfilArrive"";" \n "    helo1 engineOn true; " \n "    []execVM ""flying.sqf"";" \n "};" \n "";
+								onActivation="[] spawn {" \n "    sleep 30;" \n "    [""Wave1""] spawn tsp_fnc_sector_load; sleep (5*60);" \n "    [""Wave2""] spawn tsp_fnc_sector_load; sleep (10*60);" \n "    [""Wave3""] spawn tsp_fnc_sector_load; sleep (10*60);" \n "    [""Wave4""] spawn tsp_fnc_sector_load; sleep (10*60);" \n "    wavesFinished = true; publicVariable ""wavesFinished"";" \n "    [""Exfil""] spawn tsp_fnc_sector_load; sleep (2*60);" \n "    exfilArrive = true; publicVariable ""exfilArrive"";" \n "    helo1 engineOn true; " \n "    []execVM ""flying.sqf"";" \n "};";
 								sizeA=100;
 								sizeB=73.691002;
 								sizeC=20;
@@ -13031,7 +13031,7 @@ class Mission
 									{
 									};
 									id=2599;
-									type="UK3CB_CHD_O_LR_M2";
+									type="UK3CB_CHD_O_LR_Opentop_M2";
 								};
 								class Item2
 								{
@@ -13565,7 +13565,7 @@ class Mission
 									{
 									};
 									id=2603;
-									type="UK3CB_CHD_O_LR_AGS30";
+									type="UK3CB_CHD_O_LR_Opentop_AGS30";
 								};
 								class Item5
 								{

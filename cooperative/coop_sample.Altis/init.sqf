@@ -6,7 +6,7 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
 	west, ["fob"], "Capture FOB", "This FOB is a prominent AAF position on Altis. Capture it and clear the surrounding area of enemy combatants.", "Attack", getPos task_fob, 
-	{true}, {"fob_close" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_fob && side _x == resistance}) < 2)}
+	{true}, {["fob_close", "", task_fob] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	west, ["fob_defend"], "Defend FOB", "Enemy reinforcements have been spotted, hold the FOB!", "Defend", getPos task_fob, 

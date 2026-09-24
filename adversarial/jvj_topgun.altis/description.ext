@@ -1,0 +1,36 @@
+enableDebugConsole = 1;
+saving = 0;
+
+author = "GarudOne";
+onLoadName = "Top Gun";
+class header {gameType = TDM}; 
+
+respawnButton = 1;
+disabledAI = 1;
+respawn = "BASE";
+respawnDelay = 1;
+respawnDialog = 0;
+
+//-- Endings
+class CfgDebriefing {
+	class BLUFOR {title = "BLUFOR WINS"; subtitle = "";};
+	class OPFOR {title = "OPFOR WIN"; subtitle = "";};
+	class TIE {title = "TIE"; subtitle = "";};
+};
+
+//Spawn at 2 corners / Blufor vs Opfor
+//AO 6000x6000x1000, once u enter u cant leave, 10s before boom
+//Planes outside zone are invincible and have no ammo?
+//Weapons: Aim 9X sidewinders and the gun
+//Countdown after 1st player enters AO, 10 mins to game end
+//Each Enemy down = 500 points (Missile), 1000 points (Gun), 100 points (Accidental Crash or GEOFENCE VIOLATIONS)
+//Find and Kill AH64 Apache (Red team: gun run) = 1500 Points
+//Find and Kill Ka60        (Blu team: gun run) = 1500 Points
+//Briefing area on first spawn if misison not started yet
+//Admin start mission
+//Winner: Side with heighest points wins.
+//Respawn jets
+//Respawn people
+
+//Mission End
+//Score display

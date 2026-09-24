@@ -1,1 +1,0 @@
-#include "\tsp_mission\initPlayerLocal.sqf";

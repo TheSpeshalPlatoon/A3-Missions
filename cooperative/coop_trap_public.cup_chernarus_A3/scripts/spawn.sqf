@@ -572,7 +572,7 @@ bis_fnc_map_mod = { //\\// Indicates me
 	//\\//	_camera camcommitprepared 0;
 	//\\//	_camera
 	//\\//} else {
-	//\\//	objnull
+	//\\//	objNull
 	//\\//};
 
 	//--- Garbage collector

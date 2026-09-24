@@ -56,8 +56,17 @@
 ], "darkreach", {[] spawn tsp_fnc_spawn}] spawn tsp_fnc_intro;  //-- Slides, music, code to run at the end
 
 [player, [
-"rhsgref_ins_spotter", "rhsgref_ins_squadleader", "tsp_chdkz_radio", "rhsgref_ins_sniper", "rhsgref_ins_saboteur", "rhsgref_ins_rifleman_aks74", "rhsgref_ins_rifleman_akm", "rhsgref_ins_rifleman_RPG26", "rhsgref_ins_grenadier", "rhsgref_ins_rifleman"
-], [zone_zombie], east, {true}, {}, 250, 2, 25, 350] spawn tsp_fnc_zombience;
+    "tsp_chdkz_radio", 
+    "rhsgref_ins_spotter", 
+    "rhsgref_ins_squadleader", 
+    "rhsgref_ins_sniper", 
+    "rhsgref_ins_saboteur", 
+    "rhsgref_ins_rifleman_aks74", 
+    "rhsgref_ins_rifleman_akm", 
+    "rhsgref_ins_rifleman_RPG26", 
+    "rhsgref_ins_grenadier", 
+    "rhsgref_ins_rifleman"
+], [zone_zombie1, zone_zombie2], east, {true}, {}, 250, 1, 25, 350] spawn tsp_fnc_zombience;
 
 if (!isServer) exitWith {}; 
 
@@ -82,6 +91,6 @@ if (!isServer) exitWith {};
 
 [
 	east, ["mission"], "x", "x", "Attack", objNull, 
-	{true}, {count (["arty","extract"] select {_x call BIS_fnc_taskState == "SUCCEEDED"}) == 2}, 
+	{true}, {count (["arty", "extract"] select {_x call BIS_fnc_taskState == "SUCCEEDED"}) == 2}, 
 	{false}, {false}, {}, {"end1" remoteExec ["BIS_fnc_endMission", 0]}
 ] spawn tsp_fnc_task;

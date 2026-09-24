@@ -6,9 +6,9 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
 	west, ["sawmill"], "Secure Sawmill", "Search and secure the sawmill.", 
-	"Attack", getPos task_sawmill, {true}, {"sawmill" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_sawmill && side _x == east}) < 2)}
+	"Attack", "sector_sawmill", {true}, {["sawmill", "", sector_sawmill, 0, 2] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;	
 [
 	west, ["kamensk"], "Secure Kamensk MB", "Search and secure Kamensk MB.", 
-	"Attack", getPos task_kamensk, {true}, {"kamensk" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_kamensk && side _x == east}) < 2)}
+	"Attack", "sector_kamensk", {true}, {["kamensk", "", sector_kamensk, 0, 2] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;

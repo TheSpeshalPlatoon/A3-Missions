@@ -10,7 +10,7 @@
 	"rhs_vdv_recon_rifleman_asval","rhs_vdv_recon_grenadier","rhs_vdv_recon_grenadier_scout","rhs_vdv_recon_arifleman_scout",
 	"rhs_vdv_recon_arifleman_rpk_scout","rhs_vdv_recon_sergeant","rhs_vdv_recon_rifleman_lat","rhs_vdv_recon_rifleman_scout_akm",
 	"rhs_vdv_recon_rifleman_scout"
-], [zone_zombie], east, {true}, {}, 400, 1, 30, 600] spawn tsp_fnc_zombience;
+], [zone_zombie1,zone_zombie2,zone_zombie3], east, {true}, {}, 400, 1, 30, 600] spawn tsp_fnc_zombience;
 
 if (!isServer) exitWith {};
 

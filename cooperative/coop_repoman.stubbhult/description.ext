@@ -26,7 +26,7 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"CIA/JSOC - Task Force Delilah", "data\ciajsoc.paa", "west", {
+	{"CIA/JSOC - Task Force Delilah", "\tsp_core\data\insignia\ciajsoc.paa", "west", {
 		{"Empire", "markers\nato\b_hq.paa", {
 			{"Element Coordinator", "tsp_ion_teamlead", {"soc_delta","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "tsp_ion_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
@@ -68,24 +68,20 @@ class Params {
 	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
 };
 
-class CfgDebriefing
-{  
-
-	class End1
-	{
+class CfgDebriefing {
+	class End1 {
 		title = "Mission Complete";
 		subtitle = "Job well done!";
 		description = "The Commanche was recovered succesfully all thanks to your effort, our adversaries won't get their hands on our prototype anytime soon.";
-		pictureBackground = "end.jpg";
+		pictureBackground = "overview.jpg";
 		picture = "b_recon";
 		pictureColor[] = {0.0,0.3,0.6,1};
 	};
-	class End2
-	{
+	class End2 {
 		title = "Mission Failed";
 		subtitle = "Return To Base.";
 		description = "The Comanche was destroyed. This thing was planned to replace our attack helicopters in 2035 but due to your incompetence we're gonna have to make something from scratch...";
-		pictureBackground = "end.jpg";
+		pictureBackground = "overview.jpg";
 		picture = "b_recon";
 		pictureColor[] = {0.0,0.3,0.6,1};
 	};

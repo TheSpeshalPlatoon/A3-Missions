@@ -21,24 +21,12 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
 	west, ["bunkers", "secondary"], "Clear Bunkers", "HUMINT and SIGINT reports say that the Russians have occupied pillboxes and bunkers on the shores of Kaska, burn 'em out, and the rest of the MAGTF will have an easier day tomorrow. We only need 3 of these bunkers be cleared out. (Tip: look for any out of place structure markers hidden in the woods on the map or any pillboxes by the shoreline)", 
-	"Attack", objNull, {true}, {count (["bunker1", "bunker2", "bunker3", "bunker4"] select {_x call BIS_fnc_taskState in ["SUCCEEDED", "FAILED"]}) == 3}
+	"Attack", objNull, {true}, {count (["bunker1", "bunker2", "bunker3", "aaradar"] select {_x call BIS_fnc_taskState in ["SUCCEEDED", "FAILED"]}) == 3}
 ] spawn tsp_fnc_task;
-[
-	east, ["bunker1", "secondary"], "Bunker1", "", 
-	"Attack", objNull, {true}, {"bunker1" call tsp_fnc_sector_check && (count (allUnits select {_x inArea trigger_bunker1 && side _x == east}) < 1)}
-] spawn tsp_fnc_task;
-[
-	east, ["bunker2", "secondary"], "Bunker2", "", 
-	"Attack", objNull, {true}, {"bunker2" call tsp_fnc_sector_check && (count (allUnits select {_x inArea trigger_bunker2 && side _x == east}) < 1)}
-] spawn tsp_fnc_task;
-[
-	east, ["bunker3", "secondary"], "Bunker3", "", 
-	"Attack", objNull, {true}, {"bunker3" call tsp_fnc_sector_check && (count (allUnits select {_x inArea trigger_bunker3 && side _x == east}) < 1)}
-] spawn tsp_fnc_task;
-[
-	east, ["bunker4", "secondary"], "Bunker4", "", 
-	"Attack", objNull, {true}, {"aaradar" call tsp_fnc_sector_check && (count (allUnits select {_x inArea trigger_bunker4 && side _x == east}) < 1)}
-] spawn tsp_fnc_task;
+[east, ["bunker1", "secondary"], "Bunker1", "", "Attack", objNull, {true}, {["bunker1", "", sector_bunker1, 0, 0] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[east, ["bunker2", "secondary"], "Bunker2", "", "Attack", objNull, {true}, {["bunker2", "", sector_bunker2, 0, 0] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[east, ["bunker3", "secondary"], "Bunker3", "", "Attack", objNull, {true}, {["bunker3", "", sector_bunker3, 0, 0] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
+[east, ["aaradar", "secondary"], "Bunker4", "", "Attack", objNull, {true}, {["aaradar", "", sector_aaradar, 0, 0] call tsp_fnc_sector_clear}] spawn tsp_fnc_task;
 [
 	west, ["supplies", "secondary"], "Destroy Supplies", "Supply convoys have been going in and out of the AO recently, we need to see if that ammo is up to condition, blow it all up. We don't know their exact locations as of now but SIGINT and HUMINT sources say that some of them might be hidden inside a warehouse or are on their way outside the AO", 
 	"Truck", objNull, {true}, {!alive task_supply1 && !alive task_supply2 && !alive task_supply3}, {false}

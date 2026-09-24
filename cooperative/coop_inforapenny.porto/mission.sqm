@@ -6027,7 +6027,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="Leadership has made the decision to take over the island of Porto prior to offensive operations on the main islands, in order to prevent the SLA from landing any more reinforcements on the mainland from Porto as well as to eliminate any leadership on the island.<br/><br/>   " \n "The mission is to insert a squad of Recon Marines at night to destroy key defenses and secure the <marker name='beach'>beachhead</marker> prior to the <marker name='invasion'>main invasion force</marker> landing at 4AM.<br/><br/>   " \n "The <marker name='invasion'>invasion force</marker> is made up of ambphibious units from RACS who will land at <marker name='beach'>LZ White</marker> as well as a squad of RACS Scout troops who will land at <marker name='black'>LZ Black</marker>. Once on land, the force will secure key military installations on Porto and attempt to capture former President Ramirez, who is believed to have orchestrated the invasion. " \n "";
+											value="Leadership has made the decision to take over the island of Porto prior to offensive operations on the main islands, in order to prevent the SLA from landing any more reinforcements on the mainland from Porto as well as to eliminate any leadership on the island.<br/><br/>   " \n "The mission is to insert a squad of Recon Marines at night to destroy key defenses and secure the <marker name='beach'>beachhead</marker> prior to the <marker name='invasion'>main invasion force</marker> landing at 4AM.<br/><br/>   " \n "The <marker name='invasion'>invasion force</marker> is made up of ambphibious units from RACS who will land at <marker name='beach'>LZ White</marker> as well as a squad of RACS Scout troops who will land at <marker name='black'>LZ Black</marker>. Once on land, the force will secure key military installations on Porto and attempt to capture former President Ramirez, who is believed to have orchestrated the invasion.";
 										};
 									};
 								};
@@ -7280,7 +7280,7 @@ class Mission
 							flags=1;
 							class Attributes
 							{
-								init="this spawn { " \n " while {sleep 10; alive _this} do { " \n "  playSound3D [""\a3\data_f_curator\sound\cfgsounds\air_raid.wss"", _this, false, getPosASL _this, 3, 1, 1500]; " \n " }; " \n "}; " \n "";
+								init="this spawn { " \n " while {sleep 10; alive _this} do { " \n "  playSound3D [""\a3\data_f_curator\sound\cfgsounds\air_raid.wss"", _this, false, getPosASL _this, 3, 1, 1500]; " \n " }; " \n "};";
 							};
 							id=878;
 							type="Land_Loudspeakers_F";
@@ -16620,7 +16620,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"", {_this switchMove ""Acts_LyingWounded_loop1"";_this setDamage 1}]";
+												init="this setVariable [""init"", {_this switchMove ""Acts_LyingWounded_loop1"";_this setDamage 1; removeFromRemainsCollector [_this]}]";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -16721,7 +16721,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"", {_this switchMove ""Acts_LyingWounded_loop1"";_this setDamage 1}]";
+												init="this setVariable [""init"", {_this switchMove ""Acts_LyingWounded_loop1"";_this setDamage 1; removeFromRemainsCollector [_this]}]";
 												receiveRemoteTargets=1;
 												stance="Down";
 												class Inventory
@@ -17648,7 +17648,7 @@ class Mission
 											flags=3;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 											};
 											id=770;
 											type="tsp_sla_antitank";
@@ -25174,7 +25174,7 @@ class Mission
 									flags=7;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""Acts_AidlPercMstpSnonWnonDnon_warmup_6_loop"", ""Acts_AidlPercMstpSnonWnonDnon_warmup_7_loop""]] spawn tsp_fnc_anim}]; " \n "";
+										init="this setVariable [""init"",{[_this,[""Acts_AidlPercMstpSnonWnonDnon_warmup_6_loop"", ""Acts_AidlPercMstpSnonWnonDnon_warmup_7_loop""]] spawn tsp_fnc_anim}];";
 										stance="Middle";
 									};
 									id=935;
@@ -26425,7 +26425,7 @@ class Mission
 									flags=7;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""Acts_Commenting_On_Fight_loop""],["""","""","""",""Acts_Shocked_1_Loop"",""Acts_Shocked_3"",""Acts_Shocked_4_Loop""]] spawn tsp_fnc_anim}]; " \n "";
+										init="this setVariable [""init"",{[_this,[""Acts_Commenting_On_Fight_loop""],["""","""","""",""Acts_Shocked_1_Loop"",""Acts_Shocked_3"",""Acts_Shocked_4_Loop""]] spawn tsp_fnc_anim}];";
 									};
 									id=2377;
 									type="tsp_sla_rifleman_lite";
@@ -26473,7 +26473,7 @@ class Mission
 									flags=7;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 									};
 									id=2378;
 									type="tsp_sla_rifleman";
@@ -26683,7 +26683,7 @@ class Mission
 									flags=6;
 									class Attributes
 									{
-										init="this setVariable [""init"", {_this spawn {_this setCaptive true; sleep 1; _this switchMove ""Acts_SittingWounded_out""; sleep 1; _this setDamage 1}}];";
+										init="this setVariable [""init"", {_this spawn {_this setCaptive true; sleep 1; _this switchMove ""Acts_SittingWounded_out""; sleep 1; _this setDamage 1; removeFromRemainsCollector [_this]}}];";
 										receiveRemoteTargets=1;
 										class Inventory
 										{
@@ -26852,7 +26852,7 @@ class Mission
 							{
 							};
 							id=1146;
-							type="UK3CB_C_LandRover_Closed";
+							type="UK3CB_C_LandRover_Softtop_Transport_Closed";
 							atlOffset=-0.00014019012;
 						};
 						class Item1
@@ -27422,7 +27422,7 @@ class Mission
 									flags=7;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 									};
 									id=1187;
 									type="tsp_sla_teamlead";
@@ -27470,7 +27470,7 @@ class Mission
 									flags=3;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""Acts_AidlPercMstpSnonWnonDnon_warmup_6_loop"", ""Acts_AidlPercMstpSnonWnonDnon_warmup_7_loop""]] spawn tsp_fnc_anim}]; " \n "";
+										init="this setVariable [""init"",{[_this,[""Acts_AidlPercMstpSnonWnonDnon_warmup_6_loop"", ""Acts_AidlPercMstpSnonWnonDnon_warmup_7_loop""]] spawn tsp_fnc_anim}];";
 										stance="Middle";
 									};
 									id=1190;
@@ -27928,7 +27928,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 											};
 											id=793;
 											type="tsp_sla_rifleman_at";
@@ -28991,7 +28991,7 @@ class Mission
 									flags=7;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 										stance="Up";
 									};
 									id=796;
@@ -32226,7 +32226,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 												stance="Up";
 											};
 											id=851;
@@ -32604,7 +32604,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 											};
 											id=870;
 											type="tsp_slan_guard_lite";
@@ -34445,7 +34445,7 @@ class Mission
 											flags=7;
 											class Attributes
 											{
-												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+												init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 											};
 											id=1122;
 											type="tsp_sla_rifleman_lite";
@@ -35401,7 +35401,7 @@ class Mission
 									flags=7;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 									};
 									id=1335;
 									type="tsp_sla_rifleman";
@@ -35450,7 +35450,7 @@ class Mission
 									flags=3;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 									};
 									id=1337;
 									type="tsp_sla_marksman";
@@ -40087,7 +40087,7 @@ class Mission
 									flags=3;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 										stance="Up";
 									};
 									id=1068;
@@ -40426,7 +40426,7 @@ class Mission
 									flags=7;
 									class Attributes
 									{
-										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];   " \n "";
+										init="this setVariable [""init"",{[_this,[""inbasemoves_patrolling1""]] spawn tsp_fnc_anim}];  ";
 										stance="Up";
 									};
 									id=949;
@@ -41920,7 +41920,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 									};
 									id=3145;
 									type="CUP_lekarnicka";
@@ -41937,7 +41937,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 									};
 									id=3146;
 									type="CUP_lekarnicka";
@@ -41954,7 +41954,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 									};
 									id=3147;
 									type="CUP_lekarnicka";
@@ -42021,7 +42021,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Physics""] call tsp_fnc_action;  " \n "[this, ""Garage"", ""true"", [garage_car, 4,{[  " \n "    ""UK3CB_B_M1030_USMC_WDL"",  " \n "    ""rhsusf_mrzr4_d"", " \n "    ""rhsusf_m1165a1_gmv_m134d_m240_socom_d"", " \n "    ""rhsusf_m1165a1_gmv_m2_m240_socom_d"", " \n "    ""rhsusf_m1165a1_gmv_mk19_m240_socom_d"", " \n "    ""rhsusf_M1078A1R_SOV_M2_D_fmtv_socom"", " \n "    ""rhsusf_M1084A1R_SOV_M2_D_fmtv_socom"", " \n "    ""rhsusf_m1043_w_s_m2"",  " \n "    ""rhsusf_m1043_w_s_mk19"",  " \n "    ""rhsusf_m1043_w_s"",  " \n "    ""rhsusf_m1045_w_s"",  " \n "    ""rhsusf_m998_w_s_2dr"",  " \n "    ""rhsusf_m998_w_s_4dr"",  " \n "    ""rhsusf_m1151_usmc_wd"",  " \n "    ""rhsusf_m1151_m2crows_usmc_wd"",  " \n "    ""rhsusf_m1151_mk19crows_usmc_wd"",  " \n "    ""rhsusf_m1151_m2_v3_usmc_wd"",  " \n "    ""rhsusf_m1151_m240_v3_usmc_wd"",  " \n "    ""rhsusf_m1151_mk19_v3_usmc_wd"",  " \n "    ""rhsusf_m1152_rsv_usmc_wd"",  " \n "    ""rhsusf_CGRCAT1A2_usmc_wd"", " \n "    ""rhsusf_CGRCAT1A2_M2_usmc_wd"", " \n "    ""rhsusf_CGRCAT1A2_Mk19_usmc_wd"", " \n "    ""rhsusf_M1232_MC_M2_usmc_wd"", " \n "    ""rhsusf_M1232_MC_MK19_usmc_wd"", " \n "    ""UK3CB_B_MaxxPro_M2_US_W"",  " \n "    ""UK3CB_B_MaxxPro_MK19_US_W"",  " \n "    ""UK3CB_B_MTVR_Reammo_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Closed_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Refuel_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Open_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Recovery_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Repair_USMC_WDL"",  " \n "    ""UK3CB_B_LAV25_HQ_US_WDL"",  " \n "    ""UK3CB_B_LAV25_US_WDL"",  " \n "    ""UK3CB_B_AAV_US_WDL""  " \n "]}]] call tsp_fnc_action;   " \n "";
+										init="[this, ""Physics""] call tsp_fnc_action;  " \n "[this, ""Garage"", ""true"", [garage_car, 4,{[  " \n "    ""UK3CB_B_M1030_USMC_WDL"",  " \n "    ""rhsusf_mrzr4_d"", " \n "    ""rhsusf_m1165a1_gmv_m134d_m240_socom_d"", " \n "    ""rhsusf_m1165a1_gmv_m2_m240_socom_d"", " \n "    ""rhsusf_m1165a1_gmv_mk19_m240_socom_d"", " \n "    ""rhsusf_M1078A1R_SOV_M2_D_fmtv_socom"", " \n "    ""rhsusf_M1084A1R_SOV_M2_D_fmtv_socom"", " \n "    ""rhsusf_m1043_w_s_m2"",  " \n "    ""rhsusf_m1043_w_s_mk19"",  " \n "    ""rhsusf_m1043_w_s"",  " \n "    ""rhsusf_m1045_w_s"",  " \n "    ""rhsusf_m998_w_s_2dr"",  " \n "    ""rhsusf_m998_w_s_4dr"",  " \n "    ""rhsusf_m1151_usmc_wd"",  " \n "    ""rhsusf_m1151_m2crows_usmc_wd"",  " \n "    ""rhsusf_m1151_mk19crows_usmc_wd"",  " \n "    ""rhsusf_m1151_m2_v3_usmc_wd"",  " \n "    ""rhsusf_m1151_m240_v3_usmc_wd"",  " \n "    ""rhsusf_m1151_mk19_v3_usmc_wd"",  " \n "    ""rhsusf_m1152_rsv_usmc_wd"",  " \n "    ""rhsusf_CGRCAT1A2_usmc_wd"", " \n "    ""rhsusf_CGRCAT1A2_M2_usmc_wd"", " \n "    ""rhsusf_CGRCAT1A2_Mk19_usmc_wd"", " \n "    ""rhsusf_M1232_MC_M2_usmc_wd"", " \n "    ""rhsusf_M1232_MC_MK19_usmc_wd"", " \n "    ""UK3CB_B_MaxxPro_M2_US_W"",  " \n "    ""UK3CB_B_MaxxPro_MK19_US_W"",  " \n "    ""UK3CB_B_MTVR_Reammo_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Closed_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Refuel_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Open_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Recovery_USMC_WDL"",  " \n "    ""UK3CB_B_MTVR_Repair_USMC_WDL"",  " \n "    ""UK3CB_B_LAV25_HQ_US_WDL"",  " \n "    ""UK3CB_B_LAV25_US_WDL"",  " \n "    ""UK3CB_B_AAV_US_WDL""  " \n "]}]] call tsp_fnc_action;  ";
 									};
 									id=3151;
 									type="Land_Laptop_03_olive_F";
@@ -42038,7 +42038,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Garage"", ""true"", [garage_boat, 4, {[""UK3CB_B_RHIB_USN"",""UK3CB_B_RHIB_Gunboat_USN"",""rhsgref_hidf_rhib"",""CUP_B_Seafox_USMC"",""CUP_B_Seafox_USV_USMC"",""CUP_B_LCAC_USMC"",""B_G_Boat_Transport_01_F""]}]] call tsp_fnc_action;  " \n "";
+										init="[this, ""Garage"", ""true"", [garage_boat, 4, {[""UK3CB_B_RHIB_USN"",""UK3CB_B_RHIB_Gunboat_USN"",""rhsgref_hidf_rhib"",""CUP_B_Seafox_USMC"",""CUP_B_Seafox_USV_USMC"",""CUP_B_LCAC_USMC"",""B_G_Boat_Transport_01_F""]}]] call tsp_fnc_action; ";
 									};
 									id=3152;
 									type="Land_Laptop_03_olive_F";
@@ -42056,7 +42056,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;  ";
 									};
 									id=3153;
 									type="C_IDAP_supplyCrate_F";
@@ -42135,7 +42135,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;  ";
 									};
 									id=3154;
 									type="C_IDAP_supplyCrate_F";
@@ -42214,7 +42214,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;  ";
 									};
 									id=3155;
 									type="C_IDAP_supplyCrate_F";
@@ -42293,7 +42293,7 @@ class Mission
 									flags=4;
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;  ";
 									};
 									id=3156;
 									type="C_IDAP_supplyCrate_F";
@@ -42371,7 +42371,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;  ";
 									};
 									id=3157;
 									type="C_IDAP_supplyCrate_F";
@@ -42449,7 +42449,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;  ";
 									};
 									id=3158;
 									type="C_IDAP_supplyCrate_F";
@@ -42527,7 +42527,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;  ";
 									};
 									id=3159;
 									type="C_IDAP_supplyCrate_F";
@@ -42605,7 +42605,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Role""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Role""] call tsp_fnc_action; ";
 									};
 									id=3160;
 									type="Land_MapBoard_01_Wall_F";
@@ -42652,7 +42652,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Role""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Role""] call tsp_fnc_action; ";
 									};
 									id=3161;
 									type="Land_MapBoard_01_Wall_F";
@@ -42699,7 +42699,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Role""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Role""] call tsp_fnc_action; ";
 									};
 									id=3162;
 									type="Land_MapBoard_01_Wall_F";
@@ -43166,7 +43166,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Heal""] call tsp_fnc_action;  " \n "";
+										init="[this, ""Heal""] call tsp_fnc_action; ";
 									};
 									id=3175;
 									type="Land_FirstAidKit_01_open_F";
@@ -43219,7 +43219,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="_action = [""FastRopeActionYo"",""Fast Rope"","""",{[player, rope] call ace_fastroping_fnc_fastRope},{true},{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;  " \n "[this, 0, [], _action] call ace_interact_menu_fnc_addActionToObject; " \n "";
+										init="_action = [""FastRopeActionYo"",""Fast Rope"","""",{[player, rope] call ace_fastroping_fnc_fastRope},{true},{},[], [0,0,0], 3] call ace_interact_menu_fnc_createAction;  " \n "[this, 0, [], _action] call ace_interact_menu_fnc_addActionToObject;";
 										name="rope_action";
 									};
 									id=3177;
@@ -43826,7 +43826,7 @@ class Mission
 									side="Empty";
 									class Attributes
 									{
-										init="[this, ""Arsenal""] call tsp_fnc_action;   " \n "";
+										init="[this, ""Arsenal""] call tsp_fnc_action;  ";
 									};
 									id=3194;
 									type="C_IDAP_supplyCrate_F";

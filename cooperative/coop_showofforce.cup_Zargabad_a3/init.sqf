@@ -25,11 +25,11 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     west, ["cache","s1"], "Destroy weapons cache", "They have a cache located somewhere in the construction zone.",
-    "destroy", objnull, {true}, {!alive task_cache1 && !alive task_cache2}
+    "destroy", objNull, {true}, {!alive task_cache1 && !alive task_cache2}
 ] spawn tsp_fnc_task;
 [
     West, ["bomb1", "s1"], "Defuse Bomb", "Find and Defuse bomb.",
-    "intel", objnull, {true}, {bomb1 getVariable ["defused", false]}, {bomb1 getVariable ["exploded", false]}
+    "intel", objNull, {true}, {bomb1 getVariable ["defused", false]}, {bomb1 getVariable ["exploded", false]}
 ] spawn tsp_fnc_task;
 [
     west, ["s2"], "Sector 2", "Complete the objectives and clear the area.", 
@@ -37,11 +37,11 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     west, ["officer","s2"], "Kill 3 Officers", "Their in an apartment and its fully garrisoned, We know their in Sector 2.",
-    "destroy", objnull, {true}, {!alive task_officer1 && !alive task_officer2 && !alive task_officer3}
+    "destroy", objNull, {true}, {!alive task_officer1 && !alive task_officer2 && !alive task_officer3}
 ] spawn tsp_fnc_task;
 [
     West, ["bomb2", "s2"], "Defuse Bomb", "Find and Defuse bomb.",
-    "intel", objnull, {true}, {bomb2 getVariable ["defused", false]}, {bomb2 getVariable ["exploded", false]}
+    "intel", objNull, {true}, {bomb2 getVariable ["defused", false]}, {bomb2 getVariable ["exploded", false]}
 ] spawn tsp_fnc_task;
 [
     west, ["s3"], "Sector 3", "Complete the objectives and clear the area.", 
@@ -49,11 +49,11 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     West, ["clear","s3"], "Secure the area", "Kill the remaining syrian forces.",
-    "Attack", objnull, {true}, { (count (allunits select {_x inArea secure_S3 && side _x == Independent}) <1)}
+    "Attack", objNull, {true}, { (count (allunits select {_x inArea secure_S3 && side _x == Independent}) <1)}
 ] spawn tsp_fnc_task;
 [
     West, ["bomb3", "s3"], "Defuse Bomb", "Find and Defuse bomb.",
-    "intel", objnull, {true}, {bomb3 getVariable ["defused", false]}, {bomb3 getVariable ["exploded", false]}
+    "intel", objNull, {true}, {bomb3 getVariable ["defused", false]}, {bomb3 getVariable ["exploded", false]}
 ] spawn tsp_fnc_task;
 [
     west, ["defend"], "Defend Zargabad", "Assist 1st Armored Brigade in defending Zargabad against an enemy counterattack.", "Defend", getPos zargabad_defense, 

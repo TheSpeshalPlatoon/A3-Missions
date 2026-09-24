@@ -2,20 +2,19 @@ if (!isServer) exitWith {};
 
 [
 	west, "villa", "Secure Villa", "Secure the main compound which consists of multiple residential structures.", 
-	"Attack", getPos task_villa, {true}, {"villa" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_villa && "ion" in typeOf _x}) < 1)}, {false}, {false},
-	{}, {["villa_reinf"] call tsp_fnc_sector_load}
+	"Attack", "sector_villa", {true}, {["villa", "villa", sector_villa, 0, 1, [west,east]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	west, "port", "Secure Port", "Secure the port's few industrial structures and surrounding area.", 
-	"Attack", getPos task_port, {true}, {"port" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_port && "ion" in typeOf _x}) < 1)}
+	"Attack", "sector_port", {true}, {["port", "port", sector_port, 0, 1, [west,east]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	west, "temple", "Secure Temple", "Secure the area around the temple.", 
-	"Attack", getPos task_temple, {true}, {"temple" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_temple && "ion" in typeOf _x}) < 1)}
+	"Attack", "sector_temple", {true}, {["temple", "temple", sector_temple, 0, 1, [west,east]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	west, "cave", "Secure Cave", "Secure the cave underneath the temple.", 
-	"Attack", objNull, {"temple" call BIS_fnc_taskState == "SUCCEEDED"}, {"cave" call tsp_fnc_sector_check && (count (allUnits select {_x inArea task_cave && "ion" in typeOf _x}) < 1)}
+	"Attack", objNull, {"temple" call BIS_fnc_taskState == "SUCCEEDED"}, {["cave", "cave", sector_cave, 0, 0, [west,east]] call tsp_fnc_sector_clear}
 ] spawn tsp_fnc_task;
 [
 	west, ["hvt"], "Kill/Capture Epstein", "Kill or capture Jeffrey Epstein, he could be hiding anywhere on the island.", 
@@ -26,7 +25,7 @@ if (!isServer) exitWith {};
 	"Download", objNull, {true}, {!isNil "tsp_epstein_files"}, {false}
 ] spawn tsp_fnc_task;
 
-addMissionEventHandler ["EntityCreated", {
+addMissionEventHandler ["EntityCreated", {  //-- Change group sides of enemies to EAST
 	params ["_entity"];
 	if !("_ion_" in typeOf _entity) exitWith {};
 	_entity enableSimulation false;	_entity spawn {sleep 3; _this enableSimulation true};

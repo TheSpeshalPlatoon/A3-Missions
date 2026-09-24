@@ -30,11 +30,11 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     west, ["bunker"], "Tunnel Network", "We have a rough position marked on your map, This could lead you into their underground bunker.", 
-    "Attack", objnull, {true}, { (count (allUnits select {_x inArea bunker_attack && side _x == East}) < 1)}
+    "Attack", objNull, {true}, { (count (allUnits select {_x inArea bunker_attack && side _x == East}) < 1)}
 ] spawn tsp_fnc_task;
 [
     west, ["ammo_bunker","bunker"], "Destroy Ammo cache", "We have reasaon to believe thier ammo is being stored in a makeshift underground bunker.", 
-    "Destroy", objnull, {true}, {!alive task_ammo1}
+    "Destroy", objNull, {true}, {!alive task_ammo1}
 ] spawn tsp_fnc_task;
 [
     west, ["construction"], "Construction Site", "An abandon building project, turned nest for the militia.", 
@@ -42,10 +42,10 @@ if (!isServer) exitWith {};
 ] spawn tsp_fnc_task;
 [
     west, ["ammo_construction","construction"], "Destroy Equipment cache", "Might be located at the construction site, Bring Demo for these caches..", 
-    "Destroy", objnull, {true}, {!alive task_ammo2}
+    "Destroy", objNull, {true}, {!alive task_ammo2}
 ] spawn tsp_fnc_task;
 [
-    west, ["construction_hvt","construction"], "Capture cell leader", "Last known location is the construction site.", "Meet", objnull, 
+    west, ["construction_hvt","construction"], "Capture cell leader", "Last known location is the construction site.", "Meet", objNull, 
     {true}, {count ([hvt_construction] select {alive _x && (_x inArea hvt_captured)}) > 0}, 
     {count ([hvt_construction] select {alive _x}) == 0}
 ] spawn tsp_fnc_task;
