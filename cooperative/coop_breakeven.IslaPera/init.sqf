@@ -6,7 +6,7 @@
     "tsp_afr_para_m21",
     "tsp_afr_para_ak",
     "tsp_afr_para_rpk"
-], [zone_zombie], east, {true}, {}, 100, 12, 20, 350] spawn tsp_fnc_zombience;
+], [zone_zombie], east, {true}, {}, 100, 2, 20, 350] spawn tsp_fnc_zombience;
 
 if (!isServer) exitWith {};
 
