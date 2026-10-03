@@ -8,18 +8,18 @@ class EditorData
 	toggles=514;
 	class ItemIDProvider
 	{
-		nextID=249;
+		nextID=251;
 	};
 	class LayerIndexProvider
 	{
-		nextID=19;
+		nextID=30;
 	};
 	class Camera
 	{
-		pos[]={9773.0469,75.793861,1500.8043};
-		dir[]={-0.72046459,-0.17787172,0.67033774};
-		up[]={-0.1302397,0.98404944,0.12117722};
-		aside[]={0.68120027,4.3441833e-07,0.73214477};
+		pos[]={9762.3398,75.793861,1510.7692};
+		dir[]={-0.31814203,-0.27542657,0.90715379};
+		up[]={-0.091150172,0.96132219,0.25990653};
+		aside[]={0.94365197,-8.9494279e-09,0.33094174};
 	};
 };
 binarizationWanted=0;
@@ -36,16 +36,14 @@ addons[]=
 	"A3_Props_F_Orange_Humanitarian_Camps",
 	"A3_Structures_F_Civ_Camping",
 	"A3_Props_F_Decade_Objectives",
-	"A3_Structures_F_Enoch_Walls_Wooden",
-	"A3_Weapons_F_Explosives",
-	"A3_Modules_F_Effects",
 	"rhs_c_btr",
 	"ace_compat_rhs_afrf3",
 	"acre_compat_rhs_afrf3",
 	"rhs_c_cars",
 	"A3_Characters_F",
 	"A3_Weapons_F",
-	"rhs_c_troops"
+	"rhs_c_troops",
+	"A3_Structures_F_Mil_Helipads"
 };
 class AddonsMetaData
 {
@@ -115,59 +113,59 @@ class AddonsMetaData
 		};
 		class Item9
 		{
-			className="A3_Structures_F_Enoch";
-			name="Arma 3 Contact Platform - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item10
-		{
-			className="A3_Weapons_F";
-			name="Arma 3 Alpha - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item11
-		{
 			className="rhs_c_btr";
 			name="BTR-70 & 80";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item12
+		class Item10
 		{
 			className="ace_compat_rhs_afrf3";
 			name="ACE3 - RHS AFRF Compatibility";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item13
+		class Item11
 		{
 			className="acre_compat_rhs_afrf3";
 			name="ACRE2 - RHS AFRF Compatibility";
 			author="ACRE2Team";
 			url="https://github.com/IDI-Systems/acre2";
 		};
-		class Item14
+		class Item12
 		{
 			className="rhs_c_cars";
 			name="Tigr vehicles";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item15
+		class Item13
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item14
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item15
 		{
 			className="rhs_c_troops";
 			name="AFRF Infantry & Equipment";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
+		};
+		class Item16
+		{
+			className="A3_Structures_F_Mil";
+			name="Arma 3 - Military Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -176,7 +174,6 @@ dlcs[]=
 	"Expansion",
 	"Orange",
 	"Argo",
-	"Enoch",
 	"RHS_AFRF"
 };
 randomSeed=1275540;
@@ -223,17 +220,10 @@ class Mission
 				class Item0
 				{
 					dataType="Layer";
-					name="!interact";
-					id=75;
-					atlOffset=-23.449951;
-				};
-				class Item1
-				{
-					dataType="Layer";
 					name="%spawn";
 					class Entities
 					{
-						items=10;
+						items=9;
 						class Item0
 						{
 							dataType="Object";
@@ -603,7 +593,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={9758.8994,72.662125,1525.082};
-								angles[]={0,2.254375,-0};
+								angles[]={0,2.254375,0};
 							};
 							side="Empty";
 							class Attributes
@@ -711,264 +701,11 @@ class Mission
 								nAttributes=3;
 							};
 						};
-						class Item9
-						{
-							dataType="Layer";
-							name="Chemlight Dangler Pole";
-							class Entities
-							{
-								items=8;
-								class Item0
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={9763.9736,72.378777,1527.7643};
-										angles[]={0,4.6142888,-0};
-									};
-									side="Empty";
-									flags=1;
-									class Attributes
-									{
-										disableSimulation=1;
-									};
-									id=216;
-									type="Land_WoodenWall_03_s_pole_F";
-									atlOffset=0.3975296;
-								};
-								class Item1
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={9763.9639,71.636742,1527.6385};
-										angles[]={1.5707961,4.7123899,0.098129801};
-									};
-									side="Empty";
-									flags=5;
-									class Attributes
-									{
-										init="[this] spawn { " \n "    params [""_mine""]; " \n " " \n "    private _pos = getPosWorld _mine; " \n "    private _dirUp = [vectorDir _mine, vectorUp _mine]; " \n " " \n "    private _simple = [""APERSTripMine"", _pos] call BIS_fnc_createSimpleObject; " \n "    _simple setVectorDirAndUp _dirUp; " \n " " \n "    deleteVehicle _mine; " \n "};";
-										disableSimulation=1;
-									};
-									id=213;
-									type="APERSTripMine";
-									atlOffset=-0.40423584;
-								};
-								class Item2
-								{
-									dataType="Logic";
-									class PositionInfo
-									{
-										position[]={9763.9717,73.162041,1527.5641};
-										angles[]={1.3467485,3.134367,0.05893977};
-									};
-									id=214;
-									type="ModuleChemlight_F";
-									atlOffset=1.1209259;
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="ModuleChemlight_F_Type";
-											expression="_this setVariable ['Type',_value,true];";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="Chemlight_Red";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="ModuleChemlight_F_Repeat";
-											expression="_this setVariable ['Repeat',_value,true];";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=1;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item3
-								{
-									dataType="Logic";
-									class PositionInfo
-									{
-										position[]={9763.9697,73.162041,1527.6055};
-										angles[]={1.3467485,3.134367,0.05893977};
-									};
-									id=215;
-									type="ModuleChemlight_F";
-									atlOffset=1.1210098;
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="ModuleChemlight_F_Type";
-											expression="_this setVariable ['Type',_value,true];";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="Chemlight_Red";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="ModuleChemlight_F_Repeat";
-											expression="_this setVariable ['Repeat',_value,true];";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=1;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item4
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={9749.2354,72.374893,1527.4751};
-										angles[]={0,4.9433613,-0};
-									};
-									side="Empty";
-									flags=1;
-									class Attributes
-									{
-										disableSimulation=1;
-									};
-									id=218;
-									type="Land_WoodenWall_03_s_pole_F";
-									atlOffset=0.46372223;
-								};
-								class Item5
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={9749.2178,71.600174,1527.4382};
-										angles[]={1.5707961,4.7123899,6.0522504};
-									};
-									side="Empty";
-									flags=5;
-									class Attributes
-									{
-										init="[this] spawn { " \n "    params [""_mine""]; " \n " " \n "    private _pos = getPosWorld _mine; " \n "    private _dirUp = [vectorDir _mine, vectorUp _mine]; " \n " " \n "    private _simple = [""APERSTripMine"", _pos] call BIS_fnc_createSimpleObject; " \n "    _simple setVectorDirAndUp _dirUp; " \n " " \n "    deleteVehicle _mine; " \n "};";
-										disableSimulation=1;
-									};
-									id=219;
-									type="APERSTripMine";
-									atlOffset=-0.3704071;
-								};
-								class Item6
-								{
-									dataType="Logic";
-									class PositionInfo
-									{
-										position[]={9749.2012,73.125473,1527.3654};
-										angles[]={1.3391147,3.2087772,6.0214186};
-									};
-									id=220;
-									type="ModuleChemlight_F";
-									atlOffset=1.1548386;
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="ModuleChemlight_F_Type";
-											expression="_this setVariable ['Type',_value,true];";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="Chemlight_Red";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="ModuleChemlight_F_Repeat";
-											expression="_this setVariable ['Repeat',_value,true];";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=1;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-								class Item7
-								{
-									dataType="Logic";
-									class PositionInfo
-									{
-										position[]={9749.2129,73.125473,1527.4045};
-										angles[]={1.3391147,3.2087772,6.0214186};
-									};
-									id=221;
-									type="ModuleChemlight_F";
-									atlOffset=1.1548462;
-									class CustomAttributes
-									{
-										class Attribute0
-										{
-											property="ModuleChemlight_F_Type";
-											expression="_this setVariable ['Type',_value,true];";
-											class Value
-											{
-												class data
-												{
-													singleType="STRING";
-													value="Chemlight_Red";
-												};
-											};
-										};
-										class Attribute1
-										{
-											property="ModuleChemlight_F_Repeat";
-											expression="_this setVariable ['Repeat',_value,true];";
-											class Value
-											{
-												class data
-												{
-													singleType="SCALAR";
-													value=1;
-												};
-											};
-										};
-										nAttributes=2;
-									};
-								};
-							};
-							id=217;
-							atlOffset=0.89834595;
-						};
 					};
 					id=172;
 					atlOffset=0.46648407;
 				};
-				class Item2
+				class Item1
 				{
 					dataType="Object";
 					class PositionInfo
@@ -1067,7 +804,7 @@ class Mission
 						nAttributes=6;
 					};
 				};
-				class Item3
+				class Item2
 				{
 					dataType="Object";
 					class PositionInfo
@@ -1084,7 +821,7 @@ class Mission
 					type="rhs_tigr_3camo_msv";
 					atlOffset=0.0018310547;
 				};
-				class Item4
+				class Item3
 				{
 					dataType="Group";
 					side="East";
@@ -3713,7 +3450,7 @@ class Mission
 					};
 					id=71;
 				};
-				class Item5
+				class Item4
 				{
 					dataType="Object";
 					class PositionInfo
@@ -3730,13 +3467,13 @@ class Mission
 					type="rhs_tigr_sts_msv";
 					atlOffset=-0.00030517578;
 				};
-				class Item6
+				class Item5
 				{
 					dataType="Object";
 					class PositionInfo
 					{
 						position[]={9751.8223,74.039139,1533.3674};
-						angles[]={0,6.1847281,-0};
+						angles[]={0,6.1847281,0};
 					};
 					side="Empty";
 					flags=4;
@@ -3747,7 +3484,7 @@ class Mission
 					type="rhs_tigr_m_msv";
 					atlOffset=-0.002204895;
 				};
-				class Item7
+				class Item6
 				{
 					dataType="Object";
 					class PositionInfo
@@ -3833,9 +3570,25 @@ class Mission
 						nAttributes=5;
 					};
 				};
+				class Item7
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8452.7012,127.11526,2739.3389};
+						angles[]={6.1002536,0.001403712,6.1983886};
+					};
+					side="Empty";
+					class Attributes
+					{
+						name="tsp_spawnCenter";
+					};
+					id=250;
+					type="Land_HelipadEmpty_F";
+				};
 			};
 			id=74;
-			atlOffset=0.14373779;
+			atlOffset=5.2172165;
 		};
 	};
 };
