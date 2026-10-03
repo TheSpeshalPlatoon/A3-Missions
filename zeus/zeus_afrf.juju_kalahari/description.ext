@@ -1,0 +1,97 @@
+author = "TheSpeshalPlatoon"; onLoadName = "Zeus"; class Header {gameType = ZEUS};
+
+class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Addon mode needs full path (\tsp_core\)
+#include "\a3\ui_f\hpp\definecommongrids.inc"
+#include "\tsp_core\scripts\chvd.hpp"
+#include "\tsp_core\scripts\gui.hpp"
+#include "\tsp_core\roles.hpp"
+
+tsp_param_mission = true;               //-- Run TSP mission scripts
+tsp_param_addons = false;              //-- Run TSP addon scripts
+tsp_param_spawn = true;               //-- Show spawn map at all
+tsp_param_spawnStart = true;         //-- Show spawn screen on initial spawn
+tsp_param_spawnScale = 0.25;        //-- Spawn screen scale, smaller is closer
+tsp_param_spawnLoadout = "Retain"; //-- "Retain", "Original", "Saved"
+tsp_param_spectate = "Dynamic";   //-- "Disabled", "Dynamic", "Forced"
+tsp_param_spectateTime = 120;    //-- Users that join after this many seconds, will be put into spectate if set to "Forced"
+tsp_param_role = true;          //-- Custom CfgRole select screen
+tsp_param_roleStart = true;    //-- Force player to select role at start of 
+tsp_param_roleCheck = false;  //-- Gear checking
+tsp_param_dispersion = 20;   //-- AI weapon dispersion
+tsp_param_skill = 1;        //-- AI skill
+tsp_param_spotting = 1;    //-- AI spotting
+tsp_param_brightness = 0.5;
+tsp_param_time_day = 5;
+tsp_param_time_night = 10;
+tsp_param_weather = true;
+
+tsp_roles[] = {
+	{"SSO - 81st Special Forces Brigade", "\tsp_core\data\insignia\sso.paa", "east", {
+		{"Zvesda HQ", "markers\nato\o_hq.paa", {
+			{"Platoon Leader", "tsp_sso_teamlead", {"sso_all","ru_leader","sso_gucci"}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_sso_medic", {"sso_all","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_sso_engineer", {"sso_all"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Zvesda 1", "markers\nato\o_inf.paa", {
+			{"Squad Leader", "tsp_sso_teamlead", {"sso_all","ru_leader","sso_gucci"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_sso_medic", {"sso_all","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_sso_operator", {"sso_all"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "tsp_sso_operator_lat", {"sso_all"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_sso_arifleman", {"sso_all","ru_missile"}, "iconManMG_ca.paa"},
+			{"Breacher", "tsp_sso_breacher", {"sso_all"}, "iconManRecon_ca.paa"}
+		}},
+		{"Zvesda 2 (Weapons)", "markers\nato\o_inf.paa", {
+			{"Squad Leader", "tsp_sso_teamlead", {"sso_all","ru_leader","sso_gucci"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_sso_medic", {"sso_all","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_sso_operator", {"sso_all"}, "iconManRecon_ca.paa"},
+			{"Operator (Thermobaric)", "tsp_sso_operator_RShG2", {"sso_all"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "tsp_sso_machinegunner", {"sso_all","ru_missile"}, "iconManMG_ca.paa"},
+			{"Grenadier", "tsp_sso_grenadier", {"sso_all"}, "iconManExplosive_ca.paa"}
+		}},
+		{"Molot", "markers\nato\o_art.paa", {
+			{"Team Leader", "tsp_sso_teamlead", {"sso_all","ru_leader","sso_gucci"}, "iconManLeader_ca.paa"},
+			{"Anti Tank", "tsp_sso_at", {"sso_all"}, "iconManAT_ca.paa"},
+			{"Ammo Bearer", "tsp_sso_strelok_rpg_assist", {"sso_all"}, "iconManAT_ca.paa"}
+		}}
+	}}
+};
+
+class Params {
+	#define GUERFRIENDLY_DEFAULT -1
+	#define TIMEACCELERATION_DEFAULT 1
+    #include "\a3\Functions_F_MP_Mark\Params\paramTimeAcceleration.hpp"
+	#include "\a3\functions_f\Params\paramGuerFriendly.hpp"
+};
+
+enableDebugConsole = 2; 
+saving = 0; 
+respawn = "BASE"; 
+respawnTemplates[] = {"BASE"};
+respawnDelay = 2; 
+respawnDialog = 0;
+respawnButton = 1;
+forceRotorLibSimulation = 0;
+disabledAI = 1;
+briefing = 1;  //-- Skip map screen
+
+minPlayerDistance = 300;  //-- Garbage collector despawn distance
+
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
+corpseLimit = 30;
+corpseRemovalMinTime = 60; 
+corpseRemovalMaxTime = 120;
+
+wreckManagerMode = 3;  //-- 1: All, 2: Players, 3: All but players
+wreckLimit = 15;
+wreckRemovalMinTime = 300; 
+wreckRemovalMaxTime = 600;
+ 
+reviveMode = 0;
+reviveUnconsciousStateMode = 1;
+reviveRequiredTrait = 0;
+reviveRequiredItems = 0;
+reviveRequiredItemsFakConsumed = 1;
+reviveMedicSpeedMultiplier = 2;
+reviveDelay = 10;
+reviveForceRespawnDelay = 5;
+reviveBleedOutDelay = 240;
