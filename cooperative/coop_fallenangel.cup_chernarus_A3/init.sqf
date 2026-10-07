@@ -8,7 +8,7 @@
     "rhsgref_ins_machinegunner",
     "rhsgref_ins_rifleman",
     "rhsgref_ins_rifleman_aks74"
-], [zone_zombie], east, {true}, {}, 200, 6, 15, 400] spawn tsp_fnc_zombience;
+], [zone_zombie], east, {true}, {}, 200, 3, 15, 400] spawn tsp_fnc_zombience;
 
 if (!isServer) exitWith {};
 

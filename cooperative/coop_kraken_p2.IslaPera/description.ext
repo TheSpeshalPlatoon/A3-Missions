@@ -1,4 +1,4 @@
-author = "N1C0"; onLoadName = "Transit"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]);
+author = "N1C0"; onLoadName = "Kraken"; class Header {gameType = COOP}; loadScreen = __EVAL(selectRandom["overview.jpg"]);
 
 class CfgFunctions {class tsp_core {class functions {class init {file = "\tsp_core\initFramework.sqf"; preInit = true};};};};  //-- Addon mode needs full path (\tsp_core\)
 #include "\a3\ui_f\hpp\definecommongrids.inc"
@@ -48,15 +48,7 @@ tsp_roles[] = {
 			{"Autorifleman", "tsp_hidf_sf_autorifleman", {"hidf_recon","hidf_autorifle"}, "iconManMG_ca.paa"},
 			{"Marksman", "tsp_hidf_sf_grenadier", {"hidf_recon","tsp_hidf_marksman"}, "iconManRecon_ca.paa"}
 		}}
-	}},
-	{"HIDF - Air Force", "\tsp_core\data\insignia\hidf.paa", "west", {
-		{"Python 1", "markers\nato\b_air.paa", {
-			{"Pilot", "rhsgref_hidf_helipilot", {"hidf_recon","hidf_leader", "hidf_pilot"}, "iconManOfficer_ca.paa"},
-			{"Copilot", "rhsgref_hidf_helipilot", {"hidf_recon","hidf_leader", "hidf_pilot"}, "iconManOfficer_ca.paa"},
-			{"Door gunner", "rhsgref_hidf_helipilot", {"hidf_recon","hidf_leader", "hidf_pilot"}, "iconManOfficer_ca.paa"},
-			{"Door gunner", "rhsgref_hidf_helipilot", {"hidf_recon","hidf_leader", "hidf_pilot"}, "iconManOfficer_ca.paa"}
-		}},
-	}}    
+	}}   
 };
 
 class Params {
@@ -78,12 +70,12 @@ briefing = 1;  //-- Skip map screen
 
 minPlayerDistance = 200;  //-- Garbage collector despawn distance
 
-corpseManagerMode = 0;  //-- 1: All, 2: Players, 3: All but players
+corpseManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
 corpseLimit = 30;
 corpseRemovalMinTime = 60; 
 corpseRemovalMaxTime = 120;
 
-wreckManagerMode = 0;  //-- 1: All, 2: Players, 3: All but players
+wreckManagerMode = 1;  //-- 1: All, 2: Players, 3: All but players
 wreckLimit = 15;
 wreckRemovalMinTime = 300; 
 wreckRemovalMaxTime = 600;

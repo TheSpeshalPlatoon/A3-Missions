@@ -7,7 +7,7 @@
 	"tsp_tka_rifleman",
 	"tsp_tka_rifleman_akm",
 	"tsp_tka_rifleman_lite"
-], [zone_zombie], independent, {true}, {}, 40, 6, 30, 250] spawn tsp_fnc_zombience;
+], [zone_zombie], independent, {true}, {}, 40, 4, 30, 250] spawn tsp_fnc_zombience;
 
 
 if (fileExists 'defuse\functions.sqf') then { 
