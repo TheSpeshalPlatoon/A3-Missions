@@ -6,24 +6,28 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=549;
+	mods[]=
+	{
+		"WBK_Zombies_AdvancedEditorSettings"
+	};
 	class ItemIDProvider
 	{
 		nextID=517;
 	};
 	class LayerIndexProvider
 	{
-		nextID=68;
+		nextID=73;
 	};
 	class Camera
 	{
-		pos[]={7925.2319,35.302032,10145.975};
-		dir[]={-0.65317249,-0.6380015,0.40784588};
-		up[]={-0.54116905,0.77003223,0.33791021};
-		aside[]={0.52964222,-1.9265281e-07,0.84823275};
+		pos[]={7920.75,35.302032,10134.887};
+		dir[]={-0.10272488,-0.37909281,0.919653};
+		up[]={-0.042083342,0.92535526,0.37675634};
+		aside[]={0.99383301,-3.0559022e-08,0.11101134};
 	};
 };
 binarizationWanted=0;
-sourceName="killhouse_pvp3";
+sourceName="killhouse_pvp";
 addons[]=
 {
 	"Bro_MSW_Base",
@@ -36,13 +40,14 @@ addons[]=
 	"A3_Structures_F_Ind_AirPort",
 	"USAF_ServiceMenu",
 	"A3_Structures_F_Training",
-	"A3_Characters_F_Exp"
+	"A3_Characters_F_Exp",
+	"hide_vanilla"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=11;
+		items=12;
 		class Item0
 		{
 			className="Bro_MSW_Base";
@@ -117,6 +122,11 @@ class AddonsMetaData
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item11
+		{
+			className="hide_vanilla";
+			name="hide_vanilla";
 		};
 	};
 };

@@ -26,27 +26,27 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"SLA - Paratroopers", "\tsp_core\data\insignia\sla.paa", "east", {
+	{"SLA - Paratroopers", "\tsp_core\data\insignia\sla.paa", "playerSide == east", {
 		{"Viper HQ", "markers\nato\o_hq.paa", {
-			{"Platoon Leader", {"tsp_sla_teamlead"}, {}, "iconManCommander_ca.paa"},
-			{"Medic", {"tsp_sla_medic"}, {}, "iconManMedic_ca.paa"},
-			{"Engineer", {"tsp_sla_engineer"}, {}, "iconManEngineer_ca.paa"}
+			{"Platoon Leader", "tsp_sla_teamlead", {}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_sla_medic", {}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_sla_engineer" {}, "iconManEngineer_ca.paa"}
 		}},
 		{"Viper 1", "markers\nato\o_inf.paa", {
-			{"Squad Leader", {"tsp_sla_teamlead"}, {}, "iconManLeader_ca.paa"},
-			{"Medic", {"tsp_sla_medic"}, {}, "iconManMedic_ca.paa"},
-			{"Rifleman", {"tsp_sla_rifleman"}, {}, "iconMan_ca.paa"},
-			{"Rifleman (AT)", {"tsp_sla_rifleman_at"}, {}, "iconManAT_ca.paa"},
-			{"Autorifleman", {"tsp_sla_autorifleman"}, {}, "iconManMG_ca.paa"},
-			{"Grenadier", {"tsp_sla_grenadier"}, {}, "iconManExplosive_ca.paa"}
+			{"Squad Leader", "tsp_sla_teamlead", {}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_sla_medic", {}, "iconManMedic_ca.paa"},
+			{"Rifleman", "tsp_sla_rifleman", {}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "tsp_sla_rifleman_at", {}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_sla_autorifleman", {}, "iconManMG_ca.paa"},
+			{"Grenadier", "tsp_sla_grenadier", {}, "iconManExplosive_ca.paa"}
 		}},
 		{"Viper 2", "markers\nato\o_inf.paa", {
-			{"Squad Leader", {"tsp_sla_teamlead"}, {}, "iconManLeader_ca.paa"},
-			{"Medic", {"tsp_sla_medic"}, {}, "iconManMedic_ca.paa"},
-			{"Rifleman", {"tsp_sla_rifleman"}, {}, "iconMan_ca.paa"},
-			{"Rifleman (AT)", {"tsp_sla_rifleman_at"}, {}, "iconManAT_ca.paa"},
-			{"Autorifleman", {"tsp_sla_autorifleman"}, {}, "iconManMG_ca.paa"},
-			{"Marksman", {"tsp_sla_marksman"}, {}, "iconManRecon_ca.paa"}
+			{"Squad Leader", "tsp_sla_teamlead", {}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_sla_medic", {}, "iconManMedic_ca.paa"},
+			{"Rifleman", "tsp_sla_rifleman", {}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "tsp_sla_rifleman_at", {}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_sla_autorifleman", {}, "iconManMG_ca.paa"},
+			{"Marksman", "tsp_sla_marksman", {}, "iconManRecon_ca.paa"}
 		}},
 		{"Burya 1", "markers\nato\o_mech_inf.paa", {
 			{"Crewman", "tsp_sla_crewman", {}, "iconManLeader_ca.paa"},

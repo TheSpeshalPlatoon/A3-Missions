@@ -26,35 +26,35 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"VDV - 76th Guards Razvedka", "\tsp_core\data\insignia\76vdv.paa", "east", {
+	{"VDV - 76th Guards Razvedka", "\tsp_core\data\insignia\vdv_76vdv.paa", "playerSide == east", {
 		{"Zvezda HQ", "markers\nato\o_hq.paa", {
-			{"Platoon Leader", "rhs_vdv_officer_armored", {"ru_vdv","ru_leader"}, "iconManCommander_ca.paa"},
+			{"Troop Commander", "rhs_vdv_officer_armored", {"ru_vdv","ru_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "rhs_vdv_engineer", {"ru_vdv"}, "iconManEngineer_ca.paa"}
+			{"Engineer", "rhs_vdv_engineer", {"ru_vdv","ru_engineer"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Zvezda 1", "markers\nato\o_inf.paa", {
-			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
+			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader","ru_grenadier_vdv"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
-			{"Scout (AT)", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "rhs_vdv_arifleman_rpk", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
-			{"Scout (ASVAL)", "rhs_vdv_rifleman_asval", {"ru_vdv","ru_sniper"}, "iconManRecon_ca.paa"}
+			{"Trooper", "rhs_vdv_rifleman", {"ru_vdv"}, "iconMan_ca.paa"},
+			{"Trooper (AT)", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
+			{"Grenadier", "rhs_vdv_grenadier", {"ru_vdv","ru_grenadier_vdv"}, "iconManExplosive_ca.paa"},
+			{"Autorifleman", "rhs_vdv_arifleman_rpk", {"ru_vdv","ru_autorifle"}, "iconManMG_ca.paa"}
 		}},
 		{"Zvezda 2 (Weapons)", "markers\nato\o_inf.paa", {
-			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
+			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader","ru_grenadier_vdv"}, "iconManLeader_ca.paa"},
 			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
-			{"Scout (AT)", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "rhs_vdv_machinegunner", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
-			{"Grenadier", "rhs_vdv_grenadier", {"ru_vdv"}, "iconManExplosive_ca.paa"}
+			{"Trooper", "rhs_vdv_rifleman", {"ru_vdv"}, "iconMan_ca.paa"},
+			{"Trooper (AT)", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
+			{"Marksman", "rhs_vdv_marksman", {"ru_vdv","ru_marksman"}, "iconManRecon_ca.paa"},
+			{"Machine Gunner", "rhs_vdv_arifleman", {"ru_vdv","ru_autorifle"}, "iconManMG_ca.paa"}
 		}},
 		{"Ohotnik", "markers\nato\o_art.paa", {
 			{"Team Leader", "rhs_vdv_junior_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Anti Tank", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
+			{"Anti Tank", "rhs_vdv_LAT", {"ru_vdv","ru_missile"}, "iconManAT_ca.paa"},
 			{"Ammo Bearer", "rhs_vdv_strelok_rpg_assist", {"ru_vdv"}, "iconManAT_ca.paa"}
 		}}
 	}},
-	{"VDV - 76th Guards Armor", "\tsp_core\data\insignia\76vdv.paa", "east", {
+	{"VDV - 76th Guards Armor", "\tsp_core\data\insignia\vdv_76vdv.paa", "playerSide == east", {
 		{"Sokol 1", "markers\nato\o_mech_inf.paa", {
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
@@ -64,7 +64,7 @@ tsp_roles[] = {
 			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}}
 	}},
-	{"Russia - BTG commander", "", "east", {
+	{"Russia - BTG commander", "", "playerSide == east", {
 		{"Varon", "markers\nato\o_hq.paa", {
 			{"Battalion Commander", "rhs_vdv_officer_armored", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"}
 		}}

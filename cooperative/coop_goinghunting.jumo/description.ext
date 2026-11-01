@@ -26,46 +26,45 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"USA - 2nd Infantry Brigade Combat Team (Airborne)", "\tsp_core\data\insignia\501bct.paa", "west", {
+	{"USA - 2nd Infantry Brigade Combat Team (Airborne)", "\tsp_core\data\insignia\501bct.paa", "playerSide == west", {
 		{"Trooper HQ", "markers\nato\b_hq.paa", {
-			{"Platoon Leader", "rhsusf_army_ocp_officer", {"usa_grunt","us_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "rhsusf_army_ocp_engineer", {"usa_grunt"}, "iconManEngineer_ca.paa"}
+			{"Platoon Leader", "rhsusf_army_ocp_arb_squadleader", {"usa_para","us_leader"}, "iconManCommander_ca.paa"},
+			{"JTAC", "rhsusf_army_ocp_fso", {"usa_para","us_leader"}, "iconManRecon_ca.paa"},
+			{"Medic", "rhsusf_army_ocp_arb_medic", {"usa_para","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "rhsusf_army_ocp_arb_engineer", {"usa_para","us_engineer"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Trooper 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_army_ocp_squadleader", {"usa_grunt","us_leader"}, "iconManLeader_ca.paa"},
-			{"Team Leader", "rhsusf_army_ocp_teamleader", {"usa_grunt"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
-			{"Rifleman", "rhsusf_army_ocp_rifleman", {"usa_grunt"}, "iconMan_ca.paa"},
-			{"Rifleman (AT)", "rhsusf_army_ocp_riflemanat", {"usa_grunt","usa_missile","us_missile"}, "iconManAT_ca.paa"},
-			{"Grenadier", "rhsusf_army_ocp_grenadier", {"usa_grunt"}, "iconMan_ca.paa"},
-			{"Autorifleman", "rhsusf_army_ocp_autorifleman", {"usa_grunt","us_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "rhsusf_army_ocp_rifleman_m590", {"usa_grunt"}, "iconManExplosive_ca.paa"}
+			{"Squad Leader", "rhsusf_army_ocp_arb_squadleader", {"usa_para","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_army_ocp_arb_teamleader", {"usa_para"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_army_ocp_arb_medic", {"usa_para","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_army_ocp_arb_rifleman", {"usa_para"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_army_ocp_arb_riflemanat", {"usa_para","usa_missile"}, "iconManAT_ca.paa"},
+			{"Grenadier", "rhsusf_army_ocp_arb_grenadier", {"usa_para","usa_grenadier"}, "iconMan_ca.paa"},
+			{"Autorifleman", "rhsusf_army_ocp_arb_autorifleman", {"usa_para","usa_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", "rhsusf_army_ocp_arb_rifleman_m590", {"usa_para","us_engineer"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Trooper 2", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_army_ocp_squadleader", {"usa_grunt","us_leader"}, "iconManLeader_ca.paa"},
-			{"Team Leader", "rhsusf_army_ocp_teamleader", {"usa_grunt"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
-			{"Rifleman", "rhsusf_army_ocp_rifleman", {"usa_grunt"}, "iconMan_ca.paa"},
-			{"Rifleman (AT)", "rhsusf_army_ocp_riflemanat", {"usa_grunt","usa_missile","us_missile"}, "iconManAT_ca.paa"},
-			{"Grenadier", "rhsusf_army_ocp_grenadier", {"usa_grunt"}, "iconMan_ca.paa"},
-			{"Autorifleman", "rhsusf_army_ocp_autorifleman", {"usa_grunt","us_autorifle"}, "iconManMG_ca.paa"},
-			{"Marksman", "rhsusf_army_ocp_marksman", {"usa_grunt","us_sniper","usa_sniper"}, "iconMan_ca.paa"}
+			{"Squad Leader", "rhsusf_army_ocp_arb_squadleader", {"usa_para","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_army_ocp_arb_teamleader", {"usa_para"}, "iconManLeader_ca.paa"},
+			{"Medic", "rhsusf_army_ocp_arb_medic", {"usa_para","medic"}, "iconManMedic_ca.paa"},
+			{"Rifleman", "rhsusf_army_ocp_arb_rifleman", {"usa_para"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_army_ocp_arb_riflemanat", {"usa_para","usa_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Grenadier", "rhsusf_army_ocp_arb_grenadier", {"usa_para","usa_grenadier"}, "iconMan_ca.paa"},
+			{"Autorifleman", "rhsusf_army_ocp_arb_autorifleman", {"usa_para","usa_autorifle"}, "iconManMG_ca.paa"},
+			{"Marksman", "rhsusf_army_ocp_arb_marksman", {"usa_para","usa_marksman"}, "iconMan_ca.paa"}
 		}},
 		{"Trooper 3 (Weapons)", "markers\nato\b_art.paa", {
-			{"Squad Leader", "rhsusf_army_ocp_squadleader", {"usa_grunt","us_leader"}, "iconManLeader_ca.paa"},
-			{"Team Leader", "rhsusf_army_ocp_teamleader", {"usa_grunt"}, "iconManLeader_ca.paa"},
-			{"Machine Gunner", "rhsusf_army_ocp_machinegunner", {"usa_grunt","us_autorifle"}, "iconManMG_ca.paa"},
-			{"Ammo Bearer", "rhsusf_army_ocp_machinegunnera", {"usa_grunt","us_autorifle"}, "iconMan_ca.paa"},
-			{"Missile Specialist", "rhsusf_army_ocp_javelin", {"usa_grunt","usa_missile","us_missile"}, "iconManAT_ca.paa"},
-			{"Assistant Missile Specialist", "rhsusf_army_ocp_javelin_assistant", {"usa_grunt","usa_missile","us_missile"}, "iconMan_ca.paa"}
+			{"Team Leader", "rhsusf_army_ocp_arb_teamleader", {"usa_para"}, "iconManLeader_ca.paa"},
+			{"Machine Gunner", "rhsusf_army_ocp_arb_machinegunner", {"usa_para","usa_machinegun"}, "iconManMG_ca.paa"},
+			{"Ammo Bearer", "rhsusf_army_ocp_arb_machinegunnera", {"usa_para"}, "iconMan_ca.paa"},
+			{"Missile Specialist", "rhsusf_army_ocp_arb_maaws", {"usa_para","usa_missile"}, "iconManAT_ca.paa"}
 		}}
 	}},
-	{"USA - 40th Cavalry Regiment", "\tsp_core\data\insignia\40cav.paa", "west", {
+	{"USA - 40th Cavalry Regiment", "\tsp_core\data\insignia\usa_40cav.paa", "playerSide == west", {
 		{"Talon 1", "markers\nato\b_mech_inf.paa", {
-			{"Crewman", "rhsusf_army_ocp_crewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
+            {"Crewman", "rhsusf_army_ocp_crewman", {"usa_inf","us_crew","us_leader","cinco_uniform_nomex_tan_m","cinco_uniform_nomex_green_m"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_inf","us_crew","us_leader","cinco_uniform_nomex_tan_m","cinco_uniform_nomex_green_m"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_inf","us_crew","us_leader","cinco_uniform_nomex_tan_m","cinco_uniform_nomex_green_m"}, "iconManLeader_ca.paa"}
 		}}
 	}}
 };

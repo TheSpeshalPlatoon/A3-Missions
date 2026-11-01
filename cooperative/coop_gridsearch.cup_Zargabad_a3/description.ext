@@ -26,30 +26,30 @@ tsp_param_time_night = 12;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"ION - Task Force Red", "\tsp_core\data\insignia\ion.paa", "west", {
+	{"IoN - Task Force Red", "\tsp_core\data\insignia\ion.paa", "playerSide == west", {
 		{"Sword 1", "markers\nato\b_inf.paa", {
-			{"Team Leader", "tsp_ion_teamlead", {"ion_contractor","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "tsp_ion_teamlead", {"ion_contractor","ion_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "tsp_ion_medic", {"ion_contractor","medic"}, "iconManMedic_ca.paa"},
 			{"Contractor", "tsp_ion_contractor", {"ion_contractor"}, "iconMan_ca.paa"},
 			{"Contractor", "tsp_ion_contractor_akm", {"ion_contractor"}, "iconMan_ca.paa"},
 			{"Autorifleman", "tsp_ion_autorifleman", {"ion_contractor","ion_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_ion_breacher", {"ion_contractor"}, "iconManExplosive_ca.paa"}
+			{"Engineer", "tsp_ion_breacher", {"ion_contractor","ion_engineer"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Sword 2", "markers\nato\b_inf.paa", {
-			{"Team Leader", "tsp_ion_teamlead", {"ion_contractor","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "tsp_ion_teamlead", {"ion_contractor","ion_leader"}, "iconManLeader_ca.paa"},
 			{"Medic", "tsp_ion_medic", {"ion_contractor","medic"}, "iconManMedic_ca.paa"},
 			{"Contractor", "tsp_ion_contractor", {"ion_contractor"}, "iconMan_ca.paa"},
 			{"Contractor", "tsp_ion_contractor_fal", {"ion_contractor"}, "iconMan_ca.paa"},
 			{"Autorifleman", "tsp_ion_autorifleman", {"ion_contractor","ion_autorifle"}, "iconManMG_ca.paa"},
-			{"Marksman", "tsp_ion_marksman", {"ion_contractor", "ion_sniper"}, "iconManExplosive_ca.paa"}
+			{"Marksman", "tsp_ion_marksman", {"ion_contractor", "ion_sniper"}, "iconManRecon_ca.paa"}
 		}},
 		{"Arrow 1", "markers\nato\b_air.paa", {
-			{"Helicopter Pilot", "tsp_ion_helipilot", {"ion_contractor","us_leader","ion_pilot"}, "iconManOfficer_ca.paa"},
-			{"Helicopter Crew", "tsp_ion_helipilot", {"ion_contractor","us_leader","ion_pilot"}, "iconManOfficer_ca.paa"}
+			{"Helicopter Pilot", "tsp_ion_helipilot", {"ion_contractor","ion_pilot","ion_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_ion_helipilot", {"ion_contractor","ion_pilot","ion_leader"}, "iconManOfficer_ca.paa"}
 		}},
 		{"Arrow 2", "markers\nato\b_air.paa", {
-			{"Helicopter Pilot", "tsp_ion_helipilot", {"ion_contractor","us_leader","ion_pilot"}, "iconManOfficer_ca.paa"},
-			{"Helicopter Crew", "tsp_ion_helipilot", {"ion_contractor","us_leader","ion_pilot"}, "iconManOfficer_ca.paa"}
+			{"Helicopter Pilot", "tsp_ion_helipilot", {"ion_contractor","ion_pilot","ion_leader"}, "iconManOfficer_ca.paa"},
+			{"Helicopter Crew", "tsp_ion_helipilot", {"ion_contractor","ion_pilot","ion_leader"}, "iconManOfficer_ca.paa"}
 		}}
 	}}
 };

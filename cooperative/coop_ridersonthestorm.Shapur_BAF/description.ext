@@ -26,64 +26,65 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\1recon.paa", "west", {
+	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\usmc_1recon.paa", "playerSide == west", {
+		#define USMCRECON "_this spawn {sleep 1; [_this, 'usmc_1fr'] call BIS_fnc_setUnitInsignia};"
 		{"Raider HQ", "markers\nato\b_hq.paa", {
-			{"Platoon Leader", "rhsusf_usmc_recon_marpat_d_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "rhsusf_navy_sarc_d_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", {"rhsusf_usmc_marpat_d_explosives", "tsp_usmc_engineer"}, {"usmc_recon"}, "iconManEngineer_ca.paa"}
+			{"Platoon Commander", "rhsusf_usmc_recon_marpat_d_officer", {"usmc_recon","us_leader_special"}, "iconManCommander_ca.paa", USMCRECON},
+			{"SARC Medic", "rhsusf_navy_sarc_d_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa", USMCRECON},
+			{"Engineer", {"rhsusf_usmc_marpat_d_explosives", "tsp_usmc_engineer"}, {"usmc_recon","usmc_engineer"}, "iconManEngineer_ca.paa", USMCRECON}
 		}},
 		{"Raider 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_usmc_recon_marpat_d_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhsusf_navy_sarc_d_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhsusf_usmc_recon_marpat_d_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Scout (AT)", "rhsusf_usmc_recon_marpat_d_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "rhsusf_usmc_recon_marpat_d_machinegunner_m249", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", {"rhsusf_usmc_marpat_d_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"}
+			{"Team Leader", "rhsusf_usmc_recon_marpat_d_teamleader", {"usmc_recon","us_leader_special","usmc_grenadier"}, "iconManLeader_ca.paa", USMCRECON},
+			{"SARC Medic", "rhsusf_navy_sarc_d", {"usmc_recon","medic"}, "iconManMedic_ca.paa", USMCRECON},
+			{"Scout (AT)", "rhsusf_usmc_recon_marpat_d_rifleman_at", {"usmc_recon","usmc_missile"}, "iconManAT_ca.paa", USMCRECON},
+			{"Autorifleman", "rhsusf_usmc_recon_marpat_d_machinegunner_m249", {"usmc_recon","usa_autorifle_special","usa_machinegun"}, "iconManMG_ca.paa", USMCRECON},
+			{"Breacher", {"rhsusf_usmc_marpat_d_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon","usmc_engineer"}, "iconManExplosive_ca.paa", USMCRECON}
 		}},
 		{"Raider 2 (Weapons)", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_usmc_recon_marpat_d_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhsusf_navy_sarc_d_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhsusf_usmc_recon_marpat_d_rifleman", {"usmc_recon","us_grenadier","soc_grenadier"}, "iconManRecon_ca.paa"},
-			{"Anti Tank", {"rhsusf_usmc_recon_marpat_d_rifleman_at", "tsp_usmc_antitank",}, {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "rhsusf_usmc_recon_marpat_d_machinegunner_fast", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", {"rhsusf_usmc_marpat_d_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"}
+			{"Team Leader", "rhsusf_usmc_recon_marpat_d_teamleader", {"usmc_recon","us_leader_special","usa_grenadier_special"}, "iconManLeader_ca.paa", USMCRECON},
+			{"SARC Medic", "rhsusf_navy_sarc_d", {"usmc_recon","medic"}, "iconManMedic_ca.paa", USMCRECON},
+			{"Scout", "rhsusf_usmc_recon_marpat_d_rifleman", {"usmc_recon"}, "iconManRecon_ca.paa", USMCRECON},
+			{"Anti Tank", {"tsp_usmc_antitank", "rhsusf_usmc_recon_marpat_d_rifleman_at"}, {"usmc_recon","usmc_missile"}, "iconManAT_ca.paa", USMCRECON},
+			{"Machine Gunner", "rhsusf_usmc_recon_marpat_d_machinegunner", {"usmc_recon","usa_autorifle_special","usa_machinegun"}, "iconManMG_ca.paa", USMCRECON},
 		}},
 		{"Hitman (Scout Snipers)", "markers\nato\b_art.paa", {
-			{"Spotter", "rhsusf_usmc_recon_marpat_d_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
-			{"Sniper", "rhsusf_usmc_recon_marpat_d_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
+			{"Spotter", "rhsusf_usmc_marpat_d_spotter", {"usmc_recon","us_leader_special","usmc_marksman","usmc_sniper"}, "iconManLeader_ca.paa", USMCRECON},
+			{"Sniper", "rhsusf_usmc_marpat_d_sniper", {"usmc_recon","us_leader_special","usmc_marksman","usmc_sniper"}, "iconManRecon_ca.paa", USMCRECON}
 		}}
 	}},
-	{"USMC - 3rd Marine Raider Battalion", "\tsp_core\data\insignia\raider.paa", "west", {
+	{"USMC - 3rd Marine Raider Battalion", "\tsp_core\data\insignia\usmc_raider.paa", "playerSide == west", {
+		#define USMCRAIDER "_this spawn {sleep 1; [_this, 'usmc_raid'] call BIS_fnc_setUnitInsignia};"
 		{"Gambler HQ", "markers\nato\b_hq.paa", {
-			{"Platoon Leader", "rhsusf_socom_marsoc_elementleader", {"soc_raider","us_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "rhsusf_socom_marsoc_cso_mechanic", {"soc_raider"}, "iconManEngineer_ca.paa"}
+			{"Team Chief", "rhsusf_socom_marsoc_teamchief", {"usmc_raider","us_leader_special"}, "iconManCommander_ca.paa", USMCRAIDER},
+			{"SARC Medic", "rhsusf_socom_marsoc_sarc", {"usmc_raider","medic"}, "iconManMedic_ca.paa", USMCRAIDER},
+			{"Engineer", "rhsusf_socom_marsoc_cso_mechanic", {"usmc_raider","usmc_engineer"}, "iconManEngineer_ca.paa", USMCRAIDER}
 		}},
 		{"Gambler 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "rhsusf_socom_marsoc_cso", {"soc_raider"}, "iconManRecon_ca.paa"},
-			{"Operator (M203)", "rhsusf_socom_marsoc_cso_grenadier", {"soc_raider","usa_missile"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "tsp_army_sf_autorifleman", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", "rhsusf_socom_marsoc_cso_breacher", {"soc_raider"}, "iconManExplosive_ca.paa"}
+			{"Element Leader", "rhsusf_socom_marsoc_elementleader", {"usmc_raider","us_leader_special","usa_grenadier_special"}, "iconManLeader_ca.paa", USMCRAIDER},
+			{"SARC Medic", "rhsusf_socom_marsoc_sarc", {"usmc_raider","medic"}, "iconManMedic_ca.paa", USMCRAIDER},
+			{"Operator", "rhsusf_socom_marsoc_cso", {"usmc_raider"}, "iconManRecon_ca.paa", USMCRAIDER},
+			{"Grenadier", "rhsusf_socom_marsoc_cso_grenadier", {"usmc_raider","usa_grenadier_special"}, "iconManAT_ca.paa", USMCRAIDER},
+			{"Autorifleman", "rhsusf_socom_marsoc_cso_light", {"usmc_raider","us_autorifle","usa_autorifle_special","usa_machinegun","tier1_autorifle"}, "iconManMG_ca.paa", USMCRAIDER},
+			{"Breacher", "rhsusf_socom_marsoc_cso_breacher", {"usmc_raider","usmc_engineer"}, "iconManExplosive_ca.paa", USMCRAIDER}
 		}},
 		{"Gambler 2 (Weapons)", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_socom_marsoc_teamleader", {"soc_raider","us_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
-			{"Operator (MK17)", "rhsusf_socom_marsoc_cso_mk17", {"soc_raider"}, "iconManRecon_ca.paa"},
-			{"Operator (AT)", "rhsusf_socom_marsoc_cso", {"soc_raider","usa_missile"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_raider","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
-			{"Marksman", "rhsusf_socom_marsoc_sniper", {"soc_raider","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+			{"Element Leader", "rhsusf_socom_marsoc_teamleader", {"usmc_raider","us_leader_special","usa_grenadier_special"}, "iconManLeader_ca.paa", USMCRAIDER},
+			{"SARC Medic", "rhsusf_socom_marsoc_sarc", {"usmc_raider","medic"}, "iconManMedic_ca.paa", USMCRAIDER},
+			{"Operator (MK17)", "rhsusf_socom_marsoc_cso_mk17", {"usmc_raider"}, "iconManRecon_ca.paa", USMCRAIDER},
+			{"Operator (AT)", "rhsusf_socom_marsoc_cso", {"usmc_raider","usa_missile","usmc_missile"}, "iconManAT_ca.paa", USMCRAIDER},
+			{"Machine Gunner", "rhsusf_socom_marsoc_cso_mk17_light", {"usmc_raider","us_autorifle","usa_autorifle_special","usa_machinegun","tier1_autorifle"}, "iconManMG_ca.paa", USMCRAIDER},
+			{"Marksman", "rhsusf_socom_marsoc_sniper", {"usmc_raider","usa_sniper","usmc_sniper","tier1_sniper"}, "iconMan_ca.paa", USMCRAIDER}
 		}}
 	}},
-	{"USMC - 2nd Light Armoured Reconnaissance", "\tsp_core\data\insignia\2lar.paa", "west", {
+	{"USMC - 2nd Light Armoured Reconnaissance", "\tsp_core\data\insignia\usmc_2lar.paa", "playerSide == west", {
+		#define USMCLAR "_this spawn {sleep 1; [_this, 'usmc_3lar'] call BIS_fnc_setUnitInsignia};"
 		{"Crocodile 1", "markers\nato\b_mech_inf.paa", {
-			{"Crewman", "rhsusf_usmc_marpat_d_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhsusf_usmc_marpat_d_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
+			{"Crewman", "rhsusf_usmc_lar_marpat_d_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa", USMCLAR},
+			{"Crewman", "rhsusf_usmc_lar_marpat_d_combatcrewman", {"usmc_grunt","us_crew","us_leader"}, "iconMan_ca.paa", USMCLAR}
 		}},
 		{"Crocodile 2", "markers\nato\b_mech_inf.paa", {
-			{"Crewman", "rhsusf_usmc_marpat_d_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhsusf_usmc_marpat_d_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
+			{"Crewman", "rhsusf_usmc_lar_marpat_d_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa", USMCLAR},
+			{"Crewman", "rhsusf_usmc_lar_marpat_d_combatcrewman", {"usmc_grunt","us_crew","us_leader"}, "iconMan_ca.paa", USMCLAR}
 		}}
 	}}
 };
@@ -129,39 +130,15 @@ reviveForceRespawnDelay = 5;
 reviveBleedOutDelay = 240;
 
 class CfgSounds {
-	class uragan_1 {
-		name = "uragan_1";
-		sound[] = {"\sound\uragan_1.ogg", db+1, 1};
-		titles[] = {1, ""};
-	};
-	class bcg_wind {
-		name = "bcg_wind";
-		sound[] = {"\sound\bcg_wind.ogg", db+1, 1};
-		titles[] = {1, ""};
-	};	
-	class rafala_1 {
-		name = "rafala_1";
-		sound[] = {"\sound\rafala_1.ogg", db+1, 1};
-		titles[] = {1, ""};
-	};	
-	class rafala_4_dr {
-		name = "rafala_4_dr";
-		sound[] = {"\sound\rafala_4_dr.ogg", db+1, 1};
-		titles[] = {1, ""};
-	};	
-	class rafala_5_st {
-		name = "rafala_5_st";
-		sound[] = {"\sound\rafala_5_st.ogg", db+1, 1};
-		titles[] = {1, ""};
-	};
-	class sandstorm	{
-		name = "sandstorm";
-		sound[] = {"\sound\sandstorm.ogg", db+1, 1};
-		titles[] = {1, ""};
-	};		
+	class uragan_1 {name = "uragan_1"; sound[] = {"\dust\uragan_1.ogg", db+1, 1}; titles[] = {1, ""};};
+	class bcg_wind {name = "bcg_wind"; sound[] = {"\dust\bcg_wind.ogg", db+1, 1}; titles[] = {1, ""};};	
+	class rafala_1 {name = "rafala_1"; sound[] = {"\dust\rafala_1.ogg", db+1, 1}; titles[] = {1, ""};};	
+	class rafala_4_dr {name = "rafala_4_dr"; sound[] = {"\dust\rafala_4_dr.ogg", db+1, 1}; titles[] = {1, ""};};	
+	class rafala_5_st {name = "rafala_5_st"; sound[] = {"\dust\rafala_5_st.ogg", db+1, 1}; titles[] = {1, ""};};
+	class sandstorm	{name = "sandstorm"; sound[] = {"\dust\sandstorm.ogg", db+1, 1}; titles[] = {1, ""};};		
 };
 
-class CfgMusic {class shellac {name = "shellac"; sound[] = {"shellac.ogg", db+1, 1.0};};};
+class CfgMusic {class shellac {name = "shellac"; sound[] = {"@tsp_core\data\takistan\shellac.ogg", db-7, 1.0};};};
 
 class CfgORBAT {
 	class tka {

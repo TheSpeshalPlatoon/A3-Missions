@@ -26,32 +26,31 @@ tsp_param_time_night = 10;
 tsp_param_weather = true;
 
 tsp_roles[] = {
-	{"SSO - 81st Special Forces Brigade", "\tsp_core\data\insignia\sso.paa", "east", {
+	{"SSO - 81st Special Forces", "\tsp_core\data\insignia\sso.paa", "playerSide == east", {
 		{"Zvesda HQ", "markers\nato\o_hq.paa", {
-			{"Platoon Leader", "tsp_sso_teamlead", {"sso_all","ru_leader","sso_gucci"}, "iconManCommander_ca.paa"},
-			{"Medic", "tsp_sso_medic", {"sso_all","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "tsp_sso_engineer", {"sso_all"}, "iconManEngineer_ca.paa"}
+			{"Platoon Commander", "tsp_sso_officer_armored", {"ru_sso","ru_leader_spetsnaz","ru_grenadier_vdv"}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_sso_medic", {"ru_sso","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_sso_engineer", {"ru_sso","ru_engineer"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Zvesda 1", "markers\nato\o_inf.paa", {
-			{"Squad Leader", "tsp_sso_teamlead", {"sso_all","ru_leader","sso_gucci"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_sso_medic", {"sso_all","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "tsp_sso_operator", {"sso_all"}, "iconManRecon_ca.paa"},
-			{"Operator (AT)", "tsp_sso_operator_lat", {"sso_all"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "tsp_sso_arifleman", {"sso_all","ru_missile"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_sso_breacher", {"sso_all"}, "iconManRecon_ca.paa"}
+			{"Squad Leader", "tsp_sso_teamlead", {"ru_sso","ru_leader_spetsnaz","ru_grenadier_vdv"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_sso_medic", {"ru_sso","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_sso_operator", {"ru_sso"}, "iconManRecon_ca.paa"},
+			{"Operator (AT)", "tsp_sso_operator_lat", {"ru_sso","ru_missile"}, "iconManAT_ca.paa"},
+			{"Grenadier", "tsp_sso_grenadier", {"ru_sso","ru_grenadier_vdv"}, "iconManExplosive_ca.paa"},
+			{"Autorifleman", "tsp_sso_arifleman_rpk", {"ru_sso","ru_autorifle"}, "iconManMG_ca.paa"}
 		}},
 		{"Zvesda 2 (Weapons)", "markers\nato\o_inf.paa", {
-			{"Squad Leader", "tsp_sso_teamlead", {"sso_all","ru_leader","sso_gucci"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_sso_medic", {"sso_all","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "tsp_sso_operator", {"sso_all"}, "iconManRecon_ca.paa"},
-			{"Operator (Thermobaric)", "tsp_sso_operator_RShG2", {"sso_all"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "tsp_sso_machinegunner", {"sso_all","ru_autorifle"}, "iconManMG_ca.paa"},
-			{"Grenadier", "tsp_sso_grenadier", {"sso_all"}, "iconManExplosive_ca.paa"}
+			{"Squad Leader", "tsp_sso_teamlead", {"ru_sso","ru_leader_spetsnaz","ru_grenadier_vdv"}, "iconManLeader_ca.paa"},
+			{"Medic", "tsp_sso_medic", {"ru_sso","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", "tsp_sso_operator", {"ru_sso"}, "iconManRecon_ca.paa"},
+			{"Anti Tank", "tsp_sso_at", {"ru_sso","ru_missile"}, "iconManAT_ca.paa"},
+			{"Marksman", "tsp_sso_marksman", {"ru_sso","ru_marksman"}, "iconManRecon_ca.paa"},
+			{"Machine Gunner", "tsp_sso_machinegunner", {"ru_sso","ru_autorifle"}, "iconManMG_ca.paa"}
 		}},
 		{"Molot", "markers\nato\o_art.paa", {
-			{"Team Leader", "tsp_sso_teamlead", {"sso_all","ru_leader","sso_gucci"}, "iconManLeader_ca.paa"},
-			{"Anti Tank", "tsp_sso_at", {"sso_all"}, "iconManAT_ca.paa"},
-			{"Ammo Bearer", "tsp_sso_strelok_rpg_assist", {"sso_all"}, "iconManAT_ca.paa"}
+			{"Spotter", "tsp_sso_marksman_vss", {"ru_sso","ru_leader_spetsnaz","ru_marksman","ru_sniper"}, "iconManLeader_ca.paa"},
+			{"Sniper", "tsp_sso_sniper", {"ru_sso","ru_leader_spetsnaz","ru_marksman","ru_sniper"}, "iconManRecon_ca.paa"}
 		}}
 	}}
 };

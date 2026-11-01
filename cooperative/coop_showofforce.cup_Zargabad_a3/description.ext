@@ -26,7 +26,7 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"USA - 1st Cavalry Regiment", "\tsp_core\data\insignia\1cav.paa", "west", {
+	{"USA - 1st Cavalry Regiment", "\tsp_core\data\insignia\1cav.paa", "playerSide == west", {
 		{"BlackJack HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "rhsusf_army_ocp_officer", {"usa_grunt","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "rhsusf_army_ocp_medic", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
@@ -61,11 +61,17 @@ tsp_roles[] = {
 			{"Assistant Missile Specialist", "rhsusf_army_ocp_javelin_assistant", {"usa_grunt","usa_missile","us_missile"}, "iconMan_ca.paa"}
 		}}
 	}},
-	{"USA - Iron Brigade", "\tsp_core\data\insignia\2bct.paa", "west", {
+	{"USA - 1st Armored", "\tsp_core\data\insignia\usa_1armor.paa", "playerSide == west", {
+		#define USA1A "_this spawn {sleep 1; [_this, 'army_1a'] call BIS_fnc_setUnitInsignia};"
 		{"Wrecker 1", "markers\nato\b_mech_inf.paa", {
-			{"Crewman", "rhsusf_army_ocp_crewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
+			{"Crewman", "rhsusf_army_ocp_crewman", {"usa_inf","us_crew","us_leader","cinco_uniform_nomex_tan_m","cinco_uniform_nomex_green_m"}, "iconManLeader_ca.paa", USA1A},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_inf","us_crew","us_leader","cinco_uniform_nomex_tan_m","cinco_uniform_nomex_green_m"}, "iconManLeader_ca.paa", USA1A},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_inf","us_crew","us_leader","cinco_uniform_nomex_tan_m","cinco_uniform_nomex_green_m"}, "iconManLeader_ca.paa", USA1A}
+		}},
+		{"Wrecker", "markers\nato\b_mech_inf.paa", {
+			{"Crewman", "rhsusf_army_ocp_crewman", {"usa_inf","us_crew","us_leader","cinco_uniform_nomex_tan_m","cinco_uniform_nomex_green_m"}, "iconManLeader_ca.paa", USA3SFG},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_inf","us_crew","us_leader","cinco_uniform_nomex_tan_m","cinco_uniform_nomex_green_m"}, "iconManLeader_ca.paa", USA3SFG},
+			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_inf","us_crew","us_leader","cinco_uniform_nomex_tan_m","cinco_uniform_nomex_green_m"}, "iconManLeader_ca.paa", USA3SFG}
 		}}
 	}}
 };

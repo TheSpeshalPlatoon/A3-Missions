@@ -1,5 +1,5 @@
 tsp_roles_nato[] = {
-	{"5th Expeditionary Force", "\a3\UI_F_enoch\Data\CfgUnitInsignia\eaf_5thRegiment_ca.paa", "west", {
+	{"5th Expeditionary Force", "\a3\UI_F_enoch\Data\CfgUnitInsignia\eaf_5thRegiment_ca.paa", "playerSide == west", {
 		{"Platoon HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "B_officer_F", {}, "iconManCommander_ca.paa"},
 			{"Medic", "B_medic_F", {}, "iconManMedic_ca.paa"},
@@ -35,7 +35,7 @@ tsp_roles_nato[] = {
 			{"Assistant Missile Specialist", "B_soldier_AAT_F", {}, "iconMan_ca.paa"}
 		}}
 	}},
-	{"2nd Force Reconnaissance", "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\TFAegis_ca.paa", "west", {
+	{"2nd Force Reconnaissance", "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\TFAegis_ca.paa", "playerSide == west", {
 		{"Raider 1", "markers\nato\b_inf.paa", {
 			{"Team Leader", "B_Soldier_SL_F", {}, "iconManLeader_ca.paa"},
 			{"Medic", "B_medic_F", {}, "iconManMedic_ca.paa"},
@@ -51,7 +51,7 @@ tsp_roles_nato[] = {
 			{"Autorifleman", "B_soldier_AR_F", {}, "iconManMG_ca.paa"}
 		}}
 	}},
-	{"3rd Light Armoured Reconnaissance", "\a3\UI_F_Orange\Data\CfgUnitInsignia\aaf_3rdRegiment_ca.paa", "west", {
+	{"3rd Light Armoured Reconnaissance", "\a3\UI_F_Orange\Data\CfgUnitInsignia\aaf_3rdRegiment_ca.paa", "playerSide == west", {
 		{"Crocodile 1", "markers\nato\b_mech_inf.paa", {
 			{"Crewman", "B_Crew_F", {}, "iconManLeader_ca.paa"},
 			{"Crewman", "B_Crew_F", {}, "iconManLeader_ca.paa"}
@@ -61,7 +61,7 @@ tsp_roles_nato[] = {
 			{"Crewman", "B_Crew_F", {}, "iconManLeader_ca.paa"}
 		}}
 	}},
-	{"Carrier Rotor Wing 1", "\a3\UI_F_Tank\Data\CfgUnitInsignia\aaf_1stRegiment_ca.paa", "west", {
+	{"Carrier Rotor Wing 1", "\a3\UI_F_Tank\Data\CfgUnitInsignia\aaf_1stRegiment_ca.paa", "playerSide == west", {
 		{"Whiplash 1", "markers\nato\b_air.paa", {
 			{"Helicopter Pilot", "B_Helipilot_F", {}, "iconManOfficer_ca.paa"},
 			{"Helicopter Crew", "B_Helicrew_F", {}, "iconManOfficer_ca.paa"}
@@ -75,11 +75,11 @@ tsp_roles_nato[] = {
 			{"Helicopter Crew", "B_Helicrew_F", {}, "iconManOfficer_ca.paa"}
 		}}
 	}},
-	{"Carrier Strike Group 14", "\a3\UI_F_Jets\Data\CfgUnitInsignia\jets_patch_01.paa", "west", {
+	{"Carrier Strike Group 14", "\a3\UI_F_Jets\Data\CfgUnitInsignia\jets_patch_01.paa", "playerSide == west", {
 		{"Razor 1", "markers\nato\b_plane.paa", {{"Jet Pilot", "B_Pilot_F", {}, "iconManOfficer_ca.paa"}}},
 		{"Razor 2", "markers\nato\b_plane.paa", {{"Jet Pilot", "B_Pilot_F", {}, "iconManOfficer_ca.paa"}}}
 	}},
-	{"CTRG Group 13", "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\CTRG13_NATO.paa", "west", {
+	{"CTRG Group 13", "\A3\Ui_f\data\GUI\Cfg\UnitInsignia\CTRG13_NATO.paa", "playerSide == west", {
 		{"Keystone 1", "markers\nato\b_inf.paa", {
 			{"Team Leader", "B_Soldier_SL_F", {}, "iconManLeader_ca.paa"},
 			{"Medic", "B_medic_F", {}, "iconManMedic_ca.paa"},
@@ -95,7 +95,7 @@ tsp_roles_nato[] = {
 };
 
 tsp_roles_all[] = {
-	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\1recon.paa", "west", {
+	{"USMC - 1st Force Reconnaissance", "\tsp_core\data\insignia\1recon.paa", "playerSide == west", {
 		{"Raider HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "rhsusf_usmc_recon_marpat_wd_officer", {"usmc_recon","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
@@ -122,7 +122,7 @@ tsp_roles_all[] = {
 			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_leader","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
 		}}
 	}},
-	{"USMC - 3rd Marine Raider Battalion", "\tsp_core\data\insignia\raider.paa", "west", {
+	{"USMC - 3rd Marine Raider Battalion", "\tsp_core\data\insignia\raider.paa", "playerSide == west", {
 		{"Gambler HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "rhsusf_socom_marsoc_elementleader", {"soc_raider","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "rhsusf_socom_marsoc_sarc", {"soc_raider","medic"}, "iconManMedic_ca.paa"},
@@ -145,7 +145,7 @@ tsp_roles_all[] = {
 			{"Marksman", "rhsusf_socom_marsoc_sniper", {"soc_raider","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
 		}}
 	}},
-	{"USMC - 2nd Light Armoured Reconnaissance", "\tsp_core\data\insignia\2lar.paa", "west", {
+	{"USMC - 2nd Light Armoured Reconnaissance", "\tsp_core\data\insignia\2lar.paa", "playerSide == west", {
 		{"Crocodile 1", "markers\nato\b_mech_inf.paa", {
 			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
@@ -155,7 +155,7 @@ tsp_roles_all[] = {
 			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
 		}}
 	}},
-	{"USMC - 3rd Assault Amphibian", "\tsp_core\data\insignia\3aa.paa", "west", {
+	{"USMC - 3rd Assault Amphibian", "\tsp_core\data\insignia\3aa.paa", "playerSide == west", {
 		{"Gator 1", "markers\nato\b_mech_inf.paa", {
 			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
@@ -169,7 +169,7 @@ tsp_roles_all[] = {
 			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
 		}}
 	}},
-	{"USMC - 2nd Aviation Branch", "\tsp_core\data\insignia\2aviation.paa", "west", {
+	{"USMC - 2nd Aviation Branch", "\tsp_core\data\insignia\2aviation.paa", "playerSide == west", {
 		{"Thunder 1", "markers\nato\b_air.paa", {
 			{"Helicopter Pilot", "tsp_usn_helipilot", {"us_all","us_weapons","us_ammo","usmc_all","us_heli","us_leader"}, "iconManOfficer_ca.paa"},
 			{"Helicopter Crew", "tsp_usn_helipilot", {"us_all","us_weapons","us_ammo","usmc_all","us_heli","us_leader"}, "iconManOfficer_ca.paa"}
@@ -183,7 +183,7 @@ tsp_roles_all[] = {
 			{"Helicopter Crew", "tsp_usn_helipilot", {"us_all","us_weapons","us_ammo","usmc_all","us_heli","us_leader"}, "iconManOfficer_ca.paa"}
 		}}
 	}},
-	{"USN - Rotor Wing Squadron 51", "\tsp_core\data\insignia\hsm51.paa", "west", {
+	{"USN - Rotor Wing Squadron 51", "\tsp_core\data\insignia\hsm51.paa", "playerSide == west", {
 		{"Whiplash 1", "markers\nato\b_air.paa", {
 			{"Helicopter Pilot", "tsp_usn_helipilot", {"us_all","us_weapons","us_ammo","usmc_all","usn_heli","us_leader"}, "iconManOfficer_ca.paa"},
 			{"Helicopter Crew", "tsp_usn_helipilot", {"us_all","us_weapons","us_ammo","usmc_all","usn_heli","us_leader"}, "iconManOfficer_ca.paa"}
@@ -193,11 +193,11 @@ tsp_roles_all[] = {
 			{"Helicopter Crew", "tsp_usn_helipilot", {"us_all","us_weapons","us_ammo","usmc_all","usn_heli","us_leader"}, "iconManOfficer_ca.paa"}
 		}}
 	}},
-	{"USN - Carrier Strike Group 192", "\tsp_core\data\insignia\vfa192.paa", "west", {
+	{"USN - Carrier Strike Group 192", "\tsp_core\data\insignia\vfa192.paa", "playerSide == west", {
 		{"Shark 1", "markers\nato\b_plane.paa", {{"Jet Pilot", "B_Pilot_F", {}, "iconManOfficer_ca.paa"}}},
 		{"Shark 2", "markers\nato\b_plane.paa", {{"Jet Pilot", "B_Pilot_F", {}, "iconManOfficer_ca.paa"}}}
 	}},
-	{"USN - Seal Team 2", "\tsp_core\data\insignia\2seal.paa", "west", {
+	{"USN - Seal Team 2", "\tsp_core\data\insignia\2seal.paa", "playerSide == west", {
 		{"Neptune HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "tsp_usn_sailor", {"soc_seal","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "tsp_usn_sailor", {"soc_seal","medic"}, "iconManMedic_ca.paa"},
@@ -220,7 +220,7 @@ tsp_roles_all[] = {
 			{"Marksman", "tsp_usn_sailor", {"soc_seal","usa_sniper","soc_sniper"}, "iconMan_ca.paa"}
 		}}
 	}},
-	{"USA - 7th Stryker Infantry", "\tsp_core\data\army_7id.paa", "west", {
+	{"USA - 7th Stryker Infantry", "\tsp_core\data\army_7id.paa", "playerSide == west", {
 		{"Platoon HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "B_officer_F", {"usa_grunt","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "B_medic_F", {"usa_grunt","medic"}, "iconManMedic_ca.paa"},
@@ -256,7 +256,7 @@ tsp_roles_all[] = {
 			{"Marksman", "B_soldier_M_F", {"usa_grunt","us_sniper","usa_sniper"}, "iconMan_ca.paa"}
 		}}
 	}},
-	{"USA - 1st Armored", "\tsp_core\data\army_1a.paa", "west", {
+	{"USA - 1st Armored", "\tsp_core\data\army_1a.paa", "playerSide == west", {
 		{"Iron 1", "markers\nato\b_mech_inf.paa", {
 			{"Crewman", "rhsusf_army_ocp_crewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
 			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},
@@ -268,7 +268,7 @@ tsp_roles_all[] = {
 			{"Crewman", "rhsusf_army_ocp_combatcrewman", {"usa_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"}
 		}}
 	}},
-	{"USA - Aviation Branch", "\tsp_core\data\army_aviation.paa", "west", {
+	{"USA - Aviation Branch", "\tsp_core\data\army_aviation.paa", "playerSide == west", {
 		{"Chalk 1", "markers\nato\b_air.paa", {
 			{"Helicopter Pilot", "rhsusf_army_ocp_helipilot", {"us_all","us_weapons","us_ammo","usa_grunt","us_heli","us_leader"}, "iconManOfficer_ca.paa"},
 			{"Helicopter Crew", "rhsusf_army_ocp_helicrew", {"us_all","us_weapons","us_ammo","usa_grunt","us_heli","us_leader"}, "iconManOfficer_ca.paa"}
@@ -286,7 +286,7 @@ tsp_roles_all[] = {
 			{"Helicopter Crew", "rhsusf_army_ocp_helicrew", {"us_all","us_weapons","us_ammo","usa_grunt","us_heli","us_leader"}, "iconManOfficer_ca.paa"}
 		}}
 	}},
-	{"USA - 3rd Special Forces Group", "\tsp_core\data\insignia\sf.paa", "west", {
+	{"USA - 3rd Special Forces Group", "\tsp_core\data\insignia\sf.paa", "playerSide == west", {
 		{"Sabre HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "tsp_army_sf_teamlead", {"soc_special","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "tsp_army_sf_medic", {"soc_special","medic"}, "iconManMedic_ca.paa"},
@@ -314,7 +314,7 @@ tsp_roles_all[] = {
 			{"Marksman", "tsp_army_sf_marksman", {"soc_special","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
 		}}
 	}},
-	{"USA - 1st Special Forces Operational Detachment Delta ", "\tsp_core\data\insignia\1sfod.paa", "west", {
+	{"USA - 1st Special Forces Operational Detachment Delta ", "\tsp_core\data\insignia\1sfod.paa", "playerSide == west", {
 		{"Shadow HQ", "markers\nato\b_hq.paa", {
 			{"Platoon Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManCommander_ca.paa"},
 			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
@@ -342,7 +342,7 @@ tsp_roles_all[] = {
 			{"Marksman", "tsp_army_sf_marksman", {"soc_delta","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
 		}}
 	}},
-	{"USA - 160th SOAR", "\tsp_core\data\insignia\160soar.paa", "west", {
+	{"USA - 160th SOAR", "\tsp_core\data\insignia\160soar.paa", "playerSide == west", {
 		{"Phantom 1", "markers\nato\b_air.paa", {
 			{"Helicopter Pilot", "rhsusf_army_ocp_helipilot", {"soc_special","us_heli","us_leader"}, "iconManOfficer_ca.paa"},
 			{"Helicopter Crew", "rhsusf_army_ocp_helicrew", {"soc_special","us_heli","us_leader"}, "iconManOfficer_ca.paa"}

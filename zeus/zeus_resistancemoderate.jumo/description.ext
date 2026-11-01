@@ -26,44 +26,44 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"USMC - 3rd Marine Division", "\tsp_core\data\insignia\3mar.paa", "west", {
+    {"USMC - 3rd Marine Division", "\tsp_core\data\insignia\usmc_3mar.paa", "playerSide == west", {
 		{"Dagger HQ", "markers\nato\b_hq.paa", {
-			{"Platoon Leader", "rhsusf_usmc_marpat_wd_fso", {"usmc_grunt","us_leader"}, "iconManCommander_ca.paa"},
+			{"Platoon Commander", "rhsusf_usmc_marpat_wd_fso", {"usmc_grunt","us_leader"}, "iconManCommander_ca.paa"},
 			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "rhsusf_usmc_marpat_wd_engineer", {"usmc_grunt"}, "iconManEngineer_ca.paa"},
-			{"Explosive Specialist", "rhsusf_usmc_marpat_wd_explosives", {"usmc_grunt"}, "iconManExplosive_ca.paa"}
+			{"Engineer", "rhsusf_usmc_marpat_wd_engineer", {"usmc_grunt","usmc_engineer"}, "iconManEngineer_ca.paa"},
+			{"Explosive Specialist", "rhsusf_usmc_marpat_wd_explosives", {"usmc_grunt","usmc_engineer"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Dagger 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_usmc_marpat_wd_squadleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Squad Leader", "rhsusf_usmc_marpat_wd_squadleader", {"usmc_grunt","usmc_grenadier","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","usmc_grenadier","us_leader"}, "iconManLeader_ca.paa"},
 			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
 			{"Rifleman", "rhsusf_usmc_marpat_wd_rifleman", {"usmc_grunt"}, "iconMan_ca.paa"},
-			{"Rifleman (AT)", "rhsusf_usmc_marpat_wd_riflemanat", {"usmc_grunt","usmc_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_usmc_marpat_wd_riflemanat", {"usmc_grunt","usmc_missile"}, "iconManAT_ca.paa"},
 			{"Grenadier", "rhsusf_usmc_marpat_wd_grenadier", {"usmc_grunt","usmc_grenadier"}, "iconMan_ca.paa"},
-			{"Autorifleman", "rhsusf_usmc_marpat_wd_autorifleman_m249", {"usmc_grunt","us_autorifle"}, "iconManMG_ca.paa"},
+			{"Autorifleman", "rhsusf_usmc_marpat_wd_autorifleman_m249", {"usmc_grunt"}, "iconManMG_ca.paa"},
 			{"Ammo Bearer", "rhsusf_usmc_marpat_wd_rifleman_m4", {"usmc_grunt"}, "iconMan_ca.paa"}
 		}},
 		{"Dagger 2", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_usmc_marpat_wd_squadleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
+			{"Squad Leader", "rhsusf_usmc_marpat_wd_squadleader", {"usmc_grunt","usmc_grenadier","us_leader"}, "iconManLeader_ca.paa"},
+			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","usmc_grenadier","us_leader"}, "iconManLeader_ca.paa"},
 			{"Corpsman", "rhsusf_navy_marpat_wd_medic", {"usmc_grunt","medic"}, "iconManMedic_ca.paa"},
 			{"Rifleman", "rhsusf_usmc_marpat_wd_rifleman", {"usmc_grunt"}, "iconMan_ca.paa"},
-			{"Rifleman (AT)", "rhsusf_usmc_marpat_wd_rifleman_law", {"usmc_grunt","usmc_missile","us_missile"}, "iconManAT_ca.paa"},
+			{"Rifleman (AT)", "rhsusf_usmc_marpat_wd_riflemanat", {"usmc_grunt","usmc_missile"}, "iconManAT_ca.paa"},
 			{"Grenadier", "rhsusf_usmc_marpat_wd_grenadier", {"usmc_grunt","usmc_grenadier"}, "iconMan_ca.paa"},
-			{"Autorifleman", "rhsusf_usmc_marpat_wd_autorifleman", {"usmc_grunt","us_autorifle"}, "iconManMG_ca.paa"},
-			{"Marksman", "rhsusf_usmc_marpat_wd_marksman", {"usmc_grunt","us_sniper","usmc_sniper"}, "iconMan_ca.paa"}
+			{"Autorifleman", "rhsusf_usmc_marpat_wd_autorifleman_m249", {"usmc_grunt"}, "iconManMG_ca.paa"},
+			{"Ammo Bearer", "rhsusf_usmc_marpat_wd_rifleman_m4", {"usmc_grunt"}, "iconMan_ca.paa"}
 		}},
 		{"Dagger 3 (CAAT)", "markers\nato\b_art.paa", {
-			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","us_leader","usmc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Machine Gunner", "rhsusf_usmc_marpat_wd_machinegunner", {"usmc_grunt","us_autorifle"}, "iconManMG_ca.paa"},
+			{"Team Leader", "rhsusf_usmc_marpat_wd_teamleader", {"usmc_grunt","usmc_grenadier","us_leader"}, "iconManLeader_ca.paa"},
+			{"Machine Gunner", "rhsusf_usmc_marpat_wd_machinegunner", {"usmc_grunt"}, "iconManMG_ca.paa"},
 			{"Ammo Bearer", "rhsusf_usmc_marpat_wd_machinegunner_ass", {"usmc_grunt"}, "iconMan_ca.paa"},
-			{"Anti Tank", "rhsusf_usmc_marpat_wd_javelin", {"usmc_grunt","usmc_missile","us_missile"}, "iconManAT_ca.paa"},
-			{"AT Assistant", "rhsusf_usmc_marpat_wd_javelin_assistant", {"usmc_grunt","usmc_missile","us_missile"}, "iconMan_ca.paa"}
-		}},
+			{"Anti Tank", "rhsusf_usmc_marpat_wd_javelin", {"usmc_grunt","usmc_missile"}, "iconManAT_ca.paa"},
+			{"AT Assistant", "rhsusf_usmc_marpat_wd_javelin_assistant", {"usmc_grunt","usmc_missile"}, "iconMan_ca.paa"}
+		}}
 	}},
-	{"USMC - III MEF", "\tsp_core\data\insignia\3mef.paa", "west", {
+	{"USMC - III MEF", "\tsp_core\data\insignia\usmc_3mef.paa", "playerSide == west", {
 		{"Swordmaster", "markers\nato\b_hq.paa", {
-			{"Battalion Commander", "rhsusf_usmc_marpat_wd_officer", {"usmc_grunt","us_leader"}, "iconManLeader_ca.paa"}
+			{"Battalion Commander", "rhsusf_usmc_marpat_wd_officer", {"usmc_grunt","us_leader"}, "iconManCommander_ca.paa"}
 		}},
 		{"Moryo 1", "markers\nato\b_mech_inf.paa", {
 			{"Crewman", "rhsusf_usmc_marpat_wd_crewman", {"usmc_grunt","us_crew","us_leader"}, "iconManLeader_ca.paa"},

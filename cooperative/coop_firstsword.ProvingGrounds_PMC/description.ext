@@ -26,44 +26,68 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"VDV - 45th Guards Spetsnaz", "\tsp_core\data\insignia\45vdv.paa", "east", {
-		{"Shapka HQ", "markers\nato\o_hq.paa", {
-			{"Platoon Leader", "rhs_vdv_officer_armored", {"ru_vdv","ru_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "rhs_vdv_engineer", {"ru_vdv"}, "iconManEngineer_ca.paa"}
+	{"MSV - 2nd Guards Motor Rifle", "\tsp_core\data\insignia\msv_2mot.paa", "playerSide == east", {
+		#define MSV2MOT "_this spawn {sleep 1; [_this, 'msv_2mot'] call BIS_fnc_setUnitInsignia};"
+		{"Adidas HQ", "markers\nato\o_hq.paa", {
+			{"Platoon Commander", "rhs_msv_emr_officer_armored", {"ru_msv","ru_leader"}, "iconManCommander_ca.paa", MSV2MOT},
+			{"Medic", "rhs_msv_emr_medic", {"ru_msv","medic"}, "iconManMedic_ca.paa", MSV2MOT},
+			{"Engineer", "rhs_msv_emr_engineer", {"ru_msv","ru_engineer"}, "iconManEngineer_ca.paa", MSV2MOT}
 		}},
-		{"Shapka 1", "markers\nato\o_inf.paa", {
-			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
-			{"Scout (AT)", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "rhs_vdv_arifleman_rpk", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
-			{"Scout (ASVAL)", "rhs_vdv_rifleman_asval", {"ru_vdv","ru_sniper"}, "iconManRecon_ca.paa"}
+		{"Adidas 1", "markers\nato\o_inf.paa", {
+			{"Squad Leader", "rhs_msv_emr_sergeant", {"ru_msv","ru_leader","ru_grenadier"}, "iconManLeader_ca.paa", MSV2MOT},
+			{"Rifleman", "rhs_msv_emr_rifleman", {"ru_msv"}, "iconMan_ca.paa", MSV2MOT},
+			{"Rifleman (AT)", "rhs_msv_emr_LAT", {"ru_msv","ru_missile"}, "iconManAT_ca.paa", MSV2MOT},
+			{"Grenadier", "rhs_msv_emr_grenadier", {"ru_msv","ru_grenadier"}, "iconManExplosive_ca.paa", MSV2MOT},
+			{"Autorifleman", "rhs_msv_emr_arifleman_rpk", {"ru_msv","ru_autorifle"}, "iconManMG_ca.paa", MSV2MOT}
 		}},
-		{"Shapka 2 (Weapons)", "markers\nato\o_inf.paa", {
-			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
-			{"Scout (AT)", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "rhs_vdv_machinegunner", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
-			{"Grenadier", "rhs_vdv_grenadier", {"ru_vdv"}, "iconManExplosive_ca.paa"}
+		{"Adidas 2 (Weapons)", "markers\nato\o_inf.paa", {
+			{"Squad Leader", "rhs_msv_emr_sergeant", {"ru_msv","ru_leader","ru_grenadier"}, "iconManLeader_ca.paa", MSV2MOT},
+			{"Rifleman", "rhs_msv_emr_rifleman", {"ru_msv"}, "iconMan_ca.paa", MSV2MOT},
+			{"Rifleman (AT)", "rhs_msv_emr_LAT", {"ru_msv","ru_missile"}, "iconManAT_ca.paa", MSV2MOT},
+			{"Marksman", "rhs_msv_emr_marksman", {"ru_msv","ru_marksman"}, "iconManRecon_ca.paa", MSV2MOT},
+			{"Machine Gunner", "rhs_msv_emr_arifleman", {"ru_msv","ru_autorifle"}, "iconManMG_ca.paa", MSV2MOT}
 		}},
-		{"Sickel", "markers\nato\o_art.paa", {
-			{"Team Leader", "rhs_vdv_junior_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Anti Tank", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
-			{"Ammo Bearer", "rhs_vdv_strelok_rpg_assist", {"ru_vdv"}, "iconManAT_ca.paa"}
+		{"Klyak 1", "markers\nato\o_mech_inf.paa", {
+			{"Crewman", "rhs_msv_combatcrew", {"ru_msv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhs_msv_combatcrew", {"ru_msv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
+		}},
+		{"Klyak 2", "markers\nato\o_mech_inf.paa", {
+			{"Crewman", "rhs_msv_combatcrew", {"ru_msv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhs_msv_combatcrew", {"ru_msv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
+		}},
+		{"Klyak 3", "markers\nato\o_mech_inf.paa", {
+			{"Crewman", "rhs_msv_combatcrew", {"ru_msv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhs_msv_combatcrew", {"ru_msv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}}
 	}},
-	{"MSV - 2nd Guards Motor Rifle", "\tsp_core\data\insignia\2mot.paa", "east", {
-		{"Tempest 1", "markers\nato\o_mech_inf.paa", {
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
+	{"VDV - 45th Guards Spetsnaz", "\tsp_core\data\insignia\vdv_45vdv.paa", "playerSide == east", {
+		#define VDV45SPT "_this spawn {sleep 1; [_this, 'vdv_45spetsnaz'] call BIS_fnc_setUnitInsignia};"
+		{"Voron HQ", "markers\nato\o_hq.paa", {
+			{"Platoon Commander", "rhs_vdv_recon_officer_armored", {"ru_vdv","ru_recon","ru_leader_spetsnaz"}, "iconManCommander_ca.paa", VDV45SPT},
+			{"Medic", "rhs_vdv_recon_medic", {"ru_vdv","ru_recon","medic"}, "iconManMedic_ca.paa", VDV45SPT},
+			{"Engineer", "rhs_vdv_engineer", {"ru_vdv","ru_recon","ru_engineer"}, "iconManEngineer_ca.paa", VDV45SPT}
 		}},
-		{"Tempest 2", "markers\nato\o_mech_inf.paa", {
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
+		{"Voron 1", "markers\nato\o_inf.paa", {
+			{"Squad Leader", "rhs_vdv_recon_sergeant", {"ru_vdv","ru_recon","ru_leader_spetsnaz","ru_grenadier_vdv"}, "iconManLeader_ca.paa", VDV45SPT},
+			{"Medic", "rhs_vdv_recon_medic", {"ru_vdv","ru_recon","medic"}, "iconManMedic_ca.paa", VDV45SPT},
+			{"Scout", "rhs_vdv_recon_rifleman", {"ru_vdv","ru_recon"}, "iconManRecon_ca.paa", VDV45SPT},
+			{"Scout (AT)", "rhs_vdv_recon_rifleman_lat", {"ru_vdv","ru_recon","ru_missile"}, "iconManAT_ca.paa", VDV45SPT},
+			{"Grenadier", "rhs_vdv_recon_grenadier", {"ru_vdv","ru_recon","ru_grenadier_vdv"}, "iconManExplosive_ca.paa", VDV45SPT},
+			{"Autorifleman", "rhs_vdv_recon_arifleman_rpk", {"ru_vdv","ru_recon","ru_autorifle"}, "iconManMG_ca.paa", VDV45SPT}
+		}},
+		{"Voron 2 (Weapons)", "markers\nato\o_inf.paa", {
+			{"Squad Leader", "rhs_vdv_recon_sergeant", {"ru_vdv","ru_recon","ru_leader_spetsnaz","ru_grenadier_vdv"}, "iconManLeader_ca.paa", VDV45SPT},
+			{"Medic", "rhs_vdv_recon_medic", {"ru_vdv","ru_recon","medic"}, "iconManMedic_ca.paa", VDV45SPT},
+			{"Scout", "rhs_vdv_recon_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa", VDV45SPT},
+			{"Anti Tank", "rhs_vdv_recon_rifleman_lat", {"ru_vdv","ru_recon","ru_missile"}, "iconManAT_ca.paa", VDV45SPT},
+			{"Marksman", "rhs_vdv_recon_marksman", {"ru_vdv","ru_recon","ru_marksman"}, "iconManRecon_ca.paa", VDV45SPT},
+			{"Machine Gunner", "rhs_vdv_recon_arifleman", {"ru_vdv","ru_recon","ru_autorifle"}, "iconManMG_ca.paa", VDV45SPT}
+		}},
+		{"Krylo", "markers\nato\o_art.paa", {
+			{"Spotter", "rhs_vdv_recon_marksman_vss", {"ru_vdv","ru_recon","ru_leader_spetsnaz","ru_marksman","ru_sniper"}, "iconManLeader_ca.paa", VDV45SPT},
+			{"Sniper", "rhs_vdv_recon_marksman", {"ru_vdv","ru_recon","ru_leader_spetsnaz","ru_marksman","ru_sniper"}, "iconManRecon_ca.paa", VDV45SPT}
 		}}
-	}}
+	}},
 };
 
 class Params {

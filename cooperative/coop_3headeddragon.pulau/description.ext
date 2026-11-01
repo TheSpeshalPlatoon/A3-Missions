@@ -26,56 +26,91 @@ tsp_param_time_night = 12;
 tsp_param_weather = true;
 
 tsp_roles[] = {
-	{"HIDF - Task Force Naga", "data\naga.paa", "west", {
-		{"Naga HQ", "markers\nato\b_hq.paa", {
-			{"Platoon Leader", "tsp_hidf_sf_teamlead", {"hidf_recon","hidf_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "tsp_hidf_sf_medic", {"hidf_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "tsp_hidf_sf_engineer", {"hidf_recon"}, "iconManEngineer_ca.paa"}
+	{"HIDF - 1st Infantry", "\tsp_core\data\insignia\hidf.paa", "playerSide == west", {
+		{"Mako HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "rhsgref_hidf_squadleader", {"hidf_grunt","hidf_grenadier"}, "iconManCommander_ca.paa"},
+			{"Medic", "rhsgref_hidf_medic", {"hidf_grunt","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "rhsgref_hidf_rifleman", {"hidf_grunt","hidf_engineer"}, "iconManEngineer_ca.paa"}
 		}},
-		{"Naga 1", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "tsp_hidf_sf_teamlead", {"hidf_recon","hidf_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_hidf_sf_medic", {"hidf_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "tsp_hidf_sf_scout", {"hidf_recon"}, "iconManRecon_ca.paa"},
-			{"Scout (AT)", "tsp_hidf_sf_scout_m72", {"hidf_recon"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "tsp_hidf_sf_autorifleman", {"hidf_recon","hidf_autorifle"}, "iconManMG_ca.paa"},
-			{"Grenadier", "tsp_hidf_sf_grenadier", {"hidf_recon"}, "iconManRecon_ca.paa"}
+		{"Mako 1", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsgref_hidf_teamleader", {"hidf_grunt","hidf_grenadier","hidf_leader"}, "iconManLeader_ca.paa"},
+			{"Rifleman", "rhsgref_hidf_rifleman", {"hidf_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman", "rhsgref_hidf_rifleman", {"hidf_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsgref_hidf_rifleman_m72", {"hidf_grunt"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "rhsgref_hidf_autorifleman", {"hidf_grunt","hidf_autorifle"}, "iconManMG_ca.paa"},
+			{"Grenadier", "rhsgref_hidf_grenadier", {"hidf_grunt","hidf_grenadier"}, "iconMan_ca.paa"}
 		}},
-		{"Naga 2", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "tsp_hidf_sf_teamlead", {"hidf_recon","hidf_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_hidf_sf_medic", {"hidf_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "tsp_hidf_sf_scout", {"hidf_recon"}, "iconManRecon_ca.paa"},
-			{"Scout (AT)", "tsp_hidf_sf_scout_m72", {"hidf_recon"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "tsp_hidf_sf_autorifleman", {"hidf_recon","hidf_autorifle"}, "iconManMG_ca.paa"},
-			{"Marksman", "tsp_hidf_sf_grenadier", {"hidf_recon","tsp_hidf_marksman"}, "iconManRecon_ca.paa"}
+		{"Mako 2 (Weapons)", "markers\nato\b_inf.paa", {
+			{"Squad Leader", "rhsgref_hidf_teamleader", {"hidf_grunt","hidf_grenadier","hidf_leader"}, "iconManLeader_ca.paa"},
+			{"Rifleman", "rhsgref_hidf_rifleman", {"hidf_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman", "rhsgref_hidf_rifleman", {"hidf_grunt"}, "iconMan_ca.paa"},
+			{"Rifleman (AT)", "rhsgref_hidf_rifleman_m72", {"hidf_grunt"}, "iconManAT_ca.paa"},
+			{"Machine Gunner", "rhsgref_hidf_machinegunner", {"hidf_grunt","hidf_autorifle"}, "iconManMG_ca.paa"},
+			{"Machine Gunner Assistant", "rhsgref_hidf_machinegunner_assist", {"hidf_grunt","hidf_grenadier"}, "iconMan_ca.paa"}
+		}},
+		{"Mako 3 (Armor)", "markers\nato\b_inf.paa", {
+			{"Crewman", "rhsgref_hidf_crewman", {"hidf_grunt","hidf_crew","hidf_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhsgref_hidf_crewman", {"hidf_grunt","hidf_crew","hidf_leader"}, "iconMan_ca.paa"},
+			{"Crewman", "rhsgref_hidf_crewman", {"hidf_grunt","hidf_crew","hidf_leader"}, "iconMan_ca.paa"},
+			{"Crewman", "rhsgref_hidf_crewman", {"hidf_grunt","hidf_crew","hidf_leader"}, "iconMan_ca.paa"}
 		}}
 	}},
-	{"HIDF - Air Force", "data\hidf.paa", "west", {
+	{"HIDF - Task Force Naga", "\tsp_core\data\insignia\hidf_naga.paa", "playerSide == west", {
+		{"Naga HQ", "markers\nato\b_hq.paa", {
+			{"Platoon Leader", "tsp_hidf_sf_teamlead", {"hidf_recon","hidf_grenadier","hidf_leader_special"}, "iconManCommander_ca.paa"},
+			{"Medic", "tsp_hidf_sf_medic", {"hidf_recon","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", "tsp_hidf_sf_engineer", {"hidf_recon","hidf_engineer_special"}, "iconManEngineer_ca.paa"}
+		}},
+		{"Naga 1", "markers\nato\b_inf.paa", {
+			{"Team Leader", "tsp_hidf_sf_teamlead", {"hidf_recon","hidf_grenadier","hidf_leader_special"}, "iconManLeader_ca.paa"},
+			{"Scout", "tsp_hidf_sf_scout", {"hidf_recon"}, "iconManRecon_ca.paa"},
+			{"Autorifleman", "tsp_hidf_sf_autorifleman", {"hidf_recon","hidf_autorifle"}, "iconManMG_ca.paa"},
+			{"Grenadier", "tsp_hidf_sf_grenadier", {"hidf_recon","hidf_grenadier"}, "iconManRecon_ca.paa"}
+		}},
+		{"Naga 2", "markers\nato\b_inf.paa", {
+			{"Team Leader", "tsp_hidf_sf_teamlead", {"hidf_recon","hidf_grenadier","hidf_leader_special"}, "iconManLeader_ca.paa"},
+			{"Scout (AT)", "tsp_hidf_sf_scout_m72", {"hidf_recon"}, "iconManAT_ca.paa"},
+			{"Autorifleman", "tsp_hidf_sf_autorifleman", {"hidf_recon","hidf_autorifle"}, "iconManMG_ca.paa"},
+			{"Grenadier", "tsp_hidf_sf_grenadier", {"hidf_recon","hidf_grenadier"}, "iconManRecon_ca.paa"}
+		}},
+		{"Anaconda", "markers\nato\b_inf.paa", {
+			{"Spotter", "tsp_hidf_sf_marksman", {"hidf_recon","hidf_sniper","hidf_leader_special"}, "iconManLeader_ca.paa"},
+			{"Sniper", "tsp_hidf_sf_sniper", {"hidf_recon","hidf_sniper","hidf_leader_special"}, "iconManRecon_ca.paa"}
+		}}
+	}},
+	{"HIDF - Air Force", "\tsp_core\data\insignia\hidf_aviation.paa", "playerSide == west", {
 		{"Python 1", "markers\nato\b_air.paa", {
-			{"Pilot", "rhsgref_hidf_helipilot", {"hidf_recon","hidf_leader", "hidf_pilot"}, "iconManOfficer_ca.paa"},
-			{"Copilot", "rhsgref_hidf_helipilot", {"hidf_recon","hidf_leader", "hidf_pilot"}, "iconManOfficer_ca.paa"}
+			{"Pilot", "rhsgref_hidf_helipilot", {"hidf_heli","hidf_leader"}, "iconManOfficer_ca.paa"},
+			{"Copilot", "rhsgref_hidf_helipilot", {"hidf_heli","hidf_leader"}, "iconManOfficer_ca.paa"}
 		}},
-		{"Cobra 1", "markers\nato\b_air.paa", {
-			{"Pilot", "rhsgref_hidf_helipilot", {"hidf_recon","hidf_leader", "hidf_pilot"}, "iconManOfficer_ca.paa"},
-			{"Copilot", "rhsgref_hidf_helipilot", {"hidf_recon","hidf_leader", "hidf_pilot"}, "iconManOfficer_ca.paa"}
+		{"Python 2", "markers\nato\b_air.paa", {
+			{"Pilot", "rhsgref_hidf_helipilot", {"hidf_heli","hidf_leader"}, "iconManOfficer_ca.paa"},
+			{"Copilot", "rhsgref_hidf_helipilot", {"hidf_heli","hidf_leader"}, "iconManOfficer_ca.paa"}
+		}},
+		{"Cobra 1", "markers\nato\b_air.paa", {{"Pilot", "rhsgref_hidf_helipilot", {"hidf_jet","hidf_leader"}, "iconManOfficer_ca.paa"}}},
+		{"Cobra 2", "markers\nato\b_air.paa", {{"Pilot", "rhsgref_hidf_helipilot", {"hidf_jet","hidf_leader"}, "iconManOfficer_ca.paa"}}}
+	}},  
+	{"USMC - Advisory Force", "\tsp_core\data\insignia\usmc_3mef.paa", "playerSide == west", {
+		#define USMCRECON "_this spawn {sleep 1; [_this, 'usmc_1fr'] call BIS_fnc_setUnitInsignia};"
+		{"Knight", "markers\nato\b_inf.paa", {
+			{"Team Leader", "rhsusf_usmc_recon_marpat_wd_teamleader_lite", {"usmc_recon","us_leader_special","usmc_grenadier"}, "iconManLeader_ca.paa", USMCRECON},
+			{"SARC Medic", "rhsusf_navy_sarc_w_fast", {"usmc_recon","medic"}, "iconManMedic_ca.paa", USMCRECON},
+			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at_lite", {"usmc_recon","usmc_missile"}, "iconManAT_ca.paa", USMCRECON},
+			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249_lite", {"usmc_recon","usa_autorifle_special","usa_machinegun"}, "iconManMG_ca.paa", USMCRECON},
+			{"Breacher", {"rhsusf_usmc_marpat_wd_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon","usmc_engineer"}, "iconManExplosive_ca.paa", USMCRECON}
+		}},
+		{"Archer (Scout Snipers)", "markers\nato\b_art.paa", {
+			{"Spotter", "rhsusf_usmc_marpat_wd_spotter", {"usmc_recon","us_leader_special","usmc_marksman","usmc_sniper"}, "iconManLeader_ca.paa", USMCRECON},
+			{"Sniper", "rhsusf_usmc_marpat_wd_sniper", {"usmc_recon","us_leader_special","usmc_marksman","usmc_sniper"}, "iconManRecon_ca.paa", USMCRECON}
 		}}
-	}},    
-	{"USMC - Advisory Force", "\tsp_core\data\insignia\3mef.paa", "west", {
-		{"Assassin", "markers\nato\b_inf.paa", {
-			{"Squad Leader", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader","us_grenadier","soc_grenadier"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhsusf_navy_sarc_w", {"usmc_recon","medic"}, "iconManMedic_ca.paa"},
-			{"Scout (AT)", "rhsusf_usmc_recon_marpat_wd_rifleman_at", {"usmc_recon","usa_missile"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "rhsusf_usmc_recon_marpat_wd_machinegunner_m249", {"usmc_recon","us_autorifle","usmc_recon_autorifle"}, "iconManMG_ca.paa"},
-			{"Breacher", {"rhsusf_usmc_marpat_wd_rifleman_m590", "tsp_usmc_breacher"}, {"usmc_recon"}, "iconManExplosive_ca.paa"}
-		}},
-		{"Hitman", "markers\nato\b_art.paa", {
-			{"Spotter", "rhsusf_usmc_recon_marpat_wd_teamleader", {"usmc_recon","us_leader"}, "iconManLeader_ca.paa"},
-			{"Sniper", "rhsusf_usmc_recon_marpat_wd_marksman_fast", {"usmc_recon","us_sniper","usmc_sniper"}, "iconManRecon_ca.paa"}
-		}},
+	}},
+	{"USN - Rotor Wing Squadron 51", "\tsp_core\data\insignia\usn_hsm51.paa", "playerSide == west", {
+		#define USNHSL "_this spawn {sleep 1; [_this, 'usn_hsl_51'] call BIS_fnc_setUnitInsignia};"
 		{"Whiplash", "markers\nato\b_air.paa", {
-			{"Helicopter Pilot", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","us_leader"}, "iconManOfficer_ca.paa"},
-			{"Helicopter Crew", "tsp_usn_helipilot", {"west_all","us_all","us_weapons","us_ammo","usmc_all","usn_heli","us_leader"}, "iconManOfficer_ca.paa"}
+			{"Helicopter Pilot", {"rhsusf_usmc_marpat_wd_helipilot", "tsp_usn_helipilot"}, {"usn_heli","us_leader"}, "iconManOfficer_ca.paa", USNHSL},
+			{"Helicopter Crew", {"rhsusf_usmc_marpat_wd_helipilot", "tsp_usn_helipilot"}, {"usn_heli","us_leader"}, "iconManOfficer_ca.paa", USNHSL}
 		}}
-	}}
+	}},
 };
 
 class Params {

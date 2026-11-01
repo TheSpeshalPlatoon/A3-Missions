@@ -14,6 +14,7 @@ _grenades = [];
 {_this removeMagazines _x} forEach _grenades;
 
 systemChat "NO FRAGS";
+systemChat "NO GLS";
 systemChat "NO EXPLOSIVES";
 systemChat "NO ROCKETS";
 systemChat "NO AUTORIFLES";

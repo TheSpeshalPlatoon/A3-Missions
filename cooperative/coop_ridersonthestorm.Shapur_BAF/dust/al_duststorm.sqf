@@ -64,11 +64,11 @@ sleep 0.1;
 	};
 };
 
-[[],"AL_dust_storm\alias_duststorm_effect.sqf"] remoteExec ["execVM",0,true];
+[[],"dust\alias_duststorm_effect.sqf"] remoteExec ["execVM",0,true];
 
 if (_dust_wall) then 
 {
-	_rand_pl = [] execVM "AL_dust_storm\alias_hunt.sqf";
+	_rand_pl = [] execVM "dust\alias_hunt.sqf";
 	waitUntil {scriptDone _rand_pl};
 	_pozobcj = hunt_alias getRelPos [800,(_direction_duststorm-180)];
 	_stormsource = "Land_HelipadEmpty_F" createVehicle _pozobcj;
@@ -77,7 +77,7 @@ if (_dust_wall) then
 	if ((_direction_duststorm<225)or(_direction_duststorm>135)) then {_x_dev=600; _y_dev = 60};
 	if ((_direction_duststorm<=135)&&(_direction_duststorm>=45)) then {_x_dev=60; _y_dev = 600};
 	if ((_direction_duststorm>=225)&&(_direction_duststorm<=315)) then {_x_dev=60; _y_dev = 600};
-	[[_stormsource,_duration_duststorm,_x_dev,_y_dev],"AL_dust_storm\alias_dust_wall.sqf"] remoteExec ["execVM",0,true];
+	[[_stormsource,_duration_duststorm,_x_dev,_y_dev],"dust\alias_dust_wall.sqf"] remoteExec ["execVM",0,true];
 
 	[_stormsource] spawn 
 	{
@@ -89,7 +89,7 @@ if (_dust_wall) then
 			sleep 40;
 		};
 	};
-	if (_lethal_wall) then {[_stormsource,_x_dev,_y_dev] execvm "AL_dust_storm\lethal_wall.sqf"};
+	if (_lethal_wall) then {[_stormsource,_x_dev,_y_dev] execvm "dust\lethal_wall.sqf"};
 	[_stormsource,_direction_duststorm] spawn {private ["_stormsource","_direction_duststorm"]; _stormsource = _this select 0; _direction_duststorm = _this select 1; while {al_duststorm_on} do {_stormsource setPos (_stormsource getRelPos [10,_direction_duststorm]);sleep 5}};
 };
 
@@ -122,7 +122,7 @@ if (_effect_on_objects) then {
 
 	while {al_duststorm_on} do {
 		sleep 1;
-		_rand_pl = [] execVM "AL_dust_storm\alias_hunt.sqf";
+		_rand_pl = [] execVM "dust\alias_hunt.sqf";
 		waitUntil {scriptDone _rand_pl};
 
 	// interval object blow

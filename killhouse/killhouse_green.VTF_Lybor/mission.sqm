@@ -5,21 +5,25 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=522;
+	toggles=513;
+	mods[]=
+	{
+		"WBK_Zombies_AdvancedEditorSettings"
+	};
 	class ItemIDProvider
 	{
-		nextID=4413;
+		nextID=4527;
 	};
 	class LayerIndexProvider
 	{
-		nextID=444;
+		nextID=736;
 	};
 	class Camera
 	{
-		pos[]={3226.6335,91.232712,2926.7507};
-		dir[]={0.15729633,-0.36517575,0.91761154};
-		up[]={0.061714776,0.93089926,0.36001685};
-		aside[]={0.98567653,7.2878902e-07,-0.16896506};
+		pos[]={3442.0806,280.29739,3031.1348};
+		dir[]={-0.59471124,-0.77192587,-0.22507338};
+		up[]={-0.72193599,0.63573641,-0.27322215};
+		aside[]={-0.35399818,1.3271929e-06,0.93537331};
 	};
 };
 binarizationWanted=0;
@@ -44,13 +48,11 @@ addons[]=
 	"A3_Structures_F_EPA_Walls",
 	"A3_Props_F_Decade_Objectives",
 	"A3_Structures_F_Items_Electronics",
-	"A3_Structures_F_Globe_Items_Electronics",
 	"tsp_music_radio",
 	"A3_Structures_F_Civ_Camping",
-	"A3_Weapons_F_Ammoboxes",
-	"ace_cargo",
 	"A3_Structures_F_Mil_Helipads",
 	"rhs_c_weapons",
+	"A3_Structures_F_Civ_InfoBoards",
 	"A3_Structures_F_Training",
 	"A3_Props_F_Exp_Infrastructure_Traffic",
 	"A3_Structures_F_Mark_Items_Sport",
@@ -72,8 +74,6 @@ addons[]=
 	"A3_Signs_F",
 	"A3_Props_F_Orange_Humanitarian_Supplies",
 	"A3_Structures_F_Ind_ConcreteMixingPlant",
-	"rhs_c_troops",
-	"acre_main",
 	"A3_Modules_F_Intel",
 	"A3_Modules_F_Curator_Curator",
 	"A3_Ui_F",
@@ -81,14 +81,16 @@ addons[]=
 	"CUP_Misc3_Config",
 	"Bro_MSW_Base",
 	"A3_Structures_F_Enoch_Military_Camps",
-	"Desert",
-	"A3_Structures_F_Civ_InfoBoards"
+	"rhsgref_c_troops",
+	"rhs_c_troops",
+	"hide_rhs",
+	"Desert"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=39;
+		items=38;
 		class Item0
 		{
 			className="A3_Structures_F";
@@ -201,154 +203,145 @@ class AddonsMetaData
 		};
 		class Item16
 		{
-			className="A3_Structures_F_Globe";
-			name="O&T Expansion Eden - Buildings and Structures";
-			author="Trager";
-			url="https://steamcommunity.com/workshop/filedetails/?id=1923321700";
-		};
-		class Item17
-		{
 			className="tsp_music_radio";
 			name="tsp_music_radio";
 		};
-		class Item18
-		{
-			className="A3_Weapons_F";
-			name="Arma 3 Alpha - Weapons and Accessories";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item19
-		{
-			className="ace_cargo";
-			name="ACE3 - Cargo";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item20
+		class Item17
 		{
 			className="A3_Structures_F_Mil";
 			name="Arma 3 - Military Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item18
 		{
 			className="rhs_c_weapons";
 			name="AFRF Weapons Pack";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item22
+		class Item19
 		{
 			className="A3_Props_F_Exp";
 			name="Arma 3 Apex - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item20
 		{
 			className="A3_Structures_F_Mark";
 			name="Arma 3 Marksmen - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item24
+		class Item21
 		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item25
+		class Item22
 		{
 			className="A3_Structures_F_Heli";
 			name="Arma 3 Helicopters - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item26
+		class Item23
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item24
 		{
 			className="A3_Props_F_Decade";
 			name="CFGPATCHES_A3_Props_F_Decade";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item27
+		class Item25
 		{
 			className="A3_Structures_F_Exp_Industrial";
 			name="Arma 3 Apex - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item28
+		class Item26
 		{
 			className="ace_dragging";
 			name="ACE3 - Dragging";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item29
+		class Item27
 		{
 			className="A3_Signs_F";
 			name="Arma 3 - Signs";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item30
+		class Item28
 		{
 			className="A3_Structures_F_Ind";
 			name="Arma 3 - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item31
-		{
-			className="rhs_c_troops";
-			name="AFRF Infantry & Equipment";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
-		};
-		class Item32
-		{
-			className="acre_main";
-			name="ACRE2 - Main";
-			author="ACRE2Team";
-			url="https://github.com/IDI-Systems/acre2";
-		};
-		class Item33
+		class Item29
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item34
+		class Item30
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item35
+		class Item31
 		{
 			className="A3_Structures_F_Wrecks";
 			name="Arma 3 - Vehicle Wrecks";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item36
+		class Item32
 		{
 			className="CUP_Misc3_Config";
 			name="CUP_Misc3_Config";
 		};
-		class Item37
+		class Item33
 		{
 			className="Bro_MSW_Base";
 			name="Modular Shoothouse [Bromine]";
 			author="Bromine";
 		};
-		class Item38
+		class Item34
+		{
+			className="rhsgref_c_troops";
+			name="GREF Infantry & Equipment";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item35
+		{
+			className="rhs_c_troops";
+			name="AFRF Infantry & Equipment";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item36
+		{
+			className="hide_rhs";
+			name="hide_rhs";
+		};
+		class Item37
 		{
 			className="Desert";
 			name="Desert";
@@ -365,7 +358,8 @@ dlcs[]=
 	"Expansion",
 	"Mark",
 	"Heli",
-	"Contact"
+	"Contact",
+	"RHS_GREF"
 };
 randomSeed=15039389;
 class ScenarioData
@@ -411,18 +405,18 @@ class Mission
 	class Intel
 	{
 		timeOfChanges=1800.0002;
-		startWeather=0.36000001;
-		startFog=0.059999999;
-		startWind=0.23999999;
+		startWeather=0.50000018;
+		startFog=0.49999982;
+		startWind=1;
 		startWindDir=90;
 		startWaves=0.1;
-		startGust=0.56;
-		forecastWeather=0.36000001;
-		forecastFog=0.059999999;
-		forecastWind=0.23999999;
+		startGust=1;
+		forecastWeather=0.49719056;
+		forecastFog=0.49999982;
+		forecastWind=1;
 		forecastWaves=0.1;
 		forecastLightnings=0.1;
-		forecastGust=0.56;
+		forecastGust=1;
 		forecastWindDir=90;
 		wavesForced=1;
 		windForced=1;
@@ -430,12 +424,14 @@ class Mission
 		month=6;
 		day=23;
 		minute=0;
-		startFogDecay=0.014;
-		forecastFogDecay=0.014;
+		startFogBase=50;
+		forecastFogBase=50;
+		startFogDecay=0.028448287;
+		forecastFogDecay=0.029999999;
 	};
 	class Entities
 	{
-		items=6;
+		items=5;
 		class Item0
 		{
 			dataType="Layer";
@@ -443,7 +439,7 @@ class Mission
 			state=1;
 			class Entities
 			{
-				items=31;
+				items=32;
 				class Item0
 				{
 					dataType="Layer";
@@ -8834,7 +8830,7 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={3217.8311,67.641975,2994.6377};
+						position[]={3217.8311,67.641991,2994.6379};
 					};
 					areaSize[]={100,0,70};
 					areaIsRectangle=1;
@@ -9179,8 +9175,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3235.0774,66.873329,2930.9133};
-						angles[]={0,4.9741888,0.0066592805};
+						position[]={3233.9246,66.886108,2932.2114};
+						angles[]={6.282269,4.8361464,0.0065959343};
 					};
 					side="Empty";
 					flags=4;
@@ -9190,7 +9186,7 @@ class Mission
 					};
 					id=1594;
 					type="C_Van_02_vehicle_F";
-					atlOffset=-2.2888184e-05;
+					atlOffset=-0.0018768311;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -10378,97 +10374,8 @@ class Mission
 				};
 				class Item9
 				{
-					dataType="Trigger";
-					position[]={3267.3081,68.500641,2976.4441};
-					angle=3.1415927;
-					class Attributes
-					{
-						name="zone_captive";
-						sizeA=66;
-						sizeB=66;
-						sizeC=4;
-						repeatable=1;
-						activationBy="ANYPLAYER";
-						isRectangle=1;
-					};
-					id=3985;
-					type="EmptyDetectorArea10x10";
-					atlOffset=1.1186676;
-				};
-				class Item10
-				{
-					dataType="Trigger";
-					position[]={3303.4209,57.428665,2966.6609};
-					angle=4.712389;
-					class Attributes
-					{
-						name="zone_inside_1";
-						sizeA=10;
-						sizeB=6;
-						sizeC=10;
-						repeatable=1;
-						activationBy="ANYPLAYER";
-						isRectangle=1;
-					};
-					id=3986;
-					type="EmptyDetectorArea10x10";
-					atlOffset=-6.9713364;
-				};
-				class Item11
-				{
-					dataType="Trigger";
-					position[]={3219.7451,63.307533,2969.7959};
-					angle=1.5707965;
-					class Attributes
-					{
-						name="zone_inside_2";
-						sizeA=25;
-						sizeB=15;
-						sizeC=1;
-						repeatable=1;
-						activationBy="ANYPLAYER";
-						isRectangle=1;
-					};
-					id=3987;
-					type="EmptyDetectorArea10x10";
-					atlOffset=-1.5763855;
-				};
-				class Item12
-				{
-					dataType="Trigger";
-					position[]={3266.792,64.461609,2976.1858};
-					class Attributes
-					{
-						name="zone_play_1";
-						sizeA=66;
-						sizeB=66;
-						sizeC=15;
-						isRectangle=1;
-					};
-					id=3989;
-					type="EmptyDetectorAreaR50";
-				};
-				class Item13
-				{
-					dataType="Trigger";
-					position[]={3104.9478,48.32476,3017.4971};
-					class Attributes
-					{
-						name="zone_play_2";
-						sizeA=100;
-						sizeB=29;
-						sizeC=15;
-						isRectangle=1;
-					};
-					id=3988;
-					type="EmptyDetectorAreaR50";
-					atlOffset=-9.656971;
-				};
-				class Item14
-				{
 					dataType="Layer";
 					name="!interact";
-					state=1;
 					class Entities
 					{
 						items=21;
@@ -10495,7 +10402,7 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3267.8545,65.604782,2972.1711};
+								position[]={3267.46,65.615204,2972.3425};
 								angles[]={0,1.3078824,0};
 							};
 							side="Empty";
@@ -10505,7 +10412,7 @@ class Mission
 							};
 							id=3215;
 							type="Land_FirstAidKit_01_open_F";
-							atlOffset=0.69999695;
+							atlOffset=0.8371582;
 						};
 						class Item2
 						{
@@ -10861,8 +10768,8 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3184.479,59.368343,3022.0281};
-								angles[]={0,4.5668211,0.039977662};
+								position[]={3260.7236,62.703201,3021.8376};
+								angles[]={6.2631865,4.9266024,0.079830915};
 							};
 							side="Empty";
 							flags=4;
@@ -10873,15 +10780,15 @@ class Mission
 							};
 							id=3259;
 							type="Land_Portable_generator_F";
-							atlOffset=0.00034713745;
+							atlOffset=-0.0006980896;
 						};
 						class Item11
 						{
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3267.8674,65.62368,2974.167};
-								angles[]={0,4.416234,0};
+								position[]={3267.4626,65.660271,2967.0083};
+								angles[]={0,4.5882182,0};
 							};
 							side="Empty";
 							class Attributes
@@ -10890,7 +10797,7 @@ class Mission
 							};
 							id=3260;
 							type="Land_FMradio_F";
-							atlOffset=0.8319931;
+							atlOffset=0.76513672;
 						};
 						class Item12
 						{
@@ -10932,41 +10839,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3217.9712,66.12339,2937.21};
-								angles[]={6.2432065,1.6717286,0.0066682254};
-							};
-							side="Empty";
-							flags=4;
-							class Attributes
-							{
-								init="[this, ""Arsenal"", ""true"", [(getMissionConfigValue [""tsp_param_mission"", ""false""]) isEqualTo ""false""]] call tsp_fnc_action;" \n "[this, ""Role""] call tsp_fnc_action;";
-							};
-							id=4023;
-							type="B_supplyCrate_F";
-							atlOffset=-0.00011444092;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item15
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={3307.7859,65.400002,2976.4319};
 								angles[]={0,3.1415927,0};
 							};
@@ -10984,19 +10856,6 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
 									property="ammoBox";
 									expression="[_this,_value] call bis_fnc_initAmmoBox;";
 									class Value
@@ -11008,36 +10867,10 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=4;
+								nAttributes=1;
 							};
 						};
-						class Item16
+						class Item15
 						{
 							dataType="Object";
 							class PositionInfo
@@ -11058,19 +10891,6 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
 									property="ammoBox";
 									expression="[_this,_value] call bis_fnc_initAmmoBox;";
 									class Value
@@ -11082,36 +10902,10 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=4;
+								nAttributes=1;
 							};
 						};
-						class Item17
+						class Item16
 						{
 							dataType="Object";
 							class PositionInfo
@@ -11132,19 +10926,6 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
 									property="ammoBox";
 									expression="[_this,_value] call bis_fnc_initAmmoBox;";
 									class Value
@@ -11156,36 +10937,10 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								nAttributes=4;
+								nAttributes=1;
 							};
 						};
-						class Item18
+						class Item17
 						{
 							dataType="Object";
 							class PositionInfo
@@ -11205,19 +10960,6 @@ class Mission
 							{
 								class Attribute0
 								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
 									property="ammoBox";
 									expression="[_this,_value] call bis_fnc_initAmmoBox;";
 									class Value
@@ -11229,36 +10971,10 @@ class Mission
 										};
 									};
 								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								class Attribute3
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								nAttributes=4;
+								nAttributes=1;
 							};
 						};
-						class Item19
+						class Item18
 						{
 							dataType="Object";
 							class PositionInfo
@@ -11275,51 +10991,8 @@ class Mission
 							id=4337;
 							type="rhs_mags_crate";
 							atlOffset=0.00025177002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
-						class Item20
+						class Item19
 						{
 							dataType="Object";
 							class PositionInfo
@@ -11336,55 +11009,30 @@ class Mission
 							id=4338;
 							type="rhs_3Ya40_1_single";
 							atlOffset=0.00028991699;
-							class CustomAttributes
+						};
+						class Item20
+						{
+							dataType="Object";
+							class PositionInfo
 							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
+								position[]={3225.4199,65.205734,2939.127};
+								angles[]={0.02247984,5.8868909,6.2294292};
 							};
+							side="Empty";
+							flags=4;
+							class Attributes
+							{
+								init="tsp_fnc_trench = { " \n "    {deleteVehicle _x} forEach (allDeadMen inAreaArray zone_inside_2); " \n "    { " \n "        _group = createGroup east; _group deleteGroupWhenEmpty true;  " \n "        _enemy = _group createUnit [selectRandom enemy_chernarus, getPos _x, [], 1, ""CAN_COLLIDE""];  " \n "        _group = createGroup east; _group deleteGroupWhenEmpty true; [_enemy] joinSilent _group; " \n "        _enemy attachTo [_x, [0,0,0]]; detach _enemy;  " \n "        _enemy setFormDir (getDir _x); " \n "        _enemy setDir (getDir _x); " \n "        _enemy setUnitPos ""MIDDLE"";   " \n "        _enemy disableAI ""PATH"";    " \n "    } foreach ((getMissionLayerEntities ""trench_targets"")#0) " \n "}; " \n " " \n "tsp_fnc_trench_cond = {count (allUnits select {_x inArea zone_inside_2}) == 0}; " \n " " \n "[     " \n "    this, ""Generate Trench"", ""\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_forceRespawn_ca.paa"",           " \n "    {[] remoteExec [""tsp_fnc_trench"", 2]}, ""call tsp_fnc_trench_cond"", false, 1, [], -100          " \n "] call tsp_fnc_action_hold; ";
+							};
+							id=4410;
+							type="Land_Noticeboard_F";
+							atlOffset=-0.16100311;
 						};
 					};
 					id=3209;
-					atlOffset=0.41233826;
+					atlOffset=-0.69163513;
 				};
-				class Item15
+				class Item10
 				{
 					dataType="Layer";
 					name="!cof2";
@@ -12941,7 +12589,7 @@ class Mission
 					id=3880;
 					atlOffset=0.14441299;
 				};
-				class Item16
+				class Item11
 				{
 					dataType="Layer";
 					name="!seats";
@@ -13373,7 +13021,7 @@ class Mission
 					id=3947;
 					atlOffset=6.268158;
 				};
-				class Item17
+				class Item12
 				{
 					dataType="Layer";
 					name="sim";
@@ -13532,7 +13180,7 @@ class Mission
 					id=3263;
 					atlOffset=0.39855957;
 				};
-				class Item18
+				class Item13
 				{
 					dataType="Layer";
 					name="nosim";
@@ -15236,1261 +14884,7 @@ class Mission
 					id=3285;
 					atlOffset=0.34070206;
 				};
-				class Item19
-				{
-					dataType="Group";
-					side="East";
-					class Entities
-					{
-						items=25;
-						class Item0
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3262.634,64.53553,2949.1707};
-							};
-							side="East";
-							flags=7;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4083;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item1
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3261.634,64.49221,2949.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4085;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item2
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3260.634,64.46962,2949.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4087;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item3
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3259.634,64.489624,2949.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4089;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item4
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3258.634,64.509621,2949.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4091;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item5
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3262.634,64.457771,2948.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4093;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item6
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3261.634,64.42099,2948.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4095;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item7
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3260.634,64.41774,2948.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4097;
-							type="rhs_msv_rifleman";
-							atlOffset=1.5258789e-05;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item8
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3259.634,64.437744,2948.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4099;
-							type="rhs_msv_rifleman";
-							atlOffset=1.5258789e-05;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item9
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3258.634,64.456917,2948.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4101;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item10
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3262.634,64.390976,2947.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4103;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item11
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3261.634,64.374313,2947.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4105;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item12
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3260.634,64.371063,2947.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4107;
-							type="rhs_msv_rifleman";
-							atlOffset=1.5258789e-05;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item13
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3259.634,64.390244,2947.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4109;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item14
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3258.634,64.406906,2947.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4111;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item15
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3262.634,64.344315,2946.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4113;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item16
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3261.634,64.327652,2946.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4115;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item17
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3260.634,64.323578,2946.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4117;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item18
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3259.634,64.340248,2946.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4119;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item19
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3258.634,64.356911,2946.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4121;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item20
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3262.634,64.288857,2945.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4123;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item21
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3261.634,64.271378,2945.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4125;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item22
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3260.634,64.264778,2945.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4127;
-							type="rhs_msv_rifleman";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item23
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3259.634,64.281448,2945.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4129;
-							type="rhs_msv_rifleman";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item24
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3258.634,64.294853,2945.1707};
-							};
-							side="East";
-							flags=5;
-							class Attributes
-							{
-								description="Rifleman";
-								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class uniform
-									{
-										typeName="rhs_uniform_emr_patchless";
-										isBackpack=0;
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									radio="ItemRadio";
-									headgear="rhs_fieldcap_digi";
-								};
-							};
-							id=4131;
-							type="rhs_msv_rifleman";
-							atlOffset=7.6293945e-06;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="acre_sys_radio_edenSetup";
-									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-					};
-					class Attributes
-					{
-					};
-					id=4082;
-					atlOffset=7.6293945e-06;
-					class CustomAttributes
-					{
-						class Attribute0
-						{
-							property="groupID";
-							expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
-							class Value
-							{
-								class data
-								{
-									singleType="STRING";
-									value="Class";
-								};
-							};
-						};
-						nAttributes=1;
-					};
-				};
-				class Item20
+				class Item14
 				{
 					dataType="Object";
 					class PositionInfo
@@ -16507,7 +14901,7 @@ class Mission
 					type="Land_HelipadEmpty_F";
 					atlOffset=0.00058364868;
 				};
-				class Item21
+				class Item15
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -16587,7 +14981,7 @@ class Mission
 						nAttributes=5;
 					};
 				};
-				class Item22
+				class Item16
 				{
 					dataType="Logic";
 					class PositionInfo
@@ -16654,7 +15048,7 @@ class Mission
 						nAttributes=4;
 					};
 				};
-				class Item23
+				class Item17
 				{
 					dataType="Marker";
 					position[]={-1674.5178,66.597183,4824.4922};
@@ -16668,7 +15062,7 @@ class Mission
 					id=3477;
 					atlOffset=-340.7373;
 				};
-				class Item24
+				class Item18
 				{
 					dataType="Layer";
 					name="!cof1";
@@ -17582,7 +15976,7 @@ class Mission
 					id=3421;
 					atlOffset=1.1899605;
 				};
-				class Item25
+				class Item19
 				{
 					dataType="Layer";
 					name="trees";
@@ -19994,7 +18388,7 @@ class Mission
 					id=1769;
 					atlOffset=5.842247;
 				};
-				class Item26
+				class Item20
 				{
 					dataType="Object";
 					class PositionInfo
@@ -20011,7 +18405,7 @@ class Mission
 					type="Land_HelipadEmpty_F";
 					atlOffset=0.0024795532;
 				};
-				class Item27
+				class Item21
 				{
 					dataType="Object";
 					class PositionInfo
@@ -20028,7 +18422,7 @@ class Mission
 					type="Land_HelipadEmpty_F";
 					atlOffset=0.010253906;
 				};
-				class Item28
+				class Item22
 				{
 					dataType="Layer";
 					name="!killhouse_small";
@@ -21372,36 +19766,6 @@ class Mission
 							id=4378;
 							type="Land_HelipadEmpty_F";
 							atlOffset=0.81099701;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
 						};
 						class Item5
 						{
@@ -21419,36 +19783,6 @@ class Mission
 							id=4379;
 							type="Land_HelipadEmpty_F";
 							atlOffset=0.87258911;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								nAttributes=2;
-							};
 						};
 						class Item6
 						{
@@ -21670,7 +20004,7 @@ class Mission
 					id=4339;
 					atlOffset=-0.53424454;
 				};
-				class Item29
+				class Item23
 				{
 					dataType="Object";
 					class PositionInfo
@@ -21685,7 +20019,7 @@ class Mission
 					id=4382;
 					type="Land_ClutterCutter_medium_F";
 				};
-				class Item30
+				class Item24
 				{
 					dataType="Layer";
 					name="trench_targets";
@@ -21708,49 +20042,6 @@ class Mission
 							id=4399;
 							type="Land_HelipadEmpty_F";
 							atlOffset=0.03055954;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
 						class Item1
 						{
@@ -21766,49 +20057,6 @@ class Mission
 							};
 							id=4400;
 							type="Land_HelipadEmpty_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
 						class Item2
 						{
@@ -21825,49 +20073,6 @@ class Mission
 							id=4401;
 							type="Land_HelipadEmpty_F";
 							atlOffset=1.4822998;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
 						class Item3
 						{
@@ -21884,49 +20089,6 @@ class Mission
 							id=4402;
 							type="Land_HelipadEmpty_F";
 							atlOffset=1.8387299;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
 						class Item4
 						{
@@ -21934,7 +20096,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={3215.679,62.934769,2963.7012};
-								angles[]={0,3.1525543,-0};
+								angles[]={0,3.1525543,0};
 							};
 							side="Empty";
 							class Attributes
@@ -21943,49 +20105,6 @@ class Mission
 							id=4403;
 							type="Land_HelipadEmpty_F";
 							atlOffset=1.5529823;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
 						class Item5
 						{
@@ -22002,49 +20121,6 @@ class Mission
 							id=4404;
 							type="Land_HelipadEmpty_F";
 							atlOffset=0.23519516;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
 						class Item6
 						{
@@ -22061,49 +20137,6 @@ class Mission
 							id=4405;
 							type="Land_HelipadEmpty_F";
 							atlOffset=0.2178421;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
 						class Item7
 						{
@@ -22119,49 +20152,6 @@ class Mission
 							};
 							id=4406;
 							type="Land_HelipadEmpty_F";
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
 						class Item8
 						{
@@ -22178,49 +20168,6 @@ class Mission
 							id=4411;
 							type="Land_HelipadEmpty_F";
 							atlOffset=6.8664551e-05;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="true";
-										};
-									};
-								};
-								class Attribute2
-								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=0;
-										};
-									};
-								};
-								nAttributes=3;
-							};
 						};
 						class Item9
 						{
@@ -22237,57 +20184,2028 @@ class Mission
 							id=4412;
 							type="Land_HelipadEmpty_F";
 							atlOffset=0.0064315796;
+						};
+					};
+					id=4398;
+					atlOffset=-0.52150726;
+				};
+				class Item25
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={3209.0107,66.414505,2978.7065};
+					};
+					areaSize[]={5,-1,5};
+					flags=1;
+					id=4413;
+					type="ModuleHideTerrainObjects_F";
+					atlOffset=-0.30802155;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="#filter";
+							expression="_this setVariable [""#filter"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=8;
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="#hideLocally";
+							expression="_this setVariable [""#hideLocally"",_value]";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item26
+				{
+					dataType="Group";
+					side="West";
+					class Entities
+					{
+						items=30;
+						class Item0
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3262.342,64.781441,2956.0481};
+								angles[]={0,6.2761512,0};
+							};
+							side="West";
+							flags=6;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayer=1;
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4478;
+							type="rhsgref_cdf_b_reg_rifleman";
 							class CustomAttributes
 							{
 								class Attribute0
 								{
-									property="ObjectCollision";
-									expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-									class Value
-									{
-										class data
-										{
-											singleType="BOOL";
-											value=1;
-										};
-									};
-								};
-								class Attribute1
-								{
-									property="DeleteDelayCondition_property";
-									expression="_this setVariable ['Globe_delCond', _value, true]";
+									property="speaker";
+									expression="_this setspeaker _value;";
 									class Value
 									{
 										class data
 										{
 											singleType="STRING";
-											value="true";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
 										};
 									};
 								};
 								class Attribute2
 								{
-									property="ObjectBoxMarker";
-									expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
+									property="acre_sys_radio_edenSetup";
+									expression="_this setVariable [""acre_sys_radio_setup"", _value, true]";
 									class Value
 									{
 										class data
 										{
-											singleType="BOOL";
-											value=0;
+											singleType="STRING";
+											value="[[""ACRE_PRC343"",[1,1]],[""ACRE_PRC152"",1],[""ACRE_PRC117F"",1]]";
 										};
 									};
 								};
 								nAttributes=3;
 							};
 						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3261.3284,64.781441,2956.1018};
+								angles[]={0,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4479;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item2
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3259.1602,64.781441,2956.1729};
+								angles[]={0,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4480;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item3
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3260.2146,64.781441,2956.0913};
+								angles[]={0,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4481;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item4
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3258.1091,64.781441,2956.1865};
+								angles[]={0,6.2761331,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4482;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item5
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3256.8496,64.808144,2956.0811};
+								angles[]={6.249866,6.2762046,0.0066682254};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4483;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item6
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3262.3804,64.781441,2954.5396};
+								angles[]={0,6.2761512,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4484;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item7
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3261.3674,64.781441,2954.5935};
+								angles[]={0,6.2761512,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4485;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item8
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3259.1992,64.781441,2954.6646};
+								angles[]={0,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4486;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item9
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3260.2537,64.781441,2954.5828};
+								angles[]={0,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4487;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item10
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3258.1482,64.781441,2954.678};
+								angles[]={0,6.2761331,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4488;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item11
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3256.8887,64.77404,2954.5728};
+								angles[]={0,6.2762046,0.0066592805};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4489;
+							type="rhsgref_cdf_b_reg_rifleman";
+							atlOffset=7.6293945e-06;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item12
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3262.4797,64.781441,2952.8191};
+								angles[]={0,6.2761512,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4490;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item13
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3261.4663,64.781441,2952.874};
+								angles[]={0,6.2761593,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4491;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3259.2981,64.781441,2952.9441};
+								angles[]={0,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4492;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3260.3525,64.781441,2952.8635};
+								angles[]={0,6.2761593,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4493;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item16
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3258.2466,64.781441,2952.9587};
+								angles[]={0,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4494;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item17
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3256.9875,64.776085,2952.8533};
+								angles[]={0.0066592805,6.2762046,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4495;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item18
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3262.5422,64.717415,2951.0896};
+								angles[]={6.216619,6.2761512,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4496;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item19
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3261.5288,64.704681,2951.1438};
+								angles[]={6.1736255,6.2761583,0.043307904};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4497;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item20
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3259.3606,64.689575,2951.2148};
+								angles[]={6.1736255,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4498;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item21
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3260.4153,64.680573,2951.1331};
+								angles[]={6.1736255,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4499;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item22
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3258.3096,64.701286,2951.2283};
+								angles[]={6.1934285,6.2761331,6.2631893};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4500;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item23
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3257.0503,64.698029,2951.123};
+								angles[]={6.193429,6.2762046,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4501;
+							type="rhsgref_cdf_b_reg_rifleman";
+							atlOffset=7.6293945e-06;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item24
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3262.5808,64.578423,2949.5815};
+								angles[]={6.1736255,6.2761512,0.043307904};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								receiveRemoteTargets=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4502;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item25
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3261.5679,64.540421,2949.6353};
+								angles[]={6.1736255,6.2761512,0.043307904};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4503;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item26
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3259.3997,64.542549,2949.7065};
+								angles[]={6.1934285,6.2761583,6.2631893};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4504;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item27
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3260.4541,64.514664,2949.6248};
+								angles[]={6.1736255,6.2761583,0};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4505;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item28
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3258.3484,64.564766,2949.72};
+								angles[]={6.1934285,6.2761331,6.2631893};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4506;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
+						class Item29
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3257.0891,64.581879,2949.6147};
+								angles[]={6.2498641,6.2762046,6.2265792};
+							};
+							side="West";
+							flags=4;
+							class Attributes
+							{
+								init="if (!isMultiplayer) exitWith {deleteVehicle this};";
+								description="Select role in-game@Ungrouped";
+								isPlayable=1;
+								class Inventory
+								{
+									class uniform
+									{
+										typeName="rhs_uniform_emr_patchless";
+										isBackpack=0;
+									};
+									map="ItemMap";
+									compass="ItemCompass";
+									watch="ItemWatch";
+									headgear="rhs_fieldcap_digi";
+								};
+							};
+							id=4507;
+							type="rhsgref_cdf_b_reg_rifleman";
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="speaker";
+									expression="_this setspeaker _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="Male09ENG";
+										};
+									};
+								};
+								class Attribute1
+								{
+									property="pitch";
+									expression="_this setpitch _value;";
+									class Value
+									{
+										class data
+										{
+											singleType="SCALAR";
+											value=1;
+										};
+									};
+								};
+								nAttributes=2;
+							};
+						};
 					};
-					id=4398;
-					atlOffset=-0.52150726;
+					class Attributes
+					{
+					};
+					id=4447;
+					atlOffset=-212.24001;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="groupID";
+							expression="                            if (isNil 'CBA_fnc_setCallsign') then {                                _this setGroupID [_value];                            } else {                                [_this, _value] call CBA_fnc_setCallsign;                            };";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Class";
+								};
+							};
+						};
+						nAttributes=1;
+					};
+				};
+				class Item27
+				{
+					dataType="Trigger";
+					position[]={3303.4209,57.428665,2966.6609};
+					angle=4.712389;
+					class Attributes
+					{
+						name="zone_inside_1";
+						sizeA=10;
+						sizeB=6;
+						sizeC=10;
+						repeatable=1;
+						activationBy="ANYPLAYER";
+						isRectangle=1;
+					};
+					id=3986;
+					type="EmptyDetectorArea10x10";
+					atlOffset=-6.9713364;
+				};
+				class Item28
+				{
+					dataType="Trigger";
+					position[]={3219.7451,63.307533,2969.7959};
+					angle=1.5707965;
+					class Attributes
+					{
+						name="zone_inside_2";
+						sizeA=25;
+						sizeB=15;
+						sizeC=1;
+						repeatable=1;
+						activationBy="ANYPLAYER";
+						isRectangle=1;
+					};
+					id=3987;
+					type="EmptyDetectorArea10x10";
+					atlOffset=-1.5763855;
+				};
+				class Item29
+				{
+					dataType="Trigger";
+					position[]={3267.3081,68.500641,2976.4441};
+					angle=3.1415927;
+					class Attributes
+					{
+						name="zone_captive";
+						sizeA=66;
+						sizeB=66;
+						sizeC=4;
+						repeatable=1;
+						activationBy="ANYPLAYER";
+						isRectangle=1;
+					};
+					id=3985;
+					type="EmptyDetectorArea10x10";
+					atlOffset=1.1186676;
+				};
+				class Item30
+				{
+					dataType="Trigger";
+					position[]={3266.792,64.461601,2976.186};
+					class Attributes
+					{
+						name="zone_play_1";
+						sizeA=66;
+						sizeB=66;
+						sizeC=5;
+						isRectangle=1;
+					};
+					id=3989;
+					type="EmptyDetectorAreaR50";
+				};
+				class Item31
+				{
+					dataType="Trigger";
+					position[]={3104.9478,48.32476,3017.4971};
+					class Attributes
+					{
+						name="zone_play_2";
+						sizeA=100;
+						sizeB=29;
+						sizeC=15;
+						isRectangle=1;
+					};
+					id=3988;
+					type="EmptyDetectorAreaR50";
+					atlOffset=-9.656971;
 				};
 			};
 			id=1571;
-			atlOffset=-3.0566101;
+			atlOffset=-16.272121;
 		};
 		class Item1
 		{
@@ -22335,67 +22253,6 @@ class Mission
 			};
 			title="O&T: Wall Aid Kits";
 			id=4017;
-		};
-		class Item5
-		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={3225.4199,65.205734,2939.127};
-				angles[]={0.022480084,5.8868999,6.2294278};
-			};
-			side="Empty";
-			flags=4;
-			class Attributes
-			{
-				init="tsp_fnc_trench = { " \n "    {deleteVehicle _x} forEach (allDeadMen inAreaArray zone_inside_2); " \n "    { " \n "        _group = createGroup west; _group deleteGroupWhenEmpty true;  " \n "        _enemy = _group createUnit [selectRandom enemy_chernarus, getPos _x, [], 1, ""CAN_COLLIDE""];  " \n "        _group = createGroup west; _group deleteGroupWhenEmpty true; [_enemy] joinSilent _group; " \n "        _enemy attachTo [_x, [0,0,0]]; detach _enemy;  " \n "        _enemy setFormDir (getDir _x); " \n "        _enemy setDir (getDir _x); " \n "        _enemy setUnitPos ""MIDDLE"";   " \n "        _enemy disableAI ""PATH"";    " \n "    } foreach ((getMissionLayerEntities ""trench_targets"")#0) " \n "}; " \n " " \n "tsp_fnc_trench_cond = {count (allUnits select {_x inArea zone_inside_2}) == 0}; " \n " " \n "[     " \n "    this, ""Generate Trench"", ""\a3\ui_f\data\IGUI\Cfg\holdactions\holdAction_forceRespawn_ca.paa"",           " \n "    {[] remoteExec [""tsp_fnc_trench"", 2]}, ""call tsp_fnc_trench_cond"", false, 1, [], -100          " \n "] call tsp_fnc_action_hold; ";
-			};
-			id=4410;
-			type="Land_Noticeboard_F";
-			atlOffset=-0.16100311;
-			class CustomAttributes
-			{
-				class Attribute0
-				{
-					property="ObjectCollision";
-					expression="private _actualValue = _value; if (_actualValue isEqualType []) then { _actualValue = _actualValue # 0 }; if (_actualValue isEqualType 0) then { _actualValue = _actualValue isEqualTo 1 }; [_this, _actualValue] remoteExecCall ['setPhysicsCollisionFlag', 0, _this];";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=1;
-						};
-					};
-				};
-				class Attribute1
-				{
-					property="DeleteDelayCondition_property";
-					expression="_this setVariable ['Globe_delCond', _value, true]";
-					class Value
-					{
-						class data
-						{
-							singleType="STRING";
-							value="true";
-						};
-					};
-				};
-				class Attribute2
-				{
-					property="ObjectBoxMarker";
-					expression="if (_value isEqualTo true) then {_this call expEden_fnc_3DENObjectBoxMarker};";
-					class Value
-					{
-						class data
-						{
-							singleType="BOOL";
-							value=0;
-						};
-					};
-				};
-				nAttributes=3;
-			};
 		};
 	};
 };

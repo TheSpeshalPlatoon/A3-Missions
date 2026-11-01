@@ -26,56 +26,53 @@ tsp_param_time_night = 12;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"VMF - 11th Frogmen Spetsnaz", "\tsp_core\data\insignia\11frog.paa", "east", {
-		{"Shapka HQ", "markers\nato\o_hq.paa", {
-			{"Platoon Leader", "rhs_vdv_officer_armored", {"ru_vdv","ru_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "rhs_vdv_engineer", {"ru_vdv"}, "iconManEngineer_ca.paa"}
+	{"VMF - 11th Frogmen Spetsnaz", "\tsp_core\data\insignia\vmf_11frog.paa", "playerSide == east", {
+		#define VMF11SPT "_this spawn {sleep 1; [_this, 'vmf_11spetsnaz'] call BIS_fnc_setUnitInsignia};"
+		{"Skif HQ", "markers\nato\o_hq.paa", {
+			{"Platoon Commander", "rhs_vmf_recon_officer_armored", {"ru_vmf","ru_recon","ru_leader_spetsnaz"}, "iconManCommander_ca.paa", VMF11SPT},
+			{"Medic", "rhs_vmf_recon_medic", {"ru_vmf","ru_recon","medic"}, "iconManMedic_ca.paa", VMF11SPT},
+			{"Engineer", "rhs_vmf_engineer", {"ru_vmf","ru_recon","ru_engineer"}, "iconManEngineer_ca.paa", VMF11SPT}
 		}},
-		{"Shapka 1", "markers\nato\o_inf.paa", {
-			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
-			{"Scout (AT)", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
-			{"Autorifleman", "rhs_vdv_arifleman_rpk", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
-			{"Scout (ASVAL)", "rhs_vdv_rifleman_asval", {"ru_vdv","ru_sniper"}, "iconManRecon_ca.paa"}
+		{"Skif 1", "markers\nato\o_inf.paa", {
+			{"Squad Leader", "rhs_vmf_recon_sergeant", {"ru_vmf","ru_recon","ru_leader_spetsnaz","ru_grenadier"}, "iconManLeader_ca.paa", VMF11SPT},
+			{"Medic", "rhs_vmf_recon_medic", {"ru_vmf","ru_recon","medic"}, "iconManMedic_ca.paa", VMF11SPT},
+			{"Scout", "rhs_vmf_recon_rifleman", {"ru_vmf","ru_recon"}, "iconManRecon_ca.paa", VMF11SPT},
+			{"Scout (AT)", "rhs_vmf_recon_rifleman_lat", {"ru_vmf","ru_recon","ru_missile"}, "iconManAT_ca.paa", VMF11SPT},
+			{"Grenadier", "rhs_vmf_recon_grenadier", {"ru_vmf","ru_recon","ru_grenadier"}, "iconManExplosive_ca.paa", VMF11SPT},
+			{"Autorifleman", "rhs_vmf_recon_arifleman", {"ru_vmf","ru_recon","ru_autorifle"}, "iconManMG_ca.paa", VMF11SPT}
 		}},
-		{"Shapka 2 (Weapons)", "markers\nato\o_inf.paa", {
-			{"Squad Leader", "rhs_vdv_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "rhs_vdv_medic", {"ru_vdv","medic"}, "iconManMedic_ca.paa"},
-			{"Scout", "rhs_vdv_rifleman", {"ru_vdv"}, "iconManRecon_ca.paa"},
-			{"Scout (AT)", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "rhs_vdv_machinegunner", {"ru_vdv","ru_missile"}, "iconManMG_ca.paa"},
-			{"Grenadier", "rhs_vdv_grenadier", {"ru_vdv"}, "iconManExplosive_ca.paa"}
-		}},
-		{"Voron", "markers\nato\o_art.paa", {
-			{"Team Leader", "rhs_vdv_junior_sergeant", {"ru_vdv","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Anti Tank", "rhs_vdv_LAT", {"ru_vdv"}, "iconManAT_ca.paa"},
-			{"Ammo Bearer", "rhs_vdv_strelok_rpg_assist", {"ru_vdv"}, "iconManAT_ca.paa"}
+		{"Skif 2 (Weapons)", "markers\nato\o_inf.paa", {
+			{"Squad Leader", "rhs_vmf_recon_sergeant", {"ru_vmf","ru_recon","ru_leader_spetsnaz","ru_grenadier"}, "iconManLeader_ca.paa", VMF11SPT},
+			{"Medic", "rhs_vmf_recon_medic", {"ru_vmf","ru_recon","medic"}, "iconManMedic_ca.paa", VMF11SPT},
+			{"Scout", "rhs_vmf_recon_rifleman", {"ru_vmf","ru_recon"}, "iconManRecon_ca.paa", VMF11SPT},
+			{"Anti Tank", "rhs_vmf_recon_rifleman_lat", {"ru_vmf","ru_recon","ru_missile"}, "iconManAT_ca.paa", VMF11SPT},
+			{"Marksman", "rhs_vmf_recon_marksman", {"ru_vmf","ru_recon","ru_marksman"}, "iconManRecon_ca.paa", VMF11SPT},
+			{"Machine Gunner", "rhs_vmf_recon_arifleman", {"ru_vmf","ru_recon","ru_autorifle"}, "iconManMG_ca.paa", VMF11SPT}
 		}}
 	}},
-	{"VMF - 3rd Mechanized Naval Infantry", "\tsp_core\data\insignia\vmf.paa", "east", {
+	{"VMF - 3rd Mechanized Naval Infantry", "\tsp_core\data\insignia\vmf.paa", "playerSide == east", {
 		{"Frog 1", "markers\nato\o_mech_inf.paa", {
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
+			{"Crewman", "rhs_vmf_combatcrew", {"ru_vmf","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhs_vmf_combatcrew", {"ru_vmf","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}},
 		{"Frog 2", "markers\nato\o_mech_inf.paa", {
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
+			{"Crewman", "rhs_vmf_combatcrew", {"ru_vmf","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhs_vmf_combatcrew", {"ru_vmf","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}},
 		{"Frog 3", "markers\nato\o_mech_inf.paa", {
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
-			{"Crewman", "rhs_vdv_combatcrew", {"ru_vdv","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
+			{"Crewman", "rhs_vmf_combatcrew", {"ru_vmf","ru_crew","ru_leader"}, "iconManLeader_ca.paa"},
+			{"Crewman", "rhs_vmf_combatcrew", {"ru_vmf","ru_crew","ru_leader"}, "iconManLeader_ca.paa"}
 		}}
 	}},
-	{"VMF - 3rd Naval Aviation", "\tsp_core\data\insignia\vmfaviation.paa", "east", {
+	{"VMF - 3rd Naval Rotor Aviation", "\tsp_core\data\insignia\vmf_aviation.paa", "playerSide == east", {
+		#define VMFAVI "_this spawn {sleep 1; [_this, 'vmf_aviation'] call BIS_fnc_setUnitInsignia};"
 		{"Vortex 1", "markers\nato\o_air.paa", {
-			{"Helicopter Pilot", "rhs_pilot_combat_heli", {"vdv_spetsnaz_all","east_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
-			{"Helicopter Crew", "rhs_pilot_combat_heli", {"vdv_spetsnaz_all","east_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
+			{"Helicopter Pilot", "rhs_pilot_combat_heli", {"ru_heli","ru_leader"}, "iconManOfficer_ca.paa", VMFAVI},
+			{"Helicopter Crew", "rhs_pilot_combat_heli", {"ru_heli","ru_leader"}, "iconManOfficer_ca.paa", VMFAVI}
 		}},
 		{"Vortex 2", "markers\nato\o_air.paa", {
-			{"Helicopter Pilot", "rhs_pilot_combat_heli", {"vdv_spetsnaz_all","east_heli","everyone_leader"}, "iconManOfficer_ca.paa"},
-			{"Helicopter Crew", "rhs_pilot_combat_heli", {"vdv_spetsnaz_all","east_heli","everyone_leader"}, "iconManOfficer_ca.paa"}
+			{"Helicopter Pilot", "rhs_pilot_combat_heli", {"ru_heli","ru_leader"}, "iconManOfficer_ca.paa", VMFAVI},
+			{"Helicopter Crew", "rhs_pilot_combat_heli", {"ru_heli","ru_leader"}, "iconManOfficer_ca.paa", VMFAVI}
 		}}
 	}}
 };

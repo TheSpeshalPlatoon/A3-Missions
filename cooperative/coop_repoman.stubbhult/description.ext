@@ -26,37 +26,37 @@ tsp_param_time_night = 1;
 tsp_param_weather = false;
 
 tsp_roles[] = {
-	{"CIA/JSOC - Task Force Delilah", "\tsp_core\data\insignia\ciajsoc.paa", "west", {
+	{"CIA/JSOC - Task Force Delilah ", "\tsp_core\data\insignia\cia.paa", "playerSide == west", {
 		{"Empire", "markers\nato\b_hq.paa", {
-			{"Element Coordinator", "tsp_ion_teamlead", {"soc_delta","us_leader"}, "iconManCommander_ca.paa"},
-			{"Medic", "tsp_ion_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
-			{"Engineer", "tsp_ion_engineer", {"soc_delta"}, "iconManEngineer_ca.paa"}
+			{"Element Coordinator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_ion_teamlead"}, {"ion_contractor","usa_delta","us_leader_special"}, "iconManCommander_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_ion_medic"}, {"ion_contractor","usa_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Engineer", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_ion_engineer"}, {"ion_contractor","usa_delta","usa_engineer"}, "iconManEngineer_ca.paa"}
 		}},
 		{"Lancer (CIA)", "markers\nato\b_inf.paa", {
-			{"Element Leader", "tsp_ion_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_ion_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
-			{"Agent (1)", "tsp_ion_contractor", {"soc_delta"}, "iconManRecon_ca.paa"},
-			{"Agent (2)", "tsp_ion_contractor", {"soc_delta"}, "iconManAT_ca.paa"},
-			{"Grenadier", "tsp_ion_grenadier", {"soc_delta","us_grenadier","soc_grenadier"}, "iconManMG_ca.paa"},
-			{"Breacher", "tsp_ion_breacher", {"soc_delta"}, "iconManExplosive_ca.paa"}
+			{"Element Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_ion_teamlead"}, {"ion_contractor","usa_delta","us_leader_special","usa_grenadier_special"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_ion_medic"}, {"ion_contractor","usa_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Agent", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_ion_contractor"}, {"ion_contractor","usa_delta"}, "iconManRecon_ca.paa"},
+			{"Agent", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_ion_contractor"}, {"ion_contractor","usa_delta"}, "iconManRecon_ca.paa"},
+			{"Agent", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_ion_contractor"}, {"ion_contractor","usa_delta"}, "iconManRecon_ca.paa"},
+			{"Breacher", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_ion_breacher"}, {"ion_contractor","usa_delta","usa_engineer"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Caster (SFOD-D)", "markers\nato\b_inf.paa", {
-			{"Element Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
-			{"Medic", "tsp_army_sf_medic", {"soc_delta","medic"}, "iconManMedic_ca.paa"},
-			{"Operator", "tsp_army_sf_operator", {"soc_delta"}, "iconManRecon_ca.paa"},
-			{"Operator (AT)", "tsp_army_sf_operatorat", {"soc_delta","usa_missile","soc_missile","us_missile"}, "iconManAT_ca.paa"},
-			{"Machine Gunner", "tsp_army_sf_machinegunner", {"soc_delta","us_autorifle","soc_autorifle"}, "iconManMG_ca.paa"},
-			{"Ammo Bearer", "tsp_army_sf_operator", {"soc_delta"}, "iconManExplosive_ca.paa"}
+			{"Element Leader", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_delta_teamlead"}, {"usa_delta","us_leader_special","usa_grenadier_special"}, "iconManLeader_ca.paa"},
+			{"Medic", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_delta_medic"}, {"usa_delta","medic"}, "iconManMedic_ca.paa"},
+			{"Operator", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_delta_operatorat"}, {"usa_delta"}, "iconManAT_ca.paa"},
+			{"Operator (AT)", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_delta_operatorat"}, {"usa_delta","usa_missile"}, "iconManAT_ca.paa"},
+			{"Autorifleman", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_delta_autorifleman"}, {"usa_delta","usa_autorifle","usa_autorifle_special","usa_machinegun", "tier1_autorifle"}, "iconManMG_ca.paa"},
+			{"Breacher", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_delta_engineer"}, {"usa_delta","usa_engineer"}, "iconManExplosive_ca.paa"}
 		}},
 		{"Archer (Snipers)", "markers\nato\b_art.paa", {
-			{"Team Leader", "tsp_army_sf_teamlead", {"soc_delta","us_leader"}, "iconManLeader_ca.paa"},
-			{"Agent", "tsp_ion_contractor", {"soc_delta"}, "iconManRecon_ca.paa"},
-			{"Marksman", "tsp_army_sf_marksman", {"soc_delta","soc_sniper","usa_sniper"}, "iconMan_ca.paa"}
+			{"Spotter", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_delta_teamlead"}, {"usa_delta","us_leader_special","usa_grenadier_special"}, "iconManLeader_ca.paa"},
+			{"Sniper", {"rhsusf_infantry_socom_armysf_rifleman", "tsp_army_delta_marksman"}, {"usa_delta","usa_marksman","usa_sniper","tier1_sniper"}, "iconMan_ca.paa"}
 		}}
 	}},
-	{"USA - 160th SOAR", "\tsp_core\data\insignia\soar.paa", "west", {
-		{"Phantom 1 (Commanche Pilot)", "markers\nato\b_air.paa", {
-			{"Helicopter Pilot", "rhsusf_army_ocp_helipilot", {"soc_special","us_heli","us_leader"}, "iconManOfficer_ca.paa"}
+	{"USA - 160th SOAR", "\tsp_core\data\insignia\usa_160soar.paa", "playerSide == west", {
+		#define USASOAR "_this spawn {sleep 1; [_this, 'army_soar'] call BIS_fnc_setUnitInsignia};"
+		{"Phantom 1", "markers\nato\b_air.paa", {
+			{"Helicopter Pilot", "rhsusf_army_ocp_helipilot", {"usa_soar"}, "iconManOfficer_ca.paa", USASOAR}
 		}}
 	}}
 };

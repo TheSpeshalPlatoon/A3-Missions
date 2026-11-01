@@ -1,6 +1,5 @@
 //-- Player, Zombie Types, Triggers, Zombie Side, Condition, Code, Distance, Max Zombie Count, Interval, Despawn Distance
 [player, [
-    "tsp_afr_thug_m21",
     "tsp_afr_thug_ak",
     "tsp_afr_thug_k98",
     "tsp_afr_para_m21",
