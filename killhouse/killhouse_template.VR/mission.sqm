@@ -6,30 +6,83 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=554;
+	mods[]=
+	{
+		"WBK_Zombies_AdvancedEditorSettings"
+	};
 	class ItemIDProvider
 	{
 		nextID=1015;
 	};
 	class LayerIndexProvider
 	{
-		nextID=332;
+		nextID=386;
 	};
 	class Camera
 	{
-		pos[]={3923.2361,28.455809,1203.619};
-		dir[]={-0.68519682,-0.64394432,0.34035432};
-		up[]={-0.57671487,0.76507241,0.28646863};
-		aside[]={0.44486555,0,0.89559746};
+		pos[]={3954.532,66.529213,1168.8035};
+		dir[]={-0.45305026,-0.64945775,0.61072171};
+		up[]={-0.38694802,0.76038665,0.52161372};
+		aside[]={0.80315089,3.2581738e-07,0.59579986};
 	};
 };
 binarizationWanted=0;
 sourceName="killhouse_template";
-addons[] = {};
+addons[]=
+{
+	"Bro_MSW_Base",
+	"A3_Structures_F_Enoch_Infrastructure_Roads",
+	"A3_Structures_F_Items_Electronics",
+	"A3_Props_F_Enoch_Military_Decontamination",
+	"A3_Structures_F_Ind_Shed",
+	"A3_Props_F_Enoch_Industrial_Electric",
+	"A3_Structures_F_Enoch_VR_Helpers",
+	"A3_Props_F_Enoch_Military_Camps",
+	"A3_Structures_F_Mil_Helipads",
+	"A3_Structures_F_Enoch_Military_Camps",
+	"A3_Misc_F_Helpers",
+	"Bro_ModShoot_Remastered",
+	"A3_Structures_F_Enoch_Infrastructure_Powerlines",
+	"A3_Structures_F_Exp_Walls_Tin",
+	"A3_Structures_F_Enoch_Industrial_Materials",
+	"A3_Structures_F_Items_Vessels",
+	"ace_dragging",
+	"A3_Structures_F_Training",
+	"A3_Structures_F_Kart_Civ_SportsGrounds",
+	"A3_Structures_F_Enoch_Military_Training",
+	"A3_Props_F_Exp_Infrastructure_Traffic",
+	"A3_Structures_F_Mark_Items_Sport",
+	"cba_xeh",
+	"A3_Structures_F_Bootcamp_System",
+	"A3_Weapons_F_Ammoboxes",
+	"ace_cargo",
+	"A3_Props_F_Decade_Objectives",
+	"A3_Structures_F_EPA_Walls",
+	"A3_Structures_F_Wrecks",
+	"A3_Characters_F",
+	"hide_vanilla",
+	"A3_Weapons_F_Rifles_MX",
+	"ace_scopes",
+	"A3_Weapons_F_Acc",
+	"A3_Weapons_F",
+	"A3_Weapons_F_Pistols_Pistol_Heavy_01",
+	"DSA_Spooks",
+	"ace_nightvision",
+	"ace_attach",
+	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
+	"tsp_medical",
+	"UK3CB_Factions_Equipment_Vests",
+	"ace_hearing",
+	"A3_Sounds_F",
+	"A3_Sounds_F_Enoch",
+	"ace_ai"
+};
 class AddonsMetaData
 {
 	class List
 	{
-		items=22;
+		items=34;
 		class Item0
 		{
 			className="Bro_MSW_Base";
@@ -87,31 +140,31 @@ class AddonsMetaData
 		};
 		class Item8
 		{
-			className="A3_Structures_F_EPA";
-			name="Arma 3 Survive Episode - Buildings and Structures";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
-		};
-		class Item9
-		{
 			className="A3_Misc_F";
 			name="Arma 3 - 3D Aids and Helpers";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item10
+		class Item9
 		{
 			className="A3_Structures_F_Exp";
 			name="Arma 3 Apex - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item11
+		class Item10
 		{
 			className="A3_Structures_F_Enoch_Industrial";
 			name="Arma 3 Contact Platform - Industrial Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item11
+		{
+			className="ace_dragging";
+			name="ACE3 - Dragging";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 		class Item12
 		{
@@ -136,50 +189,129 @@ class AddonsMetaData
 		};
 		class Item15
 		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item16
+		{
 			className="A3_Structures_F_Bootcamp";
 			name="Arma 3 Bootcamp Update - Buildings and Structures";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item16
+		class Item17
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item17
+		class Item18
+		{
+			className="ace_cargo";
+			name="ACE3 - Cargo";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item19
 		{
 			className="A3_Props_F_Decade_Objectives";
 			name="A3_Props_F_Decade_Objectives";
 		};
-		class Item18
+		class Item20
+		{
+			className="A3_Structures_F_EPA";
+			name="Arma 3 Survive Episode - Buildings and Structures";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item21
 		{
 			className="A3_Structures_F_Wrecks";
 			name="Arma 3 - Vehicle Wrecks";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item19
+		class Item22
 		{
-			className="A3_Characters_F";
-			name="Arma 3 Alpha - Characters and Clothing";
-			author="Bohemia Interactive";
-			url="https://www.arma3.com";
+			className="hide_vanilla";
+			name="hide_vanilla";
 		};
-		class Item20
+		class Item23
+		{
+			className="ace_scopes";
+			name="ACE3 - Scopes";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item24
+		{
+			className="DSA_Spooks";
+			name="Drongos Spooks and Anomalies";
+			author="Drongo";
+		};
+		class Item25
+		{
+			className="ace_nightvision";
+			name="ACE3 - Night Vision";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item26
+		{
+			className="ace_attach";
+			name="ACE3 - Attach";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item27
+		{
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item28
+		{
+			className="tsp_medical";
+			name="tsp_medical";
+		};
+		class Item29
+		{
+			className="UK3CB_Factions_Equipment";
+			name="3CB Factions - Equipment";
+			author="3 Commando Brigade";
+			url="www.3commandobrigade.com";
+		};
+		class Item30
+		{
+			className="ace_hearing";
+			name="ACE3 - Hearing";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item31
 		{
 			className="A3_Sounds_F";
 			name="Arma 3 - Sound Effects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item21
+		class Item32
 		{
 			className="A3_Sounds_F_Enoch";
 			name="Arma 3 Contact Platform - Sound Effects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item33
+		{
+			className="ace_ai";
+			name="ACE3 - AI";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
 		};
 	};
 };
@@ -196,6 +328,9 @@ randomSeed=5774673;
 class ScenarioData
 {
 	author="ASmallDinosaur";
+};
+class CustomAttributes
+{
 };
 class Mission
 {
@@ -235,7 +370,7 @@ class Mission
 					state=1;
 					class Entities
 					{
-						items=30;
+						items=26;
 						class Item0
 						{
 							dataType="Layer";
@@ -7933,150 +8068,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3882.126,6.3000002,1196.108};
-								angles[]={0,1.5707964,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
-								name="healbox_1";
-								disableSimulation=1;
-							};
-							id=588;
-							type="Land_HelipadEmpty_F";
-							atlOffset=1.3000002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item26
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3917.8,6.3000002,1187.6689};
-								angles[]={0,4.712389,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
-								name="healbox_2";
-								disableSimulation=1;
-							};
-							id=589;
-							type="Land_HelipadEmpty_F";
-							atlOffset=1.3000002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item27
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3882.168,6.0999999,1196.297};
-								angles[]={6.2821031,6.2820163,1.5700284};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, ""Heal""] call tsp_fnc_action;";
-								name="heal_1";
-								disableSimulation=1;
-							};
-							id=584;
-							type="Land_InvisibleBarrier_F";
-							atlOffset=1.0999999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item28
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3917.813,6.0999999,1187.17};
-								angles[]={6.2824869,3.142221,4.7131572};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, ""Heal""] call tsp_fnc_action;";
-								name="heal_2";
-								disableSimulation=1;
-							};
-							id=583;
-							type="Land_InvisibleBarrier_F";
-							atlOffset=1.0999999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item29
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={3886.5066,6.4582014,1198.1117};
 								angles[]={4.7128515,1.5712599,1.5665817};
 							};
@@ -8108,7 +8099,7 @@ class Mission
 						};
 					};
 					id=1;
-					atlOffset=1.2634759;
+					atlOffset=0.72910118;
 				};
 				class Item1
 				{
@@ -8117,7 +8108,7 @@ class Mission
 					state=1;
 					class Entities
 					{
-						items=30;
+						items=26;
 						class Item0
 						{
 							dataType="Object";
@@ -15859,150 +15850,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3882.1941,6.3000002,1244.757};
-								angles[]={0,1.5707964,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
-								name="healbox_4";
-								disableSimulation=1;
-							};
-							id=590;
-							type="Land_HelipadEmpty_F";
-							atlOffset=1.3000002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item26
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3882.1919,6.0999999,1244.8521};
-								angles[]={0.0026703537,0.0026005406,1.5700284};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, ""Heal""] call tsp_fnc_action;";
-								name="heal_4";
-								disableSimulation=1;
-							};
-							id=585;
-							type="Land_InvisibleBarrier_F";
-							atlOffset=1.0999999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item27
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3917.8359,6.0999999,1235.724};
-								angles[]={0.0015707964,3.1399522,4.7131572};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, ""Heal""] call tsp_fnc_action;";
-								name="heal_3";
-								disableSimulation=1;
-							};
-							id=586;
-							type="Land_InvisibleBarrier_F";
-							atlOffset=1.0999999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item28
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3917.8779,6.3000002,1236.002};
-								angles[]={0,4.712389,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
-								name="healbox_3";
-								disableSimulation=1;
-							};
-							id=587;
-							type="Land_HelipadEmpty_F";
-							atlOffset=1.3000002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item29
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={3913.5488,6.2840333,1233.8746};
 								angles[]={1.5703337,4.7128525,4.716547};
 							};
@@ -16034,7 +15881,7 @@ class Mission
 						};
 					};
 					id=202;
-					atlOffset=1.213892;
+					atlOffset=0.64201641;
 				};
 				class Item2
 				{
@@ -18139,7 +17986,7 @@ class Mission
 					state=1;
 					class Entities
 					{
-						items=8;
+						items=22;
 						class Item0
 						{
 							dataType="Object";
@@ -18336,9 +18183,512 @@ class Mission
 							id=1008;
 							type="Land_HelipadEmpty_F";
 						};
+						class Item8
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3882.168,6.0999999,1196.297};
+								angles[]={6.2821031,6.2820163,1.5700284};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, ""Heal""] call tsp_fnc_action;";
+								name="heal_1";
+								disableSimulation=1;
+							};
+							id=584;
+							type="Land_InvisibleBarrier_F";
+							atlOffset=1.0999999;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item9
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3917.813,6.0999999,1187.17};
+								angles[]={6.2824869,3.142221,4.7131572};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, ""Heal""] call tsp_fnc_action;";
+								name="heal_2";
+								disableSimulation=1;
+							};
+							id=583;
+							type="Land_InvisibleBarrier_F";
+							atlOffset=1.0999999;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item10
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3882.126,6.3000002,1196.108};
+								angles[]={0,1.5707964,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								name="healbox_1";
+								disableSimulation=1;
+							};
+							id=588;
+							type="Land_HelipadEmpty_F";
+							atlOffset=1.3000002;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item11
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3917.8,6.3000002,1187.6689};
+								angles[]={0,4.712389,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								name="healbox_2";
+								disableSimulation=1;
+							};
+							id=589;
+							type="Land_HelipadEmpty_F";
+							atlOffset=1.3000002;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item12
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3917.8359,6.0999999,1235.724};
+								angles[]={0.0015707964,3.1399522,4.7131572};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, ""Heal""] call tsp_fnc_action;";
+								name="heal_3";
+								disableSimulation=1;
+							};
+							id=586;
+							type="Land_InvisibleBarrier_F";
+							atlOffset=1.0999999;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item13
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3882.1919,6.0999999,1244.8521};
+								angles[]={0.0026703537,0.0026005406,1.5700284};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, ""Heal""] call tsp_fnc_action;";
+								name="heal_4";
+								disableSimulation=1;
+							};
+							id=585;
+							type="Land_InvisibleBarrier_F";
+							atlOffset=1.0999999;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item14
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3882.1941,6.3000002,1244.757};
+								angles[]={0,1.5707964,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								name="healbox_4";
+								disableSimulation=1;
+							};
+							id=590;
+							type="Land_HelipadEmpty_F";
+							atlOffset=1.3000002;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item15
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3917.8779,6.3000002,1236.002};
+								angles[]={0,4.712389,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								name="healbox_3";
+								disableSimulation=1;
+							};
+							id=587;
+							type="Land_HelipadEmpty_F";
+							atlOffset=1.3000002;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item16
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3838.918,6.0999999,1229.757};
+								angles[]={1.5700284,1.5707265,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, ""Heal""] call tsp_fnc_action;";
+								name="heal_7";
+								disableSimulation=1;
+							};
+							id=1000;
+							type="Land_InvisibleBarrier_F";
+							atlOffset=1.0999999;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item17
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3838.4199,6.3000002,1229.803};
+								angles[]={0,3.1415927,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								name="healbox_7";
+								disableSimulation=1;
+							};
+							id=998;
+							type="Land_HelipadEmpty_F";
+							atlOffset=1.3000002;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item18
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3940.2991,6.0999999,1225.803};
+								angles[]={1.5700284,1.5707265,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, ""Heal""] call tsp_fnc_action;";
+								name="heal_6";
+								disableSimulation=1;
+							};
+							id=997;
+							type="Land_InvisibleBarrier_F";
+							atlOffset=1.0999999;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item19
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3931.771,6.0999999,1206.1851};
+								angles[]={4.7131572,4.7123017,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this, ""Heal""] call tsp_fnc_action;";
+								name="heal_5";
+								disableSimulation=1;
+							};
+							id=996;
+							type="Land_InvisibleBarrier_F";
+							atlOffset=1.0999999;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item20
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3939.8,6.3000002,1225.835};
+								angles[]={0,3.1415927,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								name="healbox_6";
+								disableSimulation=1;
+							};
+							id=995;
+							type="Land_HelipadEmpty_F";
+							atlOffset=1.3000002;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
+						class Item21
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={3931.96,6.3000002,1206.144};
+							};
+							side="Empty";
+							class Attributes
+							{
+								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
+								name="healbox_5";
+								disableSimulation=1;
+							};
+							id=994;
+							type="Land_HelipadEmpty_F";
+							atlOffset=1.3000002;
+							class CustomAttributes
+							{
+								class Attribute0
+								{
+									property="ammoBox";
+									expression="[_this,_value] call bis_fnc_initAmmoBox;";
+									class Value
+									{
+										class data
+										{
+											singleType="STRING";
+											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
+										};
+									};
+								};
+								nAttributes=1;
+							};
+						};
 					};
 					id=461;
-					atlOffset=0.12543774;
+					atlOffset=1.1663876;
 				};
 				class Item5
 				{
@@ -20487,7 +20837,7 @@ class Mission
 					state=1;
 					class Entities
 					{
-						items=24;
+						items=20;
 						class Item0
 						{
 							dataType="Layer";
@@ -25989,149 +26339,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3931.96,6.3000002,1206.144};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
-								name="healbox_5";
-								disableSimulation=1;
-							};
-							id=994;
-							type="Land_HelipadEmpty_F";
-							atlOffset=1.3000002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item20
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3939.8,6.3000002,1225.835};
-								angles[]={0,3.1415927,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
-								name="healbox_6";
-								disableSimulation=1;
-							};
-							id=995;
-							type="Land_HelipadEmpty_F";
-							atlOffset=1.3000002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item21
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3931.771,6.0999999,1206.1851};
-								angles[]={4.7131572,4.7123017,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, ""Heal""] call tsp_fnc_action;";
-								name="heal_5";
-								disableSimulation=1;
-							};
-							id=996;
-							type="Land_InvisibleBarrier_F";
-							atlOffset=1.0999999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item22
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3940.2991,6.0999999,1225.803};
-								angles[]={1.5700284,1.5707265,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, ""Heal""] call tsp_fnc_action;";
-								name="heal_6";
-								disableSimulation=1;
-							};
-							id=997;
-							type="Land_InvisibleBarrier_F";
-							atlOffset=1.0999999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item23
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={3929.8418,6.4521713,1210.4052};
 								angles[]={4.7123909,1.5707971,6.2790365};
 							};
@@ -26163,7 +26370,7 @@ class Mission
 						};
 					};
 					id=647;
-					atlOffset=1.2609668;
+					atlOffset=0.73418617;
 				};
 				class Item7
 				{
@@ -26172,7 +26379,7 @@ class Mission
 					state=1;
 					class Entities
 					{
-						items=21;
+						items=19;
 						class Item0
 						{
 							dataType="Layer";
@@ -33371,78 +33578,6 @@ class Mission
 							dataType="Object";
 							class PositionInfo
 							{
-								position[]={3838.918,6.0999999,1229.757};
-								angles[]={1.5700284,1.5707265,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this, ""Heal""] call tsp_fnc_action;";
-								name="heal_7";
-								disableSimulation=1;
-							};
-							id=1000;
-							type="Land_InvisibleBarrier_F";
-							atlOffset=1.0999999;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item19
-						{
-							dataType="Object";
-							class PositionInfo
-							{
-								position[]={3838.4199,6.3000002,1229.803};
-								angles[]={0,3.1415927,0};
-							};
-							side="Empty";
-							class Attributes
-							{
-								init="[this,"""",""\A3\structures_f_enoch\furniture\decoration\lekarnicka\lekarnicka.p3d""] spawn tsp_fnc_replace;";
-								name="healbox_7";
-								disableSimulation=1;
-							};
-							id=998;
-							type="Land_HelipadEmpty_F";
-							atlOffset=1.3000002;
-							class CustomAttributes
-							{
-								class Attribute0
-								{
-									property="ammoBox";
-									expression="[_this,_value] call bis_fnc_initAmmoBox;";
-									class Value
-									{
-										class data
-										{
-											singleType="STRING";
-											value="[[[[""FirstAidKit""],[12]],[[],[]],[[],[]],[[],[]]],false]";
-										};
-									};
-								};
-								nAttributes=1;
-							};
-						};
-						class Item20
-						{
-							dataType="Object";
-							class PositionInfo
-							{
 								position[]={3865.9929,6.4824967,1203.2059};
 								angles[]={1.5707943,4.7123899,0.0041579716};
 							};
@@ -33474,11 +33609,11 @@ class Mission
 						};
 					};
 					id=791;
-					atlOffset=1.2329712;
+					atlOffset=0.85813808;
 				};
 			};
 			id=0;
-			atlOffset=1.1023393;
+			atlOffset=0.84541273;
 		};
 		class Item1
 		{
@@ -33492,8 +33627,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3898.0266,4.923233,1218.7178};
-						angles[]={0,4.7036653,0};
+						position[]={3902.2905,5.0014391,1213.4481};
+						angles[]={0,1.5620724,0};
 					};
 					side="West";
 					flags=6;
@@ -33612,7 +33747,6 @@ class Mission
 					};
 					id=404;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -33649,8 +33783,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3897.9744,4.923233,1217.7041};
-						angles[]={0,4.7036719,0};
+						position[]={3902.3428,5.0014391,1214.4618};
+						angles[]={0,1.5620791,0};
 					};
 					side="West";
 					flags=4;
@@ -33769,7 +33903,6 @@ class Mission
 					};
 					id=405;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -33806,8 +33939,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3897.907,4.923233,1215.5358};
-						angles[]={0,4.7036719,0};
+						position[]={3902.4102,5.0014391,1216.6301};
+						angles[]={0,1.5620791,0};
 					};
 					side="West";
 					flags=4;
@@ -33926,7 +34059,6 @@ class Mission
 					};
 					id=406;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -33963,8 +34095,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3897.9868,4.923233,1216.5903};
-						angles[]={0,4.7036719,0};
+						position[]={3902.3303,5.0014391,1215.5756};
+						angles[]={0,1.5620791,0};
 					};
 					side="West";
 					flags=4;
@@ -34083,7 +34215,6 @@ class Mission
 					};
 					id=407;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -34120,8 +34251,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3897.8953,4.9496536,1214.4846};
-						angles[]={0,4.7035952,0};
+						position[]={3902.4219,5.0278597,1217.6813};
+						angles[]={0,1.5620023,0};
 					};
 					side="West";
 					flags=4;
@@ -34240,7 +34371,7 @@ class Mission
 					};
 					id=408;
 					type="B_recon_F";
-					atlOffset=-0.051785469;
+					atlOffset=0.026420593;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -34277,8 +34408,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3898.0024,5.0014391,1213.2255};
-						angles[]={0,4.7036667,0};
+						position[]={3902.3147,5.0796452,1218.9404};
+						angles[]={0,1.5620738,0};
 					};
 					side="West";
 					flags=4;
@@ -34397,6 +34528,7 @@ class Mission
 					};
 					id=409;
 					type="B_recon_F";
+					atlOffset=0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -34433,8 +34565,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3899.5349,4.923233,1218.7588};
-						angles[]={0,4.7036653,0};
+						position[]={3900.7822,5.0014391,1213.4071};
+						angles[]={0,1.5620724,0};
 					};
 					side="West";
 					flags=4;
@@ -34552,7 +34684,6 @@ class Mission
 					};
 					id=410;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -34589,8 +34720,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3899.4827,4.923233,1217.7457};
-						angles[]={0,4.7036653,0};
+						position[]={3900.8345,5.0014391,1214.4202};
+						angles[]={0,1.5620724,0};
 					};
 					side="West";
 					flags=4;
@@ -34709,7 +34840,6 @@ class Mission
 					};
 					id=411;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -34746,8 +34876,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3899.415,4.923233,1215.5773};
-						angles[]={0,4.7036719,0};
+						position[]={3900.9021,5.0014391,1216.5886};
+						angles[]={0,1.5620791,0};
 					};
 					side="West";
 					flags=4;
@@ -34866,7 +34996,6 @@ class Mission
 					};
 					id=412;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -34903,8 +35032,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3899.4949,4.923233,1216.632};
-						angles[]={0,4.7036719,0};
+						position[]={3900.8223,5.0014391,1215.5339};
+						angles[]={0,1.5620791,0};
 					};
 					side="West";
 					flags=4;
@@ -35023,7 +35152,6 @@ class Mission
 					};
 					id=413;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35060,8 +35188,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3899.4036,4.9418192,1214.5262};
-						angles[]={0,4.7035952,0};
+						position[]={3900.9136,5.0200253,1217.6396};
+						angles[]={0,1.5620023,0};
 					};
 					side="West";
 					flags=4;
@@ -35180,7 +35308,7 @@ class Mission
 					};
 					id=414;
 					type="B_recon_F";
-					atlOffset=-0.059619904;
+					atlOffset=0.018586159;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35217,8 +35345,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3899.5107,4.9936047,1213.2671};
-						angles[]={0,4.7036667,0};
+						position[]={3900.8064,5.0718107,1218.8988};
+						angles[]={0,1.5620738,0};
 					};
 					side="West";
 					flags=4;
@@ -35337,7 +35465,7 @@ class Mission
 					};
 					id=415;
 					type="B_recon_F";
-					atlOffset=-0.0078344345;
+					atlOffset=0.070371628;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35374,8 +35502,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3901.2551,4.9265785,1218.861};
-						angles[]={0,4.7036657,0};
+						position[]={3899.062,5.0047846,1213.3049};
+						angles[]={0,1.5620729,0};
 					};
 					side="West";
 					flags=4;
@@ -35493,7 +35621,7 @@ class Mission
 					};
 					id=416;
 					type="B_recon_F";
-					atlOffset=-0.074860573;
+					atlOffset=0.0033454895;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35530,8 +35658,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3901.2019,4.9237919,1217.8475};
-						angles[]={0,4.7036734,0};
+						position[]={3899.1152,5.0019979,1214.3184};
+						angles[]={0,1.5620805,0};
 					};
 					side="West";
 					flags=4;
@@ -35650,7 +35778,7 @@ class Mission
 					};
 					id=417;
 					type="B_recon_F";
-					atlOffset=-0.077647209;
+					atlOffset=0.00055885315;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35687,8 +35815,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3901.1353,4.923233,1215.679};
-						angles[]={0,4.7036719,0};
+						position[]={3899.1819,5.0014391,1216.4869};
+						angles[]={0,1.5620791,0};
 					};
 					side="West";
 					flags=4;
@@ -35807,7 +35935,6 @@ class Mission
 					};
 					id=418;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -35844,8 +35971,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3901.2144,4.923233,1216.7338};
-						angles[]={0,4.7036729,0};
+						position[]={3899.1028,5.0014391,1215.4321};
+						angles[]={0,1.56208,0};
 					};
 					side="West";
 					flags=4;
@@ -35964,7 +36091,6 @@ class Mission
 					};
 					id=419;
 					type="B_recon_F";
-					atlOffset=-0.078206062;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -36001,8 +36127,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3901.1226,4.9318285,1214.6276};
-						angles[]={0,4.7036719,0};
+						position[]={3899.1946,5.0100346,1217.5383};
+						angles[]={0,1.5620791,0};
 					};
 					side="West";
 					flags=4;
@@ -36121,7 +36247,7 @@ class Mission
 					};
 					id=420;
 					type="B_recon_F";
-					atlOffset=-0.069610596;
+					atlOffset=0.0085954666;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -36158,8 +36284,8 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={3901.23,4.9835882,1213.3689};
-						angles[]={0,4.7036667,0};
+						position[]={3899.0872,5.0617943,1218.797};
+						angles[]={0,1.5620738,0};
 					};
 					side="West";
 					flags=4;
@@ -36278,7 +36404,7 @@ class Mission
 					};
 					id=421;
 					type="B_recon_F";
-					atlOffset=-0.017850876;
+					atlOffset=0.060355186;
 					class CustomAttributes
 					{
 						class Attribute0
@@ -36315,7 +36441,6 @@ class Mission
 			{
 			};
 			id=403;
-			atlOffset=-0.078206062;
 		};
 	};
 };

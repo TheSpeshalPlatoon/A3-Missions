@@ -1,3 +1,280 @@
+tsp_fnc_killhouse = {
+    params [
+        "_start", "_end", "_area", "_width", "_height", "_roomSize", 
+
+        ["_unitsMin", 5], ["_unitsMax", 16], ["_hostageChance", 0.05],
+        ["_enemyChance", 0.7], ["_enemySide", resistance], ["_enemyTypes", enemy_altis],
+        ["_civilChance", 0.05], ["_civilTypes", civilian_altis],
+        ["_targetChance", 0], ["_targetTypes", ["Target_F"]],
+        ["_furnitureChance", 0.5], ["_furnitureTypes", furniture_altis],
+
+        ["_lockChance", 0.5], ["_openingChance", 0.2], ["_doorChance", 0.95], ["_maxRelations", 1],
+
+        ["_wallTypes", ["Bro_MSW_2m"]], ["_outerWallType", "Bro_MSW_2m_conc"], ["_wallLength", 2],
+        ["_doorTypes", ["Bro_MSW_2m_d", "Bro_MSW_2m_d", "Bro_MSW_2m_de"]], ["_openDoorTypes", ["Bro_MSW_2m_de"]], ["_outerDoorTypes", ["Bro_MSW_2m_d_conc"]], 
+
+        ["_deadType", "Sign_Pointer_Yellow_F"], ["_helperTypes", [
+            "Sign_Arrow_F","Sign_Arrow_Blue_F","Sign_Arrow_Cyan_F","Sign_Arrow_Green_F","Sign_Arrow_Pink_F","Sign_Arrow_Yellow_F",
+            "Sign_Arrow_Large_F","Sign_Arrow_Large_Yellow_F","Sign_Arrow_Large_Pink_F","Sign_Arrow_Large_Green_F","Sign_Arrow_Large_Cyan_F","Sign_Arrow_Large_Blue_F",
+            "Sign_Arrow_Direction_F","Sign_Arrow_Direction_Blue_F","Sign_Arrow_Direction_Cyan_F","Sign_Arrow_Direction_Green_F","Sign_Arrow_Direction_Pink_F","Sign_Arrow_Direction_Yellow_F",
+            "Sign_Pointer_Blue_F","Sign_Pointer_Cyan_F","Sign_Pointer_Green_F","Sign_Pointer_Pink_F","Sign_Pointer_F","Sign_Pointer_Yellow_F"  //-- Yes deadType needs to be at the end here too
+        ]] 
+    ];
+    _wallLengthLoose = _wallLength + 0.2;  //-- Lets get loose with it - for areas that need more tolerance
+
+	if (count (allPlayers select {alive _x && _x inArea _area}) > 0) exitWith {["", "Killhouse is still occupied."] spawn BIS_fnc_showSubtitle};  //-- Not safe to generate
+    
+    //-- Generation started
+    {["", "Generating Killhouse..."] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _start < _height});
+    _start setVariable ["generating", true, true]; sleep 1;  //-- Sleep so old killhouse has time to clean up
+
+    //-- Door blocker and sounds and close doors
+    _startDoor = (_start nearObjects [_outerDoorTypes#0, 5])#0;
+    _blocker = createSimpleObject ["A3\structures_f\data\DoorLocks\planks_1.p3d", getPosASL _start]; _blocker attachTo [_startDoor, [0,-0.2,-1.3]];
+    _blocker spawn {while {alive _this} do {playSound3D ["a3\sounds_f\vehicles\armor\noises\tank_building_0"+str (round random 3 + 1)+".wss", _this, false, getPosASL _this, 5, random 2 max 0.5 min 2, 25]; sleep 1}};
+    {{[_x,1,0] call bis_fnc_door; [_x,2,0] call bis_fnc_door} forEach ((_start nearObjects [_x, 5]) + (_end nearObjects [_x, 5]))} forEach _outerDoorTypes;  //-- Close outer doors
+
+    //-- Cleanup
+    {deleteVehicle _x} forEach (nearestObjects [_area, [], sqrt(_width^2 + _height^2)] select {simulationEnabled _x && !(_x == _area) && (_x inArea _area)});  //-- Remove objects in area trigger
+    {deleteVehicle _x} forEach (allDeadMen inAreaArray _area);  //-- Remove dead bodies in area trigger
+
+    //-- Create horizontal walls
+    _walls = [];  //-- Used to keep track of all the walls we're about to create (so we can delete them later)
+    for "_h" from 1 to _height-1 do {for "_w" from 0 to _width-1 do {
+        _pos = _start getPos [_wallLength*_h, getDir _start] getPos [(_wallLength*_w)+(_wallLength/2), getDir _start + 90];
+        _wall = createVehicle [selectRandom _wallTypes, _pos, [], 0, "CAN_COLLIDE"]; _wall allowDamage false;
+        _wall setPosASL [(getPosASL _wall)#0, (getPosASL _wall)#1, (getPosASL _startDoor)#2];  //-- Set it to the same Y level as _startDoor
+        _wall setDir (getDir _start);
+        _walls pushBack _wall;
+    }}; 
+
+    //-- Create vertical walls
+    for "_h" from 1 to _height do {for "_w" from 1 to _width-1 do {
+        _pos = _start getPos [(_wallLength*_h)-(_wallLength/2), getDir _start] getPos [_wallLength*_w, getDir _start + 90]; 
+        _wall = createVehicle [selectRandom _wallTypes, _pos, [], 0, "CAN_COLLIDE"]; _wall allowDamage false; 
+        _wall setPosASL [(getPosASL _wall)#0, (getPosASL _wall)#1, (getPosASL _startDoor)#2];  //-- Set it to the same Y level as _startDoor
+        _wall setDir (getDir _start+90); _walls pushBack _wall;
+        _walls pushBack _wall;
+    }}; 
+
+    //-- Create helpers to represent rooms
+    _helpers = [];  //-- Used to keep track of all helpers
+    _usedCells = [];  //-- Used to keep track of which cells are already in a room
+    _helperTypeIndex = 0;  //-- Used to create unique helper objects for each room
+    for "_h" from 1 to _height do {for "_w" from 1 to _width do {  //-- For each cell
+        _roomEndingHeight = _h + round random _roomSize max (_h+1) min _height;  //-- Room will start at current cell, and go to this cell (min is to prevent it from leaving killhouse bounds)
+        _roomEndingWidth = _w + round random _roomSize max (_w+1) min _width;  //-- Room will start at current cell, and go to this cell (min is to prevent it from leaving killhouse bounds)
+
+        //-- Check whether all the cells we want are free or already used in another room
+        _used = false;
+        for "_heightToCheck" from _h to _roomEndingHeight do {for "_widthToCheck" from _w to _roomEndingWidth do {
+            if ([_heightToCheck, _widthToCheck] in _usedCells) exitWith {_used = true}  //-- For each cell in room, check if used
+        }};
+        if (_used) then {continue};  //-- If that cell is already used in another room or something, then forgetaboutit
+
+        //-- Ok all the cells that we want for this room are unused - lets fill them with helpers and save them in _usedCells / _helpers
+        for "_heightToCheck" from _h to _roomEndingHeight do {for "_widthToCheck" from _w to _roomEndingWidth do {  //-- For each cell in room, create a helper
+            _usedCells pushBack [_heightToCheck, _widthToCheck];  //-- Save this cell in _usedCells so future rooms can check
+            _pos = (_start getPos [(_wallLength*_heightToCheck)-(_wallLength/2), getDir _start]) getPos [(_wallLength*_widthToCheck)-(_wallLength/2), getDir _start + 90];
+            _helper = createVehicleLocal [_helperTypes#_helperTypeIndex, _pos, [], 0, "CAN_COLLIDE"];
+            _helper setPosASL [(getPosASL _helper)#0, (getPosASL _helper)#1, ((getPosASL _startDoor)#2) + 0.1];  //-- Set it to the same Y level as _startDoor
+            _helpers pushBack _helper; 
+        }};
+        
+        _helperTypeIndex = _helperTypeIndex + 1;  //-- Time to use a new helper colour
+    }};
+    
+    //-- Create helpers in dead spaces (not rooms)
+    for "_h" from 1 to _height do {for "_w" from 1 to _width do {  //-- For each cell
+        if ([_h, _w] in _usedCells) then {continue};  //-- If used in rooms, skip, else create _helper:
+        _pos = (_start getPos [(_wallLength*_h)-(_wallLength/2), getDir _start]) getPos [(_wallLength*_w)-(_wallLength/2), getDir _start + 90];
+        _helper = createVehicleLocal [_deadType, [_pos#0,_pos#1,0.1], [], 0, "CAN_COLLIDE"];
+        _helper setPosASL [(getPosASL _helper)#0, (getPosASL _helper)#1, ((getPosASL _startDoor)#2) + 0.1];  //-- Set it to the same Y level as _startDoor
+        _helpers pushBack _helper;
+    }};
+
+    //-- Merge adjacent, same helpers into rooms
+    {  //-- For each helper / cell
+        _helper = _x; 
+        {  //-- Get all the helpers nearby and delete the wall between me and them
+            deleteVehicle ((lineIntersectsSurfaces [getPosASL _helper, getPosASL _x])#0#2)
+        } forEach (_helper nearObjects _wallLengthLoose select {typeOf _x == typeOf _helper});
+    } forEach _helpers;
+
+    //-- Random openings
+    _openings = [];  //-- Used to store wall objects that will be turned into openings
+    _relations = [];  //-- Used to store relations [helperType, helperType] 
+    {  //-- For each helper / cell
+        _helper = _x; 
+        _different = (_helper nearObjects _wallLengthLoose) select {typeOf _x != typeOf _helper && typeOf _x in _helperTypes};  //-- Get nearby helpers that are different from me
+        if (
+            count _different > 0 && random 1 < _openingChance 
+            && count (_relations select {typeOf _helper in _x}) < _maxRelations  //-- Maximum number of relations a single room can have
+            && count (_openings select {_x distance2D _helper < 6}) == 0  //-- Cant have openings too close to other openings
+        ) then {  //-- If there are any, maybe create opening 
+            _different = _different#0;  //-- Just get the first different one i guess
+            _wall = (lineIntersectsSurfaces [getPosASL _helper, getPosASL _different, _helper, _different])#0#2;
+            _openings pushBack _wall; hideObjectGlobal _wall;  //-- You are not longer wall, you are now opening
+            _relations pushBack [typeOf _helper, typeOf _different];
+        };
+    } forEach _helpers;
+
+    //-- Flood fill rooms to reach the end, to make sure that there is a path from beningging to end - basicly from each room / helperType, we will try and find a way out
+    tsp_fnc_killhouse_flood_old = {  //-- Fucky wucky recursive stuff below
+        params ["_helper", "_helperTypes", "_wallLengthLoose", "_end"]; //_helper hideObjectGlobal true; sleep 0.1;  //-- For display purposes
+        if (_helper distance2D _end < tsp_kh_closest distance2D _end) then {tsp_kh_closest = _helper};  //-- If this helper is closer to exit than tsp_kh_closest, it is now tsp_kh_closest
+        if (_helper distance2D _end < _wallLengthLoose) exitWith {tsp_kh_found = true};   //-- If we are right next to exit, we are done here
+        tsp_kh_hits pushBackUnique _helper;  //-- If found, exit
+        _neighbours = (_helper nearObjects _wallLengthLoose) select {(typeOf _x) in _helperTypes && !(_x in tsp_kh_hits) && count (lineIntersectsSurfaces [getPosASL _helper, getPosASL _x, _helper, _x]) == 0};  //-- Get unhit neighbours
+        {[_x, _helperTypes, _wallLengthLoose, _end] call tsp_fnc_killhouse_flood} forEach _neighbours;  //-- Recursion on neighbours
+    };
+    tsp_fnc_killhouse_flood = {
+        params ["_helper", "_helperTypes", "_wallLengthLoose", "_end"]; //_helper hideObjectGlobal true; sleep 0.1;  //-- For display purposes
+        if (tsp_kh_found || _helper in tsp_kh_hits) exitWith {};  //-- Exit already found elsewhere or helper already done, stop spreading
+        if (_helper distance2D _end < tsp_kh_closest distance2D _end) then {tsp_kh_closest = _helper};  //-- If this helper is closer to exit than tsp_kh_closest, it is now tsp_kh_closest
+        if (_helper distance2D _end < _wallLengthLoose) exitWith {tsp_kh_found = true};  //-- If we are right next to exit, we are done here
+
+        tsp_kh_hits pushBack _helper;
+
+        //-- Get all neighbours that are visible to me, that we also haven't hit yet (so like spread out like a virus)
+        private _neighbours = (_helper nearObjects _wallLengthLoose) select {
+            !(_x in tsp_kh_hits)
+            && {(typeOf _x) in _helperTypes}
+            && {count (lineIntersectsSurfaces [getPosASL _helper, getPosASL _x, _helper, _x, true, 1]) == 0}
+        };
+        {[_x, _helperTypes, _wallLengthLoose, _end] call tsp_fnc_killhouse_flood} forEach _neighbours;
+    };
+
+    _usedTypes = [];  //-- Used to store which helper types we have already used
+    {  //-- For each helper / cell
+        _helper = _x; 
+        if (typeOf _helper in _usedTypes) then {continue};  //-- Only for each type 
+        if (typeOf _helper != _deadType) then {_usedTypes pushBack typeOf _helper};  //-- We are now about to use this type, so store it in _usedTypes
+        //systemChat (typeOf _helper + " Start");
+        while {true} do {  //-- While we have not found the end (while loop is here because we may need multiple openings to get out)
+            //systemChat (typeOf _helper + " Trying"); {_x hideObjectGlobal false} forEach _helpers;  //-- For display purposes
+            tsp_kh_found = false;  //-- True when this room has found the exit
+            tsp_kh_hits = [];  //-- Stores which cells we have hit already
+            tsp_kh_closest = objNull; 
+            [_helper, _helperTypes, _wallLengthLoose, _end] call tsp_fnc_killhouse_flood;
+            if (tsp_kh_found) exitWith {};  //-- We have found the exit, stop loop, else we need to punch a hole:  //systemChat (typeOf _helper + " Found")
+            _intersect = lineIntersectsSurfaces [getPosASL tsp_kh_closest, getPosASL _end];  //-- Get walls between helper closest to exit and exit
+            hideObjectGlobal (_intersect#0#2);  //-- Open first wall between closest helper and end 
+            _openings pushBack (_intersect#0#2);  //-- Save it in _openings so we can fill it later
+        };
+    } forEach _helpers;
+    {_x hideObjectGlobal true} forEach _helpers;
+    
+    //-- Fill some of the holes with doors
+    _doors = [];  //-- Used to keep track of all the actual door objects we're about to create (so we can delete them later)
+    {  //-- For each wall that is marked as an opening
+        if (random 1 > _doorChance) then {continue};
+        _opening = _x;
+        _doorType = selectRandom (if (count (_doors select {_x distance2D _opening < (_wallLength+1)}) == 0) then {_doorTypes} else {_openDoorTypes});
+        _door = createVehicle [_doorType, [0,0,0], [], 0, "CAN_COLLIDE"]; _door attachTo [_opening, [0,0,0]]; detach _door; _door allowDamage false;
+        if (random 1 < _lockChance) then {_door setVariable ["bis_disabled_Door_1", 1, true]};  //-- Random locking
+        if (random 1 > 0.5) then {_door setDir (getDir _door + 180)};  //-- Random door swing direction
+        _doors pushBack _door; 
+    } forEach _openings;
+
+    //-- Populate with targets, furniture
+    _units = [];  //-- Used to keep track of all the units we're about to create (so we can delete them later)
+    _furniture = [];  //-- Used to keep track of all furniture we're about to create (so we can delete them later)
+    {  //-- For For each cell
+        _helper = _x; 
+        _furthest = _helpers select {typeOf _x == typeOf _helper}; _furthest = _furthest apply {[_x distance2D _helper, _x]}; _furthest sort false; _furthest = _furthest#0#1;  //-- Get furthest cell from me in room
+        _nearestWalls = (nearestObjects [_helper, [], _wallLength]) select {!isObjectHidden _x && typeOf _x in _wallTypes + [_outerWallType]};    //-- Get all nearby walls   
+        _nearestOpenings = (nearestObjects [_helper, _outerDoorTypes, _wallLength+1] + _openings) select {_x distance2D _helper < _wallLength};  //-- Get all nearby openings
+        _nearestHelpers = (nearestObjects [_helper, [], _wallLength+1.7]) select {typeOf _x in [typeOf _helper]};                               //-- Get cell count around helper
+        _nearestUnits = _units select {_x distance2D _helper < _wallLength};                                                                   //-- Get all nearyby units
+
+        //-- Targets
+        _targetCommon = count _nearestWalls > 1 && count _nearestOpenings == 0 && count _nearestUnits == 0 && count _units < _unitsMax;  //-- Common conditions
+        if (count _nearestHelpers != 3 && _targetCommon && _targetChance > 0 && (random 1 < _targetChance || count _units < _unitsMin)) exitWith {  //-- Targets
+            _target = createVehicle [selectRandom _targetTypes, getPos _helper, [], 0, "CAN_COLLIDE"]; 
+            _target setVehiclePosition [_target, [], 0, "CAN_COLLIDE"];
+            _target setDir (_furthest getDir _helper); 
+            _units pushBack _target;
+            continue
+        };
+        if (_targetCommon && _enemyChance > 0 && (random 1 < _enemyChance || count _units < _unitsMin)) exitWith {  //-- Enemies
+            _group = createGroup _enemySide; _group deleteGroupWhenEmpty true; 
+            _enemy = _group createUnit [selectRandom _enemyTypes, getPos _helper, [], 1, "CAN_COLLIDE"]; 
+            _group = createGroup _enemySide; _group deleteGroupWhenEmpty true; [_enemy] joinSilent _group;  //-- For some dumb reason it has to be done this way
+            _enemy attachTo [_helper, [0,0,0]]; detach _enemy; 
+            _enemy setFormDir (_helper getDir _furthest);
+            _enemy setDir (_helper getDir _furthest);
+            _enemy setUnitPos (selectRandom ["UP", "MIDDLE"]);  
+            _enemy disableAI "PATH";   
+            _units pushBack _enemy;
+            if (random 1 < _hostageChance) then {  //-- Hostages
+                _group = createGroup civilian; _group deleteGroupWhenEmpty true;
+                _hostage = _group createUnit [selectRandom _civilTypes, getPos _helper, [], 1, "CAN_COLLIDE"]; 
+                _hostage attachTo [_enemy, [0,0.5,0]]; detach _hostage; 
+                _hostage setUnitPos (unitPos _enemy); 
+                _hostage disableAI "MOVE"; 
+                _hostage setFormDir (_helper getDir _furthest); 
+                _units pushBack _hostage;
+            };
+            continue
+        };
+        if (_targetCommon && _civilChance > 0 && (random 1 < _civilChance || count _units < _unitsMin)) exitWith {  //-- Civilians
+            _group = createGroup civilian; _group deleteGroupWhenEmpty true;
+            _civilian = _group createUnit [selectRandom _civilTypes, getPos _helper, [], 1, "CAN_COLLIDE"]; 
+            _civilian attachTo [_helper, [0,0,0]]; detach _civilian; 
+            _civilian setFormDir (_helper getDir _furthest); 
+            _civilian setUnitPos (selectRandom ["UP", "MIDDLE", "DOWN"]); 
+            _civilian disableAI "MOVE"; 
+            _units pushBack _civilian;
+            continue
+        };
+
+        //-- Furniture
+        if (random 1 > _furnitureChance) then {continue};
+        {  //-- For each class, see if appropriate
+            _x params ["_class", "_max", "_radius", "_rotate", "_offset", "_offsetVert", "_wall", "_open", "_corner", "_cornerDir", "_randomDir"];
+            _nearestFurniture = _furniture select {_x distance2D _helper < _radius};  //-- Get all nearby furniture
+            if (count (_furniture select {typeOf _x == _class || (getModelInfo _x)#0 in _class}) == _max) then {continue};  //-- Too many of this type already
+            if (count (_nearestOpenings + _nearestFurniture) > 0) then {continue};        //-- If next to door, or position already occupied
+            if (
+                (_wall && count _nearestWalls > 0 && count _nearestWalls == 1) ||   //-- Is a wall item and there's a wall
+                (_corner && count _nearestHelpers == 4) ||   //-- Or is a corner item, and there's a corner
+                (_open && count _nearestWalls == 0)  //-- Or is an open item, and this is in the open
+            ) then {
+                _item = if ("p3d" in _class) then {createSimpleObject [_class, getPosASL _helper]} else {createVehicle [_class, getPos _helper, [], 0, "CAN_COLLIDE"]}; 
+                _item setPosASL [(getPosASL _item)#0,(getPosASL _item)#1, ((getPosASL _startDoor)#2) + _offsetVert]; 
+                _item setDir ((getDir _item) + random _randomDir);
+                if (_wall) then {  //-- If this is a wall item like a shelf, push it towards the nearest wall
+                    _item setPosASL (getPosASL _item vectorAdd (((getPosASL _item) vectorDiff (getPosASL (_nearestWalls#0))) vectorMultiply _offset)); _item setDir (_helper getDir _nearestWalls#0) + _rotate;
+                };
+                if (_cornerDir && count _nearestWalls == 2) then {_item setDir (_helper getDir _furthest) + _rotate};  //-- If corner item must be neat, then face opposite corner of room
+                [_item, getDir _item] remoteExec ["setDir", 0]; [_item, getPosASL _item] remoteExec ["setPosASL", 0];  //-- Weird simpleObject MP stuff
+                _furniture pushBack _item;
+            };
+        } forEach (_furnitureTypes call BIS_fnc_arrayShuffle);  //-- Diversity innit
+    } forEach (_helpers select {typeOf _x != _deadType});
+
+    //-- Grenades
+    _grenades = []; 
+    {_grenades = _grenades + getArray(configFile >> "CfgWeapons" >> "Throw" >> _x >> "magazines")} forEach (getArray(configFile >> "CfgWeapons" >> "Throw" >> "muzzles"));
+    if (tsp_killhouse_grenades) then {{_unit = _x; {_unit removeMagazines _x} forEach _grenades} forEach _units};
+
+    //-- Wait until killhouse is clear or has been replaced
+    _start setVariable ["generating", false, true];
+    {["", "Killhouse Generated!"] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _start < _height}); 
+    deleteVehicle _blocker;
+
+	waitUntil {sleep 0.1; (count (allUnits select {alive _x && side _x == _enemySide && _x inArea _area})) + _targetChance == 0 || _start getVariable "generating"};  //-- Wait until killhouse is clear or new house generated
+    {["", "Killhouse Clear!"] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _end < (_height*2)});    
+    playSound3D ["A3\Missions_F_Oldman\Data\sound\beep.ogg", _end, false, getPosASL _end, 5, 1, 100];  //-- BEEP
+
+	waitUntil {sleep 0.1; count (allPlayers select {alive _x && _x inArea _area}) == 0 || _start getVariable "generating"};  //-- Wait until all players are out or new house generated
+
+    {{[_x,1,0] call bis_fnc_door; [_x,2,0] call bis_fnc_door} forEach ((_start nearObjects [_x, 5]) + (_end nearObjects [_x, 5]))} forEach _outerDoorTypes;  //-- Close outer doors
+    {deleteVehicle _x} forEach (_helpers + _units + _doors + _walls + _furniture);  //-- Bye bye
+    {["", "Killhouse Reset."] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _end < (_height*2)});
+};
+
 tsp_fnc_killhouse_menu = {
 	params ["_start", "_end", "_area", "_width", "_height", "_size", "_walls", ["_display", findDisplay 46 createDisplay "RscDisplayEmpty"]]; tsp_killhouse_params = _this;
 
@@ -57,7 +334,7 @@ tsp_fnc_killhouse_menu = {
 	_button ctrlSetText "GENERATE"; _button ctrlSetFont "PuristaLight"; _button ctrlCommit 0; _button setVariable ["display", _display]; 
 	_button ctrlAddEventHandler ["buttonClick", {
 		params ["_control"]; tsp_killhouse_params params ["_start", "_end", "_area", ["_width", 6], ["_height", 18], ["_size", 5], ["_walls", tsp_killhouse_walls]]; 
-        _side = if (tsp_killhouse_theme in ["Tanoa", "Livonia"]) then {resistance} else {east};
+        _side = if (side player == east) then {west} else {east};
         ([
             _start, _end, _area, _width, _height, _size,  //-- Width, height, room size
 			5, 20, tsp_killhouse_hostages,  //-- Min, max, hostage chance
@@ -65,207 +342,11 @@ tsp_fnc_killhouse_menu = {
 			tsp_killhouse_civilians, missionNameSpace getVariable ["civilian_"+tsp_killhouse_theme, []],  //-- Civil chance, type
 			tsp_killhouse_targets, missionNameSpace getVariable ["target_"+tsp_killhouse_theme, ["Target_F"]],  //-- Target chance, type
 			tsp_killhouse_furniture, missionNameSpace getVariable ["furniture_"+tsp_killhouse_theme, []],  //-- Furniture chance, type
-            tsp_killhouse_locks, 0.5, 0.95  //--  Locked, openings, doors
+            tsp_killhouse_locks, 0.5, 0.95, 1  //--  Locked, openings, doors, relations
         ] + _walls) remoteExec ["tsp_fnc_killhouse", 2];
 		_control getVariable "display" closeDisplay 1;
 	}];
-    while {_display isNotEqualTo displayNull} do {if (kh1_start getVariable ['generating', false]) exitWith {_display closeDisplay 1;}};
-};
-
-tsp_fnc_killhouse = {
-    params [
-        "_start", "_end", "_area", "_width", "_height", "_size", 
-
-        ["_unitsMin", 5], ["_unitsMax", 16], ["_hostageChance", 0.05],
-        ["_enemyChance", 0.7], ["_enemySide", resistance], ["_enemyTypes", enemy_altis],
-        ["_civilChance", 0.05], ["_civilTypes", civilian_altis],
-        ["_targetChance", 0], ["_targetTypes", ["Target_F"]],
-        ["_furnitureChance", 0.5], ["_furnitureTypes", furniture_altis],
-
-        ["_lockChance", 0.5], ["_openingChance", 0.2], ["_doorChance", 0.95], 
-        ["_wallTypes", ["Bro_MSW_2m"]], ["_outerWallType", "Bro_MSW_2m_conc"], ["_wallLength", 2],
-        ["_doorTypes", ["Bro_MSW_2m_d", "Bro_MSW_2m_d", "Bro_MSW_2m_de"]], ["_openDoorTypes", ["Bro_MSW_2m_de"]], ["_outerDoorTypes", ["Bro_MSW_2m_d_conc"]], 
-
-        ["_units", []], ["_usedCells", []], ["_helpers", []], ["_openings", []], ["_relations", []], ["_index", 0], ["_doors", []], ["_walls", []], ["_furniture", []], ["_sleep", 0],  //0.001
-        ["_deadType", "Sign_Pointer_Yellow_F"], ["_helperTypes", [
-            "Sign_Arrow_F","Sign_Arrow_Blue_F","Sign_Arrow_Cyan_F","Sign_Arrow_Green_F","Sign_Arrow_Pink_F","Sign_Arrow_Yellow_F",
-            "Sign_Arrow_Large_F","Sign_Arrow_Large_Yellow_F","Sign_Arrow_Large_Pink_F","Sign_Arrow_Large_Green_F","Sign_Arrow_Large_Cyan_F","Sign_Arrow_Large_Blue_F",
-            "Sign_Arrow_Direction_F","Sign_Arrow_Direction_Blue_F","Sign_Arrow_Direction_Cyan_F","Sign_Arrow_Direction_Green_F","Sign_Arrow_Direction_Pink_F","Sign_Arrow_Direction_Yellow_F",
-            "Sign_Pointer_Blue_F","Sign_Pointer_Cyan_F","Sign_Pointer_Green_F","Sign_Pointer_Pink_F","Sign_Pointer_F","Sign_Pointer_Yellow_F"
-        ]] 
-    ];
-
-    //-- Check if killhouse is clear of players before generating, set reset to true to delete old killhouse
-	if (count (allPlayers select {alive _x && _x inArea _area}) > 0) exitWith {["", "Killhouse is still occupied."] spawn "BIS_fnc_showSubtitle", _x};
-    {{[_x,1,0] call bis_fnc_door; [_x,2,0] call bis_fnc_door} forEach ((_start nearObjects [_x, 5]) + (_end nearObjects [_x, 5]))} forEach _outerDoorTypes;  //-- Close outer doors
-    _enterance = (_start nearObjects [_outerDoorTypes#0, 5])#0;
-    _blocker = createSimpleObject ["A3\structures_f\data\DoorLocks\planks_1.p3d", getPosASL _start]; _blocker attachTo [_enterance, [0,-0.2,-1.3]];
-    _blocker spawn {while {sleep 1; alive _this} do {playSound3D ["a3\sounds_f\vehicles\armor\noises\tank_building_0"+str (round random 3 + 1)+".wss", _this, false, getPosASL _this, 5, random 2 max 0.5 min 2, 25]}};
-    playSound3D ["a3\sounds_f\ambient\quakes\earthquake"+str (round random 3 + 1)+".wss", _blocker, false, getPosASL _blocker, 5, 1, 50];
-    {["", "Generating Killhouse..."] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _start < _height});
-    _start setVariable ["reset", true, true]; _start setVariable ["generating", true, true]; sleep 2;  //-- Sleep so old killhouse has time to delete
-    {deleteVehicle _x} forEach (nearestObjects [_area, [], sqrt(_width^2 + _height^2)] select {simulationEnabled _x && !(_x == _area) && (_x inArea _area)});  //-- Remove objects
-    {deleteVehicle _x} forEach (allDeadMen inAreaArray _area);  //-- Remove dead bodies
-    {["", "Generating Killhouse..."] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _start < _height});
-
-    //-- Create horizontal walls
-    for "_h" from 1 to _height-1 do {for "_w" from 0 to _width-1 do {sleep _sleep;
-        _pos = _start getPos [_wallLength*_h, getDir _start] getPos [(_wallLength*_w)+(_wallLength/2), getDir _start + 90];
-        _wall = createVehicle [selectRandom _wallTypes, _pos, [], 0, "CAN_COLLIDE"];
-		_wall allowDamage false; _wall setDir (getDir _start); _walls pushBack _wall;
-        _wall setPosASL [(getPosASL _wall)#0, (getPosASL _wall)#1, (getPosASL _enterance)#2];
-    }}; 
-
-    //-- Create vertical walls
-    for "_h" from 1 to _height do {for "_w" from 1 to _width-1 do {sleep _sleep;
-        _pos = _start getPos [(_wallLength*_h)-(_wallLength/2), getDir _start] getPos [_wallLength*_w, getDir _start + 90]; 
-        _wall = createVehicle [selectRandom _wallTypes, _pos, [], 0, "CAN_COLLIDE"]; 
-		_wall allowDamage false; _wall setDir (getDir _start+90); _walls pushBack _wall;
-        _wall setPosASL [(getPosASL _wall)#0, (getPosASL _wall)#1, (getPosASL _enterance)#2];
-    }}; 
-
-    //-- Create helpers to represent rooms
-    for "_h" from 1 to _height do {for "_w" from 1 to _width do {  //-- For each cell
-        [_h + round random _size max (_h+1) min _height, _w + round random _size max (_w+1) min _width, false] params ["_hR", "_wR", "_used"];  //-- Random height and width of each room (Min so it doesnt leave bounds)
-        for "_hC" from _h to _hR do {for "_wC" from _w to _wR do {if ([_hC, _wC] in _usedCells) exitWith {_used = true}}}; if (_used) then {continue};  //-- For each cell in room, check if used
-        for "_hC" from _h to _hR do {for "_wC" from _w to _wR do {sleep _sleep;  //-- For each cell in room, create a helper
-            _pos = (_start getPos [(_wallLength*_hC)-(_wallLength/2), getDir _start]) getPos [(_wallLength*_wC)-(_wallLength/2), getDir _start + 90];
-            _helper = createVehicleLocal [_helperTypes#_index, [_pos#0,_pos#1,0.1], [], 0, "CAN_COLLIDE"];  
-            _helper setPosASL [(getPosASL _helper)#0, (getPosASL _helper)#1, (getPosASL _start)#2];
-           _helpers pushBack _helper; _usedCells pushBack [_hC, _wC];  //-- Create helper, declared coordinates as used to check above
-        }};
-        _index = _index + 1;  //-- Used to create unique helper objects for each room
-    }};
-
-    //-- Create helpers in dead spaces (not rooms)
-    for "_h" from 1 to _height do {for "_w" from 1 to _width do {sleep _sleep;  //-- For each cell
-        if ([_h, _w] in _usedCells) then {continue};  //-- If used in rooms, skip, else create _helper:
-        _pos = (_start getPos [(_wallLength*_h)-(_wallLength/2), getDir _start]) getPos [(_wallLength*_w)-(_wallLength/2), getDir _start + 90];
-        _helper = createVehicleLocal [_deadType, [_pos#0,_pos#1,0.1], [], 0, "CAN_COLLIDE"];
-        _helper setPosASL [(getPosASL _helper)#0, (getPosASL _helper)#1, (getPosASL _start)#2];
-        _helpers pushBack _helper;
-    }};
-
-    _wallLength = _wallLength + 0.2;  //-- Floating point fun
-
-    //-- Merge adjacent, visible helpers into rooms
-    {_helper = _x; {deleteVehicle ((lineIntersectsSurfaces [getPosASL _helper, getPosASL _x])#0#2)} forEach (_helper nearObjects _wallLength select {typeOf _x == typeOf _helper}); sleep _sleep} forEach _helpers;
-
-    //-- Random openings
-    {
-        [_x] params ["_helper"];
-        _different = (_helper nearObjects _wallLength) select {typeOf _x != typeOf _helper && typeOf _x in _helperTypes};  //-- Get different type adjacent helpers
-        if (count _different > 0 && random 1 < _openingChance && count (_relations select {typeOf _helper in _x}) == 0) then {  //-- If there are any, maybe create opening 
-            _different = _different#0; _wall = (lineIntersectsSurfaces [getPosASL _helper, getPosASL _different, _helper, _different])#0#2; 
-            hideObjectGlobal _wall; _openings pushBack _wall; _relations pushBack [typeOf _helper, typeOf _different]; sleep _sleep;
-        };
-    } forEach _helpers;
-
-    //-- Flood fill rooms to reach the end, if no ending found - make hole
-    _usedTypes = [];
-    {
-        [_x] params ["_helper"]; if (typeOf _x in _usedTypes) then {continue}; if (typeOf _x != _deadType) then {_usedTypes pushBack typeOf _helper};
-        while {true} do {  //-- While helper cannot reach the end
-            tsp_kh_found = false; tsp_kh_hits = []; tsp_kh_close = objNull; {_x hideObjectGlobal false} forEach _helpers;
-            [_helper, _helperTypes, _wallLength, _end, _sleep] call tsp_fnc_killhouse_flood; if (tsp_kh_found) exitWith {};
-            _intersect = lineIntersectsSurfaces [getPosASL tsp_kh_close, getPosASL _end];  //-- Get walls between helper closest to exit and exit
-            hideObjectGlobal (_intersect#0#2); _openings pushBack (_intersect#0#2);       //-- Open first wall between closest helper and end
-        };
-    } forEach _helpers;
-    {hideObjectGlobal _x} forEach _helpers; 
- 
-    //-- Fill some of the holes with doors
-    {if (random 1 < _doorChance) then {sleep _sleep;
-        _opening = _x;
-        _doorType = selectRandom (if (count (_doors select {_x distance2D _opening < (_wallLength+1)}) == 0) then {_doorTypes} else {_openDoorTypes});
-        _door = createVehicle [_doorType, [0,0,0], [], 0, "CAN_COLLIDE"]; _door attachTo [_opening, [0,0,0]]; detach _door; _door allowDamage false;
-        if (random 1 < _lockChance) then {_door setVariable ["bis_disabled_Door_1", 1, true]};
-        if (random 1 > 0.5) then {_door setDir (getDir _door + 180)};
-        _doors pushBack _door; 
-    }} forEach _openings;
-
-    _rooms = [];
-    {_rooms pushBack (nearestObjects[_start, [_x], (_width max _height)*_wallLength + 20])} forEach _helperTypes;  //-- Create array from _helpers but ordered by room
-
-    //-- Populate
-    {  //-- For For each cell
-        _helper = _x; 
-        _furthest = _helpers select {typeOf _x == typeOf _helper}; _furthest = _furthest apply {[_x distance2D _helper, _x]}; _furthest sort false; _furthest = _furthest#0#1;  //-- Get furthest cell in room
-        _nearestWalls = (nearestObjects [_helper, [], _wallLength]) select {!isObjectHidden _x && typeOf _x in _wallTypes + [_outerWallType]};    //-- Get all nearby walls   
-        _nearestOpenings = (nearestObjects [_helper, _outerDoorTypes, _wallLength+1] + _openings) select {_x distance2D _helper < _wallLength};  //-- Get all nearby openings
-        _nearestHelpers = (nearestObjects [_helper, [], _wallLength+1.7]) select {typeOf _x in [typeOf _helper]};                               //-- Get cell count around helper
-        _nearestUnits = _units select {_x distance2D _helper < _wallLength};                                                                   //-- Get all nearyby units
-
-        //-- Targets
-        _unitCommon = count _nearestWalls > 1 && count _nearestOpenings == 0 && count _nearestUnits == 0 && count _units < _unitsMax;
-        if (count _nearestHelpers != 3 && _unitCommon && _targetChance > 0 && (random 1 < _targetChance || count _units < _unitsMin)) exitWith {  //-- Targets
-            _target = createVehicle [selectRandom _targetTypes, getPos _helper, [], 0, "CAN_COLLIDE"]; _target setVehiclePosition [_target, [], 0, "CAN_COLLIDE"];
-            //if (typeOf _target == "Target_F") then {_target addEventHandler ["HitPart", {playSound3D [getMissionPath "gong.ogg", (_this#0#0), false, getPosASL (_this#0#0), 5, random 3 max 1, 50]}]};
-            _target setDir (_furthest getDir _helper); _units pushBack _target; sleep _sleep;
-            continue
-        };
-        if (_unitCommon && _enemyChance > 0 && (random 1 < _enemyChance || count _units < _unitsMin)) exitWith {  //-- Enemies
-            _group = createGroup _enemySide; _group deleteGroupWhenEmpty true; 
-            _enemy = _group createUnit [selectRandom _enemyTypes, getPos _helper, [], 1, "CAN_COLLIDE"]; 
-            _enemy attachTo [_helper, [0,0,0]]; detach _enemy; _enemy disableAI "PATH";
-            _enemy setFormDir (_helper getDir _furthest); _enemy setDir (_helper getDir _furthest); 
-            _enemy setUnitPos (selectRandom ["UP", "MIDDLE"]);            
-            _units pushBack _enemy; sleep _sleep;
-            if (random 1 < _hostageChance) then {  //-- Hostages
-                _group = createGroup civilian; _group deleteGroupWhenEmpty true;
-                _hostage = _group createUnit [selectRandom _civilTypes, getPos _helper, [], 1, "CAN_COLLIDE"]; _hostage attachTo [_enemy, [0,0.5,0]]; detach _hostage; 
-                _hostage setUnitPos (unitPos _enemy); _hostage disableAI "MOVE"; _hostage setFormDir (_helper getDir _furthest); _units pushBack _hostage; sleep _sleep;
-            };
-            continue
-        };
-        if (_unitCommon && _civilChance > 0 && (random 1 < _civilChance || count _units < _unitsMin)) exitWith {  //-- Civilians
-            _group = createGroup civilian; _group deleteGroupWhenEmpty true; 
-            _civilian = _group createUnit [selectRandom _civilTypes, getPos _helper, [], 1, "CAN_COLLIDE"]; _civilian attachTo [_helper, [0,0,0]]; detach _civilian; 
-            _civilian setFormDir (_helper getDir _furthest); _civilian setUnitPos (selectRandom ["UP", "MIDDLE", "DOWN"]); _civilian disableAI "MOVE"; 
-            _units pushBack _civilian; sleep _sleep;
-            continue
-        };
-
-        //-- Furniture
-        if (random 1 > _furnitureChance) then {continue};
-        {  //-- For each class, see if appropriate
-            _x params ["_class", "_max", "_radius", "_rotate", "_offset", "_offsetVert", "_wall", "_open", "_corner", "_cornerDir", "_randomDir"];
-            _nearestFurniture = _furniture select {_x distance2D _helper < _radius};  //-- Get all nearby furniture
-            if (count (_furniture select {typeOf _x == _class || (getModelInfo _x)#0 in _class}) == _max) then {continue};  //-- Too many of this type already
-            if (count (_nearestOpenings + _nearestFurniture) > 0) then {continue};        //-- If next to door, or position already occupied
-            if ((_wall && count _nearestWalls > 0 && count _nearestWalls == 1) || (_corner && count _nearestHelpers == 4) || (_open && count _nearestWalls == 0)) then {
-                _item = if ("p3d" in _class) then {createSimpleObject [_class, getPosASL _helper]} else {createVehicle [_class, getPos _helper, [], 0, "CAN_COLLIDE"]}; 
-                _item setPosASL [(getPosASL _item)#0,(getPosASL _item)#1, ((getPosASL _enterance)#2) + _offsetVert]; _item setDir ((getDir _item) + random _randomDir);
-                if (_wall) then {_item setPosASL (getPosASL _item vectorAdd (((getPosASL _item) vectorDiff (getPosASL (_nearestWalls#0))) vectorMultiply _offset)); _item setDir (_helper getDir _nearestWalls#0) + _rotate};
-                if (_cornerDir && count _nearestWalls == 2) then {_item setDir (_helper getDir _furthest) + _rotate};
-                [_item, getDir _item] remoteExec ["setDir", 0]; [_item, getPosASL _item] remoteExec ["setPosASL", 0];
-                _furniture pushBack _item; sleep (_sleep*100); //break;  //-- Added furniture to cell, no need to check the rest
-            };
-        } forEach (_furnitureTypes call BIS_fnc_arrayShuffle);  //-- Diversity innit
-    } forEach _helpers;
-
-    //-- Grenades
-    _grenades = []; {_grenades = _grenades + getArray(configFile >> "CfgWeapons" >> "Throw" >> _x >> "magazines")} forEach (getArray(configFile >> "CfgWeapons" >> "Throw" >> "muzzles"));
-    if (tsp_killhouse_grenades) then {{_unit = _x; {_unit removeMagazines _x} forEach _grenades} forEach _units};
-
-    //-- Wait until killhouse is clear or has been replaced
-    _start setVariable ["generating", false, true]; _start setVariable ["reset", false, true];
-    {["", "Killhouse Generated!"] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _start < _height}); deleteVehicle _blocker;
-	waitUntil {sleep 0.5; (count (allUnits select {alive _x && side _x == _enemySide && _x inArea _area}) + _targetChance == 0) || _start getVariable "reset"};  //-- Wait until killhouse is clear or new house generated
-    if !(_start getVariable "reset") then {{["", "Killhouse Clear!"] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _end < (_height*2)})};
-    if !(_start getVariable "reset") then {playSound3D ["A3\Missions_F_Oldman\Data\sound\beep.ogg", _end, false, getPosASL _end, 5, 1, 100]};  //-- BEEP	
-	waitUntil {sleep 0.5; count (allPlayers select {alive _x && _x inArea _area}) == 0 || _start getVariable "reset"};  //-- Wait until all players are out or new house generated
-    {{[_x,1,0] call bis_fnc_door; [_x,2,0] call bis_fnc_door} forEach ((_start nearObjects [_x, 5]) + (_end nearObjects [_x, 5]))} forEach _outerDoorTypes;  //-- Close outer doors
-    {deleteVehicle _x} forEach (_helpers + _units + _doors + _walls + _furniture);  //-- Bye bye
-    {["", "Killhouse Reset."] remoteExec ["BIS_fnc_showSubtitle", _x]} forEach (allPlayers select {_x distance _end < (_height*2)});
-};
-
-tsp_fnc_killhouse_flood = {  //-- Fucky wucky recursive stuff below
-    params ["_helper", "_helperTypes", "_wallLength", "_end", "_sleep"]; _helper hideObjectGlobal true; sleep _sleep;
-    if (tsp_kh_close distance2D _end > _helper distance2D _end) then {tsp_kh_close = _helper};
-    if (_helper distance2D _end < _wallLength) exitWith {tsp_kh_found = true}; tsp_kh_hits pushBackUnique _helper;  //-- If found, exit
-    _neighbours = (_helper nearObjects _wallLength) select {(typeOf _x) in _helperTypes && count (lineIntersectsSurfaces [getPosASL _helper, getPosASL _x, _helper, _x]) == 0};  //-- Get unhit neighbours
-    {if !(_x in tsp_kh_hits) then {[_x, _helperTypes, _wallLength, _end, _sleep] call tsp_fnc_killhouse_flood}} forEach _neighbours;  //-- Recursion on neighbours
+    while {_display isNotEqualTo displayNull} do {if (_start getVariable ['generating', false]) exitWith {_display closeDisplay 1}};
 };
 
 tsp_killhouse_themes = ["Altis", "Tanoa", "Livonia"];
