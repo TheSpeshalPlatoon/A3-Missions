@@ -34,7 +34,7 @@ class CfgLoadouts {  //-- QT allows for using #definitions within a string
     #define VESTS selectRandom['tacticalvest_black','tacticalvest_brown','tacticalvest_olive'] 
 
     tsp_syn_thug1 = QT[[],[],['rhs_weap_makarov_pm','','','',['rhs_mag_9x18_8_57N181S',8],[],''],[UNIFORMS_BANDIT,[ITEMS,['rhs_mag_9x18_8_57N181S',4,8]]],[],[],HEAD,'',[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
-    tsp_syn_thug2 = QT[[],[],['a2_tracker','','','',['a2_tracker_mag',6],[],''],[UNIFORMS_BANDIT,[ITEMS,['a2_tracker_mag',2,6]]],[],[],HEAD,'',[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
+    tsp_syn_thug2 = QT[[],[],['a2_tracker','','','',['6Rnd_45ACP_Cylinder',6],[],''],[UNIFORMS_BANDIT,[ITEMS,['6Rnd_45ACP_Cylinder',2,6]]],[],[],HEAD,'',[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
     tsp_syn_thug3 = QT[[],[],['RH_muzi','','','',['RH_30Rnd_9x19_UZI',30],[],''],[UNIFORMS_BANDIT,[ITEMS,['RH_30Rnd_9x19_UZI',2,30]]],[],[],HEAD,'',[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
     tsp_syn_thug4 = QT[['rhs_weap_Izh18','','','',['rhsgref_1Rnd_00Buck',1],[],''],[],KNIFE,[UNIFORMS_BANDIT,[ITEMS,['rhsgref_1Rnd_00Buck',10,1]]],[],[],HEAD,'',[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
         

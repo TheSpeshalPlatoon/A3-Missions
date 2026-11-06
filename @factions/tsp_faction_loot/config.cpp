@@ -25,5 +25,5 @@ class CfgLoadouts {  //-- QT allows for using #definitions within a string
     I_L_Looter_Rifle_F = QT[['rhs_weap_m14','','','',['rhsusf_20Rnd_762x51_m80_Mag',20],[],''],[],KNIFE,['U_BG_Guerilla3_1',[ITEMS,['rhsusf_20Rnd_762x51_m118_special_Mag',2,20]]],[],[],HEAD,EYE,[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
     I_L_Looter_SMG_F = QT[[],[],['RH_muzi','','','',['RH_30Rnd_9x19_UZI',30],[],''],[UNIFORMS,[ITEMS,['RH_30Rnd_9x19_UZI',3,30]]],[],[],HEAD,EYE,[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
     I_L_Looter_SG_F = QT[['sgun_HunterShotgun_01_F','','','',['2Rnd_12Gauge_Pellets',2],[],''],[],KNIFE,[UNIFORMS,[ITEMS,['2Rnd_12Gauge_Pellets',4,2]]],[],[BAGS,[]],HEAD,EYE,[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
-    I_L_Looter_Pistol_F = QT[[],[],['RH_ttracker','','','',['RH_6Rnd_45ACP_Mag',6],[],''],[UNIFORMS,[ITEMS,['RH_6Rnd_45ACP_Mag',3,6]]],[],[BAGS,[]],HEAD,EYE,[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
+    I_L_Looter_Pistol_F = QT[[],[],['a2_tracker','','','',['6Rnd_45ACP_Cylinder',6],[],''],[UNIFORMS,[ITEMS,['6Rnd_45ACP_Cylinder',3,6]]],[],[BAGS,[]],HEAD,EYE,[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
 };
