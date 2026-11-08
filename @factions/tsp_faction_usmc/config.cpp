@@ -17,7 +17,7 @@ class CfgLoadouts {  //-- QT allows for using #definitions within a string
     #define QT "
 
 //-- GRUNT
-    #define ITEMS ['ACE_CableTie',1],['ACE_EarPlugs',1],['ACRE_PRC154',1],['ACE_Flashlight_XL50',1],['tsp_ifak',1],['tsp_gear_ess_tan',1],['tsp_sling',1],['tsp_gear_manta',1]
+    #define ITEMS ['ACE_CableTie',1],['ACE_EarPlugs',1],['ACRE_PRC153',1],['ACE_Flashlight_XL50',1],['tsp_ifak',1],['tsp_gear_ess_tan',1],['tsp_sling',1],['tsp_gear_manta',1]
     #define ITEMS_SL ['ACE_PlottingBoard',1],['ACE_MapTools',1],['acex_intelitems_notepad',1,1]
     #define ITEMS_SNIPER ['ACE_Kestrel4500',1],['ACE_RangeCard',1]
 
@@ -103,7 +103,7 @@ class CfgLoadouts {  //-- QT allows for using #definitions within a string
     rhsusf_usmc_lar_marpat_wd_combatcrewman = QT[['rhs_weap_m4a1','','','',['rhs_mag_30Rnd_556x45_M855A1_Stanag',30],[],''],[],KNIFE,['rhs_uniform_FROG01_wd',[ITEMS,['tsp_sling',1]]],['rhsusf_spc_crewman',[[HATS,1],['ACRE_PRC152',1],['rhs_mag_30Rnd_556x45_M855A1_Stanag',3,30],['rhs_mag_an_m8hc',1,1],['rhs_mag_m67',1,1]]],[],CVC,'',['rhsusf_bino_m24_ARD','','','',[],[],''],['ItemMap','ItemGPS','','ItemCompass','ItemWatch',LAR_NVG]]QT; 
 
 //-- RECON
-    #define RECON_ITEMS ['ACE_CableTie',2],['ACE_EarPlugs',1],[selectRandom['tsp_gear_tec','ACE_Flashlight_XL50'],1],['ACRE_PRC154',1],['tsp_gear_ess_tan',1],['tsp_ifak',1],['tsp_gear_manta',1],ITEMS_SL
+    #define RECON_ITEMS ['ACE_CableTie',2],['ACE_EarPlugs',1],[selectRandom['tsp_gear_tec','ACE_Flashlight_XL50'],1],['ACRE_PRC153',1],['tsp_gear_ess_tan',1],['tsp_ifak',1],['tsp_gear_manta',1],ITEMS_SL
 
     #define RECON_OPTICS_SHORT selectRandom['tsp_acc_xps3_black','tsp_acc_xps3_tan','rhsusf_acc_compm4']
     #define RECON_OPTICS_LONG selectRandom['rhsusf_acc_ACOG2','rhsusf_acc_ACOG3']
@@ -191,7 +191,7 @@ class CfgLoadouts {  //-- QT allows for using #definitions within a string
     rhsusf_socom_marsoc_cso_eod = QT[['rhs_weap_mk18','',MARSOC_LASER,MARSOC_OPTICS_SHORT,['rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan',30],[],''],['tsp_meleeWeapon_sledge_black','','','',[],[],''],['tsp_meleeWeapon_etool','','','',[],[],''],['rhs_uniform_g3_m81',[RECON_ITEMS,[MARSOC_KNIFE,1],['tsp_sling',1]]],['milgp_v_jpc_assaulter_belt_cb',[[MARSOC_HATS,1],[MARSOC_NVG,1],[RECON_SUPPRESSORS,1],['rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan',3,30],['rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red',3,30],['rhs_mag_an_m8hc',1,1],['rhs_mag_m67',1,1],['tsp_flashbang_m84',1,1],['Chemlight_green',2,1]]],['rhsusf_assault_eagleaiii_coy',[['ToolKit',1],['MineDetector',1],['ACE_DefusalKit',1],['ACE_wirecutter',1],['ACE_M26_Clacker',1],['rhsusf_m112_mag',2,1],['rhsusf_m112x4_mag',1,1],['ClaymoreDirectionalMine_Remote_Mag',1,1],['rhsusf_mine_m14_mag',2,1],['rhsusf_mine_m49a1_10m_mag',2,1],[['tsp_meleeWeapon_etool','','','',[],[],''],1]]],MARSOC_HEAD,RECON_EYE,[],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
 
 //-- GRUNT (DES)
-    #define ITEMS ['ACE_CableTie',1],['ACE_EarPlugs',1],['ACRE_PRC154',1],['ACE_Flashlight_XL50',1],['tsp_ifak',1],['tsp_gear_ess_tan',1],['tsp_sling',1],['tsp_gear_manta',1]
+    #define ITEMS ['ACE_CableTie',1],['ACE_EarPlugs',1],['ACRE_PRC153',1],['ACE_Flashlight_XL50',1],['tsp_ifak',1],['tsp_gear_ess_tan',1],['tsp_sling',1],['tsp_gear_manta',1]
     #define ITEMS_SL ['ACE_PlottingBoard',1],['ACE_MapTools',1],['acex_intelitems_notepad',1,1]
     #define ITEMS_SNIPER ['ACE_Kestrel4500',1],['ACE_RangeCard',1]
 
@@ -277,7 +277,7 @@ class CfgLoadouts {  //-- QT allows for using #definitions within a string
     rhsusf_usmc_lar_marpat_d_combatcrewman = QT[['rhs_weap_m4a1','','','',['rhs_mag_30Rnd_556x45_M855A1_Stanag',30],[],''],[],KNIFE,['rhs_uniform_FROG01_d',[ITEMS,['tsp_sling',1]]],['rhsusf_spc_crewman',[[HATS,1],['ACRE_PRC152',1],['rhs_mag_30Rnd_556x45_M855A1_Stanag',3,30],['rhs_mag_an_m8hc',1,1],['rhs_mag_m67',1,1]]],[],CVC,'',['rhsusf_bino_m24_ARD','','','',[],[],''],['ItemMap','ItemGPS','','ItemCompass','ItemWatch',LAR_NVG]]QT; 
 
 //-- RECON (DES)
-    #define RECON_ITEMS ['ACE_CableTie',2],['ACE_EarPlugs',1],[selectRandom['tsp_gear_tec','ACE_Flashlight_XL50'],1],['ACRE_PRC154',1],['tsp_gear_ess_tan',1],['tsp_ifak',1],['tsp_gear_manta',1],ITEMS_SL
+    #define RECON_ITEMS ['ACE_CableTie',2],['ACE_EarPlugs',1],[selectRandom['tsp_gear_tec','ACE_Flashlight_XL50'],1],['ACRE_PRC153',1],['tsp_gear_ess_tan',1],['tsp_ifak',1],['tsp_gear_manta',1],ITEMS_SL
 
     #define RECON_OPTICS_SHORT selectRandom['tsp_acc_xps3_black','tsp_acc_xps3_tan','rhsusf_acc_compm4']
     #define RECON_OPTICS_LONG selectRandom['rhsusf_acc_ACOG2','rhsusf_acc_ACOG3']
