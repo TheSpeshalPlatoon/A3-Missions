@@ -258,4 +258,9 @@ class CfgLoadouts {  //-- QT allows for using #definitions within a string
     tsp_civilian_takwoman1 = QT _n=((round random 4)+1);[_this, _n] spawn {[_this#0,'a2_head_sportswoman'+(str (_this#1))] remoteExec ['setFace',0]};[[],[],[],['a2_takwoman1_'+(str _n),[]],[],[],'','',[],['','','','','','']]QT;
     tsp_civilian_takwoman2 = QT _n=((round random 4)+1);[_this, _n] spawn {[_this#0,'a2_head_sportswoman'+(str (_this#1))] remoteExec ['setFace',0]};[[],[],[],['a2_takwoman2_'+(str _n),[]],[],[],'','',[],['','','','','','']]QT;
     tsp_civilian_takwoman3 = QT _n=((round random 4)+1);[_this, _n] spawn {[_this#0,'a2_head_sportswoman'+(str (_this#1))] remoteExec ['setFace',0]};[[],[],[],['a2_takwoman3_'+(str _n),[]],[],[],'','',[],['','','','','','']]QT;
+    
+    #define ITEMS ['tsp_ifak',1],['ACE_EarPlugs',1],['ACE_Cellphone',1],['ACRE_BF888S',1],['acex_intelitems_notepad',1,1],['Chemlight_green',2,1]
+    #define UNIFORMS selectRandom['U_C_Journalist']
+    C_journalist_F = QT[[],[],[],[UNIFORMS,[]],['V_Press_F',[ITEMS]],[],'H_Cap_press','',['Nikon_DSLR','','','',[],[],''],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
+    C_Journalist_01_War_F = QT[[],[],['Bro_Camcorder','','','',[],[],''],[UNIFORMS,[['H_Cap_press',1]]],['V_Press_F',[ITEMS]],[],'rhsgref_helmet_pasgt_press','',['Hate_Smartphone','','','',[],[],''],['ItemMap','','','ItemCompass','ItemWatch','']]QT;
 };
