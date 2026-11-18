@@ -6,6 +6,10 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=513;
+	mods[]=
+	{
+		"WBK_Zombies_AdvancedEditorSettings"
+	};
 	class ItemIDProvider
 	{
 		nextID=254;
@@ -16,24 +20,77 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=64;
+		nextID=73;
 	};
 	class Camera
 	{
-		pos[]={11263.731,121.62199,6555.9751};
-		dir[]={-0.92284036,-0.19989407,0.32933268};
-		up[]={-0.18827856,0.97981381,0.067191273};
-		aside[]={0.3361153,3.211826e-07,0.94184405};
+		pos[]={11120.742,208.58731,6623.9141};
+		dir[]={0.499244,-0.6404472,-0.58372933};
+		up[]={0.41627896,0.76798934,-0.48672456};
+		aside[]={-0.76001841,2.9357034e-07,-0.65001744};
 	};
 };
 binarizationWanted=0;
 sourceName="pvp_toiletpaper";
-addons[] = {};
+addons[]=
+{
+	"CUP_A_GeneralStore_01",
+	"A3_Modules_F",
+	"A3_Structures_F_Enoch_Civilian_Police",
+	"A3_Structures_F_Civ_Garbage",
+	"A3_Structures_F_EPB_Civ_Garbage",
+	"ace_dragging",
+	"tsp_faction_civ",
+	"A3_Ui_F",
+	"A3_Modules_F_Intel",
+	"A3_Modules_F_Curator_Misc",
+	"CUP_Editor_Structures_Config",
+	"A3_Structures_F_Items_Stationery",
+	"UK3CB_Factions_Vehicles_Hilux",
+	"UK3CB_Factions_Vehicles_Lada",
+	"UK3CB_Factions_Vehicles_S1203",
+	"UK3CB_Factions_Vehicles_Sedan",
+	"UK3CB_Factions_Vehicles_Motorbikes",
+	"UK3CB_Factions_Vehicles_Volha",
+	"rhs_c_weapons",
+	"hide_rhs",
+	"ace_compat_rhs_afrf3",
+	"A3_Weapons_F",
+	"rhs_c_troops",
+	"a2_uniforms_male",
+	"acre_sys_bf888s",
+	"A3_Weapons_F_Items",
+	"ace_medical_treatment",
+	"tsp_medical",
+	"tsp_rhs_head",
+	"rhsgref_c_troops",
+	"a2_tracker",
+	"hide_vanilla",
+	"A3_Characters_F",
+	"tsp_rhs_3cb",
+	"ace_hearing",
+	"ace_captives",
+	"tsp_melee_kitchen",
+	"tsp_fire",
+	"tsp_uk3cb_tweak",
+	"A3_Weapons_F_Enoch_Rifles_HunterShotgun_01",
+	"A3_Weapons_F_Enoch",
+	"ace_goggles",
+	"rhsgref_c_weapons",
+	"ace_compat_rhs_gref3",
+	"rhssaf_c_weapons",
+	"A3_Characters_F_Decade_Facewear",
+	"RHSGREF_weapon_sounds",
+	"A3_Characters_F_Enoch_Facewear",
+	"RH_de_cfg",
+	"A3_Props_F_Orange_Humanitarian_Supplies",
+	"acre_api"
+};
 class AddonsMetaData
 {
 	class List
 	{
-		items=44;
+		items=47;
 		class Item0
 		{
 			className="CUP_A_GeneralStore_01";
@@ -142,66 +199,65 @@ class AddonsMetaData
 		};
 		class Item16
 		{
-			className="RH_de_cfg";
-			name="RH_de_cfg";
-			author="RobertHammer";
+			className="rhs_c_weapons";
+			name="AFRF Weapons Pack";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
 		};
 		class Item17
+		{
+			className="hide_rhs";
+			name="hide_rhs";
+		};
+		class Item18
+		{
+			className="ace_compat_rhs_afrf3";
+			name="ACE3 - RHS AFRF Compatibility";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item19
 		{
 			className="A3_Weapons_F";
 			name="Arma 3 Alpha - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item18
-		{
-			className="UK3CB_Factions_Equipment";
-			name="3CB Factions - Equipment";
-			author="3 Commando Brigade";
-			url="www.3commandobrigade.com";
-		};
-		class Item19
-		{
-			className="tsp_uk3cb_tweak";
-			name="tsp_uk3cb_tweak";
-		};
 		class Item20
+		{
+			className="rhs_c_troops";
+			name="AFRF Infantry & Equipment";
+			author="Red Hammer Studios";
+			url="http://www.rhsmods.org/";
+		};
+		class Item21
 		{
 			className="a2_uniforms_male";
 			name="a2_uniforms_male";
 		};
-		class Item21
+		class Item22
 		{
 			className="acre_sys_bf888s";
 			name="ACRE2 - BF 888S";
 			author="ACRE2Team";
 			url="https://github.com/IDI-Systems/acre2";
 		};
-		class Item22
-		{
-			className="tsp_medical";
-			name="tsp_medical";
-		};
 		class Item23
 		{
-			className="ace_captives";
-			name="ACE3 - Captives";
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
 		class Item24
 		{
-			className="ace_hearing";
-			name="ACE3 - Hearing";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
+			className="tsp_medical";
+			name="tsp_medical";
 		};
 		class Item25
 		{
-			className="rhs_c_troops";
-			name="AFRF Infantry & Equipment";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
+			className="tsp_rhs_head";
+			name="tsp_rhs_head";
 		};
 		class Item26
 		{
@@ -212,111 +268,125 @@ class AddonsMetaData
 		};
 		class Item27
 		{
+			className="a2_tracker";
+			name="a2_tracker";
+		};
+		class Item28
+		{
+			className="hide_vanilla";
+			name="hide_vanilla";
+		};
+		class Item29
+		{
 			className="A3_Characters_F";
 			name="Arma 3 Alpha - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item28
+		class Item30
 		{
-			className="tsp_faction_chdkz";
-			name="tsp_faction_chdkz";
+			className="tsp_rhs_3cb";
+			name="tsp_rhs_3cb";
 		};
-		class Item29
+		class Item31
 		{
-			className="ace_medical_treatment";
-			name="ACE3 - Medical Treatment";
+			className="ace_hearing";
+			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item30
+		class Item32
+		{
+			className="ace_captives";
+			name="ACE3 - Captives";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item33
 		{
 			className="tsp_melee_kitchen";
 			name="tsp_melee_kitchen";
 		};
-		class Item31
+		class Item34
 		{
 			className="tsp_fire";
 			name="tsp_fire";
 		};
-		class Item32
+		class Item35
+		{
+			className="tsp_uk3cb_tweak";
+			name="tsp_uk3cb_tweak";
+		};
+		class Item36
 		{
 			className="A3_Weapons_F_Enoch";
 			name="Arma 3 Contact Platform - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item33
+		class Item37
 		{
 			className="ace_goggles";
 			name="ACE3 - Goggles";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item34
+		class Item38
 		{
 			className="rhsgref_c_weapons";
 			name="GREF Weapons";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item35
+		class Item39
 		{
 			className="ace_compat_rhs_gref3";
 			name="ACE3 - RHS GREF Compatibility";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item36
+		class Item40
 		{
 			className="rhssaf_c_weapons";
 			name="RHS: SAF Weapons configuration";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item37
+		class Item41
 		{
 			className="A3_Characters_F_Decade";
 			name="CFGPATCHES_A3_Characters_F_Decade";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item38
+		class Item42
 		{
 			className="RHSGREF_weapon_sounds";
 			name="GREF Weapon Sounds";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
 		};
-		class Item39
+		class Item43
 		{
 			className="A3_Characters_F_Enoch";
 			name="Arma 3 Contact Platform - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item40
+		class Item44
 		{
-			className="rhs_c_weapons";
-			name="AFRF Weapons Pack";
-			author="Red Hammer Studios";
-			url="http://www.rhsmods.org/";
+			className="RH_de_cfg";
+			name="RH_de_cfg";
+			author="RobertHammer";
 		};
-		class Item41
-		{
-			className="ace_compat_rhs_afrf3";
-			name="ACE3 - RHS AFRF Compatibility";
-			author="ACE-Team";
-			url="https://ace3.acemod.org/";
-		};
-		class Item42
+		class Item45
 		{
 			className="A3_Props_F_Orange";
 			name="Arma 3 Orange - Decorative and Mission Objects";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item43
+		class Item46
 		{
 			className="acre_api";
 			name="ACRE2 - API";
@@ -1611,7 +1681,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[],[]],[[""RH_16Rnd_9x19_CZ""],[4]],[[""tsp_ifak""],[4]],[[],[]]],false]";
+											value="[[[[],[]],[[""rhs_mag_9x18_8_57N181S""],[8]],[[""tsp_ifak""],[4]],[[],[]]],false]";
 										};
 									};
 								};
@@ -2134,7 +2204,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[],[]],[[""RH_16Rnd_9x19_CZ""],[4]],[[""tsp_ifak""],[4]],[[],[]]],false]";
+											value="[[[[],[]],[[""rhs_mag_9x18_8_57N181S""],[8]],[[""tsp_ifak""],[4]],[[],[]]],false]";
 										};
 									};
 								};
@@ -2254,7 +2324,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[],[]],[[""RH_16Rnd_9x19_CZ""],[4]],[[""tsp_ifak""],[4]],[[],[]]],false]";
+											value="[[[[],[]],[[""rhs_mag_9x18_8_57N181S""],[8]],[[""tsp_ifak""],[4]],[[],[]]],false]";
 										};
 									};
 								};
@@ -2375,7 +2445,7 @@ class Mission
 										class data
 										{
 											singleType="STRING";
-											value="[[[[],[]],[[""RH_16Rnd_9x19_CZ""],[4]],[[""tsp_ifak""],[4]],[[],[]]],false]";
+											value="[[[[],[]],[[""rhs_mag_9x18_8_57N181S""],[8]],[[""tsp_ifak""],[4]],[[],[]]],false]";
 										};
 									};
 								};
@@ -2826,68 +2896,6 @@ class Mission
 								description="Captain@Chernarus Police Department";
 								isPlayer=1;
 								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class handgun
-									{
-										name="RH_cz75";
-										firemode="RH_cz75:Single";
-										class primaryMuzzleMag
-										{
-											name="RH_16Rnd_9x19_CZ";
-											ammoLeft=16;
-										};
-									};
-									class uniform
-									{
-										typeName="a2_policeman";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=4;
-											class Item0
-											{
-												name="ACRE_BF888S";
-												count=1;
-											};
-											class Item1
-											{
-												name="tsp_ifak";
-												count=1;
-											};
-											class Item2
-											{
-												name="ACE_CableTie";
-												count=4;
-											};
-											class Item3
-											{
-												name="ACE_EarPlugs";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="rhs_vest_pistol_holster";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="RH_16Rnd_9x19_CZ";
-												count=2;
-												ammoLeft=16;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="UK3CB_H_Police_Cap";
-								};
 							};
 							id=86;
 							type="tsp_civilian_policeman";
@@ -2950,68 +2958,6 @@ class Mission
 							{
 								description="Officer";
 								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class handgun
-									{
-										name="RH_cz75";
-										firemode="RH_cz75:Single";
-										class primaryMuzzleMag
-										{
-											name="RH_16Rnd_9x19_CZ";
-											ammoLeft=16;
-										};
-									};
-									class uniform
-									{
-										typeName="a2_policeman";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=4;
-											class Item0
-											{
-												name="ACRE_BF888S";
-												count=1;
-											};
-											class Item1
-											{
-												name="tsp_ifak";
-												count=1;
-											};
-											class Item2
-											{
-												name="ACE_CableTie";
-												count=4;
-											};
-											class Item3
-											{
-												name="ACE_EarPlugs";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="rhs_vest_pistol_holster";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="RH_16Rnd_9x19_CZ";
-												count=2;
-												ammoLeft=16;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="UK3CB_H_Police_Cap";
-								};
 							};
 							id=91;
 							type="tsp_civilian_policeman";
@@ -3074,68 +3020,6 @@ class Mission
 							{
 								description="Officer";
 								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class handgun
-									{
-										name="RH_cz75";
-										firemode="RH_cz75:Single";
-										class primaryMuzzleMag
-										{
-											name="RH_16Rnd_9x19_CZ";
-											ammoLeft=16;
-										};
-									};
-									class uniform
-									{
-										typeName="a2_policeman";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=4;
-											class Item0
-											{
-												name="ACRE_BF888S";
-												count=1;
-											};
-											class Item1
-											{
-												name="tsp_ifak";
-												count=1;
-											};
-											class Item2
-											{
-												name="ACE_CableTie";
-												count=4;
-											};
-											class Item3
-											{
-												name="ACE_EarPlugs";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="rhs_vest_pistol_holster";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="RH_16Rnd_9x19_CZ";
-												count=2;
-												ammoLeft=16;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="UK3CB_H_Police_Cap";
-								};
 							};
 							id=92;
 							type="tsp_civilian_policeman";
@@ -3185,68 +3069,6 @@ class Mission
 							{
 								description="Officer";
 								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class handgun
-									{
-										name="RH_cz75";
-										firemode="RH_cz75:Single";
-										class primaryMuzzleMag
-										{
-											name="RH_16Rnd_9x19_CZ";
-											ammoLeft=16;
-										};
-									};
-									class uniform
-									{
-										typeName="a2_policeman";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=4;
-											class Item0
-											{
-												name="ACRE_BF888S";
-												count=1;
-											};
-											class Item1
-											{
-												name="tsp_ifak";
-												count=1;
-											};
-											class Item2
-											{
-												name="ACE_CableTie";
-												count=4;
-											};
-											class Item3
-											{
-												name="ACE_EarPlugs";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="rhs_vest_pistol_holster";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="RH_16Rnd_9x19_CZ";
-												count=2;
-												ammoLeft=16;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="UK3CB_H_Police_Cap";
-								};
 							};
 							id=88;
 							type="tsp_civilian_policeman";
@@ -3308,68 +3130,6 @@ class Mission
 							{
 								description="Officer";
 								isPlayable=1;
-								receiveRemoteTargets=1;
-								class Inventory
-								{
-									class handgun
-									{
-										name="RH_cz75";
-										firemode="RH_cz75:Single";
-										class primaryMuzzleMag
-										{
-											name="RH_16Rnd_9x19_CZ";
-											ammoLeft=16;
-										};
-									};
-									class uniform
-									{
-										typeName="a2_policeman";
-										isBackpack=0;
-										class ItemCargo
-										{
-											items=4;
-											class Item0
-											{
-												name="ACRE_BF888S";
-												count=1;
-											};
-											class Item1
-											{
-												name="tsp_ifak";
-												count=1;
-											};
-											class Item2
-											{
-												name="ACE_CableTie";
-												count=4;
-											};
-											class Item3
-											{
-												name="ACE_EarPlugs";
-												count=1;
-											};
-										};
-									};
-									class vest
-									{
-										typeName="rhs_vest_pistol_holster";
-										isBackpack=0;
-										class MagazineCargo
-										{
-											items=1;
-											class Item0
-											{
-												name="RH_16Rnd_9x19_CZ";
-												count=2;
-												ammoLeft=16;
-											};
-										};
-									};
-									map="ItemMap";
-									compass="ItemCompass";
-									watch="ItemWatch";
-									headgear="rhs_beanie_green";
-								};
 							};
 							id=89;
 							type="tsp_civilian_policeman";
@@ -3435,12 +3195,12 @@ class Mission
 								{
 									class handgun
 									{
-										name="RH_cz75";
-										firemode="RH_cz75:Single";
+										name="rhs_weap_makarov_pm";
+										firemode="rhs_weap_makarov_pm:Single";
 										class primaryMuzzleMag
 										{
-											name="RH_16Rnd_9x19_CZ";
-											ammoLeft=16;
+											name="rhs_mag_9x18_8_57N181S";
+											ammoLeft=8;
 										};
 									};
 									class uniform
@@ -3449,7 +3209,7 @@ class Mission
 										isBackpack=0;
 										class ItemCargo
 										{
-											items=4;
+											items=2;
 											class Item0
 											{
 												name="ACRE_BF888S";
@@ -3457,17 +3217,7 @@ class Mission
 											};
 											class Item1
 											{
-												name="tsp_ifak";
-												count=1;
-											};
-											class Item2
-											{
-												name="ACE_CableTie";
-												count=4;
-											};
-											class Item3
-											{
-												name="ACE_EarPlugs";
+												name="FirstAidKit";
 												count=1;
 											};
 										};
@@ -3481,16 +3231,16 @@ class Mission
 											items=1;
 											class Item0
 											{
-												name="RH_16Rnd_9x19_CZ";
+												name="rhs_mag_9x18_8_57N181S";
 												count=2;
-												ammoLeft=16;
+												ammoLeft=8;
 											};
 										};
 									};
 									map="ItemMap";
 									compass="ItemCompass";
 									watch="ItemWatch";
-									headgear="UK3CB_H_Police_Cap";
+									headgear="rhs_beanie_green";
 								};
 							};
 							id=97;
@@ -3557,12 +3307,12 @@ class Mission
 								{
 									class handgun
 									{
-										name="RH_cz75";
-										firemode="RH_cz75:Single";
+										name="rhs_weap_makarov_pm";
+										firemode="rhs_weap_makarov_pm:Single";
 										class primaryMuzzleMag
 										{
-											name="RH_16Rnd_9x19_CZ";
-											ammoLeft=16;
+											name="rhs_mag_9x18_8_57N181S";
+											ammoLeft=8;
 										};
 									};
 									class uniform
@@ -3571,7 +3321,7 @@ class Mission
 										isBackpack=0;
 										class ItemCargo
 										{
-											items=4;
+											items=2;
 											class Item0
 											{
 												name="ACRE_BF888S";
@@ -3579,17 +3329,7 @@ class Mission
 											};
 											class Item1
 											{
-												name="tsp_ifak";
-												count=1;
-											};
-											class Item2
-											{
-												name="ACE_CableTie";
-												count=4;
-											};
-											class Item3
-											{
-												name="ACE_EarPlugs";
+												name="FirstAidKit";
 												count=1;
 											};
 										};
@@ -3603,16 +3343,16 @@ class Mission
 											items=1;
 											class Item0
 											{
-												name="RH_16Rnd_9x19_CZ";
+												name="rhs_mag_9x18_8_57N181S";
 												count=2;
-												ammoLeft=16;
+												ammoLeft=8;
 											};
 										};
 									};
 									map="ItemMap";
 									compass="ItemCompass";
 									watch="ItemWatch";
-									headgear="rhs_beanie_green";
+									headgear="rhs_beanie_black";
 								};
 							};
 							id=98;
@@ -3676,17 +3416,16 @@ class Mission
 							{
 								description="Officer";
 								isPlayable=1;
-								receiveRemoteTargets=1;
 								class Inventory
 								{
 									class handgun
 									{
-										name="RH_cz75";
-										firemode="RH_cz75:Single";
+										name="rhs_weap_makarov_pm";
+										firemode="rhs_weap_makarov_pm:Single";
 										class primaryMuzzleMag
 										{
-											name="RH_16Rnd_9x19_CZ";
-											ammoLeft=16;
+											name="rhs_mag_9x18_8_57N181S";
+											ammoLeft=8;
 										};
 									};
 									class uniform
@@ -3695,7 +3434,7 @@ class Mission
 										isBackpack=0;
 										class ItemCargo
 										{
-											items=4;
+											items=2;
 											class Item0
 											{
 												name="ACRE_BF888S";
@@ -3703,17 +3442,7 @@ class Mission
 											};
 											class Item1
 											{
-												name="tsp_ifak";
-												count=1;
-											};
-											class Item2
-											{
-												name="ACE_CableTie";
-												count=4;
-											};
-											class Item3
-											{
-												name="ACE_EarPlugs";
+												name="FirstAidKit";
 												count=1;
 											};
 										};
@@ -3727,16 +3456,16 @@ class Mission
 											items=1;
 											class Item0
 											{
-												name="RH_16Rnd_9x19_CZ";
+												name="rhs_mag_9x18_8_57N181S";
 												count=2;
-												ammoLeft=16;
+												ammoLeft=8;
 											};
 										};
 									};
 									map="ItemMap";
 									compass="ItemCompass";
 									watch="ItemWatch";
-									headgear="UK3CB_H_Police_Cap";
+									headgear="rhs_beanie_black";
 								};
 							};
 							id=94;
@@ -3800,17 +3529,16 @@ class Mission
 							{
 								description="Officer";
 								isPlayable=1;
-								receiveRemoteTargets=1;
 								class Inventory
 								{
 									class handgun
 									{
-										name="RH_cz75";
-										firemode="RH_cz75:Single";
+										name="rhs_weap_makarov_pm";
+										firemode="rhs_weap_makarov_pm:Single";
 										class primaryMuzzleMag
 										{
-											name="RH_16Rnd_9x19_CZ";
-											ammoLeft=16;
+											name="rhs_mag_9x18_8_57N181S";
+											ammoLeft=8;
 										};
 									};
 									class uniform
@@ -3819,7 +3547,7 @@ class Mission
 										isBackpack=0;
 										class ItemCargo
 										{
-											items=4;
+											items=2;
 											class Item0
 											{
 												name="ACRE_BF888S";
@@ -3827,17 +3555,7 @@ class Mission
 											};
 											class Item1
 											{
-												name="tsp_ifak";
-												count=1;
-											};
-											class Item2
-											{
-												name="ACE_CableTie";
-												count=4;
-											};
-											class Item3
-											{
-												name="ACE_EarPlugs";
+												name="FirstAidKit";
 												count=1;
 											};
 										};
@@ -3851,16 +3569,16 @@ class Mission
 											items=1;
 											class Item0
 											{
-												name="RH_16Rnd_9x19_CZ";
+												name="rhs_mag_9x18_8_57N181S";
 												count=2;
-												ammoLeft=16;
+												ammoLeft=8;
 											};
 										};
 									};
 									map="ItemMap";
 									compass="ItemCompass";
 									watch="ItemWatch";
-									headgear="rhs_beanie_green";
+									headgear="rhs_beanie_black";
 								};
 							};
 							id=95;
@@ -3959,11 +3677,11 @@ class Mission
 								{
 									class handgun
 									{
-										name="RH_ttracker_g";
-										firemode="RH_ttracker_g:Single";
+										name="a2_tracker_gold";
+										firemode="a2_tracker_gold:Single";
 										class primaryMuzzleMag
 										{
-											name="RH_6Rnd_45ACP_Mag";
+											name="6Rnd_45ACP_Cylinder";
 											ammoLeft=6;
 										};
 									};
@@ -3985,7 +3703,7 @@ class Mission
 											items=1;
 											class Item0
 											{
-												name="RH_6Rnd_45ACP_Mag";
+												name="6Rnd_45ACP_Cylinder";
 												count=1;
 												ammoLeft=6;
 											};
@@ -4095,11 +3813,11 @@ class Mission
 								{
 									class handgun
 									{
-										name="RH_ttracker";
-										firemode="RH_ttracker:Single";
+										name="a2_tracker";
+										firemode="a2_tracker:Single";
 										class primaryMuzzleMag
 										{
-											name="RH_6Rnd_45ACP_Mag";
+											name="6Rnd_45ACP_Cylinder";
 											ammoLeft=6;
 										};
 									};
@@ -4121,7 +3839,7 @@ class Mission
 											items=1;
 											class Item0
 											{
-												name="RH_6Rnd_45ACP_Mag";
+												name="6Rnd_45ACP_Cylinder";
 												count=1;
 												ammoLeft=6;
 											};
@@ -4155,7 +3873,7 @@ class Mission
 											items=1;
 											class Item0
 											{
-												name="RH_6Rnd_45ACP_Mag";
+												name="6Rnd_45ACP_Cylinder";
 												count=1;
 												ammoLeft=6;
 											};
@@ -5178,7 +4896,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={12154.922,42.178291,6295.7852};
-					angle=4.968184;
+					angle=4.9681845;
 					class Attributes
 					{
 						name="zone_station";
@@ -5195,7 +4913,7 @@ class Mission
 				{
 					dataType="Trigger";
 					position[]={11148.353,78.272308,6541.5601};
-					angle=6.2500582;
+					angle=6.2500567;
 					class Attributes
 					{
 						name="zone_civilian";
